@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <BackGround>img/background/loadingbg1</BackGround>
+  
+  <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
+  <AnimateProcessBar>img/misc/processbar/Animate</AnimateProcessBar>
+  
+  <StartAnimate>20</StartAnimate>
+  <EndAnimate>420</EndAnimate>
+  
+  <X>179</X>
+  <Y>530</Y>
+  <DelayTime>100</DelayTime>
+</root>
