@@ -125,7 +125,6 @@
     <Compile Include="Utility.cs" />
     <Compile Include="VisibleGameEntity.cs" />
     <Compile Include="VisibleGameObject.cs" />
-    <Compile Include="XMLUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Character\character.xml">
