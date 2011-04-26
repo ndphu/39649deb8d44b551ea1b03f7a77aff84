@@ -96,6 +96,7 @@
     <Compile Include="GameSprite.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="GameTitle.cs" />
+    <Compile Include="GameTitleManager.cs" />
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="KeyboardObserver.cs" />
     <Compile Include="Map.cs" />
@@ -114,6 +115,8 @@
     <Compile Include="NonPlayerCharacterManager.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="PlayerCharacterManager.cs" />
+    <Compile Include="ProcessBar.cs" />
+    <Compile Include="ProcessBarManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
@@ -146,6 +149,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\gametitle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\XML\loadingprocessbar.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\loadingtomenu.xml">

@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <title>
-    <ContentName>img/title/titleappear/title</ContentName>
-    <NumOfFrames>49</NumOfFrames>
-  </title>
+  <GameTitle id="0">
+    <Title>
+      <ContentName>img/title/titleappear/title</ContentName>
+      <NumOfFrames>49</NumOfFrames>
+    </Title>
 
-  <title>
-    <ContentName>img/title/titleanimate/title</ContentName>
-    <NumOfFrames>100</NumOfFrames>
-  </title>
+    <Title>
+      <ContentName>img/title/titleanimate/title</ContentName>
+      <NumOfFrames>100</NumOfFrames>
+    </Title>
+    
+    <X>300</X>
+    <Y>-50</Y>
+    <DelayTime>100</DelayTime>
+  </GameTitle>
   
-  <X>300</X>
-  <Y>-50</Y>
-  <DelayTime>100</DelayTime>
 </root>

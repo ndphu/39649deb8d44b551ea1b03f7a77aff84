@@ -42,7 +42,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
     
   </Button>
@@ -91,7 +91,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
     
   </Button>
@@ -140,7 +140,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
 
   </Button>
@@ -189,7 +189,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
 
   </Button>
@@ -238,7 +238,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
 
   </Button>
@@ -288,7 +288,7 @@
         <Y>0</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
     
   </Button>

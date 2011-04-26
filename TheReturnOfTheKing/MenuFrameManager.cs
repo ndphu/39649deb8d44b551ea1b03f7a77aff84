@@ -86,7 +86,7 @@ namespace TheReturnOfTheKing
                     _menuMoveInfo.Accel = new Vector2(float.Parse(moveInfo.SelectSingleNode(@"Acceleration").SelectSingleNode(@"X").InnerText),
                         float.Parse(moveInfo.SelectSingleNode(@"Acceleration").SelectSingleNode(@"Y").InnerText));
 
-                    _menuMoveInfo.DecelerationRate = float.Parse(moveInfo.SelectSingleNode(@"DecelerationRate").InnerText);
+                    _menuMoveInfo.DecelerationRate = float.Parse(moveInfo.SelectSingleNode(@"DecelerationRate").InnerText) / 10;
                     _menuMoveInfo.Owner = _prototype[id];
                 }
                 ((MenuFrame)_prototype[id])._motionInfo = _menuMoveInfo;
