@@ -40,23 +40,41 @@ namespace TheReturnOfTheKing
                 _doc.Load(_xmlInfo);
                 XmlNode _processbar = _doc.SelectSingleNode(@"//ProcessBar[@id = '" + id.ToString() + "']");
 
-                _prototype[id] = new ProcessBar();
-                _prototype[id]._nsprite = 2; // 1 processBar mac dinh chi có 2 sprite..
-                //Con thứ nhất là dung dịch (animate)
-                //Con thứ 2 là stand process (cái đứng yên)
+                /*_prototype[id] = new ProcessBar();
+                _prototype[id]._nsprite = 2;
 
-                _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
+                _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];*/
 
                 string _animate = _processbar.SelectSingleNode(@"AnimateProcessBar").InnerText;
                 string _stand = _processbar.SelectSingleNode(@"StandingProcessBar").InnerText;
 
-                Texture2D _animateTex = content.Load<Texture2D>(_animate);
+                /*Texture2D _animateTex = content.Load<Texture2D>(_animate);
                 _prototype[id]._sprite[0] = new GameSprite(_animateTex, 0, 0);
 
                 if (_stand == "Null")
                     _prototype[id]._sprite[1] = null;
                 else
                 {
+                    Texture2D _standTex = content.Load<Texture2D>(_stand);
+                    _prototype[id]._sprite[1] = new GameSprite(_standTex, 0, 0);
+                }*/
+                if (_stand == "Null")
+                {
+                    _prototype[id] = new ProcessBar();
+                    _prototype[id]._nsprite = 1;
+                    _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
+                    Texture2D _animateTex = content.Load<Texture2D>(_animate);
+                    _prototype[id]._sprite[0] = new GameSprite(_animateTex, 0, 0);
+                }
+                else
+                {
+                    _prototype[id] = new ProcessBar();
+                    _prototype[id]._nsprite = 2;
+                    _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
+
+                    Texture2D _animateTex = content.Load<Texture2D>(_animate);
+                    _prototype[id]._sprite[0] = new GameSprite(_animateTex, 0, 0);
+
                     Texture2D _standTex = content.Load<Texture2D>(_stand);
                     _prototype[id]._sprite[1] = new GameSprite(_standTex, 0, 0);
                 }
