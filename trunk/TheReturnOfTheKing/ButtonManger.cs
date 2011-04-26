@@ -98,7 +98,7 @@ namespace TheReturnOfTheKing
                     _buttonMoveInfo.Accel = new Vector2(float.Parse(moveInfo.SelectSingleNode(@"Acceleration").SelectSingleNode(@"X").InnerText),
                         float.Parse(moveInfo.SelectSingleNode(@"Acceleration").SelectSingleNode(@"Y").InnerText));
 
-                    _buttonMoveInfo.DecelerationRate = float.Parse(moveInfo.SelectSingleNode(@"DecelerationRate").InnerText);
+                    _buttonMoveInfo.DecelerationRate = float.Parse(moveInfo.SelectSingleNode(@"DecelerationRate").InnerText) / 10;
 
                     //Cái này la thang Owner nó sẽ trỏ tới cái button trên prototype
                     //Khi clone ra 1 button mới thì phai set lai cai owner này

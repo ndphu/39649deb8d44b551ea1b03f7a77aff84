@@ -20,6 +20,7 @@ namespace TheReturnOfTheKing
         Background _menubg;
         MenuFrame _menuFrame;
         Button[] _buttonArray;
+        GameTitle _gameTitle;
        
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
@@ -50,6 +51,9 @@ namespace TheReturnOfTheKing
             //Quit
             _buttonArray[5] = (Button)objectManagerArray[0].CreateObject(5);
             _buttonArray[5].Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_Quit);
+
+            //Innit gameTitle
+            _gameTitle = (GameTitle)objectManagerArray[3].CreateObject(0);
         }
 
         /// <summary>
@@ -145,6 +149,7 @@ namespace TheReturnOfTheKing
             {
                 _buttonArray[i].Draw(gameTime, sb);
             }
+            _gameTitle.Draw(gameTime, sb);
         }
 
         public override void UpdateState(GameTime gameTime)
@@ -156,6 +161,7 @@ namespace TheReturnOfTheKing
             {
                 _buttonArray[i].Update(gameTime);
             }
+            _gameTitle.Update(gameTime);
         }
 
         public override void ExitState()

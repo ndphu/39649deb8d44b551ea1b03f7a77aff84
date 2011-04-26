@@ -91,11 +91,12 @@ namespace TheReturnOfTheKing
             //_gameState.InitState(Content, this);
             //_gameState.EnterState();
 
-            int nObjectManager = 3;
+            int nObjectManager = 4;
             GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
             objectManegerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
             objectManegerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
             objectManegerArray[2] = new MenuFrameManager (@"./Data/XML/menuframe.xml");
+            objectManegerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
 
             _gameState = new StateLoading();
             _gameState.InitState(null, this);

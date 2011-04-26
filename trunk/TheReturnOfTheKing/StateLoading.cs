@@ -62,12 +62,14 @@ namespace TheReturnOfTheKing
         private bool _loadDone = false; // Da load xong het thong tin cua cac manager chua?
         private GameState temp = null;
 
-        int _debugDelay;
+        //int _debugDelay;
 
         /// <summary>
         /// Vị trí vẽ processbar animate
         /// </summary>
-        float _drawingOffset;
+        float _drawingRate;
+
+        ProcessBar _processBar;
 
 //--------------FUNCTION----------------------------------------------------------------------------
 
@@ -100,13 +102,15 @@ namespace TheReturnOfTheKing
                 _doc.Load(_xmlInfo);
 
                 _backGround = content.Load<Texture2D>(_doc.DocumentElement.SelectSingleNode("BackGround").InnerText);
-                _standingProcessBar = content.Load<Texture2D>(_doc.DocumentElement.SelectSingleNode("StandingProcessBar").InnerText);
-                _animateProcessBar = content.Load<Texture2D>(_doc.DocumentElement.SelectSingleNode("AnimateProcessBar").InnerText);
-                _xStartAnimatePro = int.Parse(_doc.DocumentElement.SelectSingleNode("StartAnimate").InnerText);
-                _xEndAnimatePro = int.Parse(_doc.DocumentElement.SelectSingleNode("EndAnimate").InnerText);
-                _xPro = int.Parse(_doc.DocumentElement.SelectSingleNode("X").InnerText);
-                _yPro = int.Parse(_doc.DocumentElement.SelectSingleNode("Y").InnerText);
                 _delayTime = int.Parse(_doc.DocumentElement.SelectSingleNode("DelayTime").InnerText);
+                string _processXMLInfo = _doc.DocumentElement.SelectSingleNode("ProcessBar").SelectSingleNode("ContentName").InnerText;
+                //Truyền va init tại chỗ vì cái ProcessBarManager chỉ xài cho loading state
+                ProcessBarManager pbm = new ProcessBarManager(_processXMLInfo);
+                for (int i = 0; i < pbm._nprototype; i++)
+                {
+                    pbm.InitOne(content, i);
+                }
+                _processBar = (ProcessBar)pbm.CreateObject(0);
             }
             catch (Exception e)
             {
@@ -161,7 +165,6 @@ namespace TheReturnOfTheKing
 
             else
             {
-                    //Load cái back ground xong roi doi 1 chút mới bắt đầu load cac manager..
                 if (_completedSteps == _stepLengh)
                 {
                     _loadDone = true;
@@ -206,18 +209,22 @@ namespace TheReturnOfTheKing
                                     break;
                                 }
                         }
-                        _debugDelay = 5;
+                        //_debugDelay = 5;
                         Owner.ResetElapsedTime();
-                        _drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;   
+                        //_drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;  
+                        _drawingRate = (float)_completedSteps / (float)_stepLengh;
+                        _processBar.UpdateDrawRect(_drawingRate);
                         return;
                     }
 
                     //LoadOne
                     _objectManagerArray[_objectIndex].InitOne(Owner.Content, _prototypeIndex);
                     _completedSteps++;
-                    _debugDelay = 5;
+                    //_debugDelay = 5;
                     Owner.ResetElapsedTime();
-                    _drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;
+                    //_drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;
+                    _drawingRate = (float)_completedSteps / (float)_stepLengh;
+                    _processBar.UpdateDrawRect(_drawingRate);
                     //Tăng id prototype hiện thời lên 1.
                     _prototypeIndex++;
                 }
@@ -234,8 +241,9 @@ namespace TheReturnOfTheKing
             if (_backGround != null)
             {
                 sb.Draw(_backGround, new Vector2(0, 0), Color.White);
-                sb.Draw(_animateProcessBar, new Vector2(_xPro, _yPro), new Rectangle(0, 0, (int)_drawingOffset, _animateProcessBar.Height), Color.White);
-                sb.Draw(_standingProcessBar, new Vector2(_xPro, _yPro), Color.White);                
+                //sb.Draw(_animateProcessBar, new Vector2(_xPro, _yPro), new Rectangle(0, 0, (int)_drawingOffset, _animateProcessBar.Height), Color.White);
+                //sb.Draw(_standingProcessBar, new Vector2(_xPro, _yPro), Color.White);  
+                _processBar.Draw(gameTime, sb);
             }
         }
 

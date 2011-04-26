@@ -15,7 +15,7 @@ namespace TheReturnOfTheKing
 {
     public class MotionInfo
     {
-        //Ai là người có thông tin này?
+        //Ai là người có những thông tin này?
         private VisibleGameObject _owner;
 
         public VisibleGameObject Owner

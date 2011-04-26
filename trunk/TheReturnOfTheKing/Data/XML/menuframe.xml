@@ -33,7 +33,7 @@
         <Y>2</Y>
       </Acceleration>
 
-      <DecelerationRate>0,6</DecelerationRate>
+      <DecelerationRate>6</DecelerationRate>
     </MoveInfo>
   </MenuFrame>
 </root>
