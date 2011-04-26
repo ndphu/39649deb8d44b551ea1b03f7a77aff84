@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using System.Xml;
 
 namespace TheReturnOfTheKing
 {
@@ -211,9 +212,24 @@ namespace TheReturnOfTheKing
         /// Lấy danh sách quái vật
         /// </summary>
         /// <returns>Mảng các quái vật</returns>
-        public List<Monster> InitMonsterList()
+        public List<Monster> InitMonsterList(MonsterManager monsterManager)
         {
-            return _lstMonster;
+            List<Monster> ret = new List<Monster>();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"Data\\Map\\map01.xml");
+            XmlNodeList Monsters = doc.SelectNodes(@"//Monster");
+            ret = new List<Monster>();
+            for (int i = 0; i < Monsters.Count; ++i)
+            {
+                Monster mst = (Monster)monsterManager.CreateObject(int.Parse(Monsters[i].SelectSingleNode(@"Type").InnerText));
+                ret.Add(mst);
+                ret[i].X = int.Parse(Monsters[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
+                ret[i].Y = int.Parse(Monsters[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
+                ret[i].DestPoint = new Point((int)ret[i].X, (int)ret[i].Y);
+                ret[i].CellToMove = new List<Point>();
+                ret[i].SetMap(this);
+            }
+            return ret;
         }
     }
 }

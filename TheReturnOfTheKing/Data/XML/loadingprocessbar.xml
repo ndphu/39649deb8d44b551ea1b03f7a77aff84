@@ -22,4 +22,94 @@
     <Width>442</Width>
     <Height>59</Height>
   </ProcessBar>
+
+  <ProcessBar id="1">
+    <!--Not null-->
+    <AnimateProcessBar>img/misc/processbar/Animate</AnimateProcessBar>
+
+    <!--Standing có thể là Null-->
+    <!--Nếu là Null thì viết cho InnerText là "Null"-->
+    <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
+
+    <StartAnimate>20</StartAnimate>
+    <EndAnimate>420</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Right</Direction>
+
+    <X>10</X>
+    <Y>10</Y>
+
+    <Width>130</Width>
+    <Height>50</Height>
+  </ProcessBar>
+
+
+  <ProcessBar id="2">
+    <!--Not null-->
+    <AnimateProcessBar>img/misc/processbar/Animate</AnimateProcessBar>
+
+    <!--Standing có thể là Null-->
+    <!--Nếu là Null thì viết cho InnerText là "Null"-->
+    <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
+
+    <StartAnimate>20</StartAnimate>
+    <EndAnimate>420</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Right</Direction>
+
+    <X>10</X>
+    <Y>50</Y>
+
+    <Width>130</Width>
+    <Height>50</Height>
+  </ProcessBar>
+
+
+  <ProcessBar id="3">
+    <!--Not null-->
+    <AnimateProcessBar>img/misc/processbar/Animate</AnimateProcessBar>
+
+    <!--Standing có thể là Null-->
+    <!--Nếu là Null thì viết cho InnerText là "Null"-->
+    <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
+
+    <StartAnimate>20</StartAnimate>
+    <EndAnimate>420</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Left</Direction>
+
+    <X>650</X>
+    <Y>10</Y>
+
+    <Width>130</Width>
+    <Height>10</Height>
+  </ProcessBar>
+
+  <ProcessBar id="4">
+    <!--Not null-->
+    <AnimateProcessBar>img/misc/processbar/Animate</AnimateProcessBar>
+
+    <!--Standing có thể là Null-->
+    <!--Nếu là Null thì viết cho InnerText là "Null"-->
+    <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
+
+    <StartAnimate>20</StartAnimate>
+    <EndAnimate>420</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Left</Direction>
+
+    <X>650</X>
+    <Y>50</Y>
+
+    <Width>130</Width>
+    <Height>50</Height>
+  </ProcessBar>
 </root>

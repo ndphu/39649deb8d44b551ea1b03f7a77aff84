@@ -68,6 +68,8 @@ namespace TheReturnOfTheKing
                 Xp = this.Xp,
                 Y = this.Y,
                 HitFrame = this.HitFrame,
+                MaxHp = this.MaxHp,
+                MaxMp = this.MaxMp,
             };
         }
         
@@ -87,7 +89,7 @@ namespace TheReturnOfTheKing
         {
             base.Update(gameTime);
             if (IsAttacking != true)
-            {
+            {   
                 if (this.Y == DestPoint.Y && this.X < DestPoint.X)
                 {
                     if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
@@ -153,7 +155,6 @@ namespace TheReturnOfTheKing
                 _sprite[Dir].Itexture2D = 0;
                 IsStanding = true;
             }
-
         }
         
     }

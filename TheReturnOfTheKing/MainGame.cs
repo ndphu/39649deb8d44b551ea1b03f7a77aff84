@@ -68,10 +68,7 @@ namespace TheReturnOfTheKing
 
             // TODO: use this.Content to load your game content here
             GlobalVariables.Sf = Content.Load<SpriteFont>("sf");
-
-            GlobalVariables.MonsterManager = new MonsterManager(@"Data\Monster\monster.xml");
-            GlobalVariables.MonsterManager.InitPrototypes(Content, @"Data\Monster\monster.xml"); 
-
+            
             GlobalVariables.ScreenHeight = this.Window.ClientBounds.Height;
             GlobalVariables.ScreenWidth = this.Window.ClientBounds.Width;
 

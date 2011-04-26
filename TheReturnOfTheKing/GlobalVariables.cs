@@ -32,14 +32,6 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._dY = value; }
         }
 
-        private static float _offset;
-
-        public static float Offset
-        {
-            get { return GlobalVariables._offset; }
-            set { GlobalVariables._offset = value; }
-        }
-
         static int _screenWidth;
 
         public static int ScreenWidth
@@ -56,22 +48,7 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._screenHeight = value; }
         }
 
-        static ButtonManger _btm;
-
-        public static ButtonManger Btm
-        {
-            get { return GlobalVariables._btm; }
-            set { GlobalVariables._btm = value; }
-        }
-
-        static MonsterManager _monsterManager;
-
-        public static MonsterManager MonsterManager
-        {
-            get { return GlobalVariables._monsterManager; }
-            set { GlobalVariables._monsterManager = value; }
-        }
-
+        
         static MouseObserver _mouseObserver;
 
         public static MouseObserver MouseObserver

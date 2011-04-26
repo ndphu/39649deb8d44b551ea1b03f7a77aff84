@@ -39,7 +39,7 @@ namespace TheReturnOfTheKing
         }
         public override bool InitOne(ContentManager content, int id)
         {
-            //try
+            try
             {
                 XmlDocument _doc = new XmlDocument();
                 _doc.Load(_xmlInfo);
@@ -93,103 +93,12 @@ namespace TheReturnOfTheKing
                 }
                 ((Map)_prototype[id]).Matrix = matrix;
                 ((Map)_prototype[id]).CollisionDim = collisionUnitDim;
-
-                XmlNodeList Monsters = _map.SelectNodes(@"//Monster");
-                ((Map)_prototype[id]).LstMonster = new List<Monster>();
-                for (int i = 0; i < Monsters.Count; ++i)
-                {
-                    Monster mst = (Monster)GlobalVariables.MonsterManager.CreateObject(int.Parse(Monsters[i].SelectSingleNode(@"Type").InnerText));
-                    ((Map)_prototype[id]).LstMonster.Add(mst);
-                    ((Map)_prototype[id]).LstMonster[i].X = int.Parse(Monsters[i].SelectSingleNode(@"X").InnerText) * collisionUnitDim;
-                    ((Map)_prototype[id]).LstMonster[i].Y = int.Parse(Monsters[i].SelectSingleNode(@"Y").InnerText) * collisionUnitDim;
-                    ((Map)_prototype[id]).LstMonster[i].DestPoint = new Point((int)((Map)_prototype[id]).LstMonster[i].X, (int)((Map)_prototype[id]).LstMonster[i].Y);
-                    ((Map)_prototype[id]).LstMonster[i].CellToMove = new List<Point>();
-                    ((Map)_prototype[id]).LstMonster[i].SetMap((Map)_prototype[id]);
-                }
-
                 return true;
             }
-            //catch
-            //{
-            //    return false;
-            //}
-        }
-        /*public override bool InitPrototypes(ContentManager content, string fileName)
-        {
-            try
-            {
-                _nprototype = 1;
-                _prototype = new Map[_nprototype];
-                _prototype[id] = new Map();
-                XmlDocument doc = new XmlDocument();
-                doc.Load(fileName);
-                int _cols = int.Parse(doc.SelectSingleNode("//Width").InnerText);
-                int _rows = int.Parse(doc.SelectSingleNode("//Height").InnerText);
-                int _pieceWidth = int.Parse(doc.SelectSingleNode("//PieceWidth").InnerText);
-                int _pieceHeight = int.Parse(doc.SelectSingleNode("//PieceHeight").InnerText);
-                int _npiece = _prototype[id]._nsprite = _cols * _rows;
-                _prototype[id]._sprite = new GameSprite[_npiece];
-                string contentName = doc.SelectSingleNode("//ContentName").InnerText;
-                for (int i = 0; i < _npiece; ++i)
-                {
-                    _prototype[id]._sprite[i] = new GameSprite(content.Load<Texture2D>(contentName + i.ToString("0000")),(i % _cols) * _pieceWidth,(i / _cols) * _pieceHeight);                
-                }
-                ((Map)_prototype[id]).Width = _prototype[id]._sprite[0].Texture2D[0].Width * _cols;
-                ((Map)_prototype[id]).Height = _prototype[id]._sprite[0].Texture2D[0].Height * _rows;
-                ((Map)_prototype[id]).Cols = _cols;
-                ((Map)_prototype[id]).Rows = _rows;
-                ((Map)_prototype[id]).RpF = GlobalVariables.ScreenHeight / _pieceHeight + 1;
-                ((Map)_prototype[id]).CpF = GlobalVariables.ScreenWidth / _pieceWidth + 1;
-                ((Map)_prototype[id]).StartPointX = int.Parse(doc.SelectSingleNode("//StartPointX").InnerText);
-                ((Map)_prototype[id]).StartPointY = int.Parse(doc.SelectSingleNode("//StartPointY").InnerText);
-             
-                string collisionName = doc.SelectSingleNode("//Collision").InnerText;
-                List<List<bool>> matrix = new List<List<bool>>();
-                int collisionUnitDim = int.Parse(doc.SelectSingleNode("//CollisionUnitDim").InnerText);
-                int collisionMatrixWith = (int)((Map)_prototype[id]).Width / collisionUnitDim;
-                int collisionMatrixHeight = (int)((Map)_prototype[id]).Height / collisionUnitDim;                
-                FileStream f = File.OpenRead(collisionName);
-                
-                List<bool> temp = new List<bool>();
-                while (true)
-                {
-                    int i = f.ReadByte();
-                    if (i == -1)
-                        break;
-                    if (i == '\r' || i == ' ' || i == '\n')
-                        continue;
-                    if (i == '1')
-                        temp.Add(true);
-                    else
-                        temp.Add(false);
-                    if (temp.Count == collisionMatrixWith)
-                    {
-                        matrix.Add(temp);
-                        temp = new List<bool>();
-                    }
-                }                
-                ((Map)_prototype[id]).Matrix = matrix;
-                ((Map)_prototype[id]).CollisionDim = collisionUnitDim;
-
-                XmlNodeList Monsters = doc.SelectNodes(@"//Monster");
-                ((Map)_prototype[id]).LstMonster = new List<Monster>();
-                for (int i = 0; i < Monsters.Count; ++i)
-                {
-                    Monster mst = (Monster)GlobalVariables.MonsterManager.CreateObject(int.Parse(Monsters[i].SelectSingleNode(@"Type").InnerText));                    
-                    ((Map)_prototype[id]).LstMonster.Add(mst);
-                    ((Map)_prototype[id]).LstMonster[i].X = int.Parse(Monsters[i].SelectSingleNode(@"X").InnerText) * collisionUnitDim;
-                    ((Map)_prototype[id]).LstMonster[i].Y = int.Parse(Monsters[i].SelectSingleNode(@"Y").InnerText) * collisionUnitDim;
-                    ((Map)_prototype[id]).LstMonster[i].DestPoint = new Point((int)((Map)_prototype[id]).LstMonster[i].X, (int)((Map)_prototype[id]).LstMonster[i].Y);
-                    ((Map)_prototype[id]).LstMonster[i].CellToMove = new List<Point>();                    
-                    ((Map)_prototype[id]).LstMonster[i].SetMap((Map)_prototype[id]);
-                }
-
-                 return true;
-            }
-            catch (Exception e)
+            catch
             {
                 return false;
             }
-        }*/
+        }
     }
 }

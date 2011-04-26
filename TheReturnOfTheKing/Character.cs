@@ -48,6 +48,17 @@ namespace TheReturnOfTheKing
             set { _hp = value; }
         }
         /// <summary>
+        /// Máu tối đa
+        /// </summary>
+        int _maxHp;
+
+        public int MaxHp
+        {
+            get { return _maxHp; }
+            set { _maxHp = value; }
+        }
+
+        /// <summary>
         /// Mana
         /// </summary>
         int _mp;
@@ -57,7 +68,17 @@ namespace TheReturnOfTheKing
             get { return _mp; }
             set { _mp = value; }
         }
-       
+        /// <summary>
+        /// Mana tối đa
+        /// </summary>
+        int _maxMp;
+
+        public int MaxMp
+        {
+            get { return _maxMp; }
+            set { _maxMp = value; }
+        }
+
         /// <summary>
         /// Bán kính tấn công
         /// </summary>

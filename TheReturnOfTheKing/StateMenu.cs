@@ -68,15 +68,17 @@ namespace TheReturnOfTheKing
             if (!_sender._motionInfo.IsStanding)
                 return;
 
-            Owner.GameState.ExitState();
+            
 
-            int nObjectManager = 2;
+            int nObjectManager = 4;
             GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
 
             objectManegerArray[1] = new MapManager(@"Data\Map\map01.xml");
             objectManegerArray[0] = new PlayerCharacterManager(@"Data\character\character.xml");
-            //objectManegerArray[2] = new MonsterManager(@"Data\monster\monster.xml");
+            objectManegerArray[2] = new MonsterManager(@"Data\monster\monster.xml");
+            objectManegerArray[3] = new ProcessBarManager(@"Data\XML\loadingprocessbar.xml");
 
+            Owner.GameState.ExitState();
             Owner.GameState = new StateLoading();
             Owner.GameState.InitState(objectManegerArray, Owner);
             ((StateLoading)Owner.GameState).GetDataLoading(Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMainGame));
