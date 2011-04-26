@@ -156,10 +156,13 @@ namespace TheReturnOfTheKing
         }
         public override VisibleGameObject Clone()
         {
+            GameSprite[] _spriteTemp = new GameSprite[_nsprite];
+            for (int i = 0; i < _nsprite; ++i)
+                _spriteTemp[i] = _sprite[i].Clone();  
             MenuFrame _newMenuFrame = new MenuFrame
             {
                 _nsprite = this._nsprite,
-                _sprite = this._sprite,
+                _sprite = _spriteTemp,
                 Width = this.Width,
                 Height = this.Height,
                 Rect = this.Rect,

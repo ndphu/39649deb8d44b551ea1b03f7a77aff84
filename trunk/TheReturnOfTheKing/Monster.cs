@@ -46,7 +46,9 @@ namespace TheReturnOfTheKing
                 X = this.X,
                 Y = this.Y,                
                 HitFrame = this.HitFrame,
-                Sight = this.Sight
+                Sight = this.Sight,
+                MaxHp = this.MaxHp,
+                MaxMp = this.MaxMp,
             };
         }
 
@@ -55,13 +57,12 @@ namespace TheReturnOfTheKing
             base.Update(gameTime);
             if (Target != null && Math.Sqrt(Math.Pow(this.X - Target.X, 2) - Math.Pow(this.Y - Target.Y, 2)) > this.Sight)
                 Target = null;
-            /*if (Target != null && IsCollisionWith(Target))
+            if (Target != null && IsCollisionWith(Target))
             {
-
                 CellToMove = new List<Point>();
                 DestPoint = new Point((int)X, (int)Y);
                 UpdateDirection(Target.X, Target.Y);
-            }*/
+            }
             if (Target == null && CellToMove.Count == 0 && this.X == DestPoint.X && this.Y == DestPoint.Y)
             {
                 Random r = new Random();

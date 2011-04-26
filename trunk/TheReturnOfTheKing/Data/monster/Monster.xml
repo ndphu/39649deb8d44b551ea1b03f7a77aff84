@@ -3,7 +3,9 @@
   <Monster id="0">
     <Speed>1</Speed>
     <Hp>800</Hp>
+    <MaxHp>800</MaxHp>
     <Mp>600</Mp>
+    <MaxMp>600</MaxMp>
     <CriticalRate>15</CriticalRate>
     <Damage>85</Damage>
     <Defense>14</Defense>
@@ -42,10 +44,12 @@
       <YOffset>-110</YOffset>
     </Dyed>
   </Monster>
-  <Monster id="0">
+  <Monster id="1">
     <Speed>1</Speed>
     <Hp>1200</Hp>
+    <MaxHp>1200</MaxHp>
     <Mp>200</Mp>
+    <MaxMp>200</MaxMp>
     <CriticalRate>20</CriticalRate>
     <Damage>95</Damage>
     <Defense>5</Defense>
@@ -84,10 +88,12 @@
       <YOffset>-110</YOffset>
     </Dyed>
   </Monster>
-  <Monster id="0">
+  <Monster id="2">
     <Speed>1</Speed>
-    <Hp>1</Hp>
-    <Mp>0</Mp>
+    <Hp>250</Hp>
+    <MaxHp>250</MaxHp>
+    <Mp>10</Mp>
+    <MaxMp>10</MaxMp>
     <CriticalRate>50</CriticalRate>
     <Damage>35</Damage>
     <Defense>2</Defense>

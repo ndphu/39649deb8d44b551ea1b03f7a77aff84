@@ -43,10 +43,13 @@ namespace TheReturnOfTheKing
 
         public override VisibleGameObject Clone()
         {
+            GameSprite[] _spriteTemp = new GameSprite[_nsprite];
+            for (int i = 0; i < _nsprite; ++i)
+                _spriteTemp[i] = _sprite[i].Clone();  
             Button _newButton = new Button
-            {
-                _sprite = this._sprite,
+            {                
                 _nsprite = this._nsprite,
+                _sprite = _spriteTemp,
                 X = this.X,
                 Y = this.Y,
                 IsMouseHover = this.IsMouseHover,

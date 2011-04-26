@@ -35,69 +35,59 @@ namespace TheReturnOfTheKing
 
             }
         }
-
-        public bool InitPrototypes(ContentManager content, string fileName)
+        public override bool InitOne(ContentManager content, int id)
         {
-            //try
-            //{
-                XmlDocument doc = new XmlDocument();
-                doc.Load(fileName);
-                XmlNodeList nodelist = doc.SelectNodes(@"//Monster");
-                _nprototype = nodelist.Count;
-                _prototype = new VisibleGameObject[_nprototype];
-                for (int i = 0; i < nodelist.Count; ++i)
-                {
-                    _prototype[i] = new Monster();
-                    _prototype[i]._nsprite = 40;
-                    _prototype[i]._sprite = new GameSprite[_prototype[i]._nsprite];
+            XmlDocument _doc = new XmlDocument();
+            _doc.Load(_xmlInfo);
+            XmlNode _monster = _doc.SelectSingleNode(@"//Monster[@id = '" + id.ToString() + "']");
+            _prototype[id] = new Monster();
+            _prototype[id]._nsprite = 40;
+            _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
 
-                    XmlNode node = nodelist[i].SelectSingleNode(@"Stand");
-                    GameSprite[] temp = Utility.LoadSprites(node, content);
-                    for (int j = 0; j < 8; ++j)
-                        _prototype[i]._sprite[j] = temp[j];
+            XmlNode node = _monster.SelectSingleNode(@"Stand");
+            GameSprite[] temp = Utility.LoadSprites(node, content);
+            for (int j = 0; j < 8; ++j)
+                _prototype[id]._sprite[j] = temp[j];
 
-                    node = nodelist[i].SelectSingleNode(@"Move");
-                    temp = Utility.LoadSprites(node, content);
-                    for (int j = 8; j < 16; ++j)
-                        _prototype[i]._sprite[j] = temp[j - 8];
+            node = _monster.SelectSingleNode(@"Move");
+            temp = Utility.LoadSprites(node, content);
+            for (int j = 8; j < 16; ++j)
+                _prototype[id]._sprite[j] = temp[j - 8];
 
-                    node = nodelist[i].SelectSingleNode(@"Attack");
-                    temp = Utility.LoadSprites(node, content);
-                    for (int j = 16; j < 24; ++j)
-                        _prototype[i]._sprite[j] = temp[j - 16];
+            node = _monster.SelectSingleNode(@"Attack");
+            temp = Utility.LoadSprites(node, content);
+            for (int j = 16; j < 24; ++j)
+                _prototype[id]._sprite[j] = temp[j - 16];
 
-                    node = nodelist[i].SelectSingleNode(@"Dying");
-                    temp = Utility.LoadSprites(node, content);
-                    for (int j = 24; j < 32; ++j)
-                        _prototype[i]._sprite[j] = temp[j - 24];
+            node = _monster.SelectSingleNode(@"Dying");
+            temp = Utility.LoadSprites(node, content);
+            for (int j = 24; j < 32; ++j)
+                _prototype[id]._sprite[j] = temp[j - 24];
 
-                    node = nodelist[i].SelectSingleNode(@"Dyed");
-                    temp = Utility.LoadSprites(node, content);
-                    for (int j = 32; j < 40; ++j)
-                        _prototype[i]._sprite[j] = temp[j - 32];
+            node = _monster.SelectSingleNode(@"Dyed");
+            temp = Utility.LoadSprites(node, content);
+            for (int j = 32; j < 40; ++j)
+                _prototype[id]._sprite[j] = temp[j - 32];
 
-                    ((Monster)_prototype[i]).CellToMove = new List<Point>();                    
-                    ((Monster)_prototype[i]).IsMoving = false;
-                    ((Monster)_prototype[i]).Map = null;
-                    ((Monster)_prototype[i]).Speed = int.Parse(nodelist[i].SelectSingleNode(@"Speed").InnerText);
-                    ((Monster)_prototype[i]).Hp = int.Parse(nodelist[i].SelectSingleNode(@"Hp").InnerText);
-                    ((Monster)_prototype[i]).Mp = int.Parse(nodelist[i].SelectSingleNode(@"Mp").InnerText);
-                    ((Monster)_prototype[i]).CriticalRate = int.Parse(nodelist[i].SelectSingleNode(@"CriticalRate").InnerText);
-                    ((Monster)_prototype[i]).Attack = int.Parse(nodelist[i].SelectSingleNode(@"Damage").InnerText);
-                    ((Monster)_prototype[i]).Defense = int.Parse(nodelist[i].SelectSingleNode(@"Defense").InnerText);
-                    ((Monster)_prototype[i]).AttackSpeed = int.Parse(nodelist[i].SelectSingleNode(@"AttackSpeed").InnerText);
-                    ((Monster)_prototype[i]).Range = int.Parse(nodelist[i].SelectSingleNode(@"Range").InnerText);
-                    ((Monster)_prototype[i]).X = 0;
-                    ((Monster)_prototype[i]).Y = 0;                    
-                    ((Monster)_prototype[i]).HitFrame = int.Parse(nodelist[i].SelectSingleNode(@"HitFrame").InnerText);
-                    ((Monster)_prototype[i]).Sight = int.Parse(nodelist[i].SelectSingleNode(@"Sight").InnerText);
-                }
-                return true;
-            //}
-            //catch
-            //
-//return false;
-            //}
+            ((Monster)_prototype[id]).CellToMove = new List<Point>();
+            ((Monster)_prototype[id]).DestPoint = new Point();
+            ((Monster)_prototype[id]).IsMoving = false;
+            ((Monster)_prototype[id]).Map = null;
+            ((Monster)_prototype[id]).Speed = int.Parse(_monster.SelectSingleNode(@"Speed").InnerText);
+            ((Monster)_prototype[id]).Hp = int.Parse(_monster.SelectSingleNode(@"Hp").InnerText);
+            ((Monster)_prototype[id]).Mp = int.Parse(_monster.SelectSingleNode(@"Mp").InnerText);
+            ((Monster)_prototype[id]).CriticalRate = int.Parse(_monster.SelectSingleNode(@"CriticalRate").InnerText);
+            ((Monster)_prototype[id]).Attack = int.Parse(_monster.SelectSingleNode(@"Damage").InnerText);
+            ((Monster)_prototype[id]).Defense = int.Parse(_monster.SelectSingleNode(@"Defense").InnerText);
+            ((Monster)_prototype[id]).AttackSpeed = int.Parse(_monster.SelectSingleNode(@"AttackSpeed").InnerText);
+            ((Monster)_prototype[id]).Range = int.Parse(_monster.SelectSingleNode(@"Range").InnerText);
+            ((Monster)_prototype[id]).X = 0;
+            ((Monster)_prototype[id]).Y = 0;
+            ((Monster)_prototype[id]).HitFrame = int.Parse(_monster.SelectSingleNode(@"HitFrame").InnerText);
+            ((Monster)_prototype[id]).Sight = int.Parse(_monster.SelectSingleNode(@"Sight").InnerText);
+            ((Monster)_prototype[id]).MaxHp = int.Parse(_monster.SelectSingleNode(@"MaxHp").InnerText);
+            ((Monster)_prototype[id]).MaxMp = int.Parse(_monster.SelectSingleNode(@"MaxMp").InnerText);
+            return true;
         }
     }
 }

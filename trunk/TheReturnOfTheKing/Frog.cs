@@ -52,6 +52,7 @@ namespace TheReturnOfTheKing
             }
         }
 
+
         public override void Init(ContentManager content)
         {
             _nsprite = 1;
@@ -59,6 +60,11 @@ namespace TheReturnOfTheKing
             _sprite[0] = new GameSprite(content.Load<Texture2D>("img/misc/frog/frog"), 0, 0);
             sf = content.Load<SpriteFont>("sf");
             GlobalVariables.Sf = sf;
+        }
+
+        public void InitProcessBar(ProcessBarManager processbarManager)
+        {
+
         }
 
         public void SetCharacter(PlayerCharacter _char)
