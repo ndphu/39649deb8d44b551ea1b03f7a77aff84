@@ -15,5 +15,16 @@
       <Y>54</Y>
       <Type>2</Type>
     </Monster>
+    <Monster>
+      <X>20</X>
+      <Y>54</Y>
+      <Type>2</Type>
+    </Monster>
+    <Monster>
+      <X>20</X>
+      <Y>54</Y>
+      <Type>2</Type>
+    </Monster>
+    
   </Map>
 </root>
