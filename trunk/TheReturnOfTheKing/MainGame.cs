@@ -88,7 +88,7 @@ namespace TheReturnOfTheKing
             //_gameState.InitState(Content, this);
             //_gameState.EnterState();
 
-            int nObjectManager = 4;
+            /*int nObjectManager = 4;
             GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
             objectManegerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
             objectManegerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
@@ -98,7 +98,21 @@ namespace TheReturnOfTheKing
             _gameState = new StateLoading();
             _gameState.InitState(null, this);
             ((StateLoading)_gameState).GetDataLoading(Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMenu));
-            _gameState.EnterState();
+            _gameState.EnterState();*/
+
+            int nObjectManager = 4;
+            GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
+
+            objectManegerArray[1] = new MapManager(@"Data\Map\map01.xml");
+            objectManegerArray[0] = new PlayerCharacterManager(@"Data\character\character.xml");
+            objectManegerArray[2] = new MonsterManager(@"Data\monster\monster.xml");
+            objectManegerArray[3] = new ProcessBarManager(@"Data\XML\loadingprocessbar.xml");
+
+           
+            GameState = new StateLoading();
+            GameState.InitState(objectManegerArray, this);
+            ((StateLoading)GameState).GetDataLoading(Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMainGame));
+            GameState.EnterState();   
         }
 
         /// <summary>

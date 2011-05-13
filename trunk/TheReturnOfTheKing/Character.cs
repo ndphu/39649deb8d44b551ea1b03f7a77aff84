@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using System.IO;
 
 namespace TheReturnOfTheKing
 {
@@ -545,9 +546,14 @@ namespace TheReturnOfTheKing
             }
             
         }
-        
+       
         public void UpdateDirection(double x, double y)
         {
+
+            if (Math.Abs(this.X - x) < 1)
+                this.X = (float)x;
+            if (Math.Abs(this.Y - y) < 1)
+                this.Y = (float)y;
             if (this.X == x && this.Y == y)
             {
                 _dir = _dir % 8;
