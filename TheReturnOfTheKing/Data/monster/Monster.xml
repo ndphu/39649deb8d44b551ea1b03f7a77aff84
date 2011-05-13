@@ -100,7 +100,7 @@
     <AttackSpeed>2</AttackSpeed>
     <Range>32</Range>
     <HitFrame>10</HitFrame>
-    <Sight>50</Sight>
+    <Sight>20</Sight>
     <Stand>
       <ContentName>img/character/zombie/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>

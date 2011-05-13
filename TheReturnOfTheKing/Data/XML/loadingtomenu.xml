@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <root>
-  <BackGround>img/background/loadingbg1</BackGround>
+  <BackGround>img/misc/loading/loadingtomenu</BackGround>
   <DelayTime>80</DelayTime>
   <ProcessBar>
     <ContentName>./Data/XML/loadingprocessbar.xml</ContentName>

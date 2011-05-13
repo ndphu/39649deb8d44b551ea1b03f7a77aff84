@@ -17,9 +17,10 @@ namespace TheReturnOfTheKing
 {
     public class StateLoading : GameState
     {
-        private Texture2D _backGround; //Back ground cho lodingScreen
+        private Texture2D _backGround; //Back ground cho loadingScreen
         private Texture2D _standingProcessBar; //Cái khung của process bar
         private Texture2D _animateProcessBar; //Dung dịch chảy trong process bar
+
 
         private GameObjectManager[] _objectManagerArray; //Mang cac objectManager
         //cần load

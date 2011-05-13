@@ -3,65 +3,17 @@
   <Map id="0">
     <ContentName>img/map/map01/res0000</ContentName>
     <Collision>data/map/map01.txt</Collision>
-    <Width>8</Width>
-    <Height>8</Height>
+    <Width>4</Width>
+    <Height>4</Height>
     <PieceWidth>512</PieceWidth>
     <PieceHeight>512</PieceHeight>
     <CollisionUnitDim>32</CollisionUnitDim>
-    <StartPointX>2</StartPointX>
-    <StartPointY>50</StartPointY>
+    <StartPointX>24</StartPointX>
+    <StartPointY>54</StartPointY>
     <Monster>
-      <X>5</X>
-      <Y>50</Y>
+      <X>20</X>
+      <Y>54</Y>
       <Type>2</Type>
     </Monster>
-    <Monster>
-      <X>10</X>
-      <Y>50</Y>
-      <Type>2</Type>
-    </Monster>
-    <Monster>
-      <X>5</X>
-      <Y>53</Y>
-      <Type>2</Type>
-    </Monster>
-    <Monster>
-      <X>5</X>
-      <Y>50</Y>
-      <Type>2</Type>
-    </Monster>
-    <Monster>
-      <X>1</X>
-      <Y>53</Y>
-      <Type>2</Type>
-    </Monster>
-    <!--
-  <Monster>
-    <X>7</X>
-    <Y>50</Y>
-    <Type>1</Type>
-  </Monster>
-  
-  <Monster>
-    <X>9</X>
-    <Y>50</Y>
-    <Type>2</Type>
-  </Monster>
-  <Monster>
-    <X>11</X>
-    <Y>50</Y>
-    <Type>2</Type>
-  </Monster>
-  <Monster>
-    <X>8</X>
-    <Y>45</Y>
-    <Type>2</Type>
-  </Monster>
-  <Monster>
-    <X>6</X>
-    <Y>45</Y>
-    <Type>2</Type>
-  </Monster>
-  -->
   </Map>
 </root>
