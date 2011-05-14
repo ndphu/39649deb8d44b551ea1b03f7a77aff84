@@ -65,11 +65,15 @@ namespace TheReturnOfTheKing
             }
             if (Target == null && CellToMove.Count == 0 && this.X == DestPoint.X && this.Y == DestPoint.Y)
             {
-                Random r = new Random();
-                if (r.Next(0, 100) < 85)
+                Random r = new Random((int)DateTime.Now.Ticks);
+                if (true)
                 {
                     Point curentPosition = Map.PointToCell(new Point((int)X, (int)Y));
-                    Point newPosition = new Point(r.Next(curentPosition.X - 2, curentPosition.X + 2), r.Next(curentPosition.Y - 2, curentPosition.Y + 2));
+                    r = new Random((int)DateTime.Now.Ticks);
+                    int nX = (int)r.Next((int)curentPosition.X - 3, (int)curentPosition.X + 3);
+                    r = new Random((int)DateTime.Now.Ticks);
+                    int nY = (int)r.Next((int)curentPosition.Y - 3, (int)curentPosition.Y + 3);
+                    Point newPosition = new Point(nX, nY);
                     CellToMove = Utility.FindPath(Map.Matrix, curentPosition, newPosition);
                 }           
             }
