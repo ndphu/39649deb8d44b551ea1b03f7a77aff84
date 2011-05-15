@@ -17,7 +17,9 @@ namespace TheReturnOfTheKing
     public class StateMainGame : GameState
     {
         Map _map;   
-        List<Monster> _listMonsters = new List<Monster>();        
+        List<Monster> _listMonsters = new List<Monster>();
+        List<MapObstacle> _listObstacle = new List<MapObstacle>();
+
         PlayerCharacter _char;
         Frog _frog;       
         
