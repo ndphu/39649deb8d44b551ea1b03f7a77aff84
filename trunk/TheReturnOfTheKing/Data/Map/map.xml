@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Map id="0">
+    <ContentName>img/map/map01/res0000</ContentName>
+    <Collision>data/map/map01/map01.txt</Collision>
+    <Width>4</Width>
+    <Height>4</Height>
+    <PieceWidth>512</PieceWidth>
+    <PieceHeight>512</PieceHeight>
+    <CollisionUnitDim>32</CollisionUnitDim>
+    <StartPointX>25</StartPointX>
+    <StartPointY>54</StartPointY>
+    <MapName>Map 01</MapName>
+  </Map>
+  <Map id="1">
+    <ContentName>img/map/map02/res0000</ContentName>
+    <Collision>data/map/map02/map02.txt</Collision>
+    <Width>4</Width>
+    <Height>4</Height>
+    <PieceWidth>512</PieceWidth>
+    <PieceHeight>512</PieceHeight>
+    <CollisionUnitDim>32</CollisionUnitDim>
+    <StartPointX>5</StartPointX>
+    <StartPointY>54</StartPointY>
+    <MapName>Map 02</MapName>
+  </Map>
+</root>
