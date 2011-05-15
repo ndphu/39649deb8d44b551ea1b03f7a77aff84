@@ -120,7 +120,13 @@ namespace TheReturnOfTheKing
             _nextRow = (Math.Abs(GlobalVariables.dY) % _sprite[0].Texture2D[0].Height) != 0;
 
         }
+        string _mapName;
 
+        public string MapName
+        {
+            get { return _mapName; }
+            set { _mapName = value; }
+        }
         public override VisibleGameObject Clone()
         {
             return new Map
@@ -143,7 +149,7 @@ namespace TheReturnOfTheKing
                 _collisionDim = this._collisionDim,
                 _startPointX = this._startPointX,
                 _startPointY = this._startPointY,
-                _lstMonster = this._lstMonster,
+                _mapName = this._mapName,
             };
         }
         /// <summary>
@@ -196,17 +202,6 @@ namespace TheReturnOfTheKing
         {
             return new Point(p.X * _collisionDim, p.Y * _collisionDim);
         }
-        /// <summary>
-        /// Danh sách các quái vật trên map
-        /// </summary>
-        List<Monster> _lstMonster;
-
-        public List<Monster> LstMonster
-        {
-            get { return _lstMonster; }
-            set { _lstMonster = value; }
-        }
-
 
         /// <summary>
         /// Lấy danh sách quái vật
@@ -243,6 +238,7 @@ namespace TheReturnOfTheKing
                 ret.Add(pt);
                 ret[i].X = int.Parse(Portrals[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
                 ret[i].Y = int.Parse(Portrals[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
+                ret[i].Destination = Portrals[i].SelectSingleNode(@"Destination").InnerText;
             }
             return ret;
         }

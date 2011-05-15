@@ -57,6 +57,11 @@ namespace TheReturnOfTheKing
             for (int i = 0; i < nFrame; ++i)
                 _texture[i] = content.Load<Texture2D>(contentName + i.ToString("00"));
             _prototype[id]._sprite[0] = new GameSprite(_texture, 0, 0);
+            _prototype[id]._sprite[0].Xoffset = int.Parse(_portral.SelectSingleNode(@"XOffset").InnerText);
+            _prototype[id]._sprite[0].Yoffset = int.Parse(_portral.SelectSingleNode(@"YOffset").InnerText);
+            _prototype[id]._sprite[0].NDelay = 3;
+            
+            
             return true;
         }       
     }

@@ -3,9 +3,13 @@
   <Portral id="0">
     <ContentName>img/portral/blueportral/D06-</ContentName>
     <NumOfFrame>15</NumOfFrame>
+    <XOffset>-40</XOffset>
+    <YOffset>-80</YOffset>
   </Portral>
   <Portral id="1">
     <ContentName>img/portral/redportral/D06-</ContentName>
     <NumOfFrame>15</NumOfFrame>
+    <XOffset>-40</XOffset>
+    <YOffset>-80</YOffset>
   </Portral>
 </root>

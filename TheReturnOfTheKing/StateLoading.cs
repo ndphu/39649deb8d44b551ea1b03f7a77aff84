@@ -17,6 +17,8 @@ namespace TheReturnOfTheKing
 {
     public class StateLoading : GameState
     {
+        
+
         private Texture2D _backGround; //Back ground cho loadingScreen
         private Texture2D _standingProcessBar; //Cái khung của process bar
         private Texture2D _animateProcessBar; //Dung dịch chảy trong process bar
@@ -72,6 +74,8 @@ namespace TheReturnOfTheKing
 
         ProcessBar _processBar;
 
+
+        
 //--------------FUNCTION----------------------------------------------------------------------------
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)

@@ -135,7 +135,9 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--BH-->
+  <!--Dong lai de debug-->
+  <!--
+  <!BH
   <Monster id="3">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -180,7 +182,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--Butcher-->
+  <!Butcher
   <Monster id="4">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -225,7 +227,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--CS-->
+  <!CS
   <Monster id="5">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -270,7 +272,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--Duriel-->
+  <!Duriel
   <Monster id="6">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -315,7 +317,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--FD-->
+  <!FD
   <Monster id="7">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -360,7 +362,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--G1-->
+  <!G1
   <Monster id="8">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -405,7 +407,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--G2-->
+  <!G2
   <Monster id="9">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -450,7 +452,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--G3-->
+  <!G3
   <Monster id="10">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -495,7 +497,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--G4-->
+  <!G4
   <Monster id="11">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -540,7 +542,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--GY-->
+  <!GY
   <Monster id="12">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -585,7 +587,7 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
-  <!--HP-->
+  <!HP
   <Monster id="13">
     <Speed>1</Speed>
     <Hp>250</Hp>
@@ -630,4 +632,5 @@
       <YOffset>-40</YOffset>
     </Dyed>
   </Monster>
+  -->
 </root>

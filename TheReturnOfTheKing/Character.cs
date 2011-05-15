@@ -142,18 +142,6 @@ namespace TheReturnOfTheKing
             set { _hitFrame = value; }
         }
 
-
-        /// <summary>
-        /// Hình chữ nhật để xét va chạm
-        /// </summary>
-        Rectangle _collisionRect;
-
-        public Rectangle CollisionRect
-        {
-            get { return _collisionRect; }
-            set { _collisionRect = value; }
-        }
-
         /// <summary>
         /// Hình chữ nhật để click vào con quái
         /// </summary>
@@ -394,8 +382,8 @@ namespace TheReturnOfTheKing
         {
             _map = map;
             cellToMove = new List<Point>();
-            IsMoving = false;
-            _destPoint = new Point((int)X, (int)Y);            
+            IsStanding = true;
+            _destPoint = new Point((int)X, (int)Y);
         }
         /// <summary>
         /// Mục tiêu tấn công
@@ -590,15 +578,7 @@ namespace TheReturnOfTheKing
             
         }
 
-        public bool IsCollisionWith(Character other)
-        {
-            if (other == null)
-                return false;
-            if (Math.Abs(other.X - this.X) < GlobalVariables.MapCollisionDim * 1 && Math.Abs(other.Y - this.Y) < GlobalVariables.MapCollisionDim * 1)
-                return true;    
-            return false;
-        }
-
+       
         
         public virtual void Hit()
         {

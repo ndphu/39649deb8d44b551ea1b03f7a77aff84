@@ -6973,12 +6973,12 @@ Content\img\quest\item7\D06-18.xnb
 Content\img\quest\item7\D06-19.xnb
 Data\Character\character.xml
 Data\Map\map01\map01.txt
-Data\Map\map01\map01.xml
+Data\Map\map.xml
 Data\Map\map01\map01_monster.xml
 Data\Map\map01\map01_portral.xml
 Data\Map\map02\map02.txt
-Data\Map\map02\map02.xml
 Data\Map\map02\map02_monster.xml
+Data\Map\map02\map02_portral.xml
 Data\monster\Monster.xml
 Data\Portral\Portral.xml
 Data\XML\buttonmanager.xml

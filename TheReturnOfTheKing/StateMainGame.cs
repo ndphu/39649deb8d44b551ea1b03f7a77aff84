@@ -16,13 +16,14 @@ namespace TheReturnOfTheKing
 {
     public class StateMainGame : GameState
     {
-        Map _map;   
-        List<Monster> _listMonsters = new List<Monster>();
-        List<MapObstacle> _listObstacle = new List<MapObstacle>();
-        List<Portral> _listPortral = new List<Portral>();
-        PlayerCharacter _char;
-        Frog _frog;       
-        
+        public Map _map;
+        public List<Monster> _listMonsters = new List<Monster>();
+        public List<MapObstacle> _listObstacle = new List<MapObstacle>();
+        public List<Portral> _listPortral = new List<Portral>();
+        public PlayerCharacter _char;
+        public Frog _frog;
+        public GameObjectManager[] _objectManagerArray;
+
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
             base.InitState(objectManagerArray, owner);
@@ -32,15 +33,17 @@ namespace TheReturnOfTheKing
             _char.SetMap(_map);            
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
             _frog = new Frog();
-            _frog.Init(Owner.Content) ;
+            _frog.Init(Owner.Content);
             _frog.InitProcessBar((ProcessBarManager)objectManagerArray[3]);
             _frog.SetCharacter(_char);
             _listPortral = _map.InitPortralList((PortralManger)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+            _objectManagerArray = objectManagerArray;
         }
 
         public override void EnterState()
         {
-            base.EnterState();            
+            base.EnterState();
+
         }
 
         public override void UpdateState(GameTime gameTime)
@@ -95,6 +98,7 @@ namespace TheReturnOfTheKing
    
             _char.Update(gameTime);
             _frog.Update(gameTime);
+
             if (_char.IsDyed)
             {
                 int nObjectManager = 4;
@@ -116,7 +120,14 @@ namespace TheReturnOfTheKing
             }
 
             for (int i = 0; i < _listPortral.Count; ++i)
+            {
                 _listPortral[i].Update(gameTime);
+                if (_listPortral[i].IsCollisionWith(_char))
+                {
+                    _listPortral[i].GoToDestination(this);
+                    break;
+                }
+            }
         }
 
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
