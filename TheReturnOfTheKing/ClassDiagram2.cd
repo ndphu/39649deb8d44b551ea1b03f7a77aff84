@@ -308,5 +308,19 @@
       <FileName>MapObstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TheReturnOfTheKing.PortralManger" Collapsed="true">
+    <Position X="24" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PortralManger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Portral" Collapsed="true">
+    <Position X="31.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Portral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

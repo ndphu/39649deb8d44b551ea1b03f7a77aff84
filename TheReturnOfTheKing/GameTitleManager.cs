@@ -26,7 +26,7 @@ namespace TheReturnOfTheKing
                 _nprototype = _doc.SelectNodes(@"//GameTitle").Count;
                 _prototype = new VisibleGameObject[_nprototype];
             }
-            catch (Exception e)
+            catch
             {
 
             }
@@ -64,7 +64,7 @@ namespace TheReturnOfTheKing
                 ((GameTitle)_prototype[id]).DelayTime = int.Parse((_gameTitle.SelectSingleNode(@"DelayTime").InnerText));
             }
 
-            catch (Exception e)
+            catch
             {
                 return false;
             }

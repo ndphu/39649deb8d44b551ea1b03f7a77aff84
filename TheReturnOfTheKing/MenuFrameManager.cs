@@ -32,7 +32,7 @@ namespace TheReturnOfTheKing
                 _nprototype = _menuFrame.Count;
                 _prototype = new VisibleGameObject[_nprototype];
             }
-            catch (Exception e)
+            catch
             {
                 
             }

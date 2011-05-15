@@ -33,7 +33,7 @@ namespace TheReturnOfTheKing
                 _nprototype = _listButton.Count;
                 _prototype = new VisibleGameObject[_nprototype];
             }
-            catch (Exception e)
+            catch
             {
                 
             }
@@ -108,7 +108,7 @@ namespace TheReturnOfTheKing
                 }
                 ((Button)_prototype[id])._motionInfo = _buttonMoveInfo;
             }
-            catch (Exception e)
+            catch
             {
                 return false;
             }

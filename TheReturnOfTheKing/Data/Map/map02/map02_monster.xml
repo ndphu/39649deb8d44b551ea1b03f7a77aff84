@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Monster>
+    <X>50</X>
+    <Y>50</Y>
+    <Type>3</Type>
+  </Monster>
+</root>

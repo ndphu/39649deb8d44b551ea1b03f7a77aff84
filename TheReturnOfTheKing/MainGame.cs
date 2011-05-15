@@ -100,13 +100,14 @@ namespace TheReturnOfTheKing
             ((StateLoading)_gameState).GetDataLoading(Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMenu));
             _gameState.EnterState();*/
 
-            int nObjectManager = 4;
+            int nObjectManager = 5;
             GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
 
-            objectManegerArray[1] = new MapManager(@"Data\Map\map01.xml");
+            objectManegerArray[1] = new MapManager(@"Data\Map\map01\map01.xml");
             objectManegerArray[0] = new PlayerCharacterManager(@"Data\character\character.xml");
             objectManegerArray[2] = new MonsterManager(@"Data\monster\monster.xml");
             objectManegerArray[3] = new ProcessBarManager(@"Data\XML\loadingprocessbar.xml");
+            objectManegerArray[4] = new PortralManger(@"Data\Portral\Portral.xml");
 
            
             GameState = new StateLoading();
@@ -149,8 +150,8 @@ namespace TheReturnOfTheKing
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            GraphicsDevice.Clear(Color.Black);
+            
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();

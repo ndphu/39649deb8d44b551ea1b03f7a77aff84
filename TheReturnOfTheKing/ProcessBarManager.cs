@@ -26,7 +26,7 @@ namespace TheReturnOfTheKing
                 _nprototype = _doc.SelectNodes(@"//ProcessBar").Count;
                 _prototype = new VisibleGameObject[_nprototype];
             }
-            catch (Exception e)
+            catch
             {
  
             }
@@ -89,7 +89,7 @@ namespace TheReturnOfTheKing
                 //((ProcessBar)_prototype[id]).DelayTime = int.Parse(_processbar.SelectSingleNode(@"DelayTime").InnerText);
                 _prototype[id].Rect = new Rectangle((int)_prototype[id].X, (int)_prototype[id].Y, (int)_prototype[id].Width, (int)_prototype[id].Height);
             }
-            catch (Exception e)
+            catch
             {
                 return false;
             }
