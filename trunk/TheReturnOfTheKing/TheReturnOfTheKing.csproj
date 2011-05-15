@@ -101,6 +101,7 @@
     <Compile Include="KeyboardObserver.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapManager.cs" />
+    <Compile Include="MapObstacle.cs" />
     <Compile Include="MenuFrame.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Button.cs" />
