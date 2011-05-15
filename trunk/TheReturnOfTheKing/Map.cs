@@ -212,13 +212,12 @@ namespace TheReturnOfTheKing
         /// Lấy danh sách quái vật
         /// </summary>
         /// <returns>Mảng các quái vật</returns>
-        public List<Monster> InitMonsterList(MonsterManager monsterManager)
+        public List<Monster> InitMonsterList(MonsterManager monsterManager, string xmlMonsterFile)
         {
             List<Monster> ret = new List<Monster>();
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"Data\\Map\\map01.xml");
+            doc.Load(xmlMonsterFile);
             XmlNodeList Monsters = doc.SelectNodes(@"//Monster");
-            ret = new List<Monster>();
             for (int i = 0; i < Monsters.Count; ++i)
             {
                 Monster mst = (Monster)monsterManager.CreateObject(int.Parse(Monsters[i].SelectSingleNode(@"Type").InnerText));
@@ -228,6 +227,22 @@ namespace TheReturnOfTheKing
                 ret[i].DestPoint = new Point((int)ret[i].X, (int)ret[i].Y);
                 ret[i].CellToMove = new List<Point>();
                 ret[i].SetMap(this);
+            }
+            return ret;
+        }
+
+        public List<Portral> InitPortralList(PortralManger portralManager, string xmlPortralFile)
+        {
+            List<Portral> ret = new List<Portral>();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xmlPortralFile);
+            XmlNodeList Portrals = doc.SelectNodes(@"//Portral");
+            for (int i = 0; i < Portrals.Count; ++i)
+            {
+                Portral pt = (Portral)portralManager.CreateObject(int.Parse(Portrals[i].SelectSingleNode(@"Type").InnerText));
+                ret.Add(pt);
+                ret[i].X = int.Parse(Portrals[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
+                ret[i].Y = int.Parse(Portrals[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
             }
             return ret;
         }

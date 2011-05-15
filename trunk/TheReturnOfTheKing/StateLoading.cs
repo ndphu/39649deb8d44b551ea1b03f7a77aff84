@@ -113,7 +113,7 @@ namespace TheReturnOfTheKing
                 }
                 _processBar = (ProcessBar)pbm.CreateObject(0);
             }
-            catch (Exception e)
+            catch
             {
                 return;
             }

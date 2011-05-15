@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Portral id="0">
+    <ContentName>img/portral/blueportral/D06-</ContentName>
+    <NumOfFrame>15</NumOfFrame>
+  </Portral>
+  <Portral id="1">
+    <ContentName>img/portral/redportral/D06-</ContentName>
+    <NumOfFrame>15</NumOfFrame>
+  </Portral>
+</root>

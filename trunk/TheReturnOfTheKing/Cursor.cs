@@ -126,7 +126,7 @@ namespace TheReturnOfTheKing
                         0);
                 }
             }
-            catch (Exception e)
+            catch
             {
                 return;
             }

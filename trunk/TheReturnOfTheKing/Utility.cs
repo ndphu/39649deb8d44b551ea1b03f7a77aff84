@@ -167,31 +167,24 @@ namespace TheReturnOfTheKing
         /// <returns></returns>
         public static GameSprite[] LoadSprites(XmlNode node, ContentManager content)
         {
-            try
+            int xoffset = int.Parse(node.SelectSingleNode(@"XOffset").InnerText);
+            int yoffset = int.Parse(node.SelectSingleNode(@"YOffset").InnerText);
+            int numofframe = int.Parse(node.SelectSingleNode(@"NumOfFrames").InnerText);
+            string contentName = node.SelectSingleNode("ContentName").InnerText;
+            GameSprite[] sprite = new GameSprite[8];
+            for (int i = 0; i < 8; ++i)
             {
-                int xoffset = int.Parse(node.SelectSingleNode(@"XOffset").InnerText);
-                int yoffset = int.Parse(node.SelectSingleNode(@"YOffset").InnerText);
-                int numofframe = int.Parse(node.SelectSingleNode(@"NumOfFrames").InnerText);
-                string contentName = node.SelectSingleNode("ContentName").InnerText;
-                GameSprite[] sprite = new GameSprite[8];
-                for (int i = 0; i < 8; ++i)
+                Texture2D[] textures = new Texture2D[numofframe];
+                for (int j = 0; j < numofframe; ++j)
                 {
-                    Texture2D[] textures = new Texture2D[numofframe];
-                    for (int j = 0; j < numofframe; ++j)
-                    {
-                        textures[j] = content.Load<Texture2D>(contentName + i.ToString("00") + "-" + j.ToString("00"));
-                    }
-                    sprite[i] = new GameSprite(textures, 0, 0);
-                    sprite[i].Xoffset = xoffset;
-                    sprite[i].Yoffset = yoffset;
-                    sprite[i].NDelay = 3;
+                    textures[j] = content.Load<Texture2D>(contentName + i.ToString("00") + "-" + j.ToString("00"));
                 }
-                return sprite;
+                sprite[i] = new GameSprite(textures, 0, 0);
+                sprite[i].Xoffset = xoffset;
+                sprite[i].Yoffset = yoffset;
+                sprite[i].NDelay = 3;
             }
-            catch (Exception e)
-            {
-                return null;
-            }
+            return sprite;
         }
     }
 }

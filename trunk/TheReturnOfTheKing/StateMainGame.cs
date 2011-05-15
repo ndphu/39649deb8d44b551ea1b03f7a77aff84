@@ -19,7 +19,7 @@ namespace TheReturnOfTheKing
         Map _map;   
         List<Monster> _listMonsters = new List<Monster>();
         List<MapObstacle> _listObstacle = new List<MapObstacle>();
-
+        List<Portral> _listPortral = new List<Portral>();
         PlayerCharacter _char;
         Frog _frog;       
         
@@ -30,11 +30,12 @@ namespace TheReturnOfTheKing
             GlobalVariables.MapCollisionDim = _map.CollisionDim;
             _char = (PlayerCharacter)objectManagerArray[0].CreateObject(0);
             _char.SetMap(_map);            
-            _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2]);
+            _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
             _frog = new Frog();
             _frog.Init(Owner.Content) ;
             _frog.InitProcessBar((ProcessBarManager)objectManagerArray[3]);
             _frog.SetCharacter(_char);
+            _listPortral = _map.InitPortralList((PortralManger)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
         }
 
         public override void EnterState()
@@ -113,17 +114,17 @@ namespace TheReturnOfTheKing
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
+
+            for (int i = 0; i < _listPortral.Count; ++i)
+                _listPortral[i].Update(gameTime);
         }
 
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
         {
             base.DrawState(gameTime, sb);
             _map.Draw(gameTime, sb);
-            for (int i = 0; i < _listMonsters.Count; ++i)
-            {
-                if (_listMonsters[i].IsDyed)
-                    _listMonsters[i].Draw(gameTime, sb);
-            }
+            for (int i = 0; i < _listPortral.Count; ++i)
+                _listPortral[i].Draw(gameTime, sb);
             for (int i = 0; i < _listMonsters.Count; ++i)
             {
                 if (_listMonsters[i].Y < _char.Y && !_listMonsters[i].IsDyed)
@@ -135,6 +136,7 @@ namespace TheReturnOfTheKing
                 if (_listMonsters[i].Y >= _char.Y && !_listMonsters[i].IsDyed)
                     _listMonsters[i].Draw(gameTime, sb);
             }
+
             _frog.Draw(gameTime, sb);
 
             GlobalVariables.GameCursor.Draw(gameTime, sb);

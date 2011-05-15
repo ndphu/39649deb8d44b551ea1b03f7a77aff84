@@ -27,7 +27,7 @@ namespace TheReturnOfTheKing
                 _nprototype = _listBackground.Count;
                 _prototype = new VisibleGameObject[_nprototype];
             }
-            catch (Exception e)
+            catch
             {
  
             }
@@ -52,7 +52,7 @@ namespace TheReturnOfTheKing
 
 
             }
-            catch (Exception e)
+            catch
             {
                 return false;
             }
