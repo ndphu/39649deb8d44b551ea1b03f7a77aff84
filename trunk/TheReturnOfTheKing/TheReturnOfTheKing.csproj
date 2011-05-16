@@ -114,10 +114,11 @@
     <Compile Include="MouseObserver.cs" />
     <Compile Include="NonPlayerCharacter.cs" />
     <Compile Include="NonPlayerCharacterManager.cs" />
+    <Compile Include="MapObstacleManager.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="PlayerCharacterManager.cs" />
     <Compile Include="Portral.cs" />
-    <Compile Include="PortralManger.cs" />
+    <Compile Include="PortralManager.cs" />
     <Compile Include="ProcessBar.cs" />
     <Compile Include="ProcessBarManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,6 +146,9 @@
     <Content Include="Data\Map\map01\map01_monster.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Map\map01\map01_obstacle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Map\map01\map01_portral.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -154,10 +158,16 @@
     <Content Include="Data\Map\map02\map02_monster.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Map\map02\map02_obstacle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Map\map02\map02_portral.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\monster\Monster.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\MapObstacle\MapObstacle.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Portral\Portral.xml">

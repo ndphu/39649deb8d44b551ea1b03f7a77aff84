@@ -20,8 +20,8 @@
     <PieceWidth>512</PieceWidth>
     <PieceHeight>512</PieceHeight>
     <CollisionUnitDim>32</CollisionUnitDim>
-    <StartPointX>5</StartPointX>
-    <StartPointY>54</StartPointY>
+    <StartPointX>6</StartPointX>
+    <StartPointY>56</StartPointY>
     <MapName>Map 02</MapName>
   </Map>
 </root>

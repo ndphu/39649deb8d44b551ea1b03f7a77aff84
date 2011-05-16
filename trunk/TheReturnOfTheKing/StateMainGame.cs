@@ -18,8 +18,8 @@ namespace TheReturnOfTheKing
     {
         public Map _map;
         public List<Monster> _listMonsters = new List<Monster>();
-        public List<MapObstacle> _listObstacle = new List<MapObstacle>();
         public List<Portral> _listPortral = new List<Portral>();
+        public List<MapObstacle> _listObstacle = new List<MapObstacle>();
         public PlayerCharacter _char;
         public Frog _frog;
         public GameObjectManager[] _objectManagerArray;
@@ -36,7 +36,8 @@ namespace TheReturnOfTheKing
             _frog.Init(Owner.Content);
             _frog.InitProcessBar((ProcessBarManager)objectManagerArray[3]);
             _frog.SetCharacter(_char);
-            _listPortral = _map.InitPortralList((PortralManger)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+            _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+            _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
             _objectManagerArray = objectManagerArray;
         }
 
@@ -102,11 +103,11 @@ namespace TheReturnOfTheKing
             if (_char.IsDyed)
             {
                 int nObjectManager = 4;
-                GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
-                objectManegerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
-                objectManegerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
-                objectManegerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
-                objectManegerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
+                GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
+                objectManagerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
+                objectManagerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
+                objectManagerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
+                objectManagerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
 
                 GlobalVariables.dX = 0;
                 GlobalVariables.dY = 0;
@@ -114,11 +115,14 @@ namespace TheReturnOfTheKing
                 Owner.GameState.ExitState();
                 Owner.GameState = new StateLoading();
                 Owner.GameState.InitState(null, this.Owner);
-                ((StateLoading)Owner.GameState).GetDataLoading(this.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMenu));
+                ((StateLoading)Owner.GameState).GetDataLoading(this.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
-
+            for (int i = 0; i < _listObstacle.Count; ++i)
+            {
+                _listObstacle[i].Update(gameTime);
+            }
             for (int i = 0; i < _listPortral.Count; ++i)
             {
                 _listPortral[i].Update(gameTime);
@@ -136,6 +140,10 @@ namespace TheReturnOfTheKing
             _map.Draw(gameTime, sb);
             for (int i = 0; i < _listPortral.Count; ++i)
                 _listPortral[i].Draw(gameTime, sb);
+            for (int i = 0; i < _listObstacle.Count; ++i)
+            {
+                _listObstacle[i].Draw(gameTime, sb);
+            }
             for (int i = 0; i < _listMonsters.Count; ++i)
             {
                 if (_listMonsters[i].Y < _char.Y && !_listMonsters[i].IsDyed)

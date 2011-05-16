@@ -226,7 +226,7 @@ namespace TheReturnOfTheKing
             return ret;
         }
 
-        public List<Portral> InitPortralList(PortralManger portralManager, string xmlPortralFile)
+        public List<Portral> InitPortralList(PortralManager portralManager, string xmlPortralFile)
         {
             List<Portral> ret = new List<Portral>();
             XmlDocument doc = new XmlDocument();
@@ -239,6 +239,24 @@ namespace TheReturnOfTheKing
                 ret[i].X = int.Parse(Portrals[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
                 ret[i].Y = int.Parse(Portrals[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
                 ret[i].Destination = Portrals[i].SelectSingleNode(@"Destination").InnerText;
+                ret[i].DestX = int.Parse(Portrals[i].SelectSingleNode(@"DestinationX").InnerText);
+                ret[i].DestY = int.Parse(Portrals[i].SelectSingleNode(@"DestinationY").InnerText);
+            }
+            return ret;
+        }
+
+        internal List<MapObstacle> InitObstacle(MapObstacleManager mapObstacleManager, string xmlMapObstacleFile)
+        {
+            List<MapObstacle> ret = new List<MapObstacle>();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xmlMapObstacleFile);
+            XmlNodeList MapObstacles = doc.SelectNodes(@"//MapObstacle");
+            for (int i = 0; i < MapObstacles.Count; ++i)
+            {
+                MapObstacle pt = (MapObstacle)mapObstacleManager.CreateObject(int.Parse(MapObstacles[i].SelectSingleNode(@"Type").InnerText));
+                ret.Add(pt);
+                ret[i].X = int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
+                ret[i].Y = int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
             }
             return ret;
         }

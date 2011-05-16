@@ -31,7 +31,7 @@
   <Class Name="TheReturnOfTheKing.Character" Collapsed="true">
     <Position X="22" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BBQAQBDCAJgISiAgEGILiCMFQoAEAgeIBEoIDwAAYkA=</HashCode>
+      <HashCode>BBQAQBDCAJgISgAgECILiCEFQoAEAgeIBEoIDwAAYkA=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -129,7 +129,7 @@
   <Class Name="TheReturnOfTheKing.Map" Collapsed="true">
     <Position X="26.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwQAJQAAgEEBglCASAAAAIAACAAhCABAAAACIQCAABA=</HashCode>
+      <HashCode>AwQAIQAAgAEBglCASAAAAIAACBAhCEBAAEACIQCAABA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -269,7 +269,7 @@
   <Class Name="TheReturnOfTheKing.StateMainGame" Collapsed="true">
     <Position X="7.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAACAAAAAAAAAAAAAAAQAICAAAAAAEoBBAAAAAA=</HashCode>
+      <HashCode>AAACAAACAAAAIAAAAAAAAEAQAICAAAAAAEoBBAAAAAA=</HashCode>
       <FileName>StateMainGame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -290,7 +290,7 @@
   <Class Name="TheReturnOfTheKing.VisibleGameEntity" Collapsed="true">
     <Position X="23" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAAAEAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>VisibleGameEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -304,22 +304,29 @@
   <Class Name="TheReturnOfTheKing.MapObstacle" Collapsed="true">
     <Position X="28.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>MapObstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheReturnOfTheKing.PortralManger" Collapsed="true">
+  <Class Name="TheReturnOfTheKing.PortralManager" Collapsed="true">
     <Position X="24" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PortralManger.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>PortralManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.Portral" Collapsed="true">
     <Position X="31.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAABAAAAAACAAAAAAAAgACAAAAAAEAAAAAAAAYBA=</HashCode>
       <FileName>Portral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.MapObstacleManager" Collapsed="true">
+    <Position X="26.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>MapObstacleManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

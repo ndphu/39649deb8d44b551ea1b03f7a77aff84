@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <MapObstacle id="0">
+    <ContentName>img/mapobject/object1/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-14</XOffset>
+    <YOffset>-117</YOffset>
+  </MapObstacle>
+  <MapObstacle id="1">
+    <ContentName>img/mapobject/object2/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-0</XOffset>
+    <YOffset>-45</YOffset>
+  </MapObstacle>
+  <MapObstacle id="2">
+    <ContentName>img/mapobject/object3/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-4</XOffset>
+    <YOffset>-50</YOffset>
+  </MapObstacle>
+  <MapObstacle id="3">
+    <ContentName>img/mapobject/object4/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-14</XOffset>
+    <YOffset>-106</YOffset>
+  </MapObstacle>
+  <MapObstacle id="4">
+    <ContentName>img/mapobject/object5/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-7</XOffset>
+    <YOffset>-44</YOffset>
+  </MapObstacle>
+  <MapObstacle id="5">
+    <ContentName>img/mapobject/object6/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-16</XOffset>
+    <YOffset>-69</YOffset>
+  </MapObstacle>
+  <MapObstacle id="6">
+    <ContentName>img/mapobject/object7/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-46</XOffset>
+    <YOffset>-155</YOffset>
+  </MapObstacle>
+  <MapObstacle id="7">
+    <ContentName>img/mapobject/object8/D06-</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-0</XOffset>
+    <YOffset>-81</YOffset>
+  </MapObstacle>
+</root>
