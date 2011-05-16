@@ -31,6 +31,8 @@ namespace TheReturnOfTheKing
                 X = this.X,
                 Y = this.Y,
                 Destination = this.Destination,
+                DestX = this.DestX,
+                DestY = this.DestY,
             };
         }
         
@@ -63,13 +65,35 @@ namespace TheReturnOfTheKing
                 CollisionRect = new Rectangle((int)X, (int)Y, (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim);
             }
         }
-
+        /// <summary>
+        /// Map se chuyen den
+        /// </summary>
         string _destination;
 
         public string Destination
         {
             get { return _destination; }
             set { _destination = value; }
+        }
+        /// <summary>
+        /// Vi tri X tren map moi
+        /// </summary>
+        int _destX;
+
+        public int DestX
+        {
+            get { return _destX; }
+            set { _destX = value; }
+        }
+        /// <summary>
+        /// Vi tri Y tren map moi
+        /// </summary>
+        int _destY;
+
+        public int DestY
+        {
+            get { return _destY; }
+            set { _destY = value; }
         }
 
         public void GoToDestination(StateMainGame mg)
@@ -79,11 +103,11 @@ namespace TheReturnOfTheKing
                 case "menu":
                     {
                         int nObjectManager = 4;
-                        GameObjectManager[] objectManegerArray = new GameObjectManager[nObjectManager];
-                        objectManegerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
-                        objectManegerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
-                        objectManegerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
-                        objectManegerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
+                        GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
+                        objectManagerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
+                        objectManagerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
+                        objectManagerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
+                        objectManagerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
 
                         GlobalVariables.dX = 0;
                         GlobalVariables.dY = 0;
@@ -91,7 +115,7 @@ namespace TheReturnOfTheKing
                         mg.Owner.GameState.ExitState();
                         mg.Owner.GameState = new StateLoading();
                         mg.Owner.GameState.InitState(null, mg.Owner);
-                        ((StateLoading)mg.Owner.GameState).GetDataLoading(mg.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManegerArray, typeof(StateMenu));
+                        ((StateLoading)mg.Owner.GameState).GetDataLoading(mg.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
                         mg.Owner.GameState.EnterState();
                         mg.Owner.ResetElapsedTime();
                     }
@@ -102,7 +126,13 @@ namespace TheReturnOfTheKing
                         mg._char.SetMap(mg._map);
                         mg._listMonsters = mg._map.InitMonsterList((MonsterManager)mg._objectManagerArray[2], @"Data\Map\map01\map01_monster.xml");
                         mg._frog.SetCharacter(mg._char);
-                        mg._listPortral = mg._map.InitPortralList((PortralManger)mg._objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+                       
+                        mg._listPortral = mg._map.InitPortralList((PortralManager)mg._objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+                        mg._char.X = DestX * GlobalVariables.MapCollisionDim;
+                        mg._char.Y = DestY * GlobalVariables.MapCollisionDim;
+                        GlobalVariables.dX = Math.Min(-mg._char.X + GlobalVariables.ScreenWidth / 2, 0);
+                        GlobalVariables.dY = Math.Min(-mg._char.Y + GlobalVariables.ScreenHeight / 2, 0);
+                        mg._char.DestPoint = new Point((int)mg._char.X, (int)mg._char.Y);   
                     }
                     break;
                 case "map02":
@@ -111,7 +141,13 @@ namespace TheReturnOfTheKing
                         mg._char.SetMap(mg._map);
                         mg._listMonsters = mg._map.InitMonsterList((MonsterManager)mg._objectManagerArray[2], @"Data\Map\map02\map02_monster.xml");
                         mg._frog.SetCharacter(mg._char);
-                        mg._listPortral = mg._map.InitPortralList((PortralManger)mg._objectManagerArray[4], @"Data\Map\map02\map02_portral.xml");
+                       
+                        mg._listPortral = mg._map.InitPortralList((PortralManager)mg._objectManagerArray[4], @"Data\Map\map02\map02_portral.xml");
+                        mg._char.X = DestX * GlobalVariables.MapCollisionDim;
+                        mg._char.Y = DestY * GlobalVariables.MapCollisionDim;
+                        GlobalVariables.dX = Math.Min(-mg._char.X + GlobalVariables.ScreenWidth / 2, 0);
+                        GlobalVariables.dY = Math.Min(-mg._char.Y + GlobalVariables.ScreenHeight / 2, 0);
+                        mg._char.DestPoint = new Point((int)mg._char.X, (int)mg._char.Y);   
                     }
                     break;
             }

@@ -86,8 +86,8 @@ namespace TheReturnOfTheKing
             sb.DrawString(sf, "HP: " + _character.Hp.ToString(), new Vector2(0, 20), Color.Red);
             sb.DrawString(sf, "MP: " + _character.Mp.ToString(), new Vector2(0, 45), Color.Blue);
             sb.DrawString(sf, "XP: " + _character.Xp.ToString(), new Vector2(0, 70), Color.White);
-            sb.DrawString(sf, "DX: " + GlobalVariables.dX.ToString(), new Vector2(0, 500), Color.White);
-            sb.DrawString(sf, "DY: " + GlobalVariables.dY.ToString(), new Vector2(0, 520), Color.White);
+            sb.DrawString(sf, "CX: " + ((GlobalVariables.GameCursor.X ) / 32).ToString(), new Vector2(0, 500), Color.White);
+            sb.DrawString(sf, "CY: " + ((GlobalVariables.GameCursor.Y )/ 32).ToString(), new Vector2(0, 520), Color.White);
             if (_character.Target != null)
             {
                 sb.DrawString(sf, "HP: " + _character.Target.Hp.ToString(), new Vector2(700, 20), Color.Red);

@@ -5,11 +5,15 @@
     <Y>5</Y>
     <Type>0</Type>
     <Destination>menu</Destination>
+    <DestinationX>0</DestinationX>
+    <DestinationY>0</DestinationY>
   </Portral>
   <Portral>
-    <X>2</X>
+    <X>3</X>
     <Y>60</Y>
     <Type>0</Type>
     <Destination>map01</Destination>
+    <DestinationX>58</DestinationX>
+    <DestinationY>6</DestinationY>
   </Portral>
 </root>

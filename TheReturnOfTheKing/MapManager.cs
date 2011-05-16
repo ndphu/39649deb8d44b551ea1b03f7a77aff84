@@ -92,6 +92,7 @@ namespace TheReturnOfTheKing
             ((Map)_prototype[id]).Matrix = matrix;
             ((Map)_prototype[id]).CollisionDim = collisionUnitDim;
             ((Map)_prototype[id]).MapName = _map.SelectSingleNode(@"MapName").InnerText;
+            
             return true;
         }
     }
