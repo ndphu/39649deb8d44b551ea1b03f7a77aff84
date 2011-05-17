@@ -255,10 +255,19 @@ namespace TheReturnOfTheKing
             {
                 MapObstacle pt = (MapObstacle)mapObstacleManager.CreateObject(int.Parse(MapObstacles[i].SelectSingleNode(@"Type").InnerText));
                 ret.Add(pt);
-                ret[i].X = int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
-                ret[i].Y = int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
-                Matrix[int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText)][int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText)] = false;
+                int XLogic = int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText);
+                int YLogic = int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText);
+                ret[i].X = XLogic * GlobalVariables.MapCollisionDim;
+                ret[i].Y = YLogic * GlobalVariables.MapCollisionDim;
+                for (int j = YLogic + ret[i].StartObstacleY; j < ret[i].ObstacleHeight + YLogic + ret[i].StartObstacleY; ++j)
+                {
+                    for (int k = XLogic + ret[i].StartObstacleX; k < ret[i].ObstacleWidth + XLogic + ret[i].StartObstacleX; ++k)
+                    {
+                        Matrix[j][k] = false;
+                    }
+                }
             }
+            
             return ret;
         }
     }

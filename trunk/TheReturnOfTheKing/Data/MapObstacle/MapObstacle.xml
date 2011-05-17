@@ -5,47 +5,168 @@
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-14</XOffset>
     <YOffset>-117</YOffset>
-  </MapObstacle>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>  
+</MapObstacle>
   <MapObstacle id="1">
     <ContentName>img/mapobject/object2/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-0</XOffset>
     <YOffset>-45</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="2">
     <ContentName>img/mapobject/object3/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-4</XOffset>
     <YOffset>-50</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="3">
     <ContentName>img/mapobject/object4/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-14</XOffset>
     <YOffset>-106</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="4">
     <ContentName>img/mapobject/object5/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-7</XOffset>
     <YOffset>-44</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="5">
     <ContentName>img/mapobject/object6/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-16</XOffset>
     <YOffset>-69</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="6">
     <ContentName>img/mapobject/object7/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-46</XOffset>
     <YOffset>-155</YOffset>
+    <StartObstacleX>-2</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>5</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
   <MapObstacle id="7">
     <ContentName>img/mapobject/object8/D06-</ContentName>
     <NumOfFrame>20</NumOfFrame>
     <XOffset>-0</XOffset>
     <YOffset>-81</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
+
+  <MapObstacle id="8">
+    <ContentName>img/plant/plant01/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-57</XOffset>
+    <YOffset>-144</YOffset>
+    <StartObstacleX>-2</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>5</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="9">
+    <ContentName>img/plant/plant02/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-58</XOffset>
+    <YOffset>-152</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="10">
+    <ContentName>img/plant/plant03/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-45</XOffset>
+    <YOffset>-106</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="11">
+    <ContentName>img/plant/plant04/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-47</XOffset>
+    <YOffset>-117</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="12">
+    <ContentName>img/plant/plant05/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-42</XOffset>
+    <YOffset>-141</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="13">
+    <ContentName>img/plant/plant06/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-30</XOffset>
+    <YOffset>-135</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="14">
+    <ContentName>img/plant/plant07/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-46</XOffset>
+    <YOffset>-126</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="15">
+    <ContentName>img/plant/plant08/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-42</XOffset>
+    <YOffset>-121</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+  
 </root>
