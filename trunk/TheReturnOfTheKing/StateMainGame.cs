@@ -70,11 +70,24 @@ namespace TheReturnOfTheKing
                 {
                     _listMonsters[i].Update(gameTime);
                     _listToDraw.Add(_listMonsters[i]);
-                    if (_listMonsters[i].IsDyed || _listMonsters[i].IsDying)
+                    if (_listMonsters[i].IsDying)
                         continue;
+                    if (_listMonsters[i].IsDyed)
+                    {
+                        _listMonsters.Remove(_listMonsters[i]);
+                        continue;
+                    }
                     if (_char != null && Math.Sqrt(Math.Pow(_listMonsters[i].X - _char.X, 2) - Math.Pow(_listMonsters[i].Y - _char.Y, 2)) < _listMonsters[i].Sight)
                         _listMonsters[i].Target = _char;
-
+                    else
+                        _listMonsters[i].Target = null;
+                    if (_listMonsters[i].IsCollisionWith(_char))
+                    {
+                        _listMonsters[i].Target = _char;
+                        _listMonsters[i].CellToMove = new List<Point>();
+                        _listMonsters[i].DestPoint = new Point((int)_listMonsters[i].X, (int)_listMonsters[i].Y);
+                        _listMonsters[i].IsAttacking = true;
+                    }
                     if (_listMonsters[i].FocusRect.Contains(new Point((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y)))
                         _checkMonster = i;
                 }

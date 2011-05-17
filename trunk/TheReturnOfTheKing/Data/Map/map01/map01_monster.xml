@@ -15,4 +15,19 @@
     <Y>52</Y>
     <Type>2</Type>
   </Monster>
+  <Monster>
+    <X>25</X>
+    <Y>55</Y>
+    <Type>2</Type>
+  </Monster>
+  <Monster>
+    <X>21</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
+  <Monster>
+    <X>17</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
 </root>
