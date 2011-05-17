@@ -50,5 +50,10 @@
     <Y>32</Y>
     <Type>7</Type>
   </MapObstacle>
+  <MapObstacle>
+    <X>19</X>
+    <Y>52</Y>
+    <Type>7</Type>
+  </MapObstacle>
  
 </root>
