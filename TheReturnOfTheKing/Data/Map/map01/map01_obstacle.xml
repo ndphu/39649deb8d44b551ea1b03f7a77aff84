@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
+  <!--
   <MapObstacle>
     <X>10</X>
     <Y>41</Y>
@@ -50,10 +51,11 @@
     <Y>32</Y>
     <Type>7</Type>
   </MapObstacle>
+  -->
   <MapObstacle>
     <X>19</X>
     <Y>52</Y>
-    <Type>7</Type>
+    <Type>10</Type>
   </MapObstacle>
  
 </root>

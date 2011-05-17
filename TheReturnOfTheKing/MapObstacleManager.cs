@@ -60,6 +60,11 @@ namespace TheReturnOfTheKing
             _prototype[id]._sprite[0].Xoffset = int.Parse(_MapObstacle.SelectSingleNode(@"XOffset").InnerText);
             _prototype[id]._sprite[0].Yoffset = int.Parse(_MapObstacle.SelectSingleNode(@"YOffset").InnerText);
             _prototype[id]._sprite[0].NDelay = 3;
+
+            ((MapObstacle)_prototype[id]).StartObstacleX = int.Parse(_MapObstacle.SelectSingleNode(@"StartObstacleX").InnerText);
+            ((MapObstacle)_prototype[id]).StartObstacleY = int.Parse(_MapObstacle.SelectSingleNode(@"StartObstacleY").InnerText);
+            ((MapObstacle)_prototype[id]).ObstacleWidth = int.Parse(_MapObstacle.SelectSingleNode(@"ObstacleWidth").InnerText);
+            ((MapObstacle)_prototype[id]).ObstacleHeight = int.Parse(_MapObstacle.SelectSingleNode(@"ObstacleHeight").InnerText);
             
             return true;
         }       

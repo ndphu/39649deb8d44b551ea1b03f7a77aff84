@@ -61,7 +61,30 @@ namespace TheReturnOfTheKing
 
             _listToDraw.Clear();
 
-            _map.Update(gameTime); 
+            _map.Update(gameTime);
+
+            for (int i = 0; i < _listObstacle.Count; ++i)
+            {
+                if (minX < _listObstacle[i].X && _listObstacle[i].X < maxX && minY < _listObstacle[i].Y && _listObstacle[i].Y < maxY)
+                {
+                    _listObstacle[i].Update(gameTime);
+                    _listToDraw.Add(_listObstacle[i]);
+                }
+            }
+            for (int i = 0; i < _listPortral.Count; ++i)
+            {
+                if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
+                {
+                    _listPortral[i].Update(gameTime);
+                    _listToDraw.Add(_listPortral[i]);
+                }
+                if (_listPortral[i].IsCollisionWith(_char))
+                {
+                    _listPortral[i].GoToDestination(this);
+                    break;
+                }
+            }
+
 
             int _checkMonster = -1; // Kiem tra chuot co dang chi len quai vat hay khong
             for (int i = 0; i < _listMonsters.Count; ++i)
@@ -147,30 +170,6 @@ namespace TheReturnOfTheKing
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
-
-            
-
-            for (int i = 0; i < _listObstacle.Count; ++i)
-            {
-                if (minX < _listObstacle[i].X && _listObstacle[i].X < maxX && minY < _listObstacle[i].Y && _listObstacle[i].Y < maxY)
-                {
-                    _listObstacle[i].Update(gameTime);
-                    _listToDraw.Add(_listObstacle[i]);
-                }
-            }
-            for (int i = 0; i < _listPortral.Count; ++i)
-            {
-                if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
-                {
-                    _listPortral[i].Update(gameTime);
-                    _listToDraw.Add(_listPortral[i]);
-                }
-                if (_listPortral[i].IsCollisionWith(_char))
-                {
-                    _listPortral[i].GoToDestination(this);
-                    break;
-                }
-            }
         }
 
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -184,55 +183,12 @@ namespace TheReturnOfTheKing
 
             for (int y = minY; y < maxY; y += 32)
             {
-//                 for (int i = 0; i < _listPortral.Count; ++i)
-//                 {
-//                     if (y < _listPortral[i].Y && _listPortral[i].Y <= y + 32)
-//                         _listPortral[i].Draw(gameTime, sb);
-//                 }
-// 
-//                 for (int i = 0; i < _listMonsters.Count; ++i)
-//                 {
-//                     if (y < _listMonsters[i].Y && _listMonsters[i].Y <= y + 32)
-//                         _listMonsters[i].Draw(gameTime, sb);
-//                 }
-// 
-//                 for (int i = 0; i < _listObstacle.Count; ++i)
-//                 {
-//                     if (y < _listObstacle[i].Y && _listObstacle[i].Y <= y + 32)
-//                         _listObstacle[i].Draw(gameTime, sb);
-//                 }
-// 
-//                 if (y < _char.Y && _char.Y <= y + 32)
-//                     _char.Draw(gameTime, sb);
-
                 for (int i = 0; i < _listToDraw.Count; ++i)
                 {
                     if (y < _listToDraw[i].Y && _listToDraw[i].Y <= y + 32)
                         _listToDraw[i].Draw(gameTime, sb);
                 }
             }
-
-//             for (int i = 0; i < _listPortral.Count; ++i)
-//                 if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
-//                         _listPortral[i].Draw(gameTime, sb);
-//             
-//             for (int i = 0; i < _listObstacle.Count; ++i)
-//             {
-//                 _listObstacle[i].Draw(gameTime, sb);
-//             }
-//             for (int i = 0; i < _listMonsters.Count; ++i)
-//             {
-//                 if (_listMonsters[i].Y < _char.Y && !_listMonsters[i].IsDyed)
-//                     _listMonsters[i].Draw(gameTime, sb);
-//             }
-// 
-//             _char.Draw(gameTime, sb);
-// 
-//             for (int i = 0; i < _listMonsters.Count; ++i)
-//             {
-//                 if (_listMonsters[i].Y >= _char.Y && !_listMonsters[i].IsDyed)
-//                     _listMonsters[i].Draw(gameTime, sb);
-//             }
 
             //_frog.Draw(gameTime, sb);
 
