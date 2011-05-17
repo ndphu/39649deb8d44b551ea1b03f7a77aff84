@@ -257,6 +257,7 @@ namespace TheReturnOfTheKing
                 ret.Add(pt);
                 ret[i].X = int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText) * GlobalVariables.MapCollisionDim;
                 ret[i].Y = int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText) * GlobalVariables.MapCollisionDim;
+                Matrix[int.Parse(MapObstacles[i].SelectSingleNode(@"Y").InnerText)][int.Parse(MapObstacles[i].SelectSingleNode(@"X").InnerText)] = false;
             }
             return ret;
         }
