@@ -6970,7 +6970,6 @@ Content\img\quest\item7\D06-16.xnb
 Content\img\quest\item7\D06-17.xnb
 Content\img\quest\item7\D06-18.xnb
 Content\img\quest\item7\D06-19.xnb
-Content\sf.xnb
 Content\img\plant\plant01\D00-00.xnb
 Content\img\plant\plant02\D00-00.xnb
 Content\img\plant\plant03\D00-00.xnb
@@ -6979,6 +6978,7 @@ Content\img\plant\plant05\D00-00.xnb
 Content\img\plant\plant06\D00-00.xnb
 Content\img\plant\plant07\D00-00.xnb
 Content\img\plant\plant08\D00-00.xnb
+Content\sf.xnb
 Data\Character\character.xml
 Data\Map\map01\map01.txt
 Data\Map\map.xml
