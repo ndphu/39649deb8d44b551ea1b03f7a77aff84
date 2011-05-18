@@ -97,9 +97,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-58</XOffset>
     <YOffset>-152</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -108,9 +108,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-45</XOffset>
     <YOffset>-106</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -119,9 +119,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-47</XOffset>
     <YOffset>-117</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -130,9 +130,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-42</XOffset>
     <YOffset>-141</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -141,9 +141,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-30</XOffset>
     <YOffset>-135</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -152,9 +152,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-46</XOffset>
     <YOffset>-126</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
@@ -163,9 +163,9 @@
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-42</XOffset>
     <YOffset>-121</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
   
