@@ -61,7 +61,8 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsAttacking = value;
-                State = 16;
+                if (value == true)
+                    State = 16;
             }
         }
 
@@ -74,7 +75,8 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsDyed = value;
-                State = 32;    
+                if (value == true)
+                    State = 32;    
             }
         }
 
@@ -87,7 +89,8 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsDying = value;
-                State = 24; 
+                if (value == true)
+                    State = 24; 
             }
         }
 
@@ -100,7 +103,8 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsMoving = value;
-                State = 8;
+                if (value == true)
+                    State = 8;
             }
         }
 
@@ -113,7 +117,8 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsStanding = value;
-                State = 0;
+                if (value == true)
+                    State = 0;
             }
         }
 
