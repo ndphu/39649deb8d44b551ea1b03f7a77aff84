@@ -100,7 +100,7 @@ namespace TheReturnOfTheKing
             ((StateLoading)_gameState).GetDataLoading(Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
             _gameState.EnterState();*/
 
-            int nObjectManager = 6;
+            int nObjectManager = 7;
             GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
 
             objectManagerArray[1] = new MapManager(@"Data\Map\map.xml");
@@ -109,6 +109,7 @@ namespace TheReturnOfTheKing
             objectManagerArray[3] = new ProcessBarManager(@"Data\XML\loadingprocessbar.xml");
             objectManagerArray[4] = new PortralManager(@"Data\Portral\Portral.xml");
             objectManagerArray[5] = new MapObstacleManager(@"Data\MapObstacle\MapObstacle.xml");
+            objectManagerArray[6] = new ProjectileManager(@"Data\Projectile\Projectile.xml");
 
            
             GameState = new StateLoading();
@@ -138,6 +139,7 @@ namespace TheReturnOfTheKing
                 this.Exit();
 
             // TODO: Add your update logic here
+            GlobalVariables.AlreadyUseLeftMouse = false;
             _gameState.UpdateState(gameTime);
             GlobalVariables.MouseObserver.Update(gameTime);
             GlobalVariables.GameCursor.Update(gameTime);

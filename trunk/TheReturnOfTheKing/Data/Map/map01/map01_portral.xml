@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
+  
   <Portral>
     <X>24</X>
     <Y>60</Y>
@@ -15,5 +16,6 @@
     <Destination>map02</Destination>
     <DestinationX>12</DestinationX>
     <DestinationY>54</DestinationY>
-  </Portral>  
+  </Portral> 
+  
 </root>

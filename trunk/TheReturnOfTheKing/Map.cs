@@ -16,6 +16,14 @@ namespace TheReturnOfTheKing
 {
     public class Map : VisibleGameEntity
     {
+        StateMainGame _owner;
+
+        public StateMainGame Owner
+        {
+            get { return _owner; }
+            set { _owner = value; }
+        }
+
         /// <summary>
         /// Số cột
         /// </summary>
@@ -222,6 +230,7 @@ namespace TheReturnOfTheKing
                 ret[i].DestPoint = new Point((int)ret[i].X, (int)ret[i].Y);
                 ret[i].CellToMove = new List<Point>();
                 ret[i].SetMap(this);
+                ret[i].Owner = this.Owner;
             }
             return ret;
         }
@@ -241,6 +250,7 @@ namespace TheReturnOfTheKing
                 ret[i].Destination = Portrals[i].SelectSingleNode(@"Destination").InnerText;
                 ret[i].DestX = int.Parse(Portrals[i].SelectSingleNode(@"DestinationX").InnerText);
                 ret[i].DestY = int.Parse(Portrals[i].SelectSingleNode(@"DestinationY").InnerText);
+                ret[i].Owner = this.Owner;
             }
             return ret;
         }

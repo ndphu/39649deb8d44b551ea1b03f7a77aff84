@@ -15,37 +15,6 @@ namespace TheReturnOfTheKing
 {
     public class MapObstacle : VisibleGameEntity
     {
-        int _startObstacleX;
-
-        public int StartObstacleX
-        {
-            get { return _startObstacleX; }
-            set { _startObstacleX = value; }
-        }
-
-        int _startObstacleY;
-
-        public int StartObstacleY
-        {
-            get { return _startObstacleY; }
-            set { _startObstacleY = value; }
-        }
-
-        int _obstacleWidth;
-
-        public int ObstacleWidth
-        {
-            get { return _obstacleWidth; }
-            set { _obstacleWidth = value; }
-        }
-
-        int _obstacleHeight;
-
-        public int ObstacleHeight
-        {
-            get { return _obstacleHeight; }
-            set { _obstacleHeight = value; }
-        }
         
         public override VisibleGameObject Clone()
         {

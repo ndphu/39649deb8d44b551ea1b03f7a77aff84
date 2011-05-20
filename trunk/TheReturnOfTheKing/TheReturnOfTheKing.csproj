@@ -121,6 +121,8 @@
     <Compile Include="PortralManager.cs" />
     <Compile Include="ProcessBar.cs" />
     <Compile Include="ProcessBarManager.cs" />
+    <Compile Include="Projectile.cs" />
+    <Compile Include="ProjectileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
@@ -171,6 +173,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Portral\Portral.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Projectile\projectile.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\buttonmanager.xml">

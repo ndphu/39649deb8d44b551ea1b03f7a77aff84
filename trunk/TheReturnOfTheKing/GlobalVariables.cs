@@ -88,5 +88,21 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables.sf; }
             set { GlobalVariables.sf = value; }
         }
+
+        static bool _alreadyUseLeftMouse;
+
+        public static bool AlreadyUseLeftMouse
+        {
+            get { return GlobalVariables._alreadyUseLeftMouse; }
+            set { GlobalVariables._alreadyUseLeftMouse = value; }
+        }
+
+        static bool _alreadyUseRightMouse;
+
+        public static bool AlreadyUseRightMouse
+        {
+            get { return GlobalVariables._alreadyUseRightMouse; }
+            set { GlobalVariables._alreadyUseRightMouse = value; }
+        }
     }
 }

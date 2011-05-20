@@ -2,8 +2,8 @@
 <root>  
   <Character id="0">
     <Speed>2</Speed>
-    <Hp>1600</Hp>
-    <MaxHp>1600</MaxHp>
+    <Hp>320000</Hp>
+    <MaxHp>320000</MaxHp>
     <Mp>350</Mp>
     <MaxMp>350</MaxMp>
     <CriticalRate>15</CriticalRate>
@@ -12,37 +12,57 @@
     <AttackSpeed>4</AttackSpeed>
     <Range>32</Range>
     <HitFrame>7</HitFrame>
+    <CastFrame>11</CastFrame>
     <Sight>150</Sight>
     
-    <Stand>
-      <ContentName>img/character/kunkka/stand/D</ContentName>
-      <NumOfFrames>8</NumOfFrames>
-      <XOffset>-28</XOffset>
-      <YOffset>-58</YOffset>
-    </Stand>
-    <Move>
-      <ContentName>img/character/kunkka/move/D</ContentName>
-      <NumOfFrames>10</NumOfFrames>
-      <XOffset>-33</XOffset>
-      <YOffset>-55</YOffset>
-    </Move>
-    <Attack>
-      <ContentName>img/character/kunkka/attack/D</ContentName>
-      <NumOfFrames>15</NumOfFrames>
-      <XOffset>-76</XOffset>
-      <YOffset>-71</YOffset>
-    </Attack>
-    <Dying>
-      <ContentName>img/character/kunkka/dying/D</ContentName>
+    <Attack1>
+      <ContentName>img/character/kunkka/attack1/D</ContentName>
+      <NumOfFrames>18</NumOfFrames>
+      <XOffset>-92</XOffset>
+      <YOffset>-106</YOffset>
+    </Attack1>
+    
+    <Attack2>
+      <ContentName>img/character/kunkka/attack2/D</ContentName>
       <NumOfFrames>19</NumOfFrames>
-      <XOffset>-67</XOffset>
-      <YOffset>-110</YOffset>
-    </Dying>
+      <XOffset>-88</XOffset>
+      <YOffset>-84</YOffset>
+    </Attack2>
+
     <Dyed>
       <ContentName>img/character/kunkka/dyed/D</ContentName>
       <NumOfFrames>1</NumOfFrames>
-      <XOffset>-67</XOffset>
-      <YOffset>-110</YOffset>
+      <XOffset>-20</XOffset>
+      <YOffset>-11</YOffset>
     </Dyed>
+
+    <Dying>
+      <ContentName>img/character/kunkka/dying/D</ContentName>
+      <NumOfFrames>28</NumOfFrames>
+      <XOffset>-40</XOffset>
+      <YOffset>-44</YOffset>
+    </Dying>
+    
+    <Move>
+      <ContentName>img/character/kunkka/move/D</ContentName>
+      <NumOfFrames>10</NumOfFrames>
+      <XOffset>-41</XOffset>
+      <YOffset>-84</YOffset>
+    </Move>
+
+    <Skill>
+      <ContentName>img/character/kunkka/skill/D</ContentName>
+      <NumOfFrames>16</NumOfFrames>
+      <XOffset>-34</XOffset>
+      <YOffset>-88</YOffset>
+    </Skill>
+
+    <Stand>
+      <ContentName>img/character/kunkka/stand/D</ContentName>
+      <NumOfFrames>8</NumOfFrames>
+      <XOffset>-35</XOffset>
+      <YOffset>-87</YOffset>
+    </Stand>
+    
   </Character>
   </root>
