@@ -24,6 +24,7 @@ namespace TheReturnOfTheKing
         public Frog _frog;
         public GameObjectManager[] _objectManagerArray;
         public List<VisibleGameEntity> _listToDraw;
+        public List<Projectile> _listProjectile = new List<Projectile>();
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -31,7 +32,9 @@ namespace TheReturnOfTheKing
             _map = (Map)objectManagerArray[1].CreateObject(0);
             GlobalVariables.MapCollisionDim = _map.CollisionDim;
             _char = (PlayerCharacter)objectManagerArray[0].CreateObject(0);
-            _char.SetMap(_map);            
+            _char.SetMap(_map);
+            _char.Owner = this;
+            _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
             _frog = new Frog();
             _frog.Init(Owner.Content);
@@ -58,10 +61,14 @@ namespace TheReturnOfTheKing
             float minY = Math.Abs(GlobalVariables.dY);
             float maxY = Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight;
             MouseState ms = Mouse.GetState();
-
+            GlobalVariables.GameCursor.IsIdle = true;
+            GlobalVariables.AlreadyUseLeftMouse = false;
+            GlobalVariables.AlreadyUseRightMouse = false;
+            
             _listToDraw.Clear();
 
             _map.Update(gameTime);
+            _char.Update(gameTime);
 
             for (int i = 0; i < _listObstacle.Count; ++i)
             {
@@ -71,6 +78,7 @@ namespace TheReturnOfTheKing
                     _listToDraw.Add(_listObstacle[i]);
                 }
             }
+
             for (int i = 0; i < _listPortral.Count; ++i)
             {
                 if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
@@ -78,78 +86,30 @@ namespace TheReturnOfTheKing
                     _listPortral[i].Update(gameTime);
                     _listToDraw.Add(_listPortral[i]);
                 }
-                if (_listPortral[i].IsCollisionWith(_char))
-                {
-                    _listPortral[i].GoToDestination(this);
-                    break;
-                }
             }
 
-
-            int _checkMonster = -1; // Kiem tra chuot co dang chi len quai vat hay khong
             for (int i = 0; i < _listMonsters.Count; ++i)
             {
                 if (minX < _listMonsters[i].X && _listMonsters[i].X < maxX && minY < _listMonsters[i].Y && _listMonsters[i].Y < maxY)
                 {
                     _listMonsters[i].Update(gameTime);
                     _listToDraw.Add(_listMonsters[i]);
-                    if (_listMonsters[i].IsDying)
-                        continue;
+                    
                     if (_listMonsters[i].IsDyed)
                     {
                         _listMonsters.Remove(_listMonsters[i]);
-                        continue;
-                    }
-                    if (_char != null && Math.Sqrt(Math.Pow(_listMonsters[i].X - _char.X, 2) - Math.Pow(_listMonsters[i].Y - _char.Y, 2)) < _listMonsters[i].Sight)
-                        _listMonsters[i].Target = _char;
-                    else
-                        _listMonsters[i].Target = null;
-                    if (_listMonsters[i].IsCollisionWith(_char))
-                    {
-                        _listMonsters[i].Target = _char;
-                        _listMonsters[i].CellToMove = new List<Point>();
-                        _listMonsters[i].DestPoint = new Point((int)_listMonsters[i].X, (int)_listMonsters[i].Y);
-                        _listMonsters[i].IsAttacking = true;
-                    }
-                    if (_listMonsters[i].FocusRect.Contains(new Point((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y)))
-                        _checkMonster = i;
-                }
-            }
-            if (_checkMonster != -1)
-                GlobalVariables.GameCursor.IsAttack = true;
-            else
-                GlobalVariables.GameCursor.IsIdle = true;
-
-            if (ms.LeftButton == ButtonState.Pressed)
-            {
-                if (ms.X < GlobalVariables.ScreenWidth && ms.Y < GlobalVariables.ScreenHeight && ms.X >= 0 && ms.Y >= 0)
-                {
-                    if (!GlobalVariables.GameCursor.IsAttack)
-                    {
-                        if (_char.Target != null)
-                        {
-                            _char.Target = null;
-                            _char.IsAttacking = false;
-                            _char.DestPoint = new Point((int)_char.X, (int)_char.Y);
-                            _char.CellToMove = new List<Point>();
-                        }
-                        Point newCell = _map.PointToCell(new Point((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y));
-                        if (_map.Matrix[newCell.Y][newCell.X] == true)
-                            _char.CellToMove = Utility.FindPath(_map.Matrix, _map.PointToCell(new Point((int)_char.X, (int)_char.Y)), newCell);
-                        
-                    }
-                    else
-                    {
-                        _char.Target = _listMonsters[_checkMonster];                        
                     }
                 }
             }
             
-            GlobalVariables.GameCursor.Update(gameTime);
-   
-            _char.Update(gameTime);
             _listToDraw.Add(_char);
-            _frog.Update(gameTime);
+
+            for (int i = 0; i < _listProjectile.Count; ++i)
+            {
+                _listProjectile[i].Update(gameTime);
+                if (_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1)
+                    _listProjectile.Remove(_listProjectile[i]);
+            }
 
             if (_char.IsDyed)
             {
@@ -170,8 +130,10 @@ namespace TheReturnOfTheKing
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
-        }
 
+            _frog.Update(gameTime);
+        }
+        
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
         {
             base.DrawState(gameTime, sb);
@@ -180,6 +142,12 @@ namespace TheReturnOfTheKing
             int maxY = (int)(Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight);
 
             _map.Draw(gameTime, sb);
+
+
+            for (int i = 0; i < _listProjectile.Count; ++i)
+            {
+                _listProjectile[i].Draw(gameTime, sb);
+            }
 
             for (int y = minY; y < maxY; y += 32)
             {
@@ -190,7 +158,7 @@ namespace TheReturnOfTheKing
                 }
             }
 
-            //_frog.Draw(gameTime, sb);
+            _frog.Draw(gameTime, sb);
 
             GlobalVariables.GameCursor.Draw(gameTime, sb);
 

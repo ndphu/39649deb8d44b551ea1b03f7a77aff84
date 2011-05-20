@@ -84,19 +84,19 @@
   <MapObstacle id="8">
     <ContentName>img/plant/plant01/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-57</XOffset>
-    <YOffset>-144</YOffset>
-    <StartObstacleX>-2</StartObstacleX>
+    <XOffset>-40</XOffset>
+    <YOffset>-130</YOffset>
+    <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>5</ObstacleWidth>
+    <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
 
   <MapObstacle id="9">
     <ContentName>img/plant/plant02/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-58</XOffset>
-    <YOffset>-152</YOffset>
+    <XOffset>-41</XOffset>
+    <YOffset>-150</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -106,8 +106,8 @@
   <MapObstacle id="10">
     <ContentName>img/plant/plant03/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-45</XOffset>
-    <YOffset>-106</YOffset>
+    <XOffset>-36</XOffset>
+    <YOffset>-146</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -118,7 +118,7 @@
     <ContentName>img/plant/plant04/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
     <XOffset>-47</XOffset>
-    <YOffset>-117</YOffset>
+    <YOffset>-107</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -128,8 +128,8 @@
   <MapObstacle id="12">
     <ContentName>img/plant/plant05/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-42</XOffset>
-    <YOffset>-141</YOffset>
+    <XOffset>-37</XOffset>
+    <YOffset>-152</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -139,8 +139,8 @@
   <MapObstacle id="13">
     <ContentName>img/plant/plant06/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-30</XOffset>
-    <YOffset>-135</YOffset>
+    <XOffset>-82</XOffset>
+    <YOffset>-158</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -150,8 +150,8 @@
   <MapObstacle id="14">
     <ContentName>img/plant/plant07/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-46</XOffset>
-    <YOffset>-126</YOffset>
+    <XOffset>-35</XOffset>
+    <YOffset>-156</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
@@ -161,12 +161,44 @@
   <MapObstacle id="15">
     <ContentName>img/plant/plant08/D00-</ContentName>
     <NumOfFrame>1</NumOfFrame>
-    <XOffset>-42</XOffset>
-    <YOffset>-121</YOffset>
+    <XOffset>-35</XOffset>
+    <YOffset>-156</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
   </MapObstacle>
-  
+
+  <MapObstacle id="16">
+    <ContentName>img/plant/plant09/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-72</XOffset>
+    <YOffset>-162</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="17">
+    <ContentName>img/plant/plant10/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-39</XOffset>
+    <YOffset>-109</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
+
+  <MapObstacle id="18">
+    <ContentName>img/plant/plant11/D00-</ContentName>
+    <NumOfFrame>1</NumOfFrame>
+    <XOffset>-41</XOffset>
+    <YOffset>-117</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+  </MapObstacle>
 </root>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Projectile id="0">
+    <ContentName>img/skill/skill01/D</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-22</XOffset>
+    <YOffset>-8</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>2</ObstacleWidth>
+    <ObstacleHeight>2</ObstacleHeight>
+    <DamagePerLevel>5</DamagePerLevel>
+    <StartingDamage>3</StartingDamage>
+  </Projectile>
+</root>

@@ -35,7 +35,15 @@ namespace TheReturnOfTheKing
                 DestY = this.DestY,
             };
         }
-        
+
+        StateMainGame _owner;
+
+        public StateMainGame Owner
+        {
+            get { return _owner; }
+            set { _owner = value; }
+        }
+
         public override float X
         {
             get
@@ -96,6 +104,14 @@ namespace TheReturnOfTheKing
             set { _destY = value; }
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            if (this.IsCollisionWith(Owner._char))
+                this.GoToDestination(Owner);
+        }
+
         public void GoToDestination(StateMainGame mg)
         {
             switch (Destination)
@@ -123,6 +139,7 @@ namespace TheReturnOfTheKing
                 case "map01":
                     {
                         mg._map = (Map)mg._objectManagerArray[1].CreateObject(0);
+                        mg._map.Owner = mg;
                         mg._char.SetMap(mg._map);
                         mg._listMonsters = mg._map.InitMonsterList((MonsterManager)mg._objectManagerArray[2], @"Data\Map\map01\map01_monster.xml");
                         mg._frog.SetCharacter(mg._char);
@@ -138,6 +155,7 @@ namespace TheReturnOfTheKing
                 case "map02":
                     {
                         mg._map = (Map)mg._objectManagerArray[1].CreateObject(1);
+                        mg._map.Owner = mg;
                         mg._char.SetMap(mg._map);
                         mg._listMonsters = mg._map.InitMonsterList((MonsterManager)mg._objectManagerArray[2], @"Data\Map\map02\map02_monster.xml");
                         mg._frog.SetCharacter(mg._char);

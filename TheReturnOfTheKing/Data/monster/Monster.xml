@@ -93,8 +93,8 @@
   <!--Zoombie-->
   <Monster id="2">
     <Speed>1</Speed>
-    <Hp>250</Hp>
-    <MaxHp>250</MaxHp>
+    <Hp>350</Hp>
+    <MaxHp>350</MaxHp>
     <Mp>10</Mp>
     <MaxMp>10</MaxMp>
     <CriticalRate>50</CriticalRate>

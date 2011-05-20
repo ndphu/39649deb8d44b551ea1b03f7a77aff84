@@ -17,6 +17,13 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+        StateMainGame _owner;
+
+        public StateMainGame Owner
+        {
+            get { return _owner; }
+            set { _owner = value; }
+        }
 
         int _damage;
 
@@ -141,6 +148,16 @@ namespace TheReturnOfTheKing
             get { return _hitFrame; }
             set { _hitFrame = value; }
         }
+        /// <summary>
+        /// Vị trí khung hình cast phép
+        /// </summary>
+        int _castFrame;
+
+        public int CastFrame
+        {
+            get { return _castFrame; }
+            set { _castFrame = value; }
+        }
 
         /// <summary>
         /// Hình chữ nhật để click vào con quái
@@ -179,7 +196,7 @@ namespace TheReturnOfTheKing
                 for (int i = 0; i < _nsprite; ++i)
                     _sprite[i].X = value;
                 CollisionRect = new Rectangle((int)X, (int)Y, (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim);
-                FocusRect = new Rectangle((int)(X - GlobalVariables.MapCollisionDim), (int)(Y - GlobalVariables.MapCollisionDim), (int)GlobalVariables.MapCollisionDim * 2, (int)GlobalVariables.MapCollisionDim * 2);
+                FocusRect = new Rectangle((int)(X), (int)(Y - GlobalVariables.MapCollisionDim), (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim * 2);
             }
         }
         /// <summary>
@@ -197,7 +214,7 @@ namespace TheReturnOfTheKing
                 for (int i = 0; i < _nsprite; ++i)
                     _sprite[i].Y = value;
                 CollisionRect = new Rectangle((int)X, (int)Y, (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim);
-                FocusRect = new Rectangle((int)(X - GlobalVariables.MapCollisionDim), (int)(Y - GlobalVariables.MapCollisionDim), (int)GlobalVariables.MapCollisionDim * 2, (int)GlobalVariables.MapCollisionDim * 2);
+                FocusRect = new Rectangle((int)(X), (int)(Y - GlobalVariables.MapCollisionDim), (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim * 2);
             }
         }
         /// <summary>
@@ -216,7 +233,7 @@ namespace TheReturnOfTheKing
         /// </summary>
         bool _isStanding = true;
 
-        public bool IsStanding
+        public virtual bool IsStanding
         {
             get { return _isStanding; }
             set 
@@ -224,7 +241,7 @@ namespace TheReturnOfTheKing
                 _isStanding = value;
                 if (value)
                 {
-                    State = 0;
+                    
                     IsAttacking = false;
                     IsMoving = false;
                     IsDyed = false;
@@ -237,7 +254,7 @@ namespace TheReturnOfTheKing
         /// </summary>
         bool _isMoving = false;
 
-        public bool IsMoving
+        public virtual bool IsMoving
         {
             get { return _isMoving; }
             set
@@ -245,7 +262,7 @@ namespace TheReturnOfTheKing
                 _isMoving = value;
                 if (value)
                 {
-                    State = 8;
+                    
                     IsStanding = false;
                     IsAttacking = false;
                     IsDyed = false;
@@ -259,7 +276,7 @@ namespace TheReturnOfTheKing
         /// </summary>
         bool _isAttacking = false;
 
-        public bool IsAttacking
+        public virtual bool IsAttacking
         {
             get { return _isAttacking; }
             set 
@@ -267,7 +284,7 @@ namespace TheReturnOfTheKing
                 _isAttacking = value;
                 if (value)
                 {
-                    State = 16;
+                    
                     IsStanding = false;
                     IsMoving = false;
                     IsDyed = false;
@@ -280,7 +297,7 @@ namespace TheReturnOfTheKing
         /// </summary>
         bool _isDying = false;
 
-        public bool IsDying
+        public virtual bool IsDying
         {
             get { return _isDying; }
             set 
@@ -288,7 +305,7 @@ namespace TheReturnOfTheKing
                 _isDying = value;
                 if (value)
                 {
-                    State = 24;                    
+                                       
                     IsStanding = false;
                     IsMoving = false;
                     IsDyed = false;
@@ -301,15 +318,14 @@ namespace TheReturnOfTheKing
         /// </summary>
         bool _isDyed = false;
 
-        public bool IsDyed
+        public virtual bool IsDyed
         {
             get { return _isDyed; }
             set 
             {
                 _isDyed = value;
                 if (value)
-                {
-                    State = 32;                  
+                {           
                     IsStanding = false; 
                     IsMoving = false;
                     IsAttacking = false;
@@ -318,6 +334,7 @@ namespace TheReturnOfTheKing
             }
         }
         
+
         /// <summary>
         /// Tốc độ di chuyển
         /// </summary>
@@ -469,6 +486,8 @@ namespace TheReturnOfTheKing
 
         private void Move()
         {
+            if (!IsMoving || IsStanding)
+                return;
             if (CellToMove.Count != 0 && X == DestPoint.X && Y == DestPoint.Y)
             {
                 DestPoint = new Point(CellToMove[CellToMove.Count - 1].X * Map.CollisionDim, CellToMove[CellToMove.Count - 1].Y * Map.CollisionDim);
@@ -535,9 +554,9 @@ namespace TheReturnOfTheKing
             
         }
        
-        public void UpdateDirection(double x, double y)
+        public virtual void UpdateDirection(double x, double y)
         {
-
+            int oldDir = _dir;
             if (Math.Abs(this.X - x) < 1)
                 this.X = (float)x;
             if (Math.Abs(this.Y - y) < 1)
@@ -575,7 +594,8 @@ namespace TheReturnOfTheKing
                 
                 _dir += _state;
             }
-            
+            if (_dir != oldDir)
+                _sprite[oldDir].Itexture2D = 0;
         }
 
        
@@ -595,8 +615,6 @@ namespace TheReturnOfTheKing
         {
             Damage = Math.Min(-(damage - this.Defense),0);
             Hp += Damage;
-            if (Hp <= 0)
-                IsDying = true;
         }
     }
 }

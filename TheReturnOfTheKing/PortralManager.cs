@@ -16,10 +16,7 @@ namespace TheReturnOfTheKing
 {
     public class PortralManager : GameObjectManager
     {
-        public override VisibleGameObject CreateObject(int idx)
-        {
-            return base.CreateObject(idx);
-        }
+        
 
         public PortralManager(string xmlInfo)
         {

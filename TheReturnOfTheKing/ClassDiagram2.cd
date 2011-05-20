@@ -129,7 +129,7 @@
   <Class Name="TheReturnOfTheKing.Map" Collapsed="true">
     <Position X="26.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwQAIQAAgAEBglCASAAAAIAACBAhCEBAAEACIQCAABA=</HashCode>
+      <HashCode>AwQQIQAAgAEBglCASAAAAIAACBAhCEBAAEACIQCAABA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -166,13 +166,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Misc.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="TheReturnOfTheKing.Monster" Collapsed="true">
-    <Position X="24.25" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.MonsterManager" Collapsed="true">
@@ -213,7 +206,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="22" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAQAAAAIAAAAAgAAAAAAAAEAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -269,7 +262,7 @@
   <Class Name="TheReturnOfTheKing.StateMainGame" Collapsed="true">
     <Position X="7.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAACAAAAIAAAAAAAAEAQAICAAAAAAEoBBAAAAAA=</HashCode>
+      <HashCode>AAECAAACAAAAIAAAAAAIAEAQAICAAAAAAEoBBAAAAAA=</HashCode>
       <FileName>StateMainGame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -290,7 +283,7 @@
   <Class Name="TheReturnOfTheKing.VisibleGameEntity" Collapsed="true">
     <Position X="23" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAEAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAADCAACEAAAAMAQAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>VisibleGameEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -304,14 +297,14 @@
   <Class Name="TheReturnOfTheKing.MapObstacle" Collapsed="true">
     <Position X="28.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAYBA=</HashCode>
       <FileName>MapObstacle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.PortralManager" Collapsed="true">
     <Position X="24" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>PortralManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -327,6 +320,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
       <FileName>MapObstacleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
+    <Position X="34" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABEAAgAAAAAAAAAAAAAYBA=</HashCode>
+      <FileName>Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.ProjectileManager" Collapsed="true">
+    <Position X="27.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>ProjectileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Monster" Collapsed="true">
+    <Position X="24.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAgAAgAAACAAAAAAAgAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
