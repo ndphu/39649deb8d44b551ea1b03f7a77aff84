@@ -494,7 +494,8 @@ namespace TheReturnOfTheKing
                 CellToMove.RemoveAt(CellToMove.Count - 1);
                 IsMoving = true;
             }
-
+            float oX = this.X;
+            float oY = this.Y;
             if (this.Y == DestPoint.Y && this.X < DestPoint.X)
             {
                 this.X += Speed;
@@ -542,6 +543,17 @@ namespace TheReturnOfTheKing
                                             this.Y += (float)(Speed / Math.Sqrt(2));
 
                                         }
+        
+
+            
+            for (int i = 0; i < Owner._listToDraw.Count; ++i)
+                if (!this.Equals(Owner._listToDraw[i]) && this.IsCollisionWith(Owner._listToDraw[i]))
+                {
+                    this.X = oX;
+                    this.Y = oY;
+                }
+
+
             if (Math.Abs(this.X - DestPoint.X) < Speed / Math.Sqrt(2) && Math.Abs(this.Y - DestPoint.Y) < Speed / Math.Sqrt(2))
             {
                 this.X = DestPoint.X;
@@ -554,13 +566,18 @@ namespace TheReturnOfTheKing
             
         }
        
-        public virtual void UpdateDirection(double x, double y)
+        public virtual void UpdateDirection(float x, float y)
         {
             int oldDir = _dir;
-            if (Math.Abs(this.X - x) < 1)
-                this.X = (float)x;
-            if (Math.Abs(this.Y - y) < 1)
-                this.Y = (float)y;
+            x += GlobalVariables.MapCollisionDim / 2;
+            y += GlobalVariables.MapCollisionDim / 2;
+            float tX = X + GlobalVariables.MapCollisionDim / 2;
+            float tY = Y + GlobalVariables.MapCollisionDim / 2;
+
+            if (Math.Abs(tX - x) < 1)
+                this.X = (float)x - GlobalVariables.MapCollisionDim / 2;
+            if (Math.Abs(tY - y) < 1)
+                this.Y = (float)y - GlobalVariables.MapCollisionDim / 2;
             if (this.X == x && this.Y == y)
             {
                 _dir = _dir % 8;
@@ -568,31 +585,38 @@ namespace TheReturnOfTheKing
             }
             else
             {
-                if (this.Y == y && this.X < x)
-                    _dir = 0;
-
-                if (this.Y > y && this.X < x)
-                    _dir = 1;
-
-                if (this.Y > y && this.X == x)
-                    _dir = 2;
-
-                if (this.Y > y && this.X > x)
-                    _dir = 3;
-
-                if (this.Y == y && this.X > x)
-                    _dir = 4;
-
-                if (this.Y < y && this.X > x)
-                    _dir = 5;
-
-                if (this.Y < y && this.X == x)
-                    _dir = 6;
-
-                if (this.Y < y && this.X < x)
-                    _dir = 7;
                 
-                _dir += _state;
+
+                Vector2 _v1, _v2, _v3;
+                _v1 = new Vector2(x - tX, y - tY);
+                _v2 = new Vector2(1, 0);
+                _v3 = _v1 * _v2;
+                float _angle = MathHelper.ToDegrees((float)Math.Acos(_v3.Length() / (_v1.Length() * _v2.Length())));
+
+                if (0 <= _angle && _angle < 22.5)
+                    if (x < tX)
+                        Dir = 4;
+                    else
+                        Dir = 0;
+                if (22.5 <= _angle && _angle < 67.5)
+                {
+                    if (x > tX && y < tY)
+                        Dir = 1;
+                    if (x < tX && y < tY)
+                        Dir = 3;
+                    if (x < tX && y > tY)
+                        Dir = 5;
+                    if (x > tX && y > tY)
+                        Dir = 7;
+                }
+
+                if (67.5 < _angle && _angle <= 90)
+                    if (y < tY)
+                        Dir = 2;
+                    else
+                        Dir = 6;
+                Dir = Dir % 8;
+                Dir += State;
             }
             if (_dir != oldDir)
                 _sprite[oldDir].Itexture2D = 0;

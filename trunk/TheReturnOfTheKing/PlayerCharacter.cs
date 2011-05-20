@@ -37,12 +37,15 @@ namespace TheReturnOfTheKing
             set 
             { 
                 _isCasting = value;
-                IsAttacking = false;
-                IsMoving = false;
-                IsStanding = false;
-                IsDyed = false;
-                IsDying = false;                
-                State = 48;
+                if (value == true)
+                {
+                    IsAttacking = false;
+                    IsMoving = false;
+                    IsStanding = false;
+                    IsDyed = false;
+                    IsDying = false;
+                    State = 48;
+                }
             }
         }
 
@@ -55,9 +58,12 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsAttacking = value;
-                State = 24;
+                
                 if (value == true)
+                {
                     _isCasting = false;
+                    State = 24;
+                }
             }
         }
 
@@ -70,9 +76,12 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsDyed = value;
-                State = 40;
+
                 if (value == true)
+                {
                     _isCasting = false;
+                    State = 40;
+                }
             }
         }
 
@@ -85,9 +94,12 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsDying = value;
-                State = 32;
+
                 if (value == true)
+                {
                     _isCasting = false;
+                    State = 32;
+                }
             }
         }
 
@@ -100,9 +112,12 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsMoving = value;
-                State = 8;
+
                 if (value == true)
+                {
                     _isCasting = false;
+                    State = 8;
+                }
             }
         }
 
@@ -115,9 +130,12 @@ namespace TheReturnOfTheKing
             set
             {
                 base.IsStanding = value;
-                State = 0;
+
                 if (value == true)
+                {
                     _isCasting = false;
+                    State = 0;
+                }
             }
         }
 
@@ -329,7 +347,7 @@ namespace TheReturnOfTheKing
                     Dir = 2;
                 else
                     Dir = 6;
-
+            if (Dir < 8)
             Dir += State;
         }
 
