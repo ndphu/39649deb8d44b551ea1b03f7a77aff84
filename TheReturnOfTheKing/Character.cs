@@ -240,12 +240,12 @@ namespace TheReturnOfTheKing
             { 
                 _isStanding = value;
                 if (value)
-                {
-                    
+                {                    
                     IsAttacking = false;
                     IsMoving = false;
                     IsDyed = false;
                     IsDying = false;
+                    IsCasting = false;
                 }
             }
         }
@@ -267,6 +267,7 @@ namespace TheReturnOfTheKing
                     IsAttacking = false;
                     IsDyed = false;
                     IsDying = false;
+                    IsCasting = false;
                 }
             }
 
@@ -289,6 +290,7 @@ namespace TheReturnOfTheKing
                     IsMoving = false;
                     IsDyed = false;
                     IsDying = false;
+                    IsCasting = false;
                 }
             }
         }
@@ -310,6 +312,7 @@ namespace TheReturnOfTheKing
                     IsMoving = false;
                     IsDyed = false;
                     IsAttacking = false;
+                    IsCasting = false;
                 }
             }
         }
@@ -330,10 +333,33 @@ namespace TheReturnOfTheKing
                     IsMoving = false;
                     IsAttacking = false;
                     IsDying = false;
+                    IsCasting = false;
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Đang dùng skill
+        /// </summary>
+        bool _isCasting;
+
+        public virtual bool IsCasting
+        {
+            get { return _isCasting; }
+            set
+            {
+                _isCasting = value;
+                if (value == true)
+                {
+                    IsAttacking = false;
+                    IsMoving = false;
+                    IsStanding = false;
+                    IsDyed = false;
+                    IsDying = false;                    
+                }
+            }
+        }
+
 
         /// <summary>
         /// Tốc độ di chuyển
@@ -452,9 +478,12 @@ namespace TheReturnOfTheKing
                 return;
             }
             if (_target == null)
-            {   
-                Move();
-                UpdateDirection(DestPoint.X, DestPoint.Y);
+            {
+                if (!IsCasting)
+                {
+                    Move();
+                    UpdateDirection(DestPoint.X, DestPoint.Y);
+                }
             }
             else
             {

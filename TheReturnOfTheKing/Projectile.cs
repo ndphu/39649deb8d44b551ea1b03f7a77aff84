@@ -16,6 +16,19 @@ namespace TheReturnOfTheKing
     public class Projectile : VisibleGameEntity
     {
         /// <summary>
+        /// Skill ma projectile nay thuoc ve
+        /// </summary>
+        Skill _skillOwner;
+
+        public Skill SkillOwner
+        {
+            get { return _skillOwner; }
+            set { _skillOwner = value; }
+        }
+
+
+
+        /// <summary>
         /// Cap do hien tai cua projectile, se duoc cap nhat khi skill tang len
         /// </summary>
         int _level;
@@ -102,6 +115,11 @@ namespace TheReturnOfTheKing
                     _sprite[i].Y = value;
                 CollisionRect = new Rectangle((int)X, (int)Y, (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim);
             }
+        }
+
+        public virtual void DoEffect(VisibleGameEntity _object)
+        {
+            _skillOwner.DoEffect(_object);
         }
     }
 }
