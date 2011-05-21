@@ -15,28 +15,45 @@ namespace TheReturnOfTheKing
 {
     public class Projectile : VisibleGameEntity
     {
-        int _dPL;
+        /// <summary>
+        /// Cap do hien tai cua projectile, se duoc cap nhat khi skill tang len
+        /// </summary>
+        int _level;
 
-        public int DPL
+        public int Level
         {
-            get { return _dPL; }
-            set { _dPL = value; }
-        }
-
-        int _dPS;
-
-        public int DPS
-        {
-            get { return _dPS; }
-            set { _dPS = value; }
+            get { return _level; }
+            set { _level = value; }
         }
 
         
+        /// <summary>
+        /// Frame hinh gay sat thuong
+        /// </summary>
+        List<int> _hitFrames;
+
+        public List<int> HitFrames
+        {
+            get { return _hitFrames; }
+            set { _hitFrames = value; }
+        }
+        /// <summary>
+        /// Mang de luu thong tin tung level cua skill
+        /// </summary>
+        List<ProjectileInfo> _listLevel;
+
+        public List<ProjectileInfo> ListLevel
+        {
+            get { return _listLevel; }
+            set { _listLevel = value; }
+        }
+                
         public override VisibleGameObject Clone()
         {
             GameSprite[] _spriteTemp = new GameSprite[_nsprite];
             for (int i = 0; i < _nsprite; ++i)
                 _spriteTemp[i] = _sprite[i].Clone();
+
             return new Projectile
             {
                 _nsprite = this._nsprite,
@@ -51,8 +68,9 @@ namespace TheReturnOfTheKing
                 StartObstacleY = this.StartObstacleY,
                 ObstacleWidth = this.ObstacleWidth,
                 ObstacleHeight = this.ObstacleHeight,
-                DPS = this.DPS,
-                DPL = this.DPL,
+                Level = this.Level,
+                ListLevel = this.ListLevel,
+                HitFrames = this.HitFrames,
             };
         }
 

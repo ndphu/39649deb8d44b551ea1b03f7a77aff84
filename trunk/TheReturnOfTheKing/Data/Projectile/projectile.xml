@@ -9,7 +9,69 @@
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>2</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
-    <DamagePerLevel>5</DamagePerLevel>
-    <StartingDamage>3</StartingDamage>
+
+    <HitFrame>3</HitFrame>
+    <HitFrame>6</HitFrame>
+    <HitFrame>9</HitFrame>
+    <HitFrame>12</HitFrame>
+    <HitFrame>15</HitFrame>
+    <HitFrame>18</HitFrame>
+
+    <Level>
+      <Min>0</Min>
+      <Max>0</Max>
+      <HP>0</HP>
+      <MP>0</MP>
+    </Level>
+    
+    <Level>
+      <Min>6</Min>
+      <Max>12</Max>
+      <HP>0</HP>
+      <MP>-5</MP>
+    </Level>
+    
+    <Level>
+      <Min>16</Min>
+      <Max>32</Max>
+      <HP>0</HP>
+      <MP>-10</MP>
+    </Level>
+    
+    <Level>
+      <Min>26</Min>
+      <Max>56</Max>
+      <HP>0</HP>
+      <MP>-15</MP>
+    </Level>
+    
+    <Level>
+      <Min>36</Min>
+      <Max>76</Max>
+      <HP>0</HP>
+      <MP>-20</MP>
+    </Level>
+    
+    <Level>
+      <Min>46</Min>
+      <Max>96</Max>
+      <HP>0</HP>
+      <MP>-30</MP>
+    </Level>
+    
+    <Level>
+      <Min>56</Min>
+      <Max>116</Max>
+      <HP>0</HP>
+      <MP>-40</MP>
+    </Level>
+    
+    <Level>
+      <Min>66</Min>
+      <Max>136</Max>
+      <HP>0</HP>
+      <MP>-50</MP>
+    </Level>
+    
   </Projectile>
 </root>

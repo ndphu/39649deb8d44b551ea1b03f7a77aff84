@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Skill id="0">
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+
+    <Level>
+      <Projectile>
+        <X>-32</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>32</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>0</X>
+        <Y>32</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>0</X>
+        <Y>-32</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+
+    <Level>
+      <Projectile>
+        <X>-1</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+      <Projectile>
+        <X>1</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+    
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+    
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>
+    
+  </Skill>
+</root>

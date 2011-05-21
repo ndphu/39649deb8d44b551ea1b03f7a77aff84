@@ -65,8 +65,26 @@ namespace TheReturnOfTheKing
             ((Projectile)_prototype[id]).StartObstacleY = int.Parse(_projectile.SelectSingleNode(@"StartObstacleY").InnerText);
             ((Projectile)_prototype[id]).ObstacleWidth = int.Parse(_projectile.SelectSingleNode(@"ObstacleWidth").InnerText);
             ((Projectile)_prototype[id]).ObstacleHeight = int.Parse(_projectile.SelectSingleNode(@"ObstacleHeight").InnerText);
-            ((Projectile)_prototype[id]).DPL = int.Parse(_projectile.SelectSingleNode(@"DamagePerLevel").InnerText);
-            ((Projectile)_prototype[id]).DPS = int.Parse(_projectile.SelectSingleNode(@"StartingDamage").InnerText);
+            ((Projectile)_prototype[id]).Level = 1;
+            ((Projectile)_prototype[id]).ListLevel = new List<ProjectileInfo>();
+            XmlNodeList _levelList = _projectile.SelectNodes(@"Level");
+            for (int i = 0; i < _levelList.Count; ++i)
+            {
+                ((Projectile)_prototype[id]).ListLevel.Add(new ProjectileInfo
+                {
+                    MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"Min").InnerText),
+                    MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"Max").InnerText),
+                    Hp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText),
+                    Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText),
+                });
+            }
+
+            ((Projectile)_prototype[id]).HitFrames = new List<int>();
+            XmlNodeList _frameList = _projectile.SelectNodes(@"HitFrame");
+            for (int i = 0; i < _frameList.Count; ++i)
+            {
+                ((Projectile)_prototype[id]).HitFrames.Add(int.Parse(_frameList[i].InnerText));
+            }
             return true;
         }
     

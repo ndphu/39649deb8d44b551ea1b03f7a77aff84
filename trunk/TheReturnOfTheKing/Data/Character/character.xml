@@ -19,7 +19,8 @@
       <ContentName>img/character/kunkka/attack1/D</ContentName>
       <NumOfFrames>18</NumOfFrames>
       <XOffset>-92</XOffset>
-      <YOffset>-106</YOffset>
+      <YOffset>-101</YOffset>
+      <NDelay>3</NDelay>
     </Attack1>
     
     <Attack2>
@@ -27,6 +28,7 @@
       <NumOfFrames>19</NumOfFrames>
       <XOffset>-88</XOffset>
       <YOffset>-84</YOffset>
+      <NDelay>3</NDelay>
     </Attack2>
 
     <Dyed>
@@ -55,6 +57,7 @@
       <NumOfFrames>16</NumOfFrames>
       <XOffset>-34</XOffset>
       <YOffset>-88</YOffset>
+      <NDelay>2</NDelay>
     </Skill>
 
     <Stand>

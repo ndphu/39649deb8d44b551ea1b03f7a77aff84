@@ -182,7 +182,14 @@ namespace TheReturnOfTheKing
                 sprite[i] = new GameSprite(textures, 0, 0);
                 sprite[i].Xoffset = xoffset;
                 sprite[i].Yoffset = yoffset;
-                sprite[i].NDelay = 3;
+                try
+                {
+                    sprite[i].NDelay = int.Parse(node.SelectSingleNode(@"NDelay").InnerText);
+                }
+                catch
+                {
+                    sprite[i].NDelay = 3;
+                }
             }
             return sprite;
         }
