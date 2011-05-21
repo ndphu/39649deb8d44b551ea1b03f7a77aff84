@@ -7520,6 +7520,7 @@ Data\monster\Monster.xml
 Data\MapObstacle\MapObstacle.xml
 Data\Portral\Portral.xml
 Data\Projectile\projectile.xml
+Data\Skill\skill.xml
 Data\XML\buttonmanager.xml
 Data\XML\gamecursor.xml
 Data\XML\gametitle.xml

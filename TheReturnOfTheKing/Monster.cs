@@ -156,7 +156,7 @@ namespace TheReturnOfTheKing
                 }           
             }
 
-            if (IsAttacking)
+            if (IsAttacking && Target != null)
             {
                 if (_sprite[Dir].Itexture2D == HitFrame && _sprite[Dir].Check == 0)
                     this.Hit();
@@ -174,9 +174,11 @@ namespace TheReturnOfTheKing
             }
             for (int i = 0; i < Owner._listProjectile.Count; ++i)
             {
-                if (Owner._listProjectile[i].IsCollisionWith(this))
+                Projectile temp = Owner._listProjectile[i];
+                if (temp.IsCollisionWith(this) && temp.HitFrames.Contains(temp._sprite[0].Itexture2D))
                 {
-                    this.BeHit(Owner._listProjectile[i].DPS);
+                    Random r = new Random();
+                    this.BeHit(r.Next(temp.ListLevel[temp.Level].MinDamage, temp.ListLevel[temp.Level].MaxDamage));
                 }
             }
 

@@ -31,7 +31,7 @@
   <Class Name="TheReturnOfTheKing.Character" Collapsed="true">
     <Position X="22" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BBQAQBDCAJgISgAgECILiCEFQoAEAgeIBEoIDwAAYkA=</HashCode>
+      <HashCode>BBQAwBDCAJgISgAgECILiCEFQoAEAgeIBEoILwAAYkA=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -108,7 +108,7 @@
   <Class Name="TheReturnOfTheKing.GlobalVariables" Collapsed="true">
     <Position X="30.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAiIQABUgAAAAAAEAAAAABAABAAABACAAIAgAIIAA=</HashCode>
+      <HashCode>AAAAiIQABUggAAAAAEAAAAABAABAAABACAAIAgAIIIA=</HashCode>
       <FileName>GlobalVariables.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -129,7 +129,7 @@
   <Class Name="TheReturnOfTheKing.Map" Collapsed="true">
     <Position X="26.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwQQIQAAgAEBglCASAAAAIAACBAhCEBAAEACIQCAABA=</HashCode>
+      <HashCode>AwQQoQCAgAEBglCASAAAAIAACBAhCEBAAEACIQCAABA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -206,7 +206,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="22" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QBQAAIAICAgAAgAECCJACAEAAkAAEAEAAAAAAAQAABA=</HashCode>
       <FileName>PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -311,7 +311,7 @@
   <Class Name="TheReturnOfTheKing.Portral" Collapsed="true">
     <Position X="31.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAABAAAAAACAAAAAAAAgACAAAAAAEAAAAAAAAYBA=</HashCode>
+      <HashCode>AAQEgADAAAAAACAAAAAAAAgACAAAAAAEAAAAAAAAYBA=</HashCode>
       <FileName>Portral.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -325,7 +325,7 @@
   <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
     <Position X="34" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAABEAAgAAAAAAAAAAAAAYBA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAAAAACAAAQACAAAAAAABAAAAAAAAYBQ=</HashCode>
       <FileName>Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -341,6 +341,48 @@
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAgAAgAAACAAAAAAAgAAAAEAAAAAAAAAABA=</HashCode>
       <FileName>Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Skill" Collapsed="true">
+    <Position X="36.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAQCCAAAAAAABAAAABAAAABA=</HashCode>
+      <FileName>Skill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.ActiveSkill" Collapsed="true">
+    <Position X="35.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActiveSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.PassiveSkill" Collapsed="true">
+    <Position X="38.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PassiveSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.ProjectileInfo" Collapsed="true">
+    <Position X="36.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAgAABAAAAAAAAAAAAAAACCAAgAAAACAAAQgA=</HashCode>
+      <FileName>ProjectileInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.SkillManager" Collapsed="true">
+    <Position X="25.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>SkillManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.SkillLevel" Collapsed="true">
+    <Position X="35" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

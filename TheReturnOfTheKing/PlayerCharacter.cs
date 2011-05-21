@@ -15,6 +15,23 @@ namespace TheReturnOfTheKing
 {
     public class PlayerCharacter : Character
     {
+
+        Skill _leftHandSkill;
+
+        public Skill LeftHandSkill
+        {
+            get { return _leftHandSkill; }
+            set { _leftHandSkill = value; }
+        }
+
+        Skill _rightHandSkill;
+
+        public Skill RightHandSkill
+        {
+            get { return _rightHandSkill; }
+            set { _rightHandSkill = value; }
+        }
+
         /// <summary>
         /// Điểm kinh nghiệm
         /// </summary>
@@ -189,22 +206,30 @@ namespace TheReturnOfTheKing
         
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            base.Draw(gameTime, sb);
-            if (IsAttacking)
-            {
-                if (_sprite[Dir].Itexture2D == HitFrame && _sprite[Dir].Check == 0)
-                    this.Hit();
-            }
-            
-            
+            base.Draw(gameTime, sb);            
         }
         float targetSkillX = 0;
         float targetSkillY = 0;
-        bool throwProjectile = false;
+        bool waitToSkill = false;
         public override void Update(GameTime gameTime)
         {
            
             base.Update(gameTime);
+            if (IsAttacking)
+            {
+                if (_sprite[Dir].Itexture2D == HitFrame && _sprite[Dir].Check == 0)
+                    this.Hit();
+                if (_sprite[Dir].Itexture2D == _sprite[Dir].Ntexture2D - 1)
+                {
+                    Random r = new Random();
+                    int rate = r.Next(0, 100);
+                    if (rate < this.CriticalRate)
+                        State = 16;
+                    else
+                        State = 24;
+                    UpdateDirection(this.X, this.Y);
+                }
+            }
             if (IsMoving)
             {   
                 if (this.Y == DestPoint.Y && this.X < DestPoint.X)
@@ -268,11 +293,11 @@ namespace TheReturnOfTheKing
             if (ms.RightButton == ButtonState.Pressed && ms.LeftButton == ButtonState.Released && !IsCasting)
             {
                 IsCasting = true;
-                throwProjectile = true;
+                waitToSkill = true;
                 Target = null;
                 CellToMove = new List<Point>();
                 DestPoint = new Point((int)this.X, (int)this.Y);
-                UpdateCastingDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
+                UpdateDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
                 targetSkillX = GlobalVariables.GameCursor.X;
                 targetSkillY = GlobalVariables.GameCursor.Y;
             }
@@ -317,51 +342,35 @@ namespace TheReturnOfTheKing
             }
         }
 
-        private void UpdateCastingDirection(float mX, float mY)
-        {
-            Vector2 _v1, _v2, _v3;
-            _v1 = new Vector2(mX - X, mY - Y    );
-            _v2 = new Vector2(1,0);
-            _v3 = _v1 * _v2;
-            float _angle = MathHelper.ToDegrees((float)Math.Acos(_v3.Length() / (_v1.Length() * _v2.Length())));
-
-            if (0 <= _angle && _angle < 22.5)
-                if (mX < X)
-                    Dir = 4;
-                else
-                    Dir = 0;
-            if (22.5 <= _angle && _angle < 67.5)
-            {
-                if (mX > X && mY < Y)
-                    Dir = 1;
-                if (mX < X && mY < Y)
-                    Dir = 3;
-                if (mX < X && mY > Y)
-                    Dir = 5;
-                if (mX > X && mY > Y)
-                    Dir = 7;
-            }
-
-            if (67.5 < _angle && _angle <= 90)
-                if (mY < Y)
-                    Dir = 2;
-                else
-                    Dir = 6;
-            if (Dir < 8)
-            Dir += State;
-        }
-
         private void ThrowProjectile()
         {
-            if (throwProjectile && IsCasting)
+            if (waitToSkill && IsCasting)
             {
-                Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(0);
-                prjt.X = targetSkillX;
-                prjt.Y = targetSkillY;
-                Owner._listProjectile.Add(prjt);
-                throwProjectile = false;
-                
+                if (RightHandSkill != null)
+                {
+                    SkillLevel skillLevel = RightHandSkill.ListLevel[RightHandSkill.Level];
+                    for (int i = 0; i < skillLevel.ListSkillInfo.Count; ++i)
+                    {
+                        SkillInfo skillInfo = skillLevel.ListSkillInfo[i];
+                        Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(skillInfo.Type);
+                        prjt.X = targetSkillX + skillInfo.X;
+                        prjt.Y = targetSkillY + skillInfo.Y;
+                        Owner._listProjectile.Add(prjt);
+                        ProjectileInfo projectileInfo = prjt.ListLevel[prjt.Level];
+                        this.Hp += projectileInfo.Hp;
+                        this.Mp += projectileInfo.Mp;
+                    }
+                }
+                waitToSkill = false;
             }
+        }
+
+        public override void Hit()
+        {
+            if (State == 16)
+                Target.BeHit(Attack * 2);
+            else
+                Target.BeHit(Attack);
         }
         
     }

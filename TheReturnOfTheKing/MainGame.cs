@@ -100,7 +100,7 @@ namespace TheReturnOfTheKing
             ((StateLoading)_gameState).GetDataLoading(Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
             _gameState.EnterState();*/
 
-            int nObjectManager = 7;
+            int nObjectManager = 8;
             GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
 
             objectManagerArray[1] = new MapManager(@"Data\Map\map.xml");
@@ -110,6 +110,7 @@ namespace TheReturnOfTheKing
             objectManagerArray[4] = new PortralManager(@"Data\Portral\Portral.xml");
             objectManagerArray[5] = new MapObstacleManager(@"Data\MapObstacle\MapObstacle.xml");
             objectManagerArray[6] = new ProjectileManager(@"Data\Projectile\Projectile.xml");
+            objectManagerArray[7] = new SkillManager(@"Data\Skill\Skill.xml");
 
            
             GameState = new StateLoading();

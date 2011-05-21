@@ -34,6 +34,7 @@ namespace TheReturnOfTheKing
             _char = (PlayerCharacter)objectManagerArray[0].CreateObject(0);
             _char.SetMap(_map);
             _char.Owner = this;
+            _char.RightHandSkill = (Skill)((SkillManager)objectManagerArray[7]).CreateObject(0);
             _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
             _frog = new Frog();
