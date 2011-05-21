@@ -16,14 +16,43 @@ namespace TheReturnOfTheKing
     public class Skill : VisibleGameEntity
     {
         /// <summary>
-        /// Hinh anh dai dien cho skill
+        /// Player ra chiêu
         /// </summary>
-        Texture2D _skillIcon;
+        PlayerCharacter _playerOwner;
 
-        public Texture2D SkillIcon
+        public PlayerCharacter PlayerOwner
         {
-            get { return _skillIcon; }
-            set { _skillIcon = value; }
+            get { return _playerOwner; }
+            set { _playerOwner = value; }
+        }
+
+        bool _isEffected;
+
+        public bool IsEffected
+        {
+            get { return _isEffected; }
+            set { _isEffected = value; }
+        }
+
+        /// <summary>
+        /// Hinh anh dai dien cho skill (64x64)
+        /// </summary>
+        Texture2D _skillIconL;
+
+        public Texture2D SkillIconL
+        {
+            get { return _skillIconL; }
+            set { _skillIconL = value; }
+        }
+        /// <summary>
+        /// Hinh anh dai dien cho skill (32x32)
+        /// </summary>
+        Texture2D _skillIconS;
+
+        public Texture2D SkillIconS
+        {
+            get { return _skillIconS; }
+            set { _skillIconS = value; }
         }
 
         int _level = 0;
@@ -50,9 +79,19 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIcon = this.SkillIcon,
+                SkillIconL = this.SkillIconL,
             };
         }
 
+        public virtual void DoEffect(VisibleGameEntity _object)
+        {
+            
+        }
+
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
+        {
+            base.Draw(gameTime, sb);
+
+        }
     }
 }

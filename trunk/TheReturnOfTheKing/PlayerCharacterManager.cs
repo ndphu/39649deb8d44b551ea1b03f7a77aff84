@@ -101,7 +101,7 @@ namespace TheReturnOfTheKing
                 ((PlayerCharacter)_prototype[id]).CastFrame = int.Parse(_char.SelectSingleNode(@"CastFrame").InnerText);
                 ((PlayerCharacter)_prototype[id]).MaxHp = int.Parse(_char.SelectSingleNode(@"MaxHp").InnerText);
                 ((PlayerCharacter)_prototype[id]).MaxMp = int.Parse(_char.SelectSingleNode(@"MaxMp").InnerText);
-
+                
                 return true;
             }
             catch

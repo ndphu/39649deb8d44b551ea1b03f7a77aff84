@@ -84,11 +84,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveSkill.cs" />
     <Compile Include="BackgroundManager.cs" />
     <Compile Include="ButtonManger.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterManager.cs" />
+    <Compile Include="CleavingAttackSkill.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="Frog.cs" />
@@ -116,7 +116,6 @@
     <Compile Include="NonPlayerCharacter.cs" />
     <Compile Include="NonPlayerCharacterManager.cs" />
     <Compile Include="MapObstacleManager.cs" />
-    <Compile Include="PassiveSkill.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="PlayerCharacterManager.cs" />
     <Compile Include="Portral.cs" />
