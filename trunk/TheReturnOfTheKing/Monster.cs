@@ -177,11 +177,10 @@ namespace TheReturnOfTheKing
                     this.Hit();
             }
 
-            MouseState ms = Mouse.GetState();
             if (FocusRect.Contains((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y))
             {   
                 GlobalVariables.GameCursor.IsAttack = true;
-                if (ms.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
+                if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
                 {
                     Owner._char.Target = this;
                     GlobalVariables.AlreadyUseLeftMouse = true;

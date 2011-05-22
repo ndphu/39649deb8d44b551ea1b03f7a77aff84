@@ -317,9 +317,9 @@ namespace TheReturnOfTheKing
                                                     GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
                                             }
             }
-            MouseState ms = Mouse.GetState();
+            
            
-            if (ms.RightButton == ButtonState.Pressed && ms.LeftButton == ButtonState.Released && !IsCasting)
+            if (GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
             {
                 IsCasting = true;
                 waitToCast = true;
@@ -351,9 +351,9 @@ namespace TheReturnOfTheKing
                 IsStanding = true;
             }
 
-            if (ms.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
+            if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
             {
-                if (ms.X < GlobalVariables.ScreenWidth && ms.Y < GlobalVariables.ScreenHeight && ms.X >= 0 && ms.Y >= 0)
+                if (GlobalVariables.CurrentMouseState.X < GlobalVariables.ScreenWidth && GlobalVariables.CurrentMouseState.Y < GlobalVariables.ScreenHeight && GlobalVariables.CurrentMouseState.X >= 0 && GlobalVariables.CurrentMouseState.Y >= 0)
                 {
                     if (this.Target != null)
                     {
@@ -366,7 +366,7 @@ namespace TheReturnOfTheKing
                     if (Owner._map.Matrix[newCell.Y][newCell.X] == true)
                         Owner._char.CellToMove = Utility.FindPath(Owner._map.Matrix, Owner._map.PointToCell(new Point((int)this.X, (int)this.Y)), newCell);
                     IsMoving = true;
-                    //GlobalVariables.AlreadyUseLeftMouse = true;
+                    GlobalVariables.AlreadyUseLeftMouse = true;
                 }
             }
 
