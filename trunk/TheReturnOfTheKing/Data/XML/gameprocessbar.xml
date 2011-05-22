@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <ProcessBar id="0">
+    <AnimateProcessBar>img/misc/processbar/bloodprocessbar/Animate</AnimateProcessBar>
+    <StandingProcessBar>img/misc/processbar/bloodprocessbar/Standing</StandingProcessBar>
+
+    <StartAnimate>90</StartAnimate>
+    <EndAnimate>10</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Up</Direction>
+
+    <X>0</X>
+    <Y>0</Y>
+
+    <Width>115</Width>
+    <Height>105</Height>
+  </ProcessBar>
+
+  <ProcessBar id="1">
+    <AnimateProcessBar>img/misc/processbar/manaprocessbar/Animate</AnimateProcessBar>
+    <StandingProcessBar>img/misc/processbar/manaprocessbar/Standing</StandingProcessBar>
+
+    <StartAnimate>90</StartAnimate>
+    <EndAnimate>10</EndAnimate>
+
+    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
+    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
+    <Direction>Up</Direction>
+
+    <X>685</X>
+    <Y>0</Y>
+
+    <Width>115</Width>
+    <Height>105</Height>
+  </ProcessBar>
+</root>

@@ -37893,13 +37893,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="img\misc\menubar\menubar.png">
-      <Name>menubar</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="img\skillicon\large\cleaving_attack.png">
       <Name>cleaving_attack</Name>
       <Importer>TextureImporter</Importer>
@@ -37957,6 +37950,38 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="img\misc\processbar\bloodprocessbar\Animate.png">
+      <Name>Animate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\misc\processbar\bloodprocessbar\Standing.png">
+      <Name>Standing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\misc\processbar\manaprocessbar\Animate.png">
+      <Name>Animate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\misc\processbar\manaprocessbar\Standing.png">
+      <Name>Standing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\healthbar\healthbarmainframe.png">
+      <Name>healthbarmainframe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\item\" />
     <Folder Include="snd\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -15,7 +15,7 @@
     <HitFrame>7</HitFrame>
     <CastFrame>11</CastFrame>
     <Sight>150</Sight>
-    
+    <ChangeToDodge>25</ChangeToDodge>
     <Attack1>
       <ContentName>img/character/kunkka/attack1/D</ContentName>
       <NumOfFrames>18</NumOfFrames>

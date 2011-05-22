@@ -50,6 +50,7 @@ namespace TheReturnOfTheKing
                 Sight = this.Sight,
                 MaxHp = this.MaxHp,
                 MaxMp = this.MaxMp,
+                ChangeToDodge = this.ChangeToDodge,
             };
         }
 
@@ -191,7 +192,7 @@ namespace TheReturnOfTheKing
             {
                 if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner))
                 {
-                    Random r = new Random();
+                    Random r = new Random((int)DateTime.Now.Ticks);
                     this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
                     this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
                 }

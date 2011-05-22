@@ -88,6 +88,7 @@ namespace TheReturnOfTheKing
             ((Monster)_prototype[id]).Sight = int.Parse(_monster.SelectSingleNode(@"Sight").InnerText);
             ((Monster)_prototype[id]).MaxHp = int.Parse(_monster.SelectSingleNode(@"MaxHp").InnerText);
             ((Monster)_prototype[id]).MaxMp = int.Parse(_monster.SelectSingleNode(@"MaxMp").InnerText);
+            ((Monster)_prototype[id]).ChangeToDodge = int.Parse(_monster.SelectSingleNode(@"ChangeToDodge").InnerText);
             return true;
         }
     }

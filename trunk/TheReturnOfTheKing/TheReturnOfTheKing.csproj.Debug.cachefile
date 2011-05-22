@@ -7510,8 +7510,6 @@ Content\img\skill\skill15\D01.xnb
 Content\img\skill\skill15\D02.xnb
 Content\img\skill\skill15\D03.xnb
 Content\img\skill\skill15\D04.xnb
-Content\sf.xnb
-Content\img\misc\menubar\menubar.xnb
 Content\img\skillicon\large\cleaving_attack.xnb
 Content\img\skillicon\large\critical_attack.xnb
 Content\img\skillicon\medium\cleaving_attack.xnb
@@ -7521,7 +7519,14 @@ Content\img\skillicon\small\critical_attack.xnb
 Content\img\skillicon\large\normal_attack.xnb
 Content\img\skillicon\medium\normal_attack.xnb
 Content\img\skillicon\small\normal_attack.xnb
+Content\img\misc\processbar\bloodprocessbar\Animate.xnb
+Content\img\misc\processbar\bloodprocessbar\Standing.xnb
+Content\img\misc\processbar\manaprocessbar\Animate.xnb
+Content\img\misc\processbar\manaprocessbar\Standing.xnb
+Content\img\healthbar\healthbarmainframe.xnb
+Content\sf.xnb
 Data\Character\character.xml
+Data\item\item.xml
 Data\Map\map01\map01.txt
 Data\Map\map.xml
 Data\Map\map01\map01_monster.xml
@@ -7538,8 +7543,12 @@ Data\Projectile\projectile.xml
 Data\Skill\skill.xml
 Data\XML\buttonmanager.xml
 Data\XML\gamecursor.xml
+Data\XML\gameframe.xml
+Data\XML\gameprocessbar.xml
 Data\XML\gametitle.xml
+Data\XML\healthbar.xml
 Data\XML\loadingprocessbar.xml
 Data\XML\loadingtomenu.xml
 Data\XML\menubg.xml
 Data\XML\menuframe.xml
+Data\XML\standingbutton.xml

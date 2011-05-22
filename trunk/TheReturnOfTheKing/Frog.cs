@@ -24,6 +24,15 @@ namespace TheReturnOfTheKing
             get { return _character; }
             set { _character = value; }
         }
+
+        HealthBar _healthBar;
+
+        public HealthBar HealthBar
+        {
+            get { return _healthBar; }
+            set { _healthBar = value; }
+        }
+
         public override float X
         {
             get
@@ -57,19 +66,14 @@ namespace TheReturnOfTheKing
         Texture2D _normalAttackRight;
         public override void Init(ContentManager content)
         {
-            _nsprite = 2;
+            /*_nsprite = 2;
             _sprite = new GameSprite[_nsprite];
             _sprite[0] = new GameSprite(content.Load<Texture2D>("img/misc/frog/frog"), 0, 0);
             _sprite[1] = new GameSprite(content.Load<Texture2D>("img/misc/menubar/menubar"), 0, GlobalVariables.ScreenHeight - 105);
             _normalAttackLeft = content.Load<Texture2D>("img/skillicon/medium/normal_attack");
             _normalAttackRight = content.Load<Texture2D>("img/skillicon/medium/normal_attack");
             sf = content.Load<SpriteFont>("sf");
-            GlobalVariables.Sf = sf;
-        }
-
-        public void InitProcessBar(ProcessBarManager processbarManager)
-        {
-
+            GlobalVariables.Sf = sf;*/
         }
 
         public void SetCharacter(PlayerCharacter _char)
@@ -79,16 +83,16 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            X = _character.X - GlobalVariables.ScreenWidth;
-            Y = _character.Y - GlobalVariables.ScreenHeight;
-            
+            //base.Update(gameTime);
+            /*X = _character.X - GlobalVariables.ScreenWidth;
+            Y = _character.Y - GlobalVariables.ScreenHeight;*/
+            _healthBar.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             //base.Draw(gameTime, sb);
-            sb.Draw(_sprite[0].Texture2D[0], new Vector2(X + GlobalVariables.dX, Y + GlobalVariables.dY), Color.White);
+            /*sb.Draw(_sprite[0].Texture2D[0], new Vector2(X + GlobalVariables.dX, Y + GlobalVariables.dY), Color.White);
             sb.Draw(_sprite[1].Texture2D[0], new Vector2(0, GlobalVariables.ScreenHeight - 105), Color.White);
             
             sb.DrawString(sf, "HP: " + _character.Hp.ToString(), new Vector2(0, 20), Color.Red);
@@ -107,7 +111,8 @@ namespace TheReturnOfTheKing
                 sb.DrawString(sf, "HP: " + _character.Target.Hp.ToString(), new Vector2(700, 20), Color.Red);
                 sb.DrawString(sf, "MP: " + _character.Target.Mp.ToString(), new Vector2(700, 45), Color.Blue);
                 //sb.DrawString(sf, "XP: " + _character.Target.Xp.ToString(), new Vector2(750, 70), Color.White);
-            }
+            }*/
+            _healthBar.Draw(gameTime, sb);
         }
     }
 }

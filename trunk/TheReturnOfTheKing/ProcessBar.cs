@@ -118,6 +118,9 @@ namespace TheReturnOfTheKing
                     }
                 case "Up":
                     {
+                        int offSet = _xStartAnimatePro - ((int)((XStartAnimatePro - _xEndAnimatePro) * _rateToDraw));
+                        _recToDraw = new Rectangle(0, offSet, (int)_width, (int)(_height - offSet));
+                        _pointToDraw = new Vector2(_x, _y + offSet);
                         break;
                     }
                 case "Down":
@@ -130,13 +133,16 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            if (_nsprite > 1)
+            if (_direction == "Up")
+            {
+                sb.Draw(_sprite[1].Texture2D[0], new Vector2(X, Y), Color.White);
+                sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
+            }
+            else
             {
                 sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
                 sb.Draw(_sprite[1].Texture2D[0], new Vector2(X, Y), Color.White);
             }
-            else
-                sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
         }
     }
 }
