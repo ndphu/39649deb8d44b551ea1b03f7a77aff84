@@ -15,7 +15,30 @@ namespace TheReturnOfTheKing
 {
     public class PlayerCharacter : Character
     {
+        /// <summary>
+        /// Danh sách các item có trong túi đồ
+        /// </summary>
+        List<Item> _bag = new List<Item>();
 
+        public List<Item> Bag
+        {
+            get { return _bag; }
+            set { _bag = value; }
+        }
+        /// <summary>
+        /// Danh sách các item đang mặc trên người
+        /// </summary>
+        List<Item> _equipped = new List<Item>();
+
+        public List<Item> Equipped
+        {
+            get { return _equipped; }
+            set { _equipped = value; }
+        }
+
+        /// <summary>
+        /// Skill tay trái, sẽ được kích hoạt khi người dùng click chuột trái lên một target nào đó
+        /// </summary>
         Skill _leftHandSkill;
 
         public Skill LeftHandSkill
@@ -23,7 +46,9 @@ namespace TheReturnOfTheKing
             get { return _leftHandSkill; }
             set { _leftHandSkill = value; }
         }
-
+        /// <summary>
+        /// Skill tay phải, sẽ được kích hoạt khi người dùng click chuột phải lên một vị trí nào đó trên bảng đồ
+        /// </summary>
         Skill _rightHandSkill;
 
         public Skill RightHandSkill
@@ -203,7 +228,7 @@ namespace TheReturnOfTheKing
                 CastFrame = this.CastFrame,
                 MaxHp = this.MaxHp,
                 MaxMp = this.MaxMp,
-                
+                ChangeToDodge = this.ChangeToDodge,
             };
         }
         
@@ -250,7 +275,7 @@ namespace TheReturnOfTheKing
                     this.Hit();
                 if (_sprite[Dir].Itexture2D == 0)
                 {
-                    Random r = new Random();
+                    Random r = new Random((int)DateTime.Now.Ticks);
                     int rate = r.Next(0, 100);
                     if (rate < this.CriticalRate || LeftHandSkill != null)
                         State = 16;
@@ -457,7 +482,7 @@ namespace TheReturnOfTheKing
 
         public override void Hit()
         {
-            Random r = new Random();
+            Random r = new Random((int)DateTime.Now.Ticks);
             int Damage = r.Next(MinDamage, MaxDamage);
             if (State == 16)
             {
@@ -469,6 +494,15 @@ namespace TheReturnOfTheKing
             else
                 Target.BeHit(Damage);
         }
-        
+        public void UpdateEquippedItemṣ̣()
+        {
+            for (int i = 0; i < _equipped.Count; ++i)
+            {
+                if (_equipped[i] != null)
+                {
+
+                }
+            }
+        }
     }
 }

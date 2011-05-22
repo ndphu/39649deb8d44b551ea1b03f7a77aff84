@@ -37,10 +37,33 @@ namespace TheReturnOfTheKing
             
             _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
+
             _frog = new Frog();
-            _frog.Init(Owner.Content);
-            _frog.InitProcessBar((ProcessBarManager)objectManagerArray[3]);
             _frog.SetCharacter(_char);
+            HealthBar _temp = (HealthBar)objectManagerArray[8].CreateObject(0);
+            _temp.MainFrame = new HealthBarMainFrame((GameFrame)objectManagerArray[9].CreateObject(0));
+            _temp.BloodProcessbar = (ProcessBar)objectManagerArray[10].CreateObject(0);
+            _temp.ManaProcessbar = (ProcessBar)objectManagerArray[10].CreateObject(1);
+            _temp.Owner = (Frog)_frog;
+
+            StandingButton _tempLeftSkill = (StandingButton)objectManagerArray[11].CreateObject(0);
+            _tempLeftSkill.Owner = _temp;
+            _temp.LeftSkillButon = new LeftSkillButton(_tempLeftSkill);
+
+            StandingButton _tempRightSkill = (StandingButton)objectManagerArray[11].CreateObject(1);
+            _tempRightSkill.Owner = _temp;
+            _temp.RightSkillButton = new RightSkillButton(_tempRightSkill);
+
+            StandingButton _tempLeftCommandButton = (StandingButton)objectManagerArray[11].CreateObject(2);
+            _tempLeftCommandButton.Owner = _temp;
+            _temp.LeftCommandButton = new LeftCommandButton(_tempLeftCommandButton);
+
+            StandingButton _tempRightCommandButton = (StandingButton)objectManagerArray[11].CreateObject(3);
+            _tempRightCommandButton.Owner = _temp;
+            _temp.RightCommandButton = new RightCommandButton(_tempRightCommandButton);
+
+            _frog.HealthBar = new HealthBar(_temp);
+
             _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
             _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
             _objectManagerArray = objectManagerArray;

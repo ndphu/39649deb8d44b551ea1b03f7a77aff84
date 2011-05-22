@@ -59,7 +59,7 @@
   <Class Name="TheReturnOfTheKing.Frog" Collapsed="true">
     <Position X="4.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAgAAkAAAAAAAAAAAAAAAAAAAAACAASAaAA=</HashCode>
+      <HashCode>AAQAAAAAAAgAIkAAAAAAAAAAAAAAAQAAAAACAASAaAA=</HashCode>
       <FileName>Frog.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -108,14 +108,14 @@
   <Class Name="TheReturnOfTheKing.GlobalVariables" Collapsed="true">
     <Position X="40" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAiIQABUggAAAAAEAAAAABAABAAABACAAIAgAIIIA=</HashCode>
+      <HashCode>AAABiMQABUggAAAAAEAAAAABAABAARBACAAIEgAKKIA=</HashCode>
       <FileName>GlobalVariables.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.KeyboardObserver" Collapsed="true">
     <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>KeyboardObserver.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -141,7 +141,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.MapObstacle" Collapsed="true">
-    <Position X="26.75" Y="6.25" Width="1.5" />
+    <Position X="25.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAYBA=</HashCode>
       <FileName>MapObstacle.cs</FileName>
@@ -206,7 +206,7 @@
   <Class Name="TheReturnOfTheKing.MouseObserver" Collapsed="true">
     <Position X="2.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MouseObserver.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -227,7 +227,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="20" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QBQAAIAICAgAAgAECCJACQEAAgAEAAEBgAAAAABAABA=</HashCode>
+      <HashCode>QBQAAIAICAgAAgAECCJACQESAgAEAAEBgAAAAAFAABA=</HashCode>
       <FileName>PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -274,7 +274,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
-    <Position X="29" Y="6.25" Width="1.5" />
+    <Position X="29.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAgAAAAAAAACAACAAAAAACCAAgAAAQAAAAYBQ=</HashCode>
       <FileName>Projectile.cs</FileName>
@@ -297,21 +297,21 @@
   <Class Name="TheReturnOfTheKing.Skill" Collapsed="true">
     <Position X="17.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAMCAAACAQAgAAACAAAQUCAAAAAACBAAQgAEAAABA=</HashCode>
+      <HashCode>AAAAMCABACAQAgAAACAAAQUCAAAAAACBAAwgAEAAABA=</HashCode>
       <FileName>Skill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillInfo" Collapsed="true">
     <Position X="38.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAQAAIAAQAAAQAAAQAAAAAAAAAAAAAAQAACAAAYgA=</HashCode>
+      <HashCode>AEAAQAAIgAQAAAQAAAQAAAAAAAACCAAgAQAACAAAYgA=</HashCode>
       <FileName>SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillLevel" Collapsed="true">
     <Position X="40" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -390,6 +390,42 @@
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>CriticalAttackSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Item" Collapsed="true">
+    <Position X="27.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAAAgAAAAAAAAASAkAAAAAACCAEoBAAAAAAAAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.ItemManager" Collapsed="true">
+    <Position X="33.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ItemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.EquipItem" Collapsed="true">
+    <Position X="26.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquipItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.Portion" Collapsed="true">
+    <Position X="28.5" Y="7.75" Width="1.5" />
+    <InheritanceLine Type="TheReturnOfTheKing.Item" ManuallyRouted="true">
+      <Path>
+        <Point X="28.25" Y="6.941" />
+        <Point X="28.25" Y="7.375" />
+        <Point X="29.25" Y="7.375" />
+        <Point X="29.25" Y="7.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Portion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

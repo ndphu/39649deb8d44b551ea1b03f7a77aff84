@@ -15,6 +15,7 @@
     <Range>32</Range>
     <HitFrame>12</HitFrame>
     <Sight>150</Sight>
+    <ChangeToDodge>15</ChangeToDodge>
     <Stand>
       <ContentName>img/character/fallenangel/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -61,6 +62,7 @@
     <Range>32</Range>
     <HitFrame>12</HitFrame>
     <Sight>100</Sight>
+    <ChangeToDodge>15</ChangeToDodge>
     <Stand>
       <ContentName>img/character/demon/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -107,6 +109,7 @@
     <Range>32</Range>
     <HitFrame>10</HitFrame>
     <Sight>128</Sight>
+    <ChangeToDodge>50</ChangeToDodge>
     <Stand>
       <ContentName>img/character/zombie/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>

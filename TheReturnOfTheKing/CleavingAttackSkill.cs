@@ -118,7 +118,7 @@ namespace TheReturnOfTheKing
                 Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].Type);
                 prjt.X = _listProjectileTarget[i].X;
                 prjt.Y = _listProjectileTarget[i].Y;
-                Random r = new Random();
+                Random r = new Random((int)DateTime.Now.Ticks);
                
                 prjt.MinDamage = PlayerOwner.MinDamage + PlayerOwner.MinDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;
                 prjt.MaxDamage = PlayerOwner.MaxDamage + PlayerOwner.MaxDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;

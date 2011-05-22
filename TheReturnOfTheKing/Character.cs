@@ -86,6 +86,16 @@ namespace TheReturnOfTheKing
             get { return _maxMp; }
             set { _maxMp = value; }
         }
+        /// <summary>
+        /// Tỉ lệ né đòn
+        /// </summary>
+        int _changeToDodge;
+
+        public int ChangeToDodge
+        {
+            get { return _changeToDodge; }
+            set { _changeToDodge = value; }
+        }
 
         /// <summary>
         /// Bán kính tấn công
@@ -660,7 +670,7 @@ namespace TheReturnOfTheKing
         {
             if (Target == null)
                 return;
-            Random r = new Random();
+            Random r = new Random((int)DateTime.Now.Ticks);
             int Damage = r.Next(MinDamage, MaxDamage);            
             if (r.Next(0, 100) < this.CriticalRate)
                 Target.BeHit(Damage * 2);
@@ -670,8 +680,12 @@ namespace TheReturnOfTheKing
 
         public virtual void BeHit(int damage)
         {
-            Damage = Math.Min(-(damage - this.Defense),0);
-            Hp += Damage;
+            Random r = new Random((int)DateTime.Now.Ticks);
+            if (r.Next(0, 100) >= this.ChangeToDodge)
+            {
+                Damage = Math.Min(-(damage - this.Defense), 0);
+                Hp += Damage;
+            }
         }
     }
 }

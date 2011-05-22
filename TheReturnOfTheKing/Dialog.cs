@@ -15,9 +15,9 @@ namespace TheReturnOfTheKing
 {
     public abstract class Dialog : VisibleGameObject
     {
-        protected Dialog _owner;
+        protected VisibleGameObject _owner;
 
-        public Dialog Owner
+        public VisibleGameObject Owner
         {
             get { return _owner; }
             set { _owner = value; }

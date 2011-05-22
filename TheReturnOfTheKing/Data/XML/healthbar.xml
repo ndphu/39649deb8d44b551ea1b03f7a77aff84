@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <HealthBar id="0">
+    <X>0</X>
+    <Y>495</Y>
+    <Width>800</Width>
+    <Height>105</Height>
+  </HealthBar>
+</root>
