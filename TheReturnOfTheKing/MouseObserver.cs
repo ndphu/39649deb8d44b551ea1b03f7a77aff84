@@ -15,26 +15,21 @@ namespace TheReturnOfTheKing
 {
     public class MouseObserver : GameObjectObserver
     {
-        MouseState _oldState = new MouseState();
-
         public override void Update(GameTime gt)
         {
             if (Observers.Count > 0)
             {
-                MouseState _newState = Mouse.GetState();
-
                 for (int i = 0; i < Observers.Count; ++i)
                 {
-                    if (Observers[i].Rect.Contains(new Point(_newState.X, _newState.Y)))
+                    if (Observers[i].Rect.Contains(new Point(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y)))
                     {
                         Observers[i].MouseEnter(this);
-                        if (_oldState.LeftButton == ButtonState.Pressed && _newState.LeftButton == ButtonState.Released)
+                        if (GlobalVariables.PreviousMouseState.LeftButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released)
                             Observers[i].MouseClick(this);
                     }
                     else
                         Observers[i].MouseLeave(this);
                 }
-                _oldState = _newState;
             }
         }
     }

@@ -16,6 +16,9 @@ namespace TheReturnOfTheKing
 {
     public static class GlobalVariables
     {
+        /// <summary>
+        /// Delta X
+        /// </summary>
         private static float _dX;
 
         public static float dX
@@ -24,6 +27,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._dX = value; }
         }
 
+        /// <summary>
+        /// Delta Y
+        /// </summary>
         private static float _dY;
 
         public static float dY
@@ -32,6 +38,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._dY = value; }
         }
 
+        /// <summary>
+        /// Chiều rộng của màn hình
+        /// </summary>
         static int _screenWidth;
 
         public static int ScreenWidth
@@ -40,6 +49,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._screenWidth = value; }
         }
 
+        /// <summary>
+        /// Chiều cao của màn hình
+        /// </summary>
         static int _screenHeight;
 
         public static int ScreenHeight
@@ -56,6 +68,7 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._mouseObserver; }
             set { GlobalVariables._mouseObserver = value; }
         }
+        
 
         static KeyboardObserver _keyboardObserver;
 
@@ -65,6 +78,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._keyboardObserver = value; }
         }
 
+        /// <summary>
+        /// Kích thước của một ô tương tác
+        /// </summary>
         static float _mapCollisionDim;
 
         public static float MapCollisionDim
@@ -72,7 +88,10 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._mapCollisionDim; }
             set { GlobalVariables._mapCollisionDim = value; }
         }
-        
+
+        /// <summary>
+        /// Con trỏ chuột của game
+        /// </summary>
         static Cursor _gameCursor;
 
         public static Cursor GameCursor
@@ -89,6 +108,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables.sf = value; }
         }
 
+        /// <summary>
+        /// Biến kiểm tra có đối tượng nào đã dùng LeftMouse hay chưa
+        /// </summary>
         static bool _alreadyUseLeftMouse;
 
         public static bool AlreadyUseLeftMouse
@@ -97,6 +119,9 @@ namespace TheReturnOfTheKing
             set { GlobalVariables._alreadyUseLeftMouse = value; }
         }
 
+        /// <summary>
+        /// Biến kiểm tra đã có đối tượng nào dùng RightMouse hay chưa
+        /// </summary>
         static bool _alreadyUseRightMouse;
 
         public static bool AlreadyUseRightMouse
@@ -108,7 +133,9 @@ namespace TheReturnOfTheKing
         //Khai báo 2 biến mouse state
         //2 biến này sẽ được khai báo 'new' 1 lần trong hàm LoadContent của MainGame.cs
 
-        //MouseState hiện hành.
+        /// <summary>
+        /// MouseState của lần update hiện tại
+        /// </summary>
         static MouseState _currentMouseState;
 
         public static MouseState CurrentMouseState
@@ -116,14 +143,37 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._currentMouseState; }
             set { GlobalVariables._currentMouseState = value; }
         }
+        
+        /// <summary>
+        /// MouseState của lần update trước đó
+        /// </summary>
+        static MouseState _previousMouseState;
 
-        //MouseState trước đó. 
-        static MouseState _preMouseState;
-
-        public static MouseState PreMouseState
+        public static MouseState PreviousMouseState
         {
-            get { return GlobalVariables._preMouseState; }
-            set { GlobalVariables._preMouseState = value; }
+            get { return GlobalVariables._previousMouseState; }
+            set { GlobalVariables._previousMouseState = value; }
+        }
+
+        /// <summary>
+        /// KeyboarState của lần update hiện tại
+        /// </summary>
+        static KeyboardState _currentKeyboardState;
+
+        public static KeyboardState CurrentKeyboardState
+        {
+            get { return GlobalVariables._currentKeyboardState; }
+            set { GlobalVariables._currentKeyboardState = value; }
+        }
+        /// <summary>
+        /// KeyboardState của lần update trước.
+        /// </summary>
+        static KeyboardState _previousKeyboardState;
+
+        public static KeyboardState PreviousKeyboardState
+        {
+            get { return GlobalVariables._previousKeyboardState; }
+            set { GlobalVariables._previousKeyboardState = value; }
         }
     }
 }

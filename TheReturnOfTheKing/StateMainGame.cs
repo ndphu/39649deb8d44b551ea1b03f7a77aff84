@@ -61,7 +61,6 @@ namespace TheReturnOfTheKing
             float maxX = Math.Abs(GlobalVariables.dX) + GlobalVariables.ScreenWidth;
             float minY = Math.Abs(GlobalVariables.dY);
             float maxY = Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight;
-            MouseState ms = Mouse.GetState();
             GlobalVariables.GameCursor.IsIdle = true;
             GlobalVariables.AlreadyUseLeftMouse = false;
             GlobalVariables.AlreadyUseRightMouse = false;

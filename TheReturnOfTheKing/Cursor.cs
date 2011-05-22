@@ -134,12 +134,10 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
-            MouseState ms = Mouse.GetState();
-
             for (int i = 0; i < _nsprite; i++)
             {
-                X = ms.X - GlobalVariables.dX;
-                Y = ms.Y - GlobalVariables.dY;
+                X = GlobalVariables.CurrentMouseState.X - GlobalVariables.dX;
+                Y = GlobalVariables.CurrentMouseState.Y - GlobalVariables.dY;
             }
         }
 
