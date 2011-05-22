@@ -15,21 +15,6 @@ namespace TheReturnOfTheKing
 {
     public class KeyboardObserver : GameObjectObserver
     {
-        KeyboardState _oldState = new KeyboardState();
-
-        public override void Update(GameTime gt)
-        {
-            KeyboardState _newState = Keyboard.GetState();
-
-            for (int i = 0; i < Observers.Count; ++i)
-            {
-                foreach (Keys key in _oldState.GetPressedKeys())
-                {
-                    if (_newState.IsKeyUp(key))
-                        Observers[i].KeyUp(this, key);                    
-                }
-            }
-            _oldState = _newState;
-        }
+        
     }
 }

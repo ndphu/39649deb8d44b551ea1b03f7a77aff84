@@ -44,7 +44,6 @@ namespace TheReturnOfTheKing
             get { return _isEffected; }
             set { _isEffected = value; }
         }
-
         /// <summary>
         /// Hinh anh dai dien cho skill (64x64)
         /// </summary>
@@ -54,6 +53,17 @@ namespace TheReturnOfTheKing
         {
             get { return _skillIconL; }
             set { _skillIconL = value; }
+        }
+
+        /// <summary>
+        /// Hinh anh dai dien cho skill (48x48)
+        /// </summary>
+        Texture2D _skillIconM;
+
+        public Texture2D SkillIconM
+        {
+            get { return _skillIconM; }
+            set { _skillIconM = value; }
         }
         /// <summary>
         /// Hinh anh dai dien cho skill (32x32)
@@ -90,7 +100,7 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconL = this.SkillIconL,
+                SkillIconM = this.SkillIconM,
                 SkillIconS = this.SkillIconS,
             };
         }

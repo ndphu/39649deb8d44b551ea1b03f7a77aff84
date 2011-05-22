@@ -67,6 +67,9 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CleavingAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
+                        ((CleavingAttackSkill)_prototype[id]).SkillIconL = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconLarge").InnerText);
+                        ((CleavingAttackSkill)_prototype[id]).SkillIconM = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconMedium").InnerText);
+                        ((CleavingAttackSkill)_prototype[id]).SkillIconS = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconSmall").InnerText);
                     }
                     break;
                 case "Critical Attack":
@@ -88,6 +91,9 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CriticalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
+                        ((CriticalAttackSkill)_prototype[id]).SkillIconL = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconLarge").InnerText);
+                        ((CriticalAttackSkill)_prototype[id]).SkillIconM = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconMedium").InnerText);
+                        ((CriticalAttackSkill)_prototype[id]).SkillIconS = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconSmall").InnerText);
                     }
                     break;
                 default:

@@ -9,7 +9,7 @@
     <StartObstacleY>0</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
-    <HitFrame>3</HitFrame>
+    <HitFrame>2</HitFrame>
   </Projectile>
 
   <Projectile id="1">

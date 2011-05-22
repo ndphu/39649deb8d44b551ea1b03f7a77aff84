@@ -53,16 +53,32 @@ namespace TheReturnOfTheKing
             get { return _mp; }
             set { _mp = value; }
         }
+
+        int _minDamage;
+
+        public int MinDamage
+        {
+            get { return _minDamage; }
+            set { _minDamage = value; }
+        }
+
+        int _maxDamage;
+
+        public int MaxDamage
+        {
+            get { return _maxDamage; }
+            set { _maxDamage = value; }
+        }
     }
 
     public class SkillLevel
     {
-        List<SkillInfo> _listProjectileInSkillInfo;
+        List<SkillInfo> _listSkillInfo;
 
         public List<SkillInfo> ListSkillInfo
         {
-            get { return _listProjectileInSkillInfo; }
-            set { _listProjectileInSkillInfo = value; }
+            get { return _listSkillInfo; }
+            set { _listSkillInfo = value; }
         }
     }
 }

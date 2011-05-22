@@ -15,14 +15,15 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconL = this.SkillIconL,
+                SkillIconM = this.SkillIconM,
                 SkillIconS = this.SkillIconS,
+                SkillIconL = this.SkillIconL,
             };
         }
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            if (_object == null)
+            if (_object == null || PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
                 return;
             //Point targetPoint = new Point();
             //int _dir = PlayerOwner.Dir % 8;
@@ -73,7 +74,7 @@ namespace TheReturnOfTheKing
 
             prjt.SkillOwner = this;
             PlayerOwner.Owner._listProjectile.Add(prjt);
-            
+            PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
     }
 }

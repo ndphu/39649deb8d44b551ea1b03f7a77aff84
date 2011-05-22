@@ -15,8 +15,9 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconL = this.SkillIconL,
+                SkillIconM = this.SkillIconM,
                 SkillIconS = this.SkillIconS,
+                SkillIconL = this.SkillIconL,
             };
         }
 
@@ -26,7 +27,8 @@ namespace TheReturnOfTheKing
             
             List<Point> _listProjectileTarget = new List<Point>();
             int _dir = PlayerOwner.Dir % 8;
-            
+            if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
+                return;
             switch (_dir)
             {
                 case 0:
@@ -129,6 +131,7 @@ namespace TheReturnOfTheKing
                 prjt.SkillOwner = this;
                 PlayerOwner.Owner._listProjectile.Add(prjt);
             }
+            PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
     }
 }
