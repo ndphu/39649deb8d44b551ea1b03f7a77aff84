@@ -7511,6 +7511,16 @@ Content\img\skill\skill15\D02.xnb
 Content\img\skill\skill15\D03.xnb
 Content\img\skill\skill15\D04.xnb
 Content\sf.xnb
+Content\img\misc\menubar\menubar.xnb
+Content\img\skillicon\large\cleaving_attack.xnb
+Content\img\skillicon\large\critical_attack.xnb
+Content\img\skillicon\medium\cleaving_attack.xnb
+Content\img\skillicon\medium\critical_attack.xnb
+Content\img\skillicon\small\cleaving_attack.xnb
+Content\img\skillicon\small\critical_attack.xnb
+Content\img\skillicon\large\normal_attack.xnb
+Content\img\skillicon\medium\normal_attack.xnb
+Content\img\skillicon\small\normal_attack.xnb
 Data\Character\character.xml
 Data\Map\map01\map01.txt
 Data\Map\map.xml

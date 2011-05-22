@@ -2,6 +2,14 @@
 <root>
   <Skill id="0">
     <Name>Cleaving Attack</Name>
+    <IconLarge>img/skillicon/large/cleaving_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/cleaving_attack</IconMedium>
+    <IconSmall>img/skillicon/small/cleaving_attack</IconSmall>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
     <Level>
       <PercentDamage>-30</PercentDamage>
       <MP>-5</MP>
@@ -41,6 +49,14 @@
   
   <Skill id="1">
     <Name>Critical Attack</Name>
+    <IconLarge>img/skillicon/large/critical_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/critical_attack</IconMedium>
+    <IconSmall>img/skillicon/small/critical_attack</IconSmall>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
     <Level>
       <PercentDamage>30</PercentDamage>
       <MP>-5</MP>
@@ -77,7 +93,7 @@
       <ProjectileType>1</ProjectileType>
     </Level>
   </Skill>
-  
+  <!--
   <Skill id="2">
     <Name>Other</Name>
     <Level>
@@ -160,4 +176,5 @@
       </Projectile>
     </Level>    
   </Skill>
+  -->
 </root>

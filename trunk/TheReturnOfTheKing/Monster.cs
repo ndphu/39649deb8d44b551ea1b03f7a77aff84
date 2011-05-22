@@ -186,7 +186,7 @@ namespace TheReturnOfTheKing
                     GlobalVariables.AlreadyUseLeftMouse = true;
                 }
             }
-            EffectedSkill.Clear();
+            
             for (int i = 0; i < Owner._listProjectile.Count; ++i)
             {
                 if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner))
@@ -195,6 +195,9 @@ namespace TheReturnOfTheKing
                     this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
                     this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
                 }
+                else
+                    if (Owner._listProjectile[i]._sprite[0].Itexture2D == Owner._listProjectile[i]._sprite[0].Ntexture2D - 2)
+                        this.EffectedSkill.Remove(Owner._listProjectile[i].SkillOwner);
             }
 
             if (Owner._char != null && Math.Sqrt(Math.Pow(this.X - Owner._char.X, 2) - Math.Pow(this.Y - Owner._char.Y, 2)) < this.Sight)
