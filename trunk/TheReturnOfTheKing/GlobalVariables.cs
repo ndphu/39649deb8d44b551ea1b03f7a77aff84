@@ -104,5 +104,26 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._alreadyUseRightMouse; }
             set { GlobalVariables._alreadyUseRightMouse = value; }
         }
+
+        //Khai báo 2 biến mouse state
+        //2 biến này sẽ được khai báo 'new' 1 lần trong hàm LoadContent của MainGame.cs
+
+        //MouseState hiện hành.
+        static MouseState _currentMouseState;
+
+        public static MouseState CurrentMouseState
+        {
+            get { return GlobalVariables._currentMouseState; }
+            set { GlobalVariables._currentMouseState = value; }
+        }
+
+        //MouseState trước đó. 
+        static MouseState _preMouseState;
+
+        public static MouseState PreMouseState
+        {
+            get { return GlobalVariables._preMouseState; }
+            set { GlobalVariables._preMouseState = value; }
+        }
     }
 }
