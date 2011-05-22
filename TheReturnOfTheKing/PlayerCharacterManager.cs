@@ -91,7 +91,8 @@ namespace TheReturnOfTheKing
                 ((PlayerCharacter)_prototype[id]).Hp = int.Parse(_char.SelectSingleNode(@"Hp").InnerText);
                 ((PlayerCharacter)_prototype[id]).Mp = int.Parse(_char.SelectSingleNode(@"Mp").InnerText);
                 ((PlayerCharacter)_prototype[id]).CriticalRate = int.Parse(_char.SelectSingleNode(@"CriticalRate").InnerText);
-                ((PlayerCharacter)_prototype[id]).Attack = int.Parse(_char.SelectSingleNode(@"Damage").InnerText);
+                ((PlayerCharacter)_prototype[id]).MinDamage = int.Parse(_char.SelectSingleNode(@"MinDamage").InnerText);
+                ((PlayerCharacter)_prototype[id]).MaxDamage = int.Parse(_char.SelectSingleNode(@"MaxDamage").InnerText);
                 ((PlayerCharacter)_prototype[id]).Defense = int.Parse(_char.SelectSingleNode(@"Defense").InnerText);
                 ((PlayerCharacter)_prototype[id]).AttackSpeed = int.Parse(_char.SelectSingleNode(@"AttackSpeed").InnerText);
                 ((PlayerCharacter)_prototype[id]).Range = int.Parse(_char.SelectSingleNode(@"Range").InnerText);

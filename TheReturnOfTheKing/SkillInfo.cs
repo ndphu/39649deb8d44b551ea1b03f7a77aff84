@@ -29,6 +29,30 @@ namespace TheReturnOfTheKing
             get { return _y; }
             set { _y = value; }
         }
+
+        int _percentDamage;
+
+        public int PercentDamage
+        {
+            get { return _percentDamage; }
+            set { _percentDamage = value; }
+        }
+
+        int _hp;
+
+        public int Hp
+        {
+            get { return _hp; }
+            set { _hp = value; }
+        }
+
+        int _mp;
+
+        public int Mp
+        {
+            get { return _mp; }
+            set { _mp = value; }
+        }
     }
 
     public class SkillLevel

@@ -42,6 +42,16 @@ namespace TheReturnOfTheKing
             get { return _xp; }
             set { _xp = value; }
         }
+        /// <summary>
+        /// Đẳng cấp của nhân vật
+        /// </summary>
+        int _level;
+
+        public int Level
+        {
+            get { return _level; }
+            set { _level = value; }
+        }
 
         public override bool IsCasting
         {
@@ -166,7 +176,8 @@ namespace TheReturnOfTheKing
             {
                 _nsprite = this._nsprite,
                 _sprite = _spriteTemp,
-                Attack = this.Attack,
+                MinDamage = this.MinDamage,
+                MaxDamage = this.MaxDamage,
                 AttackSpeed = this.AttackSpeed,
                 CellToMove = this.CellToMove,
                 CollisionRect = this.CollisionRect,
@@ -227,6 +238,12 @@ namespace TheReturnOfTheKing
         {
            
             base.Update(gameTime);
+
+            if (RightHandSkill != null)
+                RightHandSkill.IsEffected = false;
+            if (LeftHandSkill != null)
+                LeftHandSkill.IsEffected = false;
+
             if (IsAttacking)
             {
                 if (_sprite[Dir].Itexture2D == HitFrame && _sprite[Dir].Check == 0)
@@ -365,7 +382,14 @@ namespace TheReturnOfTheKing
                 LeftHandSkill = null;
             if (ks.IsKeyDown(Keys.S))
             {
-                LeftHandSkill = new CleavingAttackSkill();
+                LeftHandSkill = (CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0));
+                LeftHandSkill.Level = 1;
+                LeftHandSkill.PlayerOwner = this;
+            }
+            if (ks.IsKeyDown(Keys.D))
+            {
+                LeftHandSkill = (CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1));
+                LeftHandSkill.Level = 1;
                 LeftHandSkill.PlayerOwner = this;
             }
         }
@@ -432,15 +456,17 @@ namespace TheReturnOfTheKing
 
         public override void Hit()
         {
+            Random r = new Random();
+            int Damage = r.Next(MinDamage, MaxDamage);
             if (State == 16)
             {
                 if (LeftHandSkill != null)
                     LeftHandSkill.DoEffect(Target);
                 else
-                    Target.BeHit(Attack * 2);
+                    Target.BeHit(Damage * 2);
             }
             else
-                Target.BeHit(Attack);
+                Target.BeHit(Damage);
         }
         
     }

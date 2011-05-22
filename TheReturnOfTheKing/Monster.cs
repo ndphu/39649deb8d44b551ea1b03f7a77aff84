@@ -24,7 +24,8 @@ namespace TheReturnOfTheKing
             {
                 _nsprite = this._nsprite,
                 _sprite = _spriteTemp,
-                Attack = this.Attack,
+                MinDamage = this.MinDamage,
+                MaxDamage = this.MaxDamage,
                 AttackSpeed = this.AttackSpeed,
                 CellToMove = this.CellToMove,
                 CollisionRect = this.CollisionRect,
@@ -121,10 +122,23 @@ namespace TheReturnOfTheKing
                     State = 0;
             }
         }
+        /// <summary>
+        /// Danh sach cac skill da tac dung len quai vat, de tranh truong hop quai vat bi danh boi nhieu projectile cua cung 1 skill
+        /// </summary>
+        List<Skill> _effectedSkill = new List<Skill>();
+
+        public List<Skill> EffectedSkill
+        {
+            get { return _effectedSkill; }
+            set { _effectedSkill = value; }
+        }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            
+
             if (Hp <= 0 && !(IsDying || IsDyed))
                 IsDying = true;
             if (IsDying || IsDyed)
@@ -155,6 +169,7 @@ namespace TheReturnOfTheKing
                     IsMoving = true;
                 }           
             }
+            
 
             if (IsAttacking && Target != null)
             {
@@ -164,7 +179,7 @@ namespace TheReturnOfTheKing
 
             MouseState ms = Mouse.GetState();
             if (FocusRect.Contains((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y))
-            {
+            {   
                 GlobalVariables.GameCursor.IsAttack = true;
                 if (ms.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
                 {
@@ -172,13 +187,14 @@ namespace TheReturnOfTheKing
                     GlobalVariables.AlreadyUseLeftMouse = true;
                 }
             }
+            EffectedSkill.Clear();
             for (int i = 0; i < Owner._listProjectile.Count; ++i)
             {
-                Projectile temp = Owner._listProjectile[i];
-                if (temp.IsCollisionWith(this) && temp.HitFrames.Contains(temp._sprite[0].Itexture2D))
+                if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner))
                 {
                     Random r = new Random();
-                    this.BeHit(r.Next(temp.ListLevel[temp.Level].MinDamage, temp.ListLevel[temp.Level].MaxDamage));
+                    this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
+                    this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
                 }
             }
 

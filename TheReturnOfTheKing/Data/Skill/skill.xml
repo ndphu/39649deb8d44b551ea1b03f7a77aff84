@@ -1,6 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <Skill id="0">
+    <Name>Cleaving Attack</Name>
+    <Level>
+      <PercentDamage>-30</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>-25</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>-20</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>-10</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>-0</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>20</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>70</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+  </Skill>
+  
+  <Skill id="1">
+    <Name>Critical Attack</Name>
+    <Level>
+      <PercentDamage>30</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>60</PercentDamage>
+      <MP>-5</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>100</PercentDamage>
+      <MP>-10</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>160</PercentDamage>
+      <MP>-10</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>240</PercentDamage>
+      <MP>-20</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>350</PercentDamage>
+      <MP>-20</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>500</PercentDamage>
+      <MP>-30</MP>
+      <ProjectileType>1</ProjectileType>
+    </Level>
+  </Skill>
+  
+  <Skill id="2">
+    <Name>Other</Name>
     <Level>
       <Projectile>
         <X>0</X>
@@ -8,7 +87,6 @@
         <Type>0</Type>
       </Projectile>
     </Level>
-
     <Level>
       <Projectile>
         <X>-32</X>
@@ -36,7 +114,6 @@
         <Type>0</Type>
       </Projectile>
     </Level>
-
     <Level>
       <Projectile>
         <X>-1</X>
@@ -54,7 +131,20 @@
         <Type>0</Type>
       </Projectile>
     </Level>
-
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>    
+    <Level>
+      <Projectile>
+        <X>0</X>
+        <Y>0</Y>
+        <Type>0</Type>
+      </Projectile>
+    </Level>    
     <Level>
       <Projectile>
         <X>0</X>
@@ -62,30 +152,12 @@
         <Type>0</Type>
       </Projectile>
     </Level>
-    
     <Level>
       <Projectile>
         <X>0</X>
         <Y>0</Y>
         <Type>0</Type>
       </Projectile>
-    </Level>
-    
-    <Level>
-      <Projectile>
-        <X>0</X>
-        <Y>0</Y>
-        <Type>0</Type>
-      </Projectile>
-    </Level>
-
-    <Level>
-      <Projectile>
-        <X>0</X>
-        <Y>0</Y>
-        <Type>0</Type>
-      </Projectile>
-    </Level>
-    
+    </Level>    
   </Skill>
 </root>

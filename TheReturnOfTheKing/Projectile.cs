@@ -25,21 +25,22 @@ namespace TheReturnOfTheKing
             get { return _skillOwner; }
             set { _skillOwner = value; }
         }
+        int _minDamage;
 
-
-
-        /// <summary>
-        /// Cap do hien tai cua projectile, se duoc cap nhat khi skill tang len
-        /// </summary>
-        int _level;
-
-        public int Level
+        public int MinDamage
         {
-            get { return _level; }
-            set { _level = value; }
+            get { return _minDamage; }
+            set { _minDamage = value; }
         }
 
-        
+        int _maxDamage;
+
+        public int MaxDamage
+        {
+            get { return _maxDamage; }
+            set { _maxDamage = value; }
+        }
+
         /// <summary>
         /// Frame hinh gay sat thuong
         /// </summary>
@@ -50,16 +51,7 @@ namespace TheReturnOfTheKing
             get { return _hitFrames; }
             set { _hitFrames = value; }
         }
-        /// <summary>
-        /// Mang de luu thong tin tung level cua skill
-        /// </summary>
-        List<ProjectileInfo> _listLevel;
-
-        public List<ProjectileInfo> ListLevel
-        {
-            get { return _listLevel; }
-            set { _listLevel = value; }
-        }
+        
                 
         public override VisibleGameObject Clone()
         {
@@ -81,8 +73,6 @@ namespace TheReturnOfTheKing
                 StartObstacleY = this.StartObstacleY,
                 ObstacleWidth = this.ObstacleWidth,
                 ObstacleHeight = this.ObstacleHeight,
-                Level = this.Level,
-                ListLevel = this.ListLevel,
                 HitFrames = this.HitFrames,
             };
         }

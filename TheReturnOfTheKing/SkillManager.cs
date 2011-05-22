@@ -46,27 +46,76 @@ namespace TheReturnOfTheKing
             XmlDocument _doc = new XmlDocument();
             _doc.Load(_xmlInfo);
             XmlNode _skill = _doc.SelectSingleNode(@"//Skill[@id = '" + id.ToString() + "']");
-            _prototype[id] = new Skill();
-            _prototype[id]._nsprite = 0;
-
-            ((Skill)_prototype[id]).Level = 1;
-            ((Skill)_prototype[id]).ListLevel = new List<SkillLevel>();
-            XmlNodeList _levelList = _skill.SelectNodes(@"Level");
-            for (int i = 0; i < _levelList.Count; ++i)
+            switch (_skill.SelectSingleNode(@"Name").InnerText)
             {
-                SkillLevel _skillInfo = new SkillLevel();
-                _skillInfo.ListSkillInfo = new List<SkillInfo>();
-                XmlNodeList _projectiles = _levelList[i].SelectNodes(@"Projectile");
-                for (int j = 0; j < _projectiles.Count; ++j)
-                {
-                    _skillInfo.ListSkillInfo.Add(new SkillInfo
+                case "Cleaving Attack":
                     {
-                        Type = int.Parse(_projectiles[j].SelectSingleNode(@"Type").InnerText),
-                        X = int.Parse(_projectiles[j].SelectSingleNode(@"X").InnerText),
-                        Y = int.Parse(_projectiles[j].SelectSingleNode(@"Y").InnerText),
-                    });
-                }
-                ((Skill)_prototype[id]).ListLevel.Add(_skillInfo);
+                        _prototype[id] = new CleavingAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((CleavingAttackSkill)_prototype[id]).Name = "Cleaving Attack";
+                        ((CleavingAttackSkill)_prototype[id]).Level = 0;
+                        ((CleavingAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((CleavingAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "Critical Attack":
+                    {
+                        _prototype[id] = new CriticalAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((CriticalAttackSkill)_prototype[id]).Name = "Critical Attack";
+                        ((CriticalAttackSkill)_prototype[id]).Level = 0;
+                        ((CriticalAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((CriticalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                default:
+                    {
+                        _prototype[id] = new Skill();
+                        _prototype[id]._nsprite = 0;
+
+                        ((Skill)_prototype[id]).Level = 0;
+                        ((Skill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillInfo = new SkillLevel();
+                            _skillInfo.ListSkillInfo = new List<SkillInfo>();
+                            XmlNodeList _projectiles = _levelList[i].SelectNodes(@"Projectile");
+                            for (int j = 0; j < _projectiles.Count; ++j)
+                            {
+                                _skillInfo.ListSkillInfo.Add(new SkillInfo
+                                {
+                                    Type = int.Parse(_projectiles[j].SelectSingleNode(@"Type").InnerText),
+                                    X = int.Parse(_projectiles[j].SelectSingleNode(@"X").InnerText),
+                                    Y = int.Parse(_projectiles[j].SelectSingleNode(@"Y").InnerText),
+                                });
+                            }
+                            ((Skill)_prototype[id]).ListLevel.Add(_skillInfo);
+                        }
+                    }
+                    break;
             }
             return true;
         }

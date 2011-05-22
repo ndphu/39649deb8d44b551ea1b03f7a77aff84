@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  
   <Projectile id="0">
     <ContentName>img/skill/skill15/D</ContentName>
     <NumOfFrame>5</NumOfFrame>
@@ -11,22 +10,20 @@
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
     <HitFrame>3</HitFrame>
-    <Level>
-      <Min>0</Min>
-      <Max>0</Max>
-      <HP>0</HP>
-      <MP>0</MP>
-    </Level>
-    <Level>
-      <Min>0</Min>
-      <Max>0</Max>
-      <HP>0</HP>
-      <MP>0</MP>
-    </Level>
   </Projectile>
-  
-  
+
   <Projectile id="1">
+    <ContentName>img/skill/skill05/D</ContentName>
+    <NumOfFrame>20</NumOfFrame>
+    <XOffset>-17</XOffset>
+    <YOffset>-224</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>6</HitFrame>
+  </Projectile>  
+  <Projectile id="2">
     <ContentName>img/skill/skill08/D</ContentName>
     <NumOfFrame>16</NumOfFrame>
     <XOffset>-37</XOffset>
@@ -35,64 +32,12 @@
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>2</ObstacleWidth>
     <ObstacleHeight>2</ObstacleHeight>
-
     <HitFrame>3</HitFrame>
     <HitFrame>6</HitFrame>
     <HitFrame>9</HitFrame>
     <HitFrame>12</HitFrame>
     <HitFrame>15</HitFrame>
     <HitFrame>18</HitFrame>
-
-    <Level>
-      <Min>0</Min>
-      <Max>0</Max>
-      <HP>0</HP>
-      <MP>0</MP>
-    </Level>    
-    <Level>
-      <Min>6</Min>
-      <Max>12</Max>
-      <HP>0</HP>
-      <MP>-5</MP>
-    </Level>    
-    <Level>
-      <Min>16</Min>
-      <Max>32</Max>
-      <HP>0</HP>
-      <MP>-10</MP>
-    </Level>    
-    <Level>
-      <Min>26</Min>
-      <Max>56</Max>
-      <HP>0</HP>
-      <MP>-15</MP>
-    </Level>
-    
-    <Level>
-      <Min>36</Min>
-      <Max>76</Max>
-      <HP>0</HP>
-      <MP>-20</MP>
-    </Level>    
-    <Level>
-      <Min>46</Min>
-      <Max>96</Max>
-      <HP>0</HP>
-      <MP>-30</MP>
-    </Level>    
-    <Level>
-      <Min>56</Min>
-      <Max>116</Max>
-      <HP>0</HP>
-      <MP>-40</MP>
-    </Level>    
-    <Level>
-      <Min>66</Min>
-      <Max>136</Max>
-      <HP>0</HP>
-      <MP>-50</MP>
-    </Level>
-    
   </Projectile>
 
   <!--<Projectile id="0">
