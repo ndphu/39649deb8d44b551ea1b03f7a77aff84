@@ -7,7 +7,8 @@
     <Mp>350</Mp>
     <MaxMp>350</MaxMp>
     <CriticalRate>15</CriticalRate>
-    <Damage>45</Damage>
+    <MinDamage>45</MinDamage>
+    <MaxDamage>85</MaxDamage>
     <Defense>7</Defense>
     <AttackSpeed>4</AttackSpeed>
     <Range>32</Range>

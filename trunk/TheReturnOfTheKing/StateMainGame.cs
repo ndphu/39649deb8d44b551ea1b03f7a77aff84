@@ -34,7 +34,7 @@ namespace TheReturnOfTheKing
             _char = (PlayerCharacter)objectManagerArray[0].CreateObject(0);
             _char.SetMap(_map);
             _char.Owner = this;
-            _char.RightHandSkill = (Skill)((SkillManager)objectManagerArray[7]).CreateObject(0);
+            
             _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
             _frog = new Frog();
@@ -69,7 +69,7 @@ namespace TheReturnOfTheKing
             _listToDraw.Clear();
 
             _map.Update(gameTime);
-            _char.Update(gameTime);
+            
 
             for (int i = 0; i < _listObstacle.Count; ++i)
             {
@@ -102,15 +102,16 @@ namespace TheReturnOfTheKing
                     }
                 }
             }
-            
-            _listToDraw.Add(_char);
-
             for (int i = 0; i < _listProjectile.Count; ++i)
             {
                 _listProjectile[i].Update(gameTime);
                 if (_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1)
                     _listProjectile.Remove(_listProjectile[i]);
             }
+            _char.Update(gameTime);
+            _listToDraw.Add(_char);
+
+            
 
             if (_char.IsDyed)
             {

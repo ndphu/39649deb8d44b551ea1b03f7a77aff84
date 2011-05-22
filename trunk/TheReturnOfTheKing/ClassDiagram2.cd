@@ -31,7 +31,7 @@
   <Class Name="TheReturnOfTheKing.Character" Collapsed="true">
     <Position X="22.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BBQAwBDCAJgISgAgECILiCEFQsAEAgeIBEoILwAAYkA=</HashCode>
+      <HashCode>BBQAwBDCgJgISgAgECILiCEFQkAGCgeoBEoILwAAYgA=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -185,7 +185,7 @@
   <Class Name="TheReturnOfTheKing.Monster" Collapsed="true">
     <Position X="22.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABQAAAAAAAgAAgAAACAAAAAAAgAAAAEAAAAAAAAAABA=</HashCode>
+      <HashCode>ABQAAAAAAAkAAgAAACAAAAAAAgAAAAEEAAAAAAAAABA=</HashCode>
       <FileName>Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -227,7 +227,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="20" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QBQAAIAICAgAAgAECCJACAEAAgAEAAEAgAAAAABAABA=</HashCode>
+      <HashCode>QBQAAIAICAgAAgAECCJACQEAAgAEAAEBgAAAAABAABA=</HashCode>
       <FileName>PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -276,7 +276,7 @@
   <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
     <Position X="29" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAQAAAAACAACQACAAAAAAABAAAQAAAAYBQ=</HashCode>
+      <HashCode>AAAAEAAAgAAAAAAAACAACAAAAAACCAAgAAAQAAAAYBQ=</HashCode>
       <FileName>Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -297,14 +297,14 @@
   <Class Name="TheReturnOfTheKing.Skill" Collapsed="true">
     <Position X="17.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAQAACAAAAAAQCCAAABAAABAAAABAAAABA=</HashCode>
+      <HashCode>AAAAMCAAACAQAgAAACAAAQUCAAAAAACBAAQgAEAAABA=</HashCode>
       <FileName>Skill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillInfo" Collapsed="true">
     <Position X="38.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAQAAAQAAAAAAAAAAAAAAAAAAQAAAAAAYAA=</HashCode>
+      <HashCode>AEAAQAAIAAQAAAQAAAQAAAAAAAAAAAAAAQAACAAAYgA=</HashCode>
       <FileName>SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -381,8 +381,15 @@
   <Class Name="TheReturnOfTheKing.CleavingAttackSkill" Collapsed="true">
     <Position X="16.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>CleavingAttackSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.CriticalAttackSkill" Collapsed="true">
+    <Position X="18.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>CriticalAttackSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

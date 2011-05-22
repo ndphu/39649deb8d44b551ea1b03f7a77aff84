@@ -8,7 +8,8 @@
     <Mp>600</Mp>
     <MaxMp>600</MaxMp>
     <CriticalRate>15</CriticalRate>
-    <Damage>85</Damage>
+    <MinDamage>85</MinDamage>
+    <MaxDamage>110</MaxDamage>
     <Defense>14</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
@@ -53,7 +54,8 @@
     <Mp>200</Mp>
     <MaxMp>200</MaxMp>
     <CriticalRate>20</CriticalRate>
-    <Damage>95</Damage>
+    <MinDamage>60</MinDamage>
+    <MaxDamage>95</MaxDamage>
     <Defense>5</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
@@ -98,7 +100,8 @@
     <Mp>10</Mp>
     <MaxMp>10</MaxMp>
     <CriticalRate>50</CriticalRate>
-    <Damage>35</Damage>
+    <MinDamage>30</MinDamage>
+    <MaxDamage>55</MaxDamage>
     <Defense>2</Defense>
     <AttackSpeed>2</AttackSpeed>
     <Range>32</Range>

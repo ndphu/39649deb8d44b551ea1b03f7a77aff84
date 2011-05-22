@@ -77,7 +77,8 @@ namespace TheReturnOfTheKing
             ((Monster)_prototype[id]).Hp = int.Parse(_monster.SelectSingleNode(@"Hp").InnerText);
             ((Monster)_prototype[id]).Mp = int.Parse(_monster.SelectSingleNode(@"Mp").InnerText);
             ((Monster)_prototype[id]).CriticalRate = int.Parse(_monster.SelectSingleNode(@"CriticalRate").InnerText);
-            ((Monster)_prototype[id]).Attack = int.Parse(_monster.SelectSingleNode(@"Damage").InnerText);
+            ((Monster)_prototype[id]).MinDamage = int.Parse(_monster.SelectSingleNode(@"MinDamage").InnerText);
+            ((Monster)_prototype[id]).MaxDamage = int.Parse(_monster.SelectSingleNode(@"MaxDamage").InnerText);
             ((Monster)_prototype[id]).Defense = int.Parse(_monster.SelectSingleNode(@"Defense").InnerText);
             ((Monster)_prototype[id]).AttackSpeed = int.Parse(_monster.SelectSingleNode(@"AttackSpeed").InnerText);
             ((Monster)_prototype[id]).Range = int.Parse(_monster.SelectSingleNode(@"Range").InnerText);

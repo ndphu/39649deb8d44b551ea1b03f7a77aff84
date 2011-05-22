@@ -109,14 +109,24 @@ namespace TheReturnOfTheKing
             set { _attackSpeed = value; }
         }
         /// <summary>
-        /// Lực sát thương
+        /// Sát thương thấp nhất
         /// </summary>
-        int _attack;
+        int _minDamage;
 
-        public int Attack
+        public int MinDamage
         {
-            get { return _attack; }
-            set { _attack = value; }
+            get { return _minDamage; }
+            set { _minDamage = value; }
+        }
+        /// <summary>
+        /// Sát thương cao nhất
+        /// </summary>
+        int _maxDamage;
+
+        public int MaxDamage
+        {
+            get { return _maxDamage; }
+            set { _maxDamage = value; }
         }
         /// <summary>
         /// Phòng thủ
@@ -489,10 +499,13 @@ namespace TheReturnOfTheKing
             {
                 if (this.IsCollisionWith(_target))
                 {
-                    IsAttacking = true;
-                    UpdateDirection(_target.X, _target.Y);  
-                    DestPoint = new Point((int)X,(int)Y);                      
-                    CellToMove = new List<Point>();
+                    if (!IsAttacking)
+                    {
+                        IsAttacking = true;
+                        UpdateDirection(_target.X, _target.Y);
+                        DestPoint = new Point((int)X, (int)Y);
+                        CellToMove = new List<Point>();
+                    }
                 }
                 else
                 {
@@ -648,10 +661,11 @@ namespace TheReturnOfTheKing
             if (Target == null)
                 return;
             Random r = new Random();
+            int Damage = r.Next(MinDamage, MaxDamage);            
             if (r.Next(0, 100) < this.CriticalRate)
-                Target.BeHit(this.Attack * 2);
+                Target.BeHit(Damage * 2);
             else
-                Target.BeHit(this.Attack);
+                Target.BeHit(Damage);
         }
 
         public virtual void BeHit(int damage)

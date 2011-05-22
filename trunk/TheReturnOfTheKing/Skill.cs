@@ -16,6 +16,17 @@ namespace TheReturnOfTheKing
     public class Skill : VisibleGameEntity
     {
         /// <summary>
+        /// Tên của skill
+        /// </summary>
+        string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        /// <summary>
         /// Player ra chiêu
         /// </summary>
         PlayerCharacter _playerOwner;
@@ -80,6 +91,7 @@ namespace TheReturnOfTheKing
                 Level = this.Level,
                 ListLevel = this.ListLevel,
                 SkillIconL = this.SkillIconL,
+                SkillIconS = this.SkillIconS,
             };
         }
 
