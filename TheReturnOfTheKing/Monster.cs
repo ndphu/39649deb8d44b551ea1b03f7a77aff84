@@ -138,13 +138,6 @@ namespace TheReturnOfTheKing
         {
             base.Update(gameTime);
 
-            
-
-            if (Hp <= 0 && !(IsDying || IsDyed))
-                IsDying = true;
-            if (IsDying || IsDyed)
-                return;
-
             if (Target != null && Math.Sqrt(Math.Pow(this.X - Target.X, 2) - Math.Pow(this.Y - Target.Y, 2)) > this.Sight)
                 Target = null;
 

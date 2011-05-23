@@ -130,30 +130,7 @@ namespace TheReturnOfTheKing
             
         }
 
-        public override void MouseEnter(MouseObserver mo)
-        {
-            /*if (!IsMouseHover)
-            {
-                IsMouseHover = true;
-                for (int i = 0; i < _child.Count; ++i)
-                    mo.RegisterObserver(_child[i]);
-            }*/
-        }
-
-        public override void MouseLeave(MouseObserver mo)
-        {
-            /*if (IsMouseHover)
-            {
-                IsMouseHover = false;
-                for (int i = 0; i < _child.Count; ++i)
-                {
-                    _child[i].MouseLeave(mo);
-                    mo.UnregisterObserver(_child[i]);
-                }
-                _color = new Color(160, 160, 160);
-                _iSign = 2;
-            }*/
-        }
+       
         public override VisibleGameObject Clone()
         {
             GameSprite[] _spriteTemp = new GameSprite[_nsprite];
@@ -180,26 +157,5 @@ namespace TheReturnOfTheKing
             //_menuIndex = _child.IndexOf((Button)child);
         }
 
-        public override void KeyUp(KeyboardObserver ko, Keys key)
-        {
-            /*switch (key)
-            {
-                case Keys.Up:
-                    _menuIndex -= 1;
-                    if (_menuIndex < 0)
-                        _menuIndex = _child.Count - 1;
-                    Mouse.SetPosition((int)(_child[_menuIndex].X + _child[_menuIndex].Width / 2), (int)(_child[_menuIndex].Y + _child[_menuIndex].Height / 2));
-                    break;
-                case Keys.Down:
-                    _menuIndex += 1;
-                    if (_menuIndex > _child.Count - 1)
-                        _menuIndex = 0;
-                    Mouse.SetPosition((int)(_child[_menuIndex].X + _child[_menuIndex].Width / 2), (int)(_child[_menuIndex].Y + _child[_menuIndex].Height / 2));
-                    break;
-                case Keys.Enter:
-                    _child[_menuIndex].MouseClick(null);
-                    break;
-            }*/
-        }
     }
 }

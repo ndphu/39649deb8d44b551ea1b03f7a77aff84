@@ -109,7 +109,7 @@
     <Range>32</Range>
     <HitFrame>10</HitFrame>
     <Sight>128</Sight>
-    <ChangeToDodge>50</ChangeToDodge>
+    <ChangeToDodge>0</ChangeToDodge>
     <Stand>
       <ContentName>img/character/zombie/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>

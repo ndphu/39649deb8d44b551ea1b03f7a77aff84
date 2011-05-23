@@ -142,54 +142,6 @@ namespace TheReturnOfTheKing
             }
         }
 
-        public override void MouseEnter(MouseObserver mo)
-        {
-            IsMouseHover = true;
-            GlobalVariables.GameCursor.IsHover = true;
-            if (_owner != null)
-                _owner.ChildNotify(this);
-        }
-
-        public override void MouseLeave(MouseObserver mo)
-        {
-            if (IsMouseHover)
-            {
-                IsMouseHover = false;
-                GlobalVariables.GameCursor.IsIdle = true;
-            }
-        }
-
-        public override void MouseDownHandler(MouseObserver mo)
-        {
-            
-        }
-
-        public override void MouseUpHandler(MouseObserver mo)
-        {
-            
-        }
-
-        public override void MouseClick(MouseObserver mo)
-        {
-            //Khi button được click thì sẽ kiểm tra các yếu tố sau
-            //  -Nếu button chưa dừng lại (đang chạy ra màn hinh)
-            //  -Nều button đã được click
-            //--> Không xử lý
-            if (!_motionInfo.IsStanding)
-                return;
-            if (_isClicked)
-                return;
-
-            _isClicked = true;
-            //Xét lại hướng chuyển động và một số tham số cần thiết để cho button
-            //chuyển động theo cách mong muốn.
-            _motionInfo = SetButtonMotion(_motionInfo);
-
-            //Hàm này sẽ được gọi trong update (vì button sau khi đã đi ra ngoài màn hình
-            //  thì hàm này mới được dọi để xử lý ở mức State)
-            //OnMouse_Click(this, null);
-        }
-
         public delegate void OnMouseClickHandler(object sender, EventArgs e);
 
         public event OnMouseClickHandler Mouse_Click;
@@ -201,8 +153,6 @@ namespace TheReturnOfTheKing
                 Mouse_Click(sender, e);
             }
         }
-
-        //Sua lai cai ham này..Thúi quá xá.
         private MotionInfo SetButtonMotion(MotionInfo _preMotion)
         {
             MotionInfo _newMotion = _preMotion;

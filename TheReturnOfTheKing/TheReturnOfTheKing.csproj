@@ -108,7 +108,6 @@
     <Compile Include="HealthBarManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemManager.cs" />
-    <Compile Include="KeyboardObserver.cs" />
     <Compile Include="LeftCommandButton.cs" />
     <Compile Include="LeftSkillButton.cs" />
     <Compile Include="Map.cs" />
@@ -123,7 +122,6 @@
     <Compile Include="Monster.cs" />
     <Compile Include="MonsterManager.cs" />
     <Compile Include="MotionInfo.cs" />
-    <Compile Include="MouseObserver.cs" />
     <Compile Include="NonPlayerCharacter.cs" />
     <Compile Include="NonPlayerCharacterManager.cs" />
     <Compile Include="MapObstacleManager.cs" />

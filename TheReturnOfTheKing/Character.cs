@@ -534,6 +534,12 @@ namespace TheReturnOfTheKing
                     }
                 }
             }
+
+            if (Hp <= 0 && !(IsDying || IsDyed))
+            {
+                IsDying = true;
+                UpdateDirection(this.X, this.Y);
+            }
         }
 
         private void Move()

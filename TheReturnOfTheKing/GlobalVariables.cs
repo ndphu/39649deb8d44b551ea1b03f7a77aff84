@@ -61,23 +61,6 @@ namespace TheReturnOfTheKing
         }
 
         
-        static MouseObserver _mouseObserver;
-
-        public static MouseObserver MouseObserver
-        {
-            get { return GlobalVariables._mouseObserver; }
-            set { GlobalVariables._mouseObserver = value; }
-        }
-        
-
-        static KeyboardObserver _keyboardObserver;
-
-        public static KeyboardObserver KeyboardObserver
-        {
-            get { return GlobalVariables._keyboardObserver; }
-            set { GlobalVariables._keyboardObserver = value; }
-        }
-
         /// <summary>
         /// Kích thước của một ô tương tác
         /// </summary>
