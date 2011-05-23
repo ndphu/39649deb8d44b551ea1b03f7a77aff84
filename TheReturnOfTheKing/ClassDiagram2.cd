@@ -17,7 +17,7 @@
   <Class Name="TheReturnOfTheKing.Button" Collapsed="true">
     <Position X="5.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQABACACAABAgAAAgAgQEBAACAAAAAAAACQAAAgaBA=</HashCode>
+      <HashCode>AAQAAACACAABAgAAAAAAQEAAACAAAAAAAACQAAAAaBA=</HashCode>
       <FileName>Button.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -103,13 +103,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAEAEAAAAAAgAAAAAAAAAAAgA=</HashCode>
       <FileName>GameObjectManager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="TheReturnOfTheKing.GameObjectObserver" Collapsed="true">
-    <Position X="1.75" Y="12.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAAQACAA=</HashCode>
-      <FileName>GameObjectObserver.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.GameSprite" Collapsed="true">
@@ -234,7 +227,7 @@
   <Class Name="TheReturnOfTheKing.MenuFrame" Collapsed="true">
     <Position X="12" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAEAAAgAAAwiAAABCAAAAEAAAAACSAAAAaBA=</HashCode>
+      <HashCode>AAQAAAAAAEAAAgAAAQCAAAACAAAAEAAAAACSAAAAaBA=</HashCode>
       <FileName>MenuFrame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -479,8 +472,15 @@
   <Class Name="TheReturnOfTheKing.VisibleGameObject" Collapsed="true">
     <Position X="30" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAIRASAgwAAAAoAAEACADAAAAAAAAECAAAAYBA=</HashCode>
+      <HashCode>AAQAAAAIRASAAwAAAAIAAEACADAAAAAAAAECAAAAYBA=</HashCode>
       <FileName>VisibleGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.CurseAttackSkill" Collapsed="true">
+    <Position X="37" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAABAAAAAAAAIAAAAAAAAAAQABAAAAAA=</HashCode>
+      <FileName>CurseAttackSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

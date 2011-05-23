@@ -16,35 +16,15 @@
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>-25</PercentDamage>
-      <MP>-5</MP>
-      <ProjectileType>0</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>-20</PercentDamage>
-      <MP>-5</MP>
-      <ProjectileType>0</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>-10</PercentDamage>
-      <MP>-5</MP>
-      <ProjectileType>0</ProjectileType>
-    </Level>
-    <Level>
       <PercentDamage>-0</PercentDamage>
-      <MP>-5</MP>
+      <MP>-15</MP>
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>20</PercentDamage>
-      <MP>-5</MP>
+      <PercentDamage>50</PercentDamage>
+      <MP>-25</MP>
       <ProjectileType>0</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>70</PercentDamage>
-      <MP>-5</MP>
-      <ProjectileType>0</ProjectileType>
-    </Level>
+    </Level>    
   </Skill>
   
   <Skill id="1">
@@ -58,41 +38,57 @@
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>30</PercentDamage>
-      <MP>-5</MP>
+      <PercentDamage>150</PercentDamage>
+      <MP>-15</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>60</PercentDamage>
-      <MP>-5</MP>
+      <PercentDamage>450</PercentDamage>
+      <MP>-25</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>100</PercentDamage>
-      <MP>-10</MP>
-      <ProjectileType>1</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>160</PercentDamage>
-      <MP>-10</MP>
-      <ProjectileType>1</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>240</PercentDamage>
-      <MP>-20</MP>
-      <ProjectileType>1</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>350</PercentDamage>
-      <MP>-20</MP>
-      <ProjectileType>1</ProjectileType>
-    </Level>
-    <Level>
-      <PercentDamage>500</PercentDamage>
-      <MP>-30</MP>
+      <PercentDamage>900</PercentDamage>
+      <MP>-50</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
   </Skill>
+
+  <Skill id="2">
+    <Name>Curse Attack</Name>
+    <IconLarge>img/skillicon/large/critical_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/critical_attack</IconMedium>
+    <IconSmall>img/skillicon/small/critical_attack</IconSmall>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+      <ChanceToCurse>0</ChanceToCurse>
+      <AmorReduce>0</AmorReduce>
+    </Level>
+    <Level>
+      <PercentDamage>25</PercentDamage>
+      <MP>-10</MP>
+      <ProjectileType>2</ProjectileType>
+      <ChanceToCurse>10</ChanceToCurse>
+      <AmorReduce>3</AmorReduce>
+    </Level>
+    <Level>
+      <PercentDamage>75</PercentDamage>
+      <MP>-45</MP>
+      <ProjectileType>2</ProjectileType>
+      <ChanceToCurse>35</ChanceToCurse>
+      <AmorReduce>10</AmorReduce>
+    </Level>
+    <Level>
+      <PercentDamage>200</PercentDamage>
+      <MP>-80</MP>
+      <ProjectileType>2</ProjectileType>
+      <ChanceToCurse>100</ChanceToCurse>
+      <AmorReduce>50</AmorReduce>
+    </Level>
+  </Skill>
+  
   <!--
   <Skill id="2">
     <Name>Other</Name>

@@ -69,6 +69,22 @@ namespace TheReturnOfTheKing
             get { return _maxDamage; }
             set { _maxDamage = value; }
         }
+
+        int _amorReduce;
+
+        public int AmorReduce
+        {
+            get { return _amorReduce; }
+            set { _amorReduce = value; }
+        }
+
+        int _chanceToCurse;
+
+        public int ChanceToCurse
+        {
+            get { return _chanceToCurse; }
+            set { _chanceToCurse = value; }
+        }
     }
 
     public class SkillLevel

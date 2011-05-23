@@ -138,6 +138,9 @@ namespace TheReturnOfTheKing
         {
             base.Update(gameTime);
 
+            if (IsDying || IsDyed)
+                return;
+
             if (Target != null && Math.Sqrt(Math.Pow(this.X - Target.X, 2) - Math.Pow(this.Y - Target.Y, 2)) > this.Sight)
                 Target = null;
 
@@ -187,6 +190,7 @@ namespace TheReturnOfTheKing
                 {
                     Random r = new Random((int)DateTime.Now.Ticks);
                     this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
+                    Owner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
                     this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
                 }
                 else

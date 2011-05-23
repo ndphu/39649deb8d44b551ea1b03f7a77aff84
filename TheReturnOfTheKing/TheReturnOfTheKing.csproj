@@ -90,6 +90,7 @@
     <Compile Include="CharacterManager.cs" />
     <Compile Include="CleavingAttackSkill.cs" />
     <Compile Include="CriticalAttackSkill.cs" />
+    <Compile Include="CurseAttackSkill.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="EquipItem.cs" />

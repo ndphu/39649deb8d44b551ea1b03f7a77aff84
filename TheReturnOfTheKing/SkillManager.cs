@@ -67,9 +67,6 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CleavingAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
-                        ((CleavingAttackSkill)_prototype[id]).SkillIconL = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconLarge").InnerText);
-                        ((CleavingAttackSkill)_prototype[id]).SkillIconM = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconMedium").InnerText);
-                        ((CleavingAttackSkill)_prototype[id]).SkillIconS = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconSmall").InnerText);
                     }
                     break;
                 case "Critical Attack":
@@ -91,9 +88,29 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CriticalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
-                        ((CriticalAttackSkill)_prototype[id]).SkillIconL = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconLarge").InnerText);
-                        ((CriticalAttackSkill)_prototype[id]).SkillIconM = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconMedium").InnerText);
-                        ((CriticalAttackSkill)_prototype[id]).SkillIconS = content.Load<Texture2D>(_skill.SelectSingleNode(@"IconSmall").InnerText);
+                    }
+                    break;
+                case "Curse Attack":
+                    {
+                        _prototype[id] = new CurseAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((CurseAttackSkill)_prototype[id]).Name = "Curse Attack";
+                        ((CurseAttackSkill)_prototype[id]).Level = 0;
+                        ((CurseAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.AmorReduce = int.Parse(_levelList[i].SelectSingleNode(@"AmorReduce").InnerText);
+                            _skillInfo.ChanceToCurse = int.Parse(_levelList[i].SelectSingleNode(@"ChanceToCurse").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((CurseAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
                     }
                     break;
                 default:
