@@ -53,7 +53,7 @@ namespace TheReturnOfTheKing
                 ChangeToDodge = this.ChangeToDodge,
             };
         }
-
+        
         public override bool IsAttacking
         {
             get

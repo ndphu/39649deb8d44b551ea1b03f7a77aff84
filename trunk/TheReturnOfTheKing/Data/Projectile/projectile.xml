@@ -45,6 +45,18 @@
     <ObstacleHeight>1</ObstacleHeight>
     <HitFrame>3</HitFrame>
   </Projectile>
+  <Projectile id="4">
+    <ContentName>img/skill/skill18/D0</ContentName>
+    <NumOfFrame>14</NumOfFrame>
+    <XOffset>-22</XOffset>
+    <YOffset>-9</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>0</HitFrame>
+  </Projectile>
+  
   <!--<Projectile id="0">
     <ContentName>img/skill/skill01/D</ContentName>
     <NumOfFrame>20</NumOfFrame>

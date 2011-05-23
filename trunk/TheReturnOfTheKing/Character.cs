@@ -17,6 +17,7 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+
         StateMainGame _owner;
 
         public StateMainGame Owner
@@ -96,6 +97,18 @@ namespace TheReturnOfTheKing
             get { return _changeToDodge; }
             set { _changeToDodge = value; }
         }
+        /// <summary>
+        /// Luong mau bi mat
+        /// </summary>
+        int _recentHPLost;
+
+        public int RecentHPLost
+        {
+            get { return _recentHPLost; }
+            set { _recentHPLost = value; }
+        }
+
+        
 
         /// <summary>
         /// Bán kính tấn công
@@ -462,7 +475,7 @@ namespace TheReturnOfTheKing
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             _sprite[_dir].Draw(gameTime, sb);
-            if (_displayDamageTime > 0)
+            if (_displayDamageTime > 0 && Math.Abs(_damage) > 0)
             {
                 _displayDamageTime -= 1;
                 sb.DrawString(GlobalVariables.Sf, _damage.ToString(), new Vector2(X + GlobalVariables.dX , Y + _displayDamageTime + GlobalVariables.dY + _sprite[Dir].Yoffset - 20), Color.Red);
@@ -694,6 +707,7 @@ namespace TheReturnOfTheKing
             {
                 Damage = Math.Min(-(damage - this.Defense), 0);
                 Hp += Damage;
+                _recentHPLost = Damage;
             }
             
         }
