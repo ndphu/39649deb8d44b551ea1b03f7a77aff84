@@ -54,6 +54,7 @@ namespace TheReturnOfTheKing
                 prjt.MinDamage *= 2;
                 prjt.MaxDamage *= 2;
             }
+            prjt.SkillOwner = this;
             PlayerOwner.Owner._listProjectile.Add(prjt);
             PlayerOwner.Hp += this.ListLevel[Level].ListSkillInfo[0].Hp;
         }

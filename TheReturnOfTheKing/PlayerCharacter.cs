@@ -465,6 +465,13 @@ namespace TheReturnOfTheKing
                 _leftHandSkillIndex = 4;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.H))
+            {
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 5;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
+            }
             if (_listLeftHandSkill[_leftHandSkillIndex] != null)
             {
                 if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D1))
@@ -599,7 +606,7 @@ namespace TheReturnOfTheKing
             _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2)));
             _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(3)));
             _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
-            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
+            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(5)));
             for (int i = 1; i < _listLeftHandSkill.Count; ++i)
             {
                 if (_listLeftHandSkill[i] != null)

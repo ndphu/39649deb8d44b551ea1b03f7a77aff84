@@ -116,6 +116,32 @@
     </Level>    
   </Skill>
 
+  <Skill id="4">
+    <Name>LifeSteal Attack</Name>
+    <IconLarge>img/skillicon/large/critical_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/critical_attack</IconMedium>
+    <IconSmall>img/skillicon/small/critical_attack</IconSmall>
+    <Level>
+      <PercentDamage>00</PercentDamage>
+      <MP>0</MP>
+      <PercentLifeSteal>0</PercentLifeSteal>
+    </Level>
+    <Level>
+      <PercentDamage>20</PercentDamage>
+      <MP>-10</MP>
+      <PercentLifeSteal>15</PercentLifeSteal>
+    </Level>
+    <Level>
+      <PercentDamage>50</PercentDamage>
+      <MP>-25</MP>
+      <PercentLifeSteal>35</PercentLifeSteal>
+    </Level>
+    <Level>
+      <PercentDamage>100</PercentDamage>
+      <MP>-50</MP>
+      <PercentLifeSteal>75</PercentLifeSteal>
+    </Level>
+  </Skill>
   <!--
   <Skill id="2">
     <Name>Other</Name>

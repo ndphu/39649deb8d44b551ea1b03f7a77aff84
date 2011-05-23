@@ -127,10 +127,31 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo = new List<SkillInfo>();
                             SkillInfo _skillInfo = new SkillInfo();
                             _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
-                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
+                            _skillInfo.Hp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
                             _skillInfo.NumOfHit = int.Parse(_levelList[i].SelectSingleNode(@"NumOfHit").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((OverSpeedAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "LifeSteal Attack":
+                    {
+                        _prototype[id] = new LifeStealAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((LifeStealAttackSkill)_prototype[id]).Name = "LifeSteal Attack";
+                        ((LifeStealAttackSkill)_prototype[id]).Level = 0;
+                        ((LifeStealAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.PercentLifeSteal = int.Parse(_levelList[i].SelectSingleNode(@"PercentLifeSteal").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((LifeStealAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
                     }
                     break;
