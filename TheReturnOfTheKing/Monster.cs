@@ -190,7 +190,8 @@ namespace TheReturnOfTheKing
                 {
                     Random r = new Random((int)DateTime.Now.Ticks);
                     this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
-                    Owner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
+                    if (Owner._listProjectile[i].SkillOwner != null)
+                        Owner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
                     this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
                 }
                 else

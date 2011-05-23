@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackgroundManager.cs" />
+    <Compile Include="BashAttackSkill.cs" />
     <Compile Include="ButtonManger.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterManager.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="ItemManager.cs" />
     <Compile Include="LeftCommandButton.cs" />
     <Compile Include="LeftSkillButton.cs" />
+    <Compile Include="LifeStealAttackSkill.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapManager.cs" />
     <Compile Include="MapObstacle.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="NonPlayerCharacter.cs" />
     <Compile Include="NonPlayerCharacterManager.cs" />
     <Compile Include="MapObstacleManager.cs" />
+    <Compile Include="OverSpeedAttackSkill.cs" />
     <Compile Include="PlayerCharacter.cs" />
     <Compile Include="PlayerCharacterManager.cs" />
     <Compile Include="Portion.cs" />

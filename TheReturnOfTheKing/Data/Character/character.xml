@@ -12,7 +12,7 @@
     <Defense>7</Defense>
     <AttackSpeed>4</AttackSpeed>
     <Range>32</Range>
-    <HitFrame>7</HitFrame>
+    <HitFrame>9</HitFrame>
     <CastFrame>11</CastFrame>
     <Sight>150</Sight>
     <ChangeToDodge>25</ChangeToDodge>

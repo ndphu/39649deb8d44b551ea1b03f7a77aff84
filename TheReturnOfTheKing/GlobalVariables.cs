@@ -64,9 +64,9 @@ namespace TheReturnOfTheKing
         /// <summary>
         /// Kích thước của một ô tương tác
         /// </summary>
-        static float _mapCollisionDim;
+        static int _mapCollisionDim;
 
-        public static float MapCollisionDim
+        public static int MapCollisionDim
         {
             get { return GlobalVariables._mapCollisionDim; }
             set { GlobalVariables._mapCollisionDim = value; }
