@@ -473,6 +473,9 @@ namespace TheReturnOfTheKing
         {
             _sprite[Dir].Update(gameTime);
 
+            if (this.Hp <= 0 && !IsDying && !IsDyed)
+                IsDying = true;
+            
             if (IsDying)
             {
                 if (Target != null)
@@ -692,6 +695,7 @@ namespace TheReturnOfTheKing
                 Damage = Math.Min(-(damage - this.Defense), 0);
                 Hp += Damage;
             }
+            
         }
     }
 }

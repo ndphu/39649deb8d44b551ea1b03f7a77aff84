@@ -115,5 +115,10 @@ namespace TheReturnOfTheKing
             base.Draw(gameTime, sb);
 
         }
+
+        public virtual void DoAdditionalEffect(VisibleGameEntity target)
+        {
+            
+        }
     }
 }

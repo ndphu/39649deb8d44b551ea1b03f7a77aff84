@@ -2,14 +2,14 @@
 <root>
   <Projectile id="0">
     <ContentName>img/skill/skill15/D</ContentName>
-    <NumOfFrame>5</NumOfFrame>
+    <NumOfFrame>6</NumOfFrame>
     <XOffset>-37</XOffset>
     <YOffset>-24</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>0</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
-    <HitFrame>2</HitFrame>
+    <HitFrame>3</HitFrame>
   </Projectile>
 
   <Projectile id="1">
@@ -24,20 +24,15 @@
     <HitFrame>6</HitFrame>
   </Projectile>  
   <Projectile id="2">
-    <ContentName>img/skill/skill08/D</ContentName>
-    <NumOfFrame>16</NumOfFrame>
-    <XOffset>-37</XOffset>
-    <YOffset>-24</YOffset>
-    <StartObstacleX>-1</StartObstacleX>
-    <StartObstacleY>-1</StartObstacleY>
-    <ObstacleWidth>2</ObstacleWidth>
-    <ObstacleHeight>2</ObstacleHeight>
-    <HitFrame>3</HitFrame>
-    <HitFrame>6</HitFrame>
-    <HitFrame>9</HitFrame>
-    <HitFrame>12</HitFrame>
-    <HitFrame>15</HitFrame>
-    <HitFrame>18</HitFrame>
+    <ContentName>img/skill/skill16/D</ContentName>
+    <NumOfFrame>8</NumOfFrame>
+    <XOffset>-10</XOffset>
+    <YOffset>-70</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>5</HitFrame>
   </Projectile>
 
   <!--<Projectile id="0">

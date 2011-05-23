@@ -418,8 +418,33 @@ namespace TheReturnOfTheKing
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D))
             {
                 LeftHandSkill = (CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1));
-                LeftHandSkill.Level = 7;
+                LeftHandSkill.Level = 1;
                 LeftHandSkill.PlayerOwner = this;
+            }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.F))
+            {
+                LeftHandSkill = (CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2));
+                LeftHandSkill.Level = 1;
+                LeftHandSkill.PlayerOwner = this;
+            }
+            if (LeftHandSkill != null)
+            {
+                if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D1))
+                {
+                    LeftHandSkill.Level = 1;
+                }
+                if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D2))
+                {
+                    LeftHandSkill.Level = 2;
+                }
+                if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D3))
+                {
+                    LeftHandSkill.Level = 3;
+                }
+                if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D0))
+                {
+                    LeftHandSkill.Level = 0;
+                }
             }
         }
 

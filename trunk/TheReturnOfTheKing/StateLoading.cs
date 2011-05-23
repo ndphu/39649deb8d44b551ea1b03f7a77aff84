@@ -20,8 +20,7 @@ namespace TheReturnOfTheKing
         
 
         private Texture2D _backGround; //Back ground cho loadingScreen
-        private Texture2D _standingProcessBar; //Cái khung của process bar
-        private Texture2D _animateProcessBar; //Dung dịch chảy trong process bar
+        
 
 
         private GameObjectManager[] _objectManagerArray; //Mang cac objectManager
@@ -48,14 +47,7 @@ namespace TheReturnOfTheKing
 
         private Type _type; //Kiểu của state tiếp theo cần chuyển.
 
-        //Cái này là vị trí đặt Processbar
-        private int _xPro;
-        private int _yPro;
-
-        //Vị trí tọa độ X bắt đầu và kết thúc của thanh dung dịch trong animated Process
-        private int _xStartAnimatePro;
-        private int _xEndAnimatePro;
-
+        
         private int _stepLengh = 0;
         private int _completedSteps = 0;
 
