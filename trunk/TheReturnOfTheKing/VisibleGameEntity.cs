@@ -28,10 +28,13 @@ namespace TheReturnOfTheKing
 
         public bool IsCollisionWith(VisibleGameEntity other)
         {
-            if (other == null)
-                return false;
-            if (Math.Abs(other.X - this.X) < GlobalVariables.MapCollisionDim * 1 && Math.Abs(other.Y - this.Y) < GlobalVariables.MapCollisionDim * 1)
-                return true;
+            //if (other == null)
+            //    return false;
+            //if (Math.Abs(other.X - this.X) < GlobalVariables.MapCollisionDim * 1 && Math.Abs(other.Y - this.Y) < GlobalVariables.MapCollisionDim * 1)
+            //    return true;
+            //return false;
+            if (other != null)
+                return this.CollisionRect.Intersects(other.CollisionRect);
             return false;
         }
 

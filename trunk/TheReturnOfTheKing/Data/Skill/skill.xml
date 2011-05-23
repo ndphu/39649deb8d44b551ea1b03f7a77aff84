@@ -88,7 +88,34 @@
       <AmorReduce>50</AmorReduce>
     </Level>
   </Skill>
-  
+
+  <Skill id="3">
+    <Name>OverSpeed Attack</Name>
+    <IconLarge>img/skillicon/large/critical_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/critical_attack</IconMedium>
+    <IconSmall>img/skillicon/small/critical_attack</IconSmall>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <HP>0</HP>
+      <NumOfHit>0</NumOfHit>
+    </Level>
+    <Level>
+      <PercentDamage>20</PercentDamage>
+      <HP>-5</HP>
+      <NumOfHit>2</NumOfHit>
+    </Level>
+    <Level>
+      <PercentDamage>70</PercentDamage>
+      <HP>-15</HP>
+      <NumOfHit>3</NumOfHit>
+    </Level>
+    <Level>
+      <PercentDamage>170</PercentDamage>
+      <HP>-50</HP>
+      <NumOfHit>5</NumOfHit>
+    </Level>    
+  </Skill>
+
   <!--
   <Skill id="2">
     <Name>Other</Name>

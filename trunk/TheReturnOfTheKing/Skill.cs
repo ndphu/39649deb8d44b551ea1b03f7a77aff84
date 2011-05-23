@@ -81,7 +81,12 @@ namespace TheReturnOfTheKing
         public int Level
         {
             get { return _level; }
-            set { _level = value; }
+            set 
+            { 
+                _level = value;
+                if (value > 1)
+                    Active();
+            }
         }
 
         List<SkillLevel> _listLevel;
@@ -119,6 +124,13 @@ namespace TheReturnOfTheKing
         public virtual void DoAdditionalEffect(VisibleGameEntity target)
         {
             
+        }
+
+        public virtual void Active()
+        {
+        }
+        public virtual void Deactive()
+        { 
         }
     }
 }

@@ -69,6 +69,8 @@ namespace TheReturnOfTheKing
             _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
             _objectManagerArray = objectManagerArray;
             _listToDraw = new List<VisibleGameEntity>();
+
+            _char.InitSkill();
         }
 
         public override void EnterState()

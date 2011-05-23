@@ -85,6 +85,14 @@ namespace TheReturnOfTheKing
             get { return _chanceToCurse; }
             set { _chanceToCurse = value; }
         }
+
+        int _numOfHit;
+
+        public int NumOfHit
+        {
+            get { return _numOfHit; }
+            set { _numOfHit = value; }
+        }
     }
 
     public class SkillLevel

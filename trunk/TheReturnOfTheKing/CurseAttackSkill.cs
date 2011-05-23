@@ -19,21 +19,6 @@ namespace TheReturnOfTheKing
                 SkillIconL = this.SkillIconL,
             };
         }
-        int _chanceToCurse;
-
-        public int ChanceToCurse
-        {
-            get { return _chanceToCurse; }
-            set { _chanceToCurse = value; }
-        }
-
-        int _amorReduce;
-
-        public int AmorReduce
-        {
-            get { return _amorReduce; }
-            set { _amorReduce = value; }
-        }
 
         public override void DoEffect(VisibleGameEntity _object)
         {

@@ -97,7 +97,7 @@ namespace TheReturnOfTheKing
             
             /*sb.DrawString(sf, "HP: " + _character.Hp.ToString(), new Vector2(0, 20), Color.Red);
             sb.DrawString(sf, "MP: " + _character.Mp.ToString(), new Vector2(0, 45), Color.Blue);
-            sb.DrawString(sf, "XP: " + _character.Xp.ToString(), new Vector2(0, 70), Color.White);*/
+            sb.DrawString(sf, "XP: " + _character.Xp.ToString(), new Vector2(0, 70), Color.White);
             if (_character.LeftHandSkill != null && _character.LeftHandSkill.SkillIconM != null)
                 sb.Draw(_character.LeftHandSkill.SkillIconM, new Vector2(116, GlobalVariables.ScreenHeight - 105 + 58), Color.White);
             else

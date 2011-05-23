@@ -113,6 +113,27 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "OverSpeed Attack":
+                    {
+                        _prototype[id] = new OverSpeedAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((OverSpeedAttackSkill)_prototype[id]).Name = "OverSpeed Attack";
+                        ((OverSpeedAttackSkill)_prototype[id]).Level = 0;
+                        ((OverSpeedAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
+                            _skillInfo.NumOfHit = int.Parse(_levelList[i].SelectSingleNode(@"NumOfHit").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((OverSpeedAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         _prototype[id] = new Skill();

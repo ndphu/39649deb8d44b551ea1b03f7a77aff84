@@ -16,6 +16,70 @@ namespace TheReturnOfTheKing
     public class PlayerCharacter : Character
     {
         /// <summary>
+        /// Bien khai bao de su dung cho skill OverspeedAttack
+        /// </summary>
+        int _oldNDelay;
+
+        public int OldNDelay
+        {
+            get { return _oldNDelay; }
+            set { _oldNDelay = value; }
+        }
+
+        /// <summary>
+        /// Index cua skill tay trai hien tai
+        /// </summary>
+        int _leftHandSkillIndex;
+
+        public int LeftHandSkillIndex
+        {
+            get { return _leftHandSkillIndex; }
+            set { _leftHandSkillIndex = value; }
+        }
+        /// <summary>
+        /// Index cua skill tay phai hien tai
+        /// </summary>
+        int _rightHandSkillIndex;
+
+        public int RightHandSkillIndex
+        {
+            get { return _rightHandSkillIndex; }
+            set { _rightHandSkillIndex = value; }
+        }
+        /// <summary>
+        /// Danh sach cac skill bi dong
+        /// </summary>
+        List<Skill> _listPassiveSkill;
+
+        public List<Skill> ListPassiveSkill
+        {
+            get { return _listPassiveSkill; }
+            set { _listPassiveSkill = value; }
+        }
+
+        /// <summary>
+        /// Danh sach cac skill tay phai
+        /// </summary>
+        List<Skill> _listRightHandSkill;
+
+        public List<Skill> ListRightHandSkill
+        {
+            get { return _listRightHandSkill; }
+            set { _listRightHandSkill = value; }
+        }
+
+        /// <summary>
+        /// Danh sach cac skill tay trai
+        /// </summary>
+        List<Skill> _listLeftHandSkill;
+
+        public List<Skill> ListLeftHandSkill
+        {
+            get { return _listLeftHandSkill; }
+            set { _listLeftHandSkill = value; }
+        }
+
+        /// <summary>
         /// Danh sách các item có trong túi đồ
         /// </summary>
         List<Item> _bag = new List<Item>();
@@ -36,27 +100,7 @@ namespace TheReturnOfTheKing
             set { _equipped = value; }
         }
 
-        /// <summary>
-        /// Skill tay trái, sẽ được kích hoạt khi người dùng click chuột trái lên một target nào đó
-        /// </summary>
-        Skill _leftHandSkill;
-
-        public Skill LeftHandSkill
-        {
-            get { return _leftHandSkill; }
-            set { _leftHandSkill = value; }
-        }
-        /// <summary>
-        /// Skill tay phải, sẽ được kích hoạt khi người dùng click chuột phải lên một vị trí nào đó trên bảng đồ
-        /// </summary>
-        Skill _rightHandSkill;
-
-        public Skill RightHandSkill
-        {
-            get { return _rightHandSkill; }
-            set { _rightHandSkill = value; }
-        }
-
+       
         /// <summary>
         /// Điểm kinh nghiệm
         /// </summary>
@@ -235,10 +279,6 @@ namespace TheReturnOfTheKing
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             base.Draw(gameTime, sb);
-            if (LeftHandSkill != null)
-                LeftHandSkill.Draw(gameTime, sb);
-            if (RightHandSkill != null)
-                RightHandSkill.Draw(gameTime, sb);
         }
 
         float targetSkillX = 0;
@@ -267,11 +307,6 @@ namespace TheReturnOfTheKing
             if (IsDying || IsDyed)
                 return;
 
-            if (RightHandSkill != null)
-                RightHandSkill.IsEffected = false;
-            if (LeftHandSkill != null)
-                LeftHandSkill.IsEffected = false;
-
             if (IsAttacking)
             {
                 if (_sprite[Dir].Itexture2D == HitFrame && _sprite[Dir].Check == 0)
@@ -280,7 +315,7 @@ namespace TheReturnOfTheKing
                 {
                     Random r = new Random((int)DateTime.Now.Ticks);
                     int rate = r.Next(0, 100);
-                    if (rate < this.CriticalRate || LeftHandSkill != null)
+                    if (rate < this.CriticalRate || _listLeftHandSkill[_leftHandSkillIndex] != null)
                         State = 16;
                     else
                         State = 24;
@@ -399,51 +434,54 @@ namespace TheReturnOfTheKing
             }
 
             
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Q))
-                RightHandSkill = null;
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.W) )
-            {
-                RightHandSkill = (CleavingAttackSkill)((SkillManager)Owner._objectManagerArray[7]).CreateObject(0);
-                RightHandSkill.Level = 1;
-                RightHandSkill.PlayerOwner = this;
-            }
+            
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.A))
-                LeftHandSkill = null;
+                _leftHandSkillIndex = 0;
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.S))
             {
-                LeftHandSkill = (CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0));
-                LeftHandSkill.Level = 1;
-                LeftHandSkill.PlayerOwner = this;
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 1;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D))
             {
-                LeftHandSkill = (CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1));
-                LeftHandSkill.Level = 1;
-                LeftHandSkill.PlayerOwner = this;
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 2;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.F))
             {
-                LeftHandSkill = (CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2));
-                LeftHandSkill.Level = 1;
-                LeftHandSkill.PlayerOwner = this;
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 3;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
-            if (LeftHandSkill != null)
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.G))
+            {
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 4;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
+            }
+            if (_listLeftHandSkill[_leftHandSkillIndex] != null)
             {
                 if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D1))
                 {
-                    LeftHandSkill.Level = 1;
+                    _listLeftHandSkill[_leftHandSkillIndex].Level = 1;
                 }
                 if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D2))
                 {
-                    LeftHandSkill.Level = 2;
+                    _listLeftHandSkill[_leftHandSkillIndex].Level = 2;
                 }
                 if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D3))
                 {
-                    LeftHandSkill.Level = 3;
+                    _listLeftHandSkill[_leftHandSkillIndex].Level = 3;
                 }
                 if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D0))
                 {
-                    LeftHandSkill.Level = 0;
+                    _listLeftHandSkill[_leftHandSkillIndex].Level = 0;
                 }
             }
         }
@@ -487,9 +525,9 @@ namespace TheReturnOfTheKing
         {
             if (waitToCast && IsCasting)
             {
-                if (RightHandSkill != null)
-                {   
-                    RightHandSkill.DoEffect(Target);
+                if (_listRightHandSkill[_rightHandSkillIndex] != null)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].DoEffect(Target);
 
                     //SkillLevel skillLevel = RightHandSkill.ListLevel[RightHandSkill.Level];
                     //for (int i = 0; i < skillLevel.ListSkillInfo.Count; ++i)
@@ -514,13 +552,31 @@ namespace TheReturnOfTheKing
             int Damage = r.Next(MinDamage, MaxDamage);
             if (State == 16)
             {
-                if (LeftHandSkill != null)
-                    LeftHandSkill.DoEffect(Target);
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].DoEffect(Target);
                 else
-                    Target.BeHit(Damage * 2);
+                {
+                    Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(3);
+                    prjt.X = Target.X;
+                    prjt.Y = Target.Y;
+                    prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
+                    r = new Random((int)DateTime.Now.Ticks);
+                    prjt.MinDamage = MinDamage * 2;
+                    prjt.MaxDamage = MaxDamage * 2;
+                    Owner._listProjectile.Add(prjt);                    
+                }
             }
             else
-                Target.BeHit(Damage);
+            {
+                Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(3);
+                prjt.X = Target.X;
+                prjt.Y = Target.Y;
+                prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
+                r = new Random((int)DateTime.Now.Ticks);
+                prjt.MinDamage = MinDamage;
+                prjt.MaxDamage = MaxDamage;
+                Owner._listProjectile.Add(prjt);
+            }
         }
         public void UpdateEquippedItemṣ̣()
         {
@@ -531,6 +587,28 @@ namespace TheReturnOfTheKing
 
                 }
             }
+        }
+
+        internal void InitSkill()
+        {
+            OldNDelay = _sprite[16].NDelay;
+            _listLeftHandSkill = new List<Skill>();
+            _listLeftHandSkill.Add(null);
+            _listLeftHandSkill.Add((CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0)));
+            _listLeftHandSkill.Add((CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1)));
+            _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2)));
+            _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(3)));
+            _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
+            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
+            for (int i = 1; i < _listLeftHandSkill.Count; ++i)
+            {
+                if (_listLeftHandSkill[i] != null)
+                {
+                    _listLeftHandSkill[i].PlayerOwner = this;
+                    _listLeftHandSkill[i].Level = 1;
+                }
+            }
+            _listRightHandSkill = new List<Skill>();
         }
     }
 }
