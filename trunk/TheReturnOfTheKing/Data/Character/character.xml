@@ -2,8 +2,8 @@
 <root>  
   <Character id="0">
     <Speed>2</Speed>
-    <Hp>320000</Hp>
-    <MaxHp>320000</MaxHp>
+    <Hp>250</Hp>
+    <MaxHp>250</MaxHp>
     <Mp>350</Mp>
     <MaxMp>350</MaxMp>
     <CriticalRate>15</CriticalRate>

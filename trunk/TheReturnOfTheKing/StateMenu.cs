@@ -140,8 +140,7 @@ namespace TheReturnOfTheKing
         
         public override void EnterState()
         {
-            for (int i = 0; i < _buttonArray.Length; ++i)
-                GlobalVariables.MouseObserver.RegisterObserver(_buttonArray[i]);
+           
         }
 
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -170,8 +169,7 @@ namespace TheReturnOfTheKing
 
         public override void ExitState()
         {
-            for (int i = 0; i < _buttonArray.Length; ++i)
-                GlobalVariables.MouseObserver.UnregisterObserver(_buttonArray[i]);
+            
         }
     }
 }

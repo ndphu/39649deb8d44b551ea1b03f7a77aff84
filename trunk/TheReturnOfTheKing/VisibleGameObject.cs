@@ -99,43 +99,8 @@ namespace TheReturnOfTheKing
             return null;
         }
 
-        public virtual void MouseDownHandler(MouseObserver mo)
-        {
-            
-        }
-
-        public virtual void MouseUpHandler(MouseObserver mo)
-        {
-
-        }
-
-        public virtual void MouseEnter(MouseObserver mo)
-        {
-
-        }
-
-        public virtual void MouseLeave(MouseObserver mo)
-        {
-
-        }
-
-        public virtual void MouseClick(MouseObserver mo)
-        {
-
-        }
-
         public virtual void ChildNotify(VisibleGameObject child)
         {
-
-        }
-
-        public virtual void KeyDown(KeyboardObserver ko, Keys key)
-        { 
-
-        }
-
-        public virtual void KeyUp(KeyboardObserver ko, Keys key)
-        { 
 
         }
     }

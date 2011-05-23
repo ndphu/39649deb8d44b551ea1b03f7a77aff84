@@ -39,6 +39,7 @@ namespace TheReturnOfTheKing
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
 
             _frog = new Frog();
+            _frog.Init(owner.Content);
             _frog.SetCharacter(_char);
             HealthBar _temp = (HealthBar)objectManagerArray[8].CreateObject(0);
             _temp.MainFrame = new HealthBarMainFrame((GameFrame)objectManagerArray[9].CreateObject(0));

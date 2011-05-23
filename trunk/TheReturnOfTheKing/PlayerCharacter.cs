@@ -264,6 +264,9 @@ namespace TheReturnOfTheKing
            
             base.Update(gameTime);
 
+            if (IsDying || IsDyed)
+                return;
+
             if (RightHandSkill != null)
                 RightHandSkill.IsEffected = false;
             if (LeftHandSkill != null)
