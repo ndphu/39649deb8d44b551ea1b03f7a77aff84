@@ -101,6 +101,22 @@ namespace TheReturnOfTheKing
             get { return _percentLifeSteal; }
             set { _percentLifeSteal = value; }
         }
+
+        int _chanceToBash;
+
+        public int ChanceToBash
+        {
+            get { return _chanceToBash; }
+            set { _chanceToBash = value; }
+        }
+
+        int _bashTime;
+
+        public int BashTime
+        {
+            get { return _bashTime; }
+            set { _bashTime = value; }
+        }
     }
 
     public class SkillLevel

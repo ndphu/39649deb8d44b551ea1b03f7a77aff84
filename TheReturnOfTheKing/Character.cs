@@ -17,6 +17,13 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+        int _bashTime;
+
+        public int BashTime
+        {
+            get { return _bashTime; }
+            set { _bashTime = value; }
+        }
 
         StateMainGame _owner;
 
@@ -484,6 +491,11 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            if (BashTime > 0)
+            {
+                --BashTime;
+                return;
+            }
             _sprite[Dir].Update(gameTime);
 
             if (this.Hp <= 0 && !IsDying && !IsDyed)
@@ -642,6 +654,11 @@ namespace TheReturnOfTheKing
        
         public virtual void UpdateDirection(float x, float y)
         {
+            if (BashTime > 0)
+            {
+                IsStanding = true;
+                CellToMove = new List<Point>();
+            }
             int oldDir = _dir;
             x += GlobalVariables.MapCollisionDim / 2;
             y += GlobalVariables.MapCollisionDim / 2;

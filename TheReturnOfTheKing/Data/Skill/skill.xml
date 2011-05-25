@@ -142,6 +142,37 @@
       <PercentLifeSteal>75</PercentLifeSteal>
     </Level>
   </Skill>
+
+  <Skill id="5">
+    <Name>Bash Attack</Name>
+    <IconLarge>img/skillicon/large/critical_attack</IconLarge>
+    <IconMedium>img/skillicon/medium/critical_attack</IconMedium>
+    <IconSmall>img/skillicon/small/critical_attack</IconSmall>
+    <Level>
+      <PercentDamage>00</PercentDamage>
+      <MP>0</MP>
+      <ChanceToBash>0</ChanceToBash>
+      <BashTime>0</BashTime>
+    </Level>
+    <Level>
+      <PercentDamage>50</PercentDamage>
+      <MP>-10</MP>
+      <ChanceToBash>25</ChanceToBash>
+      <BashTime>60</BashTime>
+    </Level>
+    <Level>
+      <PercentDamage>80</PercentDamage>
+      <MP>-25</MP>
+      <ChanceToBash>35</ChanceToBash>
+      <BashTime>120</BashTime>
+    </Level>
+    <Level>
+      <PercentDamage>130</PercentDamage>
+      <MP>-50</MP>
+      <ChanceToBash>65</ChanceToBash>
+      <BashTime>180</BashTime>
+    </Level>
+  </Skill>
   <!--
   <Skill id="2">
     <Name>Other</Name>
