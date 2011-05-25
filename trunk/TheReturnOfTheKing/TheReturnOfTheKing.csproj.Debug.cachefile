@@ -7539,7 +7539,6 @@ Content\img\skill\skill17\D02.xnb
 Content\img\skill\skill17\D03.xnb
 Content\img\skill\skill17\D04.xnb
 Content\img\skill\skill17\D05.xnb
-Content\sf.xnb
 Content\img\skill\skill18\D000.xnb
 Content\img\skill\skill18\D001.xnb
 Content\img\skill\skill18\D002.xnb
@@ -7554,6 +7553,7 @@ Content\img\skill\skill18\D010.xnb
 Content\img\skill\skill18\D011.xnb
 Content\img\skill\skill18\D012.xnb
 Content\img\skill\skill18\D013.xnb
+Content\sf.xnb
 Data\Character\character.xml
 Data\item\item.xml
 Data\Map\map01\map01.txt

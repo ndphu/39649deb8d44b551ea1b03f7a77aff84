@@ -301,9 +301,13 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
-           
+            
             base.Update(gameTime);
-
+            if (BashTime > 0)
+            {
+                IsStanding = true;
+                CellToMove = new List<Point>();
+            }
             if (IsDying || IsDyed)
                 return;
 
@@ -470,6 +474,13 @@ namespace TheReturnOfTheKing
                 if (_listLeftHandSkill[_leftHandSkillIndex] != null)
                     _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 5;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
+            }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.J))
+            {
+                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 6;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (_listLeftHandSkill[_leftHandSkillIndex] != null)

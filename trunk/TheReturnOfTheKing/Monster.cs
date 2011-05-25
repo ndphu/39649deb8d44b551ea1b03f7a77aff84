@@ -136,8 +136,13 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            
             base.Update(gameTime);
-
+            if (BashTime > 0)
+            {
+                IsStanding = true;
+                CellToMove = new List<Point>();
+            }
             if (IsDying || IsDyed)
                 return;
 

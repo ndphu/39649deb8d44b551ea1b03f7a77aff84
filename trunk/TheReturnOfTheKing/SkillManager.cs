@@ -155,6 +155,28 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "Bash Attack":
+                    {
+                        _prototype[id] = new BashAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((BashAttackSkill)_prototype[id]).Name = "Bash Attack";
+                        ((BashAttackSkill)_prototype[id]).Level = 0;
+                        ((BashAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ChanceToBash = int.Parse(_levelList[i].SelectSingleNode(@"ChanceToBash").InnerText);
+                            _skillInfo.BashTime = int.Parse(_levelList[i].SelectSingleNode(@"BashTime").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((BashAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         _prototype[id] = new Skill();
