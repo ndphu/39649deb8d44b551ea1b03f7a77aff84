@@ -29,7 +29,7 @@ namespace TheReturnOfTheKing
             }
             catch
             {
- 
+
             }
         }
 
@@ -41,16 +41,20 @@ namespace TheReturnOfTheKing
                 _doc.Load(_xmlInfo);
                 XmlNode _background = _doc.SelectSingleNode(@"//Background[@id = '" + id.ToString() + "']");
 
-                //Hardcode vi theo quy dinh trong game 1 background chi co 1 anh ma thôi
+                XmlNodeList _imageList = _background.SelectNodes("//Image");
                 _prototype[id] = new Background();
-                _prototype[id]._nsprite = 1;
+                _prototype[id]._nsprite = _imageList.Count;
                 _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
 
-                _prototype[id]._sprite[0] = new GameSprite(content.Load<Texture2D>(_background.SelectSingleNode(@"ContentName").InnerText),
-                    int.Parse(_background.SelectSingleNode(@"X").InnerText),
-                    int.Parse(_background.SelectSingleNode(@"Y").InnerText));
-
-
+                for (int i = 0; i < _prototype[id]._nsprite; i++)
+                {
+                    Texture2D _temp = content.Load<Texture2D>(_imageList[i].SelectSingleNode("Path").InnerText);
+                    int _xTemp = int.Parse(_imageList[i].SelectSingleNode("X").InnerText) - (int)GlobalVariables.dX;
+                    int _yTemp = int.Parse(_imageList[i].SelectSingleNode("Y").InnerText) - (int)GlobalVariables.dY;
+                    _prototype[id]._sprite[i] = new GameSprite(_temp, _xTemp, _yTemp);
+                    _prototype[id]._sprite[i].Xoffset = 0;
+                    _prototype[id]._sprite[i].Yoffset = 0;
+                }
             }
             catch
             {

@@ -15,161 +15,143 @@ namespace TheReturnOfTheKing
 {
     public class HealthBar : Dialog
     {
-        HealthBarMainFrame _mainFrame;
+        PlayerCharacter _character;
 
-        public HealthBarMainFrame MainFrame
+        public PlayerCharacter Character
         {
-            get { return _mainFrame; }
-            set { _mainFrame = value; }
+            get { return _character; }
+            set { _character = value; }
         }
 
-        ProcessBar _bloodProcessbar;
+        GameFrame _healbarFrame;
 
-        public ProcessBar BloodProcessbar
+        public GameFrame HealbarFrame
         {
-            get { return _bloodProcessbar; }
-            set { _bloodProcessbar = value; }
+            get { return _healbarFrame; }
+            set { _healbarFrame = value; }
         }
 
-        ProcessBar _manaProcessbar;
+        ProcessBar _bloodPro;
 
-        public ProcessBar ManaProcessbar
+        public ProcessBar BloodPro
         {
-            get { return _manaProcessbar; }
-            set { _manaProcessbar = value; }
+            get { return _bloodPro; }
+            set { _bloodPro = value; }
         }
 
-        LeftSkillButton _leftSkillButon;
+        ProcessBar _manaPro;
 
-        public LeftSkillButton LeftSkillButon
+        public ProcessBar ManaPro
         {
-            get { return _leftSkillButon; }
-            set { _leftSkillButon = value; }
+            get { return _manaPro; }
+            set { _manaPro = value; }
         }
 
-        RightSkillButton _rightSkillButton;
+        SkillBoard _skillBoard;
 
-        public RightSkillButton RightSkillButton
+        public SkillBoard SkillBoard
         {
-            get { return _rightSkillButton; }
-            set { _rightSkillButton = value; }
+            get { return _skillBoard; }
+            set { _skillBoard = value; }
         }
 
-        LeftCommandButton _leftCommandButton;
-
-        public LeftCommandButton LeftCommandButton
+        public void SetCharacter(PlayerCharacter _char)
         {
-            get { return _leftCommandButton; }
-            set { _leftCommandButton = value; }
+            _character = _char;
         }
 
-        RightCommandButton _rightCommandButton;
-
-        public RightCommandButton RightCommandButton
+        public void GetResources (List<GameObjectManager> _resouces)
         {
-            get { return _rightCommandButton; }
-            set { _rightCommandButton = value; }
-        }
+            HealbarFrame = (GameFrame)_resouces[0].CreateObject(0);
+            BloodPro = (ProcessBar)_resouces[1].CreateObject(0);
+            ManaPro = (ProcessBar)_resouces[1].CreateObject(1);
 
-        public override float X
-        {
-            get
-            {
-                return base.X;
-            }
-            set
-            {
-                base.X = value;
-                for (int i = 0; i < _nsprite; ++i)
-                    _sprite[i].X = value;
-            }
-        }
+            Button _leftCommand = (Button)_resouces[2].CreateObject(0);
+            _leftCommand.Mouse_Click += new Button.OnMouseClickHandler(LeftCommandButon_Clicked);
+            _leftCommand.Mouse_Down += new Button.OnMouseDownHandler(LeftCommandButon_Down);
+            _leftCommand.Mouse_Released += new Button.OnMouseReleasedHandler(LeftCommandButon_Released);
+            HealbarFrame.AddChild(_leftCommand);
 
-        public override float Y
-        {
-            get
-            {
-                return base.Y;
-            }
-            set
-            {
-                base.Y = value;
-                for (int i = 0; i < _nsprite; ++i)
-                    _sprite[i].Y = value;
-            }
-        }
-
-        public HealthBar (HealthBar _toCopy)
-        {
-            X = _toCopy.X;
-            Y = _toCopy.Y;
-            Width = _toCopy.Width;
-            Height = _toCopy.Height;
-
-            //_frogOwner = _toCopy._frogOwner;
-            _owner = (Frog)_toCopy._owner;
-
-            _mainFrame = _toCopy._mainFrame;
-            _mainFrame.X += X;
-            _mainFrame.Y += Y;
-
-            //2 cai processbar ko xai owner..
-            _bloodProcessbar = _toCopy._bloodProcessbar;
-            _bloodProcessbar.X += X;
-            _bloodProcessbar.Y += Y;
-
-            _manaProcessbar = _toCopy._manaProcessbar;
-            _manaProcessbar.X += X;
-            _manaProcessbar.Y += Y;
-
-            _leftSkillButon = _toCopy._leftSkillButon;
-            _rightSkillButton = _toCopy.RightSkillButton;
-
-            _leftCommandButton = _toCopy._leftCommandButton;
-            _rightCommandButton = _toCopy._rightCommandButton;
-        }
-
-        public HealthBar()
-        {
- 
-        }
-
-        //Clone này chẳng qua la lấy thông tin của cái healthbar chứ ko dính dáng gì tới các thành phần bên trong
-        public override VisibleGameObject Clone()
-        {
-            //Health bar hien tai chi là một vùng có độ lớn nhất định chứ không chứa bất kì một sprite nào.
-            HealthBar _newHealthBar = new HealthBar ();
-            _newHealthBar.Width = this.Width;
-            _newHealthBar.Height = this.Height;
-            _newHealthBar.Rect = this.Rect;
-            _newHealthBar.X = this.X;
-            _newHealthBar.Y = this.Y;
-            return _newHealthBar;
+            Button _rightCommand = (Button)_resouces[2].CreateObject(1);
+            _rightCommand.Mouse_Click += new Button.OnMouseClickHandler(RightCommandButon_Clicked);
+            _rightCommand.Mouse_Down += new Button.OnMouseDownHandler(RightCommandButon_Down);
+            _rightCommand.Mouse_Released += new Button.OnMouseReleasedHandler(RightCommandButon_Released);
+            HealbarFrame.AddChild(_rightCommand);
         }
 
         public override void Update(GameTime gameTime)
         {
-            _mainFrame.Update(gameTime);
-            _leftSkillButon.Update(gameTime);
-            _rightSkillButton.Update(gameTime);
-            _leftCommandButton.Update(gameTime);
-            _rightCommandButton.Update(gameTime);
-            float _rateToDrawBlood = (float)((Frog)_owner).Character.Hp / (float)((Frog)_owner).Character.MaxHp;
-            _bloodProcessbar.UpdateDrawRect(_rateToDrawBlood);
-
-            float _rateToDrawMana = (float)((Frog)_owner).Character.Mp / (float)((Frog)_owner).Character.MaxMp;
-            _manaProcessbar.UpdateDrawRect(_rateToDrawMana);
+            _healbarFrame.Update(gameTime);
+            float _bloodRate = (float)_character.Hp / (float)_character.MaxHp;
+            _bloodPro.UpdateDrawRect(_bloodRate);
+            float _manaRate = (float)_character.Mp / (float)_character.MaxMp;
+            _manaPro.UpdateDrawRect(_manaRate);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            _leftSkillButon.Draw(gameTime, sb);
-            _rightSkillButton.Draw(gameTime, sb);
-            _leftCommandButton.Draw(gameTime, sb);
-            _rightCommandButton.Draw(gameTime, sb);
-            _mainFrame.Draw(gameTime, sb);
-            _bloodProcessbar.Draw(gameTime, sb);
-            _manaProcessbar.Draw(gameTime, sb);
+            _healbarFrame.Draw(gameTime, sb);
+            _bloodPro.Draw(gameTime, sb);
+            _manaPro.Draw(gameTime, sb);
+        }
+
+//---Su kien cho Left Command Button---
+        public void LeftCommandButon_Down (object sender, EventArgs e)
+        {
+            Button_MouseDownEffect((Button)sender);
+        }
+
+        public void LeftCommandButon_Clicked(object sender, EventArgs e)
+        {
+            Button_MouseClickedEffect((Button)sender);
+            if (_skillBoard.BoardFrame.IsVisible)
+            {
+                _skillBoard.CreateMotion_GoOut();
+                _skillBoard.BoardFrame.Motion = _skillBoard.MotionGoOut;
+                _skillBoard.BoardFrame.Motion.IsStanding = false;
+            }
+            else
+            {
+                _skillBoard.CreateMotion_GoIn();
+                _skillBoard.BoardFrame.Motion = _skillBoard.MotionGoIn;
+                _skillBoard.BoardFrame.Motion.IsStanding = false;
+            }
+        }
+
+        public void LeftCommandButon_Released(object sender, EventArgs e)
+        {
+            Button_MouseReleasedEffect((Button)sender);
+        }
+//---Su kien cho Right Command Button---
+        public void RightCommandButon_Down(object sender, EventArgs e)
+        {
+            Button_MouseDownEffect((Button)sender);
+        }
+
+        public void RightCommandButon_Clicked(object sender, EventArgs e)
+        {
+            Button_MouseClickedEffect((Button)sender);
+        }
+
+        public void RightCommandButon_Released(object sender, EventArgs e)
+        {
+            Button_MouseReleasedEffect((Button)sender);
+        }
+
+//---Hàm dùng chung---
+        void Button_MouseDownEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 1;
+        }
+
+        void Button_MouseClickedEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 0;
+        }
+
+        void Button_MouseReleasedEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 0;
         }
     }
 }

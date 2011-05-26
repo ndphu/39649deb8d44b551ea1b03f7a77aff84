@@ -277,7 +277,6 @@ namespace TheReturnOfTheKing
                     }
                 }
             }
-            
             return ret;
         }
     }

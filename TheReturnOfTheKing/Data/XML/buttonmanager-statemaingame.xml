@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <Button id ="0">
+    <Image>
+      <Idle>img/dialog/control/button/command-red/idle</Idle>
+      <Clicked>img/dialog/control/button/command-red/clicked</Clicked>
+    </Image>
+
+    <OffSetX>86</OffSetX>
+    <OffSetY>16</OffSetY>
+    <Width>30</Width>
+    <Height>30</Height>
+  </Button>
+
+  <Button id ="1">
+    <Image>
+      <Idle>img/dialog/control/button/command-red/idle</Idle>
+      <Clicked>img/dialog/control/button/command-red/clicked</Clicked>
+    </Image>
+
+    <OffSetX>452</OffSetX>
+    <OffSetY>16</OffSetY>
+    <Width>30</Width>
+    <Height>30</Height>
+  </Button>
+
+  <Button id ="2">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/lefthand/idle</Idle>
+      <Clicked>img/dialog/control/button/skillboard/lefthand/clicked</Clicked>
+    </Image>
+
+    <OffSetX>230</OffSetX>
+    <OffSetY>113</OffSetY>
+    <Width>85</Width>
+    <Height>98</Height>
+  </Button>
+
+  <Button id ="3">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/righthand/idle</Idle>
+      <Clicked>img/dialog/control/button/skillboard/righthand/clicked</Clicked>
+    </Image>
+
+    <OffSetX>230</OffSetX>
+    <OffSetY>221</OffSetY>
+    <Width>85</Width>
+    <Height>98</Height>
+  </Button>
+
+  <Button id ="4">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/passive/idle</Idle>
+      <Clicked>img/dialog/control/button/skillboard/passive/clicked</Clicked>
+    </Image>
+
+    <OffSetX>230</OffSetX>
+    <OffSetY>329</OffSetY>
+    <Width>85</Width>
+    <Height>98</Height>
+  </Button>
+</root>

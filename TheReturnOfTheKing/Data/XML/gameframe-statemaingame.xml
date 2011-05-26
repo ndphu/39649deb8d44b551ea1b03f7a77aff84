@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <Frame id="0">
+    <BackGround>img\healthbar\healthbarmainframe</BackGround>
+    <X>115</X>
+    <Y>546</Y>
+    <Width>570</Width>
+    <Height>54</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="1">
+    <BackGround>img\dialog\frame\skillboard\mainframe</BackGround>
+    <X>-437</X>
+    <Y>-2</Y>
+    <Width>398</Width>
+    <Height>558</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="2">
+    <BackGround>img\dialog\frame\skillboard\lefthand</BackGround>
+    <X>77</X>
+    <Y>64</Y>
+    <Width>319</Width>
+    <Height>432</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="3">
+    <BackGround>img\dialog\frame\skillboard\righthand</BackGround>
+    <X>77</X>
+    <Y>64</Y>
+    <Width>319</Width>
+    <Height>432</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="4">
+    <BackGround>img\dialog\frame\skillboard\passive</BackGround>
+    <X>77</X>
+    <Y>64</Y>
+    <Width>319</Width>
+    <Height>432</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+</root>

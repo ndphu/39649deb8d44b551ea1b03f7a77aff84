@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <root>
-  <BackGround>img/misc/loading/loadingtomenu</BackGround>
+  <!--Một background có thể có nhiều ảnh-->
+  <BackGround>
+    <Image>
+      <Path>img/misc/loading/loadingtomenu</Path>
+      <X>0</X>
+      <Y>0</Y>
+    </Image>
+  </BackGround>
   <DelayTime>80</DelayTime>
   <ProcessBar>
-    <ContentName>./Data/XML/loadingprocessbar.xml</ContentName>
+    <ContentName>./Data/XML/processbar-stateloading.xml</ContentName>
   </ProcessBar>
 </root>

@@ -34,8 +34,8 @@ namespace TheReturnOfTheKing
             set 
             {
                 _x = value;                
-                /*for (int i = 0; i < _nsprite; ++i)
-                    _sprite[i].X = _x;*/
+                //for (int i = 0; i < _nsprite; ++i)
+                    //_sprite[i].X = _x;
             }
         }
 
@@ -47,9 +47,8 @@ namespace TheReturnOfTheKing
             set
             {
                 _y = value;
-
-                /*for (int i = 0; i < _nsprite; ++i)
-                    _sprite[i].Y = _y;*/
+               // for (int i = 0; i < _nsprite; ++i)
+                    //_sprite[i].Y = _y;
             }
         }
 
@@ -75,6 +74,22 @@ namespace TheReturnOfTheKing
         {
             get { return _rect; }
             set { _rect = value; }
+        }
+
+        float _offSetX = 0;
+
+        public float OffSetX
+        {
+            get { return _offSetX; }
+            set { _offSetX = value; }
+        }
+
+        float _offSetY = 0;
+
+        public float OffSetY
+        {
+            get { return _offSetY; }
+            set { _offSetY = value; }
         }
 
         public virtual void Init(ContentManager content)

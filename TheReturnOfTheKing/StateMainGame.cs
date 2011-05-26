@@ -25,6 +25,8 @@ namespace TheReturnOfTheKing
         public GameObjectManager[] _objectManagerArray;
         public List<VisibleGameEntity> _listToDraw;
         public List<Projectile> _listProjectile = new List<Projectile>();
+        public HealthBar _healthBar;
+        public SkillBoard _skillBoard;
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -41,30 +43,29 @@ namespace TheReturnOfTheKing
             _frog = new Frog();
             _frog.Init(owner.Content);
             _frog.SetCharacter(_char);
-            HealthBar _temp = (HealthBar)objectManagerArray[8].CreateObject(0);
-            _temp.MainFrame = new HealthBarMainFrame((GameFrame)objectManagerArray[9].CreateObject(0));
-            _temp.BloodProcessbar = (ProcessBar)objectManagerArray[10].CreateObject(0);
-            _temp.ManaProcessbar = (ProcessBar)objectManagerArray[10].CreateObject(1);
-            _temp.Owner = (Frog)_frog;
 
-            StandingButton _tempLeftSkill = (StandingButton)objectManagerArray[11].CreateObject(0);
-            _tempLeftSkill.Owner = _temp;
-            _temp.LeftSkillButon = new LeftSkillButton(_tempLeftSkill);
+            //Phần healthbar--------------------------------------------------------------------
+            _healthBar = new HealthBar();
+            _healthBar.SetCharacter(_char);
 
-            StandingButton _tempRightSkill = (StandingButton)objectManagerArray[11].CreateObject(1);
-            _tempRightSkill.Owner = _temp;
-            _temp.RightSkillButton = new RightSkillButton(_tempRightSkill);
+            List<GameObjectManager> _resourcesForHealthbar = new List<GameObjectManager>();
+            _resourcesForHealthbar.Add(objectManagerArray[8]);
+            _resourcesForHealthbar.Add(objectManagerArray[9]);
+            _resourcesForHealthbar.Add(objectManagerArray[10]);
+            _healthBar.GetResources(_resourcesForHealthbar);
 
-            StandingButton _tempLeftCommandButton = (StandingButton)objectManagerArray[11].CreateObject(2);
-            _tempLeftCommandButton.Owner = _temp;
-            _temp.LeftCommandButton = new LeftCommandButton(_tempLeftCommandButton);
+            //Phần SkillBoard------------------------------------------------------------------
+            _skillBoard = new SkillBoard();
+            _skillBoard.SetCharacter(_char);
 
-            StandingButton _tempRightCommandButton = (StandingButton)objectManagerArray[11].CreateObject(3);
-            _tempRightCommandButton.Owner = _temp;
-            _temp.RightCommandButton = new RightCommandButton(_tempRightCommandButton);
+            List<GameObjectManager> _resourcesForSkillBoard = new List<GameObjectManager>();
+            _resourcesForSkillBoard.Add(objectManagerArray[8]);
+            _resourcesForSkillBoard.Add(objectManagerArray[10]);
+            _skillBoard.GetResources(_resourcesForSkillBoard);
 
-            _frog.HealthBar = new HealthBar(_temp);
+            _healthBar.SkillBoard = _skillBoard; //trỏ tới cái bảng skill
 
+            //Phần ???---------------------------------------------------------------------------
             _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
             _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
             _objectManagerArray = objectManagerArray;
@@ -159,6 +160,8 @@ namespace TheReturnOfTheKing
             }
 
             _frog.Update(gameTime);
+            _skillBoard.Update(gameTime);
+            _healthBar.Update(gameTime);
         }
         
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -169,7 +172,6 @@ namespace TheReturnOfTheKing
             int maxY = (int)(Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight);
 
             _map.Draw(gameTime, sb);
-
 
             for (int i = 0; i < _listProjectile.Count; ++i)
             {
@@ -184,11 +186,10 @@ namespace TheReturnOfTheKing
                         _listToDraw[i].Draw(gameTime, sb);
                 }
             }
-
             _frog.Draw(gameTime, sb);
-
             GlobalVariables.GameCursor.Draw(gameTime, sb);
-
+            _skillBoard.Draw(gameTime, sb);
+            _healthBar.Draw(gameTime, sb);
         }
 
         public override void ExitState()
