@@ -106,12 +106,8 @@
     <Compile Include="GameTitleManager.cs" />
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="HealthBar.cs" />
-    <Compile Include="HealthBarMainFrame.cs" />
-    <Compile Include="HealthBarManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemManager.cs" />
-    <Compile Include="LeftCommandButton.cs" />
-    <Compile Include="LeftSkillButton.cs" />
     <Compile Include="LifeStealAttackSkill.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapManager.cs" />
@@ -141,14 +137,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />
-    <Compile Include="RightCommandButton.cs" />
-    <Compile Include="RightSkillButton.cs" />
     <Compile Include="Skill.cs" />
     <Compile Include="ProjectileInfo.cs" />
     <Compile Include="SkillInfo.cs" />
     <Compile Include="SkillManager.cs" />
-    <Compile Include="StandingButton.cs" />
-    <Compile Include="StandingButtonManager.cs" />
+    <Compile Include="SkillBoard.cs" />
     <Compile Include="StateIntro.cs" />
     <Compile Include="StateLoading.cs" />
     <Compile Include="StateLogo.cs" />
@@ -207,16 +200,19 @@
     <Content Include="Data\Skill\skill.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\XML\buttonmanager.xml">
+    <Content Include="Data\XML\buttonmanager-statemaingame.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\XML\buttonmanager-statemenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\gamecursor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\XML\gameframe.xml">
+    <Content Include="Data\XML\gameframe-statemaingame.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\XML\gameprocessbar.xml">
+    <Content Include="Data\XML\gameframe-statemenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\gametitle.xml">
@@ -225,19 +221,16 @@
     <Content Include="Data\XML\healthbar.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\XML\loadingprocessbar.xml">
+    <Content Include="Data\XML\processbar-stateloading.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\loadingtomenu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\XML\processbar-statemaingame.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\XML\menubg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\XML\menuframe.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\XML\standingbutton.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Game.ico" />

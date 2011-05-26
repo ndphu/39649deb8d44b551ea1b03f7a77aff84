@@ -17,19 +17,20 @@ namespace TheReturnOfTheKing
 {
     public class StateLoading : GameState
     {
-        
+        //private Texture2D[] _backGround; //Back ground cho loadingScreen
+        private GameSprite[] _backGroundImage;
+        private int _nBackGroundImage = 0;
+        private Texture2D _standingProcessBar; //Cái khung của process bar
+        private Texture2D _animateProcessBar; //Dung dịch chảy trong process bar
 
-        private Texture2D _backGround; //Back ground cho loadingScreen
-        
+        private GameObjectManager[] _objectManagerArray; //Mang cac objectManager cần load
 
-
-        private GameObjectManager[] _objectManagerArray; //Mang cac objectManager
-        //cần load
         public GameObjectManager[] ObjectManagerArray
         {
             get { return _objectManagerArray; }
             set { _objectManagerArray = value; }
         }
+
 
         private int _nObjectManager; //Số lượng objectManager duoc truyền vào
 
@@ -47,7 +48,14 @@ namespace TheReturnOfTheKing
 
         private Type _type; //Kiểu của state tiếp theo cần chuyển.
 
-        
+        //Cái này là vị trí đặt Processbar
+        private int _xPro;
+        private int _yPro;
+
+        //Vị trí tọa độ X bắt đầu và kết thúc của thanh dung dịch trong animated Process
+        private int _xStartAnimatePro;
+        private int _xEndAnimatePro;
+
         private int _stepLengh = 0;
         private int _completedSteps = 0;
 
@@ -67,8 +75,8 @@ namespace TheReturnOfTheKing
         ProcessBar _processBar;
 
 
-        
-//--------------FUNCTION----------------------------------------------------------------------------
+
+        //--------------FUNCTION----------------------------------------------------------------------------
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -93,26 +101,34 @@ namespace TheReturnOfTheKing
             _type = type; //Lưu lại type của state tip theo
             _xmlInfo = xmlInfo; //Lưu lại chuoi XML luu thong tin rieng cua loadind state
 
-            try
-            {
-                XmlDocument _doc = new XmlDocument();
-                _doc.Load(_xmlInfo);
+            XmlDocument _doc = new XmlDocument();
+            _doc.Load(_xmlInfo);
 
-                _backGround = content.Load<Texture2D>(_doc.DocumentElement.SelectSingleNode("BackGround").InnerText);
-                _delayTime = int.Parse(_doc.DocumentElement.SelectSingleNode("DelayTime").InnerText);
-                string _processXMLInfo = _doc.DocumentElement.SelectSingleNode("ProcessBar").SelectSingleNode("ContentName").InnerText;
-                //Truyền va init tại chỗ vì cái ProcessBarManager chỉ xài cho loading state
-                ProcessBarManager pbm = new ProcessBarManager(_processXMLInfo);
-                for (int i = 0; i < pbm._nprototype; i++)
-                {
-                    pbm.InitOne(content, i);
-                }
-                _processBar = (ProcessBar)pbm.CreateObject(0);
-            }
-            catch
+            XmlNode _backGroundNote = _doc.DocumentElement.SelectSingleNode("BackGround");
+            XmlNodeList _imageNoteList = _backGroundNote.SelectNodes("//Image");
+
+            _nBackGroundImage = _imageNoteList.Count;
+            _backGroundImage = new GameSprite[_nBackGroundImage];
+            for (int i = 0; i < _nBackGroundImage; i++)
             {
-                return;
+                Texture2D _temp = content.Load<Texture2D>(_imageNoteList[i].SelectSingleNode("Path").InnerText);
+                int _xTemp = int.Parse(_imageNoteList[i].SelectSingleNode("X").InnerText) - (int)GlobalVariables.dX;
+                int _yTemp = int.Parse(_imageNoteList[i].SelectSingleNode("Y").InnerText) - (int)GlobalVariables.dY;
+                _backGroundImage[i] = new GameSprite(_temp, _xTemp, _yTemp);
+                _backGroundImage[i].Xoffset = 0;
+                _backGroundImage[i].Yoffset = 0;
             }
+
+            _delayTime = int.Parse(_doc.DocumentElement.SelectSingleNode("DelayTime").InnerText);
+            string _processXMLInfo = _doc.DocumentElement.SelectSingleNode("ProcessBar").SelectSingleNode("ContentName").InnerText;
+            
+            //Truyền va init tại chỗ vì cái ProcessBarManager chỉ xài cho loading state
+            ProcessBarManager pbm = new ProcessBarManager(_processXMLInfo);
+            for (int i = 0; i < pbm._nprototype; i++)
+            {
+                pbm.InitOne(content, i);
+            }
+            _processBar = (ProcessBar)pbm.CreateObject(0);
         }
 
         public override void EnterState()
@@ -121,38 +137,12 @@ namespace TheReturnOfTheKing
             GlobalVariables.GameCursor.IsEmpty = true;
         }
 
-        //Dau tien la Update cai background + Process image truoc + sound (neu co)
-        //Sau do, moi~ loop update la innit 1 doi tuong trong 1 mang prototype.
         public override void UpdateState(GameTime gameTime)
         {
-            /*if (_debugDelay > 0)
-            {
-                _debugDelay--;
-                return;
-            }*/
-            //base.UpdateState(gameTime);
-            //Nếu đã load xong..
             if (_loadDone)
             {
-                //Delay 1 chut truoc khi thuc hien viec chuyen game state..
                 if (_iDelayTime == _delayTime)
                 {
-                    /*
-                    switch (_type.Name)
-                    {
-                        case "StateMenu":
-                            {
-                                Owner.GameState = new StateMenu();
-                                break;
-                            }
-                    }
-                    Owner.GameState.InitState(_objectManagerArray, this.Owner);
-                    Owner.GameState.EnterState();
-                    return;
-                     */
-                    //Sau 1 khoảng thời gian delaytime mới gán lại gamestate cho chương trình
-                    //--> gamestate mới của chương trình sẽ chạy thẳng vào Update()
-                    //--> màn hình sẽ mượt hơn rất nhiều.
                     Owner.GameState = temp;
                     GlobalVariables.GameCursor.IsIdle = true;
                 }
@@ -170,16 +160,11 @@ namespace TheReturnOfTheKing
 
                 if (_iDelayTime == _delayTime)
                 {
-                    //Nếu như id đã vượt quá số lượng id trong object hien thời thì
-                    //chuyển wa object tip theo
                     if (_prototypeIndex >= _objectManagerArray[_objectIndex]._nprototype)
                     {
                         _prototypeIndex = 0;
                         _objectIndex++;
                     }
-                    //Nếu số lượng objectIndex vuot wa so luon object -> da~ load xong toan bo
-                    // cac manager.
-
                     if (_objectIndex >= _nObjectManager)
                     {
                         switch (_type.Name)
@@ -194,52 +179,47 @@ namespace TheReturnOfTheKing
                                     _iDelayTime = 0;
                                     break;
                                 }
-                                
+
                             case "StateMainGame":
                                 {
                                     temp = new StateMainGame();
                                     temp.InitState(_objectManagerArray, this.Owner);
-                                    temp.EnterState();                                                                      
+                                    temp.EnterState();
                                     _completedSteps++;
                                     _delayTime /= 2;
                                     _iDelayTime = 0;
                                     break;
                                 }
                         }
-                        //_debugDelay = 5;
                         Owner.ResetElapsedTime();
-                        //_drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;  
                         _drawingRate = (float)_completedSteps / (float)_stepLengh;
                         _processBar.UpdateDrawRect(_drawingRate);
                         return;
                     }
 
-                    //LoadOne
                     _objectManagerArray[_objectIndex].InitOne(Owner.Content, _prototypeIndex);
                     _completedSteps++;
-                    //_debugDelay = 5;
                     Owner.ResetElapsedTime();
-                    //_drawingOffset = (_xEndAnimatePro - _xStartAnimatePro) * _completedSteps / _stepLengh + _xStartAnimatePro;
+                    
                     _drawingRate = (float)_completedSteps / (float)_stepLengh;
                     _processBar.UpdateDrawRect(_drawingRate);
-                    //Tăng id prototype hiện thời lên 1.
+
                     _prototypeIndex++;
                 }
                 else
                     _iDelayTime++;
-                
+
             }
         }
-        
+
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
         {
-            //base.DrawState(gameTime, sb);
-            //Sau khi backGround được load xong thì mới vẽ (độc lập với delaytime)
-            if (_backGround != null)
+            if (_nBackGroundImage > 0)
             {
-                sb.Draw(_backGround, new Vector2(0, 0), Color.White);
-                //sb.Draw(_animateProcessBar, new Vector2(_xPro, _yPro), new Rectangle(0, 0, (int)_drawingOffset, _animateProcessBar.Height), Color.White);
-                //sb.Draw(_standingProcessBar, new Vector2(_xPro, _yPro), Color.White);  
+                for (int i = 0; i < _nBackGroundImage; i++)
+                {
+                    _backGroundImage[i].Draw(gameTime, sb);
+                }
                 _processBar.Draw(gameTime, sb);
             }
         }

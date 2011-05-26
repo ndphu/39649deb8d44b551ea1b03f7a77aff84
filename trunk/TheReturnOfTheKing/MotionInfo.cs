@@ -201,9 +201,10 @@ namespace TheReturnOfTheKing
                             {
                                 _vel += _accel;
                                 _newPosition -= _vel;
-                                if (_newPosition.X < _owner.Width * -1.5)
+                                if (_newPosition.X < _owner.Width * -1.1)
                                 {
                                     _isStanding = true;
+                                    _newPosition.X = (int)(_owner.Width * -1.1);
                                 }
                             }
                             #endregion

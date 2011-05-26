@@ -15,55 +15,7 @@ namespace TheReturnOfTheKing
 {
     public class Button : Dialog
     {
-        private bool _isClicked = false;//Có được click hay không.
-
-        public bool IsClicked
-        {
-            get { return _isClicked; }
-            set { _isClicked = value; }
-        }
-
-        private int _delayTime = 0;
-
-        public int DelayTime
-        {
-            get { return _delayTime; }
-            set { _delayTime = value; }
-        }
-
-        private int _ideLayTime = 0;
-
-        public int IdeLayTime
-        {
-            get { return _ideLayTime; }
-            set { _ideLayTime = value; }
-        }
-
-        public MotionInfo _motionInfo;//Thông tin chuyển động của button
-
-        public override VisibleGameObject Clone()
-        {
-            GameSprite[] _spriteTemp = new GameSprite[_nsprite];
-            for (int i = 0; i < _nsprite; ++i)
-                _spriteTemp[i] = _sprite[i].Clone();  
-            Button _newButton = new Button
-            {                
-                _nsprite = this._nsprite,
-                _sprite = _spriteTemp,
-                X = this.X,
-                Y = this.Y,
-                IsMouseHover = this.IsMouseHover,
-                Width = this.Width,
-                Height = this.Height,
-                Rect = this.Rect,
-                _motionInfo = this._motionInfo,
-                _delayTime = this._delayTime,
-                _ideLayTime = this._ideLayTime
-            };
-            _newButton._motionInfo.Owner = _newButton; //Very Important....
-            return _newButton;
-        }
-
+        //Lớp này chi có 1 con sprite với 2 texture: 0 - Idle; 1 - Clicked
         public override float X
         {
             get
@@ -75,6 +27,7 @@ namespace TheReturnOfTheKing
                 _x = value;
                 for (int i = 0; i < base._nsprite; ++i)
                     _sprite[i].X = value;
+                _rect = new Rectangle((int)_x, (int)_y, (int)_width, (int)_height);
             }
         }
 
@@ -89,57 +42,88 @@ namespace TheReturnOfTheKing
                 _y = value;
                 for (int i = 0; i < base._nsprite; ++i)
                     _sprite[i].Y = value;
+                _rect = new Rectangle((int)_x, (int)_y, (int)_width, (int)_height);
             }
+        }
+
+        bool _mouseValidation = false;
+
+        public override VisibleGameObject Clone()
+        {
+            GameSprite[] _spriteTemp = new GameSprite[_nsprite];
+            for (int i = 0; i < _nsprite; ++i)
+                _spriteTemp[i] = _sprite[i].Clone();
+            Button _new = new Button
+            {
+                _nsprite = this._nsprite,
+                _sprite = _spriteTemp,
+                Width = this.Width,
+                Height = this.Height,
+                Rect = this.Rect,
+                X = this.X,
+                Y = this.Y,
+                OffSetX = this.OffSetX,
+                OffSetY = this.OffSetY,
+                IsMouseHover = false,
+            };
+            return _new;
+        }
+
+        public void GetNewIdleTexture(Texture2D _idle)
+        {
+            _sprite[0].Texture2D[0] = _idle;
+        }
+
+        public void GetNewClickedTexture(Texture2D _clicked)
+        {
+            _sprite[0].Texture2D[1] = _clicked;
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (_ideLayTime == _delayTime)
+            if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
             {
-                //Update sprite cho button.
-                if (IsMouseHover)
-                    _sprite[1].Itexture2D = (_sprite[1].Itexture2D + 1) % _sprite[1].Ntexture2D;
-                else
-                    _sprite[0].Itexture2D = (_sprite[0].Itexture2D + 1) % _sprite[0].Ntexture2D;
-
-                //Update vị trí cho button.
-                if (_motionInfo != null)
+                if (!IsMouseHover)
                 {
-                    if (!_motionInfo.IsStanding)
-                    {
-                        //Vector2 newPos = _motionInfo.Move(new Vector2(X, Y));
-                        _motionInfo.Move(new Vector2(X, Y));
-                        //X = newPos.X;
-                        //Y = newPos.Y;
-                    }
+                    if (!_rect.Contains(GlobalVariables.PreviousMouseState.X, GlobalVariables.PreviousMouseState.Y) && GlobalVariables.PreviousMouseState.LeftButton == ButtonState.Pressed)
+                        _mouseValidation = false;
+                    else
+                        _mouseValidation = true;
+                }
+                if (_mouseValidation == false && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released)
+                {
+                    _mouseValidation = true;
+                    return;
                 }
 
-                if (_isClicked)
+                IsMouseHover = true;
+                OnMouse_Hover(this, null);
+
+                if (_mouseValidation)
                 {
-                    if (_motionInfo != null)
+                    if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed)
                     {
-                        if (!_motionInfo.IsStanding)
-                            _motionInfo.Move(new Vector2(X, Y));
-                        else
-                            OnMouse_Click(this, null);
+                        OnMouse_Down(this, null);
                     }
-                    else
+                    else if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && GlobalVariables.PreviousMouseState.LeftButton == ButtonState.Pressed)
+                    {
                         OnMouse_Click(this, null);
+                    }
                 }
             }
             else
-                _ideLayTime += 1;
+            {
+                if (IsMouseHover)
+                {
+                    IsMouseHover = false;
+                    OnMouse_Released(this, null);
+                }
+            }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            if (_ideLayTime == _delayTime)
-            {
-                if (IsMouseHover)
-                    _sprite[1].Draw(gameTime, sb);
-                else
-                    _sprite[0].Draw(gameTime, sb);
-            }
+            sb.Draw(_sprite[0].Texture2D[_sprite[0].Itexture2D], new Vector2(X, Y), Color.White);
         }
 
         public delegate void OnMouseClickHandler(object sender, EventArgs e);
@@ -153,15 +137,42 @@ namespace TheReturnOfTheKing
                 Mouse_Click(sender, e);
             }
         }
-        private MotionInfo SetButtonMotion(MotionInfo _preMotion)
+
+
+        public delegate void OnMouseHoverHandler(object sender, EventArgs e);
+
+        public event OnMouseHoverHandler Mouse_Hover;
+
+        public void OnMouse_Hover(Object sender, EventArgs e)
         {
-            MotionInfo _newMotion = _preMotion;
-            _newMotion.IsStanding = false;
-            _newMotion.FirstDection = "Right";
-            _newMotion.StandingGround = float.MinValue;
-            _newMotion.Vel = new Vector2(10, 0);
-            _newMotion.Accel = new Vector2(1, 0);
-            return _newMotion;
+            if (Mouse_Hover != null)
+            {
+                Mouse_Hover(sender, e);
+            }
+        }
+
+        public delegate void OnMouseReleasedHandler(object sender, EventArgs e);
+
+        public event OnMouseReleasedHandler Mouse_Released;
+
+        public void OnMouse_Released(Object sender, EventArgs e)
+        {
+            if (Mouse_Released != null)
+            {
+                Mouse_Released(sender, e);
+            }
+        }
+
+        public delegate void OnMouseDownHandler(object sender, EventArgs e);
+
+        public event OnMouseDownHandler Mouse_Down;
+
+        public void OnMouse_Down(Object sender, EventArgs e)
+        {
+            if (Mouse_Down != null)
+            {
+                Mouse_Down(sender, e);
+            }
         }
     }
 }

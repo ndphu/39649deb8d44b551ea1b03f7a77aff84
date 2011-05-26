@@ -13,7 +13,7 @@
     <Direction>Up</Direction>
 
     <X>0</X>
-    <Y>0</Y>
+    <Y>495</Y>
 
     <Width>115</Width>
     <Height>105</Height>
@@ -26,12 +26,10 @@
     <StartAnimate>90</StartAnimate>
     <EndAnimate>10</EndAnimate>
 
-    <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
-    <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->
     <Direction>Up</Direction>
 
     <X>685</X>
-    <Y>0</Y>
+    <Y>495</Y>
 
     <Width>115</Width>
     <Height>105</Height>

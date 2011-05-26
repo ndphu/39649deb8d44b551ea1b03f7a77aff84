@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <Frame id="0">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>150</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>60</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <!--Nhận các giá trị sau-->
+      <!--Right: Đi qua phải trước-->
+      <!--Left: Đi qua trái trước-->
+      <!--Up: Đi lên trên trước-->
+      <!--Down: Đi xuống dưới trước-->
+      <!--Null: Đứng tại chỗ-->
+
+      <StandingGround>-10</StandingGround>
+      <!--Nhận các giá trị sau-->
+      <!--<Số>: Có Standing Ground-->
+      <!--Null: Không có Standing Ground-->
+
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="1">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>216</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>65</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+      
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="2">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>282</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>70</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="3">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>348</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>75</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="4">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>414</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>80</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="5">
+    <BackGround>Null</BackGround>
+    <X>-250</X>
+    <Y>480</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>85</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>24</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="6">
+    <BackGround>img/dialog/menu/menu01</BackGround>
+    <X>0</X>
+    <Y>-658</Y>
+    <Width>274</Width>
+    <Height>658</Height>
+
+    <DelayTime>10</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Down</FirstDirection>
+
+      <StandingGround>-85</StandingGround>
+
+      <Velocity>
+        <X>0</X>
+        <Y>51</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>0</X>
+        <Y>2</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+</root>

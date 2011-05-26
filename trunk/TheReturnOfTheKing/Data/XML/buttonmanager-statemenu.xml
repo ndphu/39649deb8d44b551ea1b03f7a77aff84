@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Button id ="0">
+    <Image>
+      <Idle>img/dialog/control/button/newgame/idle</Idle>
+      <Clicked>img/dialog/control/button/newgame/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="1">
+    <Image>
+      <Idle>img/dialog/control/button/load/idle</Idle>
+      <Clicked>img/dialog/control/button/load/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="2">
+    <Image>
+      <Idle>img/dialog/control/button/option/idle</Idle>
+      <Clicked>img/dialog/control/button/option/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="3">
+    <Image>
+      <Idle>img/dialog/control/button/help/idle</Idle>
+      <Clicked>img/dialog/control/button/help/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="4">
+    <Image>
+      <Idle>img/dialog/control/button/about/idle</Idle>
+      <Clicked>img/dialog/control/button/about/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="5">
+    <Image>
+      <Idle>img/dialog/control/button/quit/idle</Idle>
+      <Clicked>img/dialog/control/button/quit/clicked</Clicked>
+    </Image>
+
+    <OffSetX>0</OffSetX>
+    <OffSetY>0</OffSetY>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+  
+</root>
