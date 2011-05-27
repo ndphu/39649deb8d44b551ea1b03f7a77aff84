@@ -14,9 +14,9 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconM = this.SkillIconM,
-                SkillIconS = this.SkillIconS,
-                SkillIconL = this.SkillIconL,
+                IdleIcon = this.IdleIcon,
+                LargeIcon = this.LargeIcon,
+                ClickedIcon = this.ClickedIcon,
             };
         }
 
@@ -55,6 +55,10 @@ namespace TheReturnOfTheKing
                 if (r.Next(0, 100) < skillInfo.ChanceToCurse)
                 {
                     ((Monster)target).Defense -= skillInfo.AmorReduce;
+                    Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(7);
+                    prjt.X = target.X;
+                    prjt.Y = target.Y;
+                    ((Monster)target).AdditionnalEffect.Add(prjt);
                 }
 
             }

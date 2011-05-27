@@ -47,33 +47,33 @@ namespace TheReturnOfTheKing
         /// <summary>
         /// Hinh anh dai dien cho skill (64x64)
         /// </summary>
-        Texture2D _skillIconL;
+        Texture2D _clickedIcon;
 
-        public Texture2D SkillIconL
+        public Texture2D ClickedIcon
         {
-            get { return _skillIconL; }
-            set { _skillIconL = value; }
+            get { return _clickedIcon; }
+            set { _clickedIcon = value; }
         }
 
         /// <summary>
         /// Hinh anh dai dien cho skill (48x48)
         /// </summary>
-        Texture2D _skillIconM;
+        Texture2D _idleIcon;
 
-        public Texture2D SkillIconM
+        public Texture2D IdleIcon
         {
-            get { return _skillIconM; }
-            set { _skillIconM = value; }
+            get { return _idleIcon; }
+            set { _idleIcon = value; }
         }
         /// <summary>
         /// Hinh anh dai dien cho skill (32x32)
         /// </summary>
-        Texture2D _skillIconS;
+        Texture2D _largeIcon;
 
-        public Texture2D SkillIconS
+        public Texture2D LargeIcon
         {
-            get { return _skillIconS; }
-            set { _skillIconS = value; }
+            get { return _largeIcon; }
+            set { _largeIcon = value; }
         }
 
         int _level = 0;
@@ -105,8 +105,8 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconM = this.SkillIconM,
-                SkillIconS = this.SkillIconS,
+                IdleIcon = this.IdleIcon,
+                LargeIcon = this.LargeIcon,
             };
         }
 

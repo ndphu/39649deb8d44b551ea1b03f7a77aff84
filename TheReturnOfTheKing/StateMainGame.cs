@@ -178,7 +178,7 @@ namespace TheReturnOfTheKing
                 _listProjectile[i].Draw(gameTime, sb);
             }
 
-            for (int y = minY; y < maxY; y += 32)
+            for (int y = minY; y < maxY; y += 16)
             {
                 for (int i = 0; i < _listToDraw.Count; ++i)
                 {

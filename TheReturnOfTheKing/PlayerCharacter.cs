@@ -559,6 +559,7 @@ namespace TheReturnOfTheKing
                     //    this.Hp += projectileInfo.Hp;
                     //    this.Mp += projectileInfo.Mp;
                     //}
+
                 }
                 waitToCast = false;
             }
@@ -578,10 +579,9 @@ namespace TheReturnOfTheKing
                     prjt.X = Target.X;
                     prjt.Y = Target.Y;
                     prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
-                    r = new Random((int)DateTime.Now.Ticks);
                     prjt.MinDamage = MinDamage * 2;
                     prjt.MaxDamage = MaxDamage * 2;
-                    Owner._listProjectile.Add(prjt);                    
+                    Target.AdditionnalEffect.Add(prjt);                   
                 }
             }
             else
@@ -590,10 +590,9 @@ namespace TheReturnOfTheKing
                 prjt.X = Target.X;
                 prjt.Y = Target.Y;
                 prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
-                r = new Random((int)DateTime.Now.Ticks);
                 prjt.MinDamage = MinDamage;
                 prjt.MaxDamage = MaxDamage;
-                Owner._listProjectile.Add(prjt);
+                Target.AdditionnalEffect.Add(prjt);
             }
         }
         public void UpdateEquippedItemṣ̣()
