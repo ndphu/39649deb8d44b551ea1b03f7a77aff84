@@ -15,9 +15,9 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconM = this.SkillIconM,
-                SkillIconS = this.SkillIconS,
-                SkillIconL = this.SkillIconL,
+                IdleIcon = this.IdleIcon,
+                LargeIcon = this.LargeIcon,
+                ClickedIcon = this.ClickedIcon,
             };
         }
 

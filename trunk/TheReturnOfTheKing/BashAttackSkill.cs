@@ -15,9 +15,9 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconM = this.SkillIconM,
-                SkillIconS = this.SkillIconS,
-                SkillIconL = this.SkillIconL,
+                IdleIcon = this.IdleIcon,
+                LargeIcon = this.LargeIcon,
+                ClickedIcon = this.ClickedIcon,
             };
         }
 
@@ -46,7 +46,13 @@ namespace TheReturnOfTheKing
             base.DoAdditionalEffect(target);
             Random r = new Random((int)DateTime.Now.Ticks);
             if (r.Next(0, 100) < ListLevel[Level].ListSkillInfo[0].ChanceToBash)
+            {
                 ((Monster)target).BashTime = ListLevel[Level].ListSkillInfo[0].BashTime;
+                Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(6);
+                prjt.X = target.X;
+                prjt.Y = target.Y;
+                ((Monster)target).AdditionnalEffect.Add(prjt);
+            }
         }
     }
 }

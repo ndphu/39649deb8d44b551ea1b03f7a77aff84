@@ -15,9 +15,9 @@ namespace TheReturnOfTheKing
                 Y = this.Y,
                 Level = this.Level,
                 ListLevel = this.ListLevel,
-                SkillIconM = this.SkillIconM,
-                SkillIconS = this.SkillIconS,
-                SkillIconL = this.SkillIconL,
+                IdleIcon = this.IdleIcon,
+                LargeIcon = this.LargeIcon,
+                ClickedIcon = this.ClickedIcon,
             };
         }
 
@@ -45,10 +45,14 @@ namespace TheReturnOfTheKing
         {
             base.DoAdditionalEffect(target);
             PlayerOwner.Hp += -((Monster)target).RecentHPLost * ListLevel[Level].ListSkillInfo[0].PercentLifeSteal / 100;
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(4);
-            prjt.X = PlayerOwner.X;
-            prjt.Y = PlayerOwner.Y;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            //Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(4);
+            //prjt.X = PlayerOwner.X;
+            //prjt.Y = PlayerOwner.Y;
+            //PlayerOwner.Owner._listProjectile.Add(prjt);
+            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(5);
+            prjt.X = ((Monster)target).X;
+            prjt.Y = ((Monster)target).Y;
+            ((Monster)target).AdditionnalEffect.Add(prjt);
         }
     }
 }

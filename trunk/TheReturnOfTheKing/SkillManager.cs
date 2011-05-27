@@ -204,6 +204,9 @@ namespace TheReturnOfTheKing
                     }
                     break;
             }
+            ((Skill)_prototype[id]).LargeIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Large").InnerText);
+            ((Skill)_prototype[id]).ClickedIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Clicked").InnerText);
+            ((Skill)_prototype[id]).IdleIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Idle").InnerText);
             return true;
         }
     }

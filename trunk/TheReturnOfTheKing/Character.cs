@@ -17,6 +17,14 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+        List<Projectile> _additionnalEffect = new List<Projectile>();
+
+        public List<Projectile> AdditionnalEffect
+        {
+            get { return _additionnalEffect; }
+            set { _additionnalEffect = value; }
+        }
+
         int _bashTime;
 
         public int BashTime
@@ -481,21 +489,31 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
+            for (int i = 0; i < AdditionnalEffect.Count; ++i)
+                AdditionnalEffect[i].Draw(gameTime, sb);
             _sprite[_dir].Draw(gameTime, sb);
             if (_displayDamageTime > 0 && Math.Abs(_damage) > 0)
             {
                 _displayDamageTime -= 1;
                 sb.DrawString(GlobalVariables.Sf, _damage.ToString(), new Vector2(X + GlobalVariables.dX , Y + _displayDamageTime + GlobalVariables.dY + _sprite[Dir].Yoffset - 20), Color.Red);
             }
+            
         }
 
         public override void Update(GameTime gameTime)
         {
+            for (int i = 0; i < AdditionnalEffect.Count; ++i)
+            {
+                AdditionnalEffect[i].Update(gameTime);
+                if (AdditionnalEffect[i]._sprite[0].Itexture2D == AdditionnalEffect[i]._sprite[0].Ntexture2D - 1)
+                    AdditionnalEffect.Remove(AdditionnalEffect[i]);
+            }
             if (BashTime > 0)
             {
                 --BashTime;
                 return;
             }
+
             _sprite[Dir].Update(gameTime);
 
             if (this.Hp <= 0 && !IsDying && !IsDyed)
