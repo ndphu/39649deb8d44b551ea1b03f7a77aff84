@@ -54,6 +54,14 @@ namespace TheReturnOfTheKing
             _resourcesForHealthbar.Add(objectManagerArray[10]);
             _healthBar.GetResources(_resourcesForHealthbar);
 
+            //Phần ???---------------------------------------------------------------------------
+            _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+            _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
+            _objectManagerArray = objectManagerArray;
+            _listToDraw = new List<VisibleGameEntity>();
+
+            _char.InitSkill();
+
             //Phần SkillBoard------------------------------------------------------------------
             _skillBoard = new SkillBoard();
             _skillBoard.SetCharacter(_char);
@@ -64,20 +72,11 @@ namespace TheReturnOfTheKing
             _skillBoard.GetResources(_resourcesForSkillBoard);
 
             _healthBar.SkillBoard = _skillBoard; //trỏ tới cái bảng skill
-
-            //Phần ???---------------------------------------------------------------------------
-            _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
-            _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
-            _objectManagerArray = objectManagerArray;
-            _listToDraw = new List<VisibleGameEntity>();
-
-            _char.InitSkill();
         }
 
         public override void EnterState()
         {
             base.EnterState();
-
         }
         
         public override void UpdateState(GameTime gameTime)
@@ -91,7 +90,10 @@ namespace TheReturnOfTheKing
             GlobalVariables.GameCursor.IsIdle = true;
             GlobalVariables.AlreadyUseLeftMouse = false;
             GlobalVariables.AlreadyUseRightMouse = false;
-            
+
+            _skillBoard.Update(gameTime);
+            _healthBar.Update(gameTime);
+
             _listToDraw.Clear();
 
             _map.Update(gameTime);
@@ -160,8 +162,6 @@ namespace TheReturnOfTheKing
             }
 
             _frog.Update(gameTime);
-            _skillBoard.Update(gameTime);
-            _healthBar.Update(gameTime);
         }
         
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -196,7 +196,5 @@ namespace TheReturnOfTheKing
         {
             base.ExitState();
         }
-
-        
     }
 }

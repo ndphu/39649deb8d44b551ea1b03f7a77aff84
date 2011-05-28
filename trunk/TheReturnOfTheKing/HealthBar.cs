@@ -68,15 +68,13 @@ namespace TheReturnOfTheKing
 
             Button _leftCommand = (Button)_resouces[2].CreateObject(0);
             _leftCommand.Mouse_Click += new Button.OnMouseClickHandler(LeftCommandButon_Clicked);
-            _leftCommand.Mouse_Down += new Button.OnMouseDownHandler(LeftCommandButon_Down);
-            _leftCommand.Mouse_Released += new Button.OnMouseReleasedHandler(LeftCommandButon_Released);
             HealbarFrame.AddChild(_leftCommand);
 
             Button _rightCommand = (Button)_resouces[2].CreateObject(1);
             _rightCommand.Mouse_Click += new Button.OnMouseClickHandler(RightCommandButon_Clicked);
-            _rightCommand.Mouse_Down += new Button.OnMouseDownHandler(RightCommandButon_Down);
-            _rightCommand.Mouse_Released += new Button.OnMouseReleasedHandler(RightCommandButon_Released);
             HealbarFrame.AddChild(_rightCommand);
+
+            _rect = new Rectangle((int)_healbarFrame.X, (int)_healbarFrame.Y, (int)_healbarFrame.Width, (int)_healbarFrame.Height);
         }
 
         public override void Update(GameTime gameTime)
@@ -86,6 +84,17 @@ namespace TheReturnOfTheKing
             _bloodPro.UpdateDrawRect(_bloodRate);
             float _manaRate = (float)_character.Mp / (float)_character.MaxMp;
             _manaPro.UpdateDrawRect(_manaRate);
+
+            _rect = new Rectangle((int)_healbarFrame.X, (int)_healbarFrame.Y, (int)_healbarFrame.Width, (int)_healbarFrame.Height);
+            if (_rect.Contains (GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
+            {
+                GlobalVariables.AlreadyUseLeftMouse = true;
+                //GlobalVariables.AlreadyUseRightMouse = true;
+            }
+
+            //Update chỗ này chỉ để chặn con chuột -> khá dỡ.
+            _bloodPro.Update(gameTime);
+            _manaPro.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
@@ -96,14 +105,8 @@ namespace TheReturnOfTheKing
         }
 
 //---Su kien cho Left Command Button---
-        public void LeftCommandButon_Down (object sender, EventArgs e)
-        {
-            Button_MouseDownEffect((Button)sender);
-        }
-
         public void LeftCommandButon_Clicked(object sender, EventArgs e)
         {
-            Button_MouseClickedEffect((Button)sender);
             if (_skillBoard.BoardFrame.IsVisible)
             {
                 _skillBoard.CreateMotion_GoOut();
@@ -117,41 +120,10 @@ namespace TheReturnOfTheKing
                 _skillBoard.BoardFrame.Motion.IsStanding = false;
             }
         }
-
-        public void LeftCommandButon_Released(object sender, EventArgs e)
-        {
-            Button_MouseReleasedEffect((Button)sender);
-        }
 //---Su kien cho Right Command Button---
-        public void RightCommandButon_Down(object sender, EventArgs e)
-        {
-            Button_MouseDownEffect((Button)sender);
-        }
-
         public void RightCommandButon_Clicked(object sender, EventArgs e)
         {
-            Button_MouseClickedEffect((Button)sender);
-        }
-
-        public void RightCommandButon_Released(object sender, EventArgs e)
-        {
-            Button_MouseReleasedEffect((Button)sender);
-        }
-
-//---Hàm dùng chung---
-        void Button_MouseDownEffect(Button _button)
-        {
-            _button._sprite[0].Itexture2D = 1;
-        }
-
-        void Button_MouseClickedEffect(Button _button)
-        {
-            _button._sprite[0].Itexture2D = 0;
-        }
-
-        void Button_MouseReleasedEffect(Button _button)
-        {
-            _button._sprite[0].Itexture2D = 0;
-        }
+            
+        }     
     }
 }

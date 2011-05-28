@@ -96,6 +96,7 @@ namespace TheReturnOfTheKing
             _child.Add(_object);
             _object.X = _x + _object.OffSetX;
             _object.Y = _y + _object.OffSetY;
+            _object.Rect = new Rectangle((int)_object.X, (int)_object.Y, (int)_object.Width, (int)_object.Height);
             _nChild++;
         }
 
@@ -141,15 +142,24 @@ namespace TheReturnOfTheKing
         {
             GameFrame _new = new GameFrame();
             _new._nsprite = this._nsprite;
-            _new._sprite = new GameSprite[_new._nsprite];
-            for (int i = 0; i < _new._nsprite; i++)
+            if (_new._nsprite == 0)
             {
-                _new._sprite[i] = this._sprite[i];
+                _new._sprite = null;
+            }
+            else
+            {
+                _new._sprite = new GameSprite[_new._nsprite];
+                for (int i = 0; i < _new._nsprite; i++)
+                {
+                    _new._sprite[i] = this._sprite[i];
+                }
             }
             _new._iDelayTime = this._iDelayTime;
             _new._delayTime = this._delayTime;
             _new._x = this._x;
             _new._y = this._y;
+            _new.OffSetX = this.OffSetX;
+            _new.OffSetY = this.OffSetY;
             _new._width = this._width;
             _new._height = this._height;
             _new._rect = this._rect;

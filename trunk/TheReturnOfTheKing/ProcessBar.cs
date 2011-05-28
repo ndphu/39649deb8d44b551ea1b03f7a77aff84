@@ -87,6 +87,8 @@ namespace TheReturnOfTheKing
                 _nsprite = this._nsprite,
                 _sprite = this._sprite,
                 _x = this._x,
+                OffSetX = this.OffSetX,
+                OffSetY = this.OffSetY,
                 _y = this._y,
                 _direction = this._direction,
                 _rect = this._rect,
@@ -95,7 +97,6 @@ namespace TheReturnOfTheKing
                 _xEndAnimatePro = this._xEndAnimatePro,
                 _xStartAnimatePro = this._xStartAnimatePro
             };
-
         }
 
         public void UpdateDrawRect(float _rateToDraw)
@@ -127,7 +128,16 @@ namespace TheReturnOfTheKing
                     {
                         break;
                     }
+            }
+        }
 
+        public override void Update(GameTime gameTime)
+        {
+            _rect = new Rectangle((int)_x, (int)_y, (int)_width, (int)_height);
+            if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
+            {
+                GlobalVariables.AlreadyUseLeftMouse = true;
+                //GlobalVariables.AlreadyUseRightMouse = true;
             }
         }
 
