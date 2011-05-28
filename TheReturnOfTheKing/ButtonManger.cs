@@ -56,8 +56,13 @@ namespace TheReturnOfTheKing
             _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
             _prototype[id]._sprite[0] = new GameSprite(_temp, 0, 0);
 
-            _prototype[id].OffSetX = float.Parse(_button.SelectSingleNode("OffSetX").InnerText);
-            _prototype[id].OffSetY = float.Parse(_button.SelectSingleNode("OffSetY").InnerText);
+            //_prototype[id].OffSetX = float.Parse(_button.SelectSingleNode("OffSetX").InnerText);
+            //_prototype[id].OffSetY = float.Parse(_button.SelectSingleNode("OffSetY").InnerText);
+            _prototype[id].X = float.Parse(_button.SelectSingleNode("X").InnerText);
+            _prototype[id].Y = float.Parse(_button.SelectSingleNode("Y").InnerText);
+            _prototype[id].OffSetX = _prototype[id].X;
+            _prototype[id].OffSetY = _prototype[id].Y;
+
             _prototype[id].Width = float.Parse(_button.SelectSingleNode("Width").InnerText);
             _prototype[id].Height = float.Parse(_button.SelectSingleNode("Height").InnerText);
             _prototype[id].Rect = new Rectangle((int)_prototype[id].X,

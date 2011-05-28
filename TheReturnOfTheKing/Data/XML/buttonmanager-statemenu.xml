@@ -6,8 +6,8 @@
       <Clicked>img/dialog/control/button/newgame/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -18,8 +18,8 @@
       <Clicked>img/dialog/control/button/load/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -30,8 +30,8 @@
       <Clicked>img/dialog/control/button/option/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -42,8 +42,8 @@
       <Clicked>img/dialog/control/button/help/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -54,8 +54,8 @@
       <Clicked>img/dialog/control/button/about/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -66,8 +66,8 @@
       <Clicked>img/dialog/control/button/quit/clicked</Clicked>
     </Image>
 
-    <OffSetX>0</OffSetX>
-    <OffSetY>0</OffSetY>
+    <X>0</X>
+    <Y>0</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>

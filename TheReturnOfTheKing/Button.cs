@@ -16,6 +16,14 @@ namespace TheReturnOfTheKing
     public class Button : Dialog
     {
         //Lớp này chi có 1 con sprite với 2 texture: 0 - Idle; 1 - Clicked
+        bool _isPressButton = false;
+
+        public bool IsPressButton
+        {
+            get { return _isPressButton; }
+            set { _isPressButton = value; }
+        }
+
         public override float X
         {
             get
@@ -83,6 +91,9 @@ namespace TheReturnOfTheKing
         {
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
             {
+                if (GlobalVariables.AlreadyUseLeftMouse)
+                    return;
+
                 if (!IsMouseHover)
                 {
                     if (!_rect.Contains(GlobalVariables.PreviousMouseState.X, GlobalVariables.PreviousMouseState.Y) && GlobalVariables.PreviousMouseState.LeftButton == ButtonState.Pressed)
@@ -103,19 +114,27 @@ namespace TheReturnOfTheKing
                 {
                     if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed)
                     {
+                        Button_MouseDownEffect(this);
                         OnMouse_Down(this, null);
                     }
                     else if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && GlobalVariables.PreviousMouseState.LeftButton == ButtonState.Pressed)
                     {
+                        if (!_isPressButton)
+                            Button_MouseClickedEffect(this);
                         OnMouse_Click(this, null);
                     }
                 }
+                GlobalVariables.AlreadyUseLeftMouse = true;
             }
             else
             {
                 if (IsMouseHover)
                 {
                     IsMouseHover = false;
+                    if (_isPressButton)
+                        GlobalVariables.GameCursor.IsIdle = true;
+                    else
+                        Button_MouseReleasedEffect(this);
                     OnMouse_Released(this, null);
                 }
             }
@@ -126,6 +145,23 @@ namespace TheReturnOfTheKing
             sb.Draw(_sprite[0].Texture2D[_sprite[0].Itexture2D], new Vector2(X, Y), Color.White);
         }
 
+        //Button Effect---
+        void Button_MouseDownEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 1;
+        }
+
+        void Button_MouseClickedEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 0;
+        }
+
+        void Button_MouseReleasedEffect(Button _button)
+        {
+            _button._sprite[0].Itexture2D = 0;
+            GlobalVariables.GameCursor.IsIdle = true;
+        }
+        //------------------------------------------------------------
         public delegate void OnMouseClickHandler(object sender, EventArgs e);
 
         public event OnMouseClickHandler Mouse_Click;
@@ -137,7 +173,6 @@ namespace TheReturnOfTheKing
                 Mouse_Click(sender, e);
             }
         }
-
 
         public delegate void OnMouseHoverHandler(object sender, EventArgs e);
 

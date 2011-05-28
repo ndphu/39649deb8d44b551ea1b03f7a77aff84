@@ -7,8 +7,8 @@
       <Clicked>img/dialog/control/button/command-red/clicked</Clicked>
     </Image>
 
-    <OffSetX>86</OffSetX>
-    <OffSetY>16</OffSetY>
+    <X>86</X>
+    <Y>16</Y>
     <Width>30</Width>
     <Height>30</Height>
   </Button>
@@ -19,8 +19,8 @@
       <Clicked>img/dialog/control/button/command-red/clicked</Clicked>
     </Image>
 
-    <OffSetX>452</OffSetX>
-    <OffSetY>16</OffSetY>
+    <X>452</X>
+    <Y>16</Y>
     <Width>30</Width>
     <Height>30</Height>
   </Button>
@@ -31,8 +31,8 @@
       <Clicked>img/dialog/control/button/skillboard/lefthand/clicked</Clicked>
     </Image>
 
-    <OffSetX>230</OffSetX>
-    <OffSetY>113</OffSetY>
+    <X>230</X>
+    <Y>113</Y>
     <Width>85</Width>
     <Height>98</Height>
   </Button>
@@ -43,8 +43,8 @@
       <Clicked>img/dialog/control/button/skillboard/righthand/clicked</Clicked>
     </Image>
 
-    <OffSetX>230</OffSetX>
-    <OffSetY>221</OffSetY>
+    <X>230</X>
+    <Y>221</Y>
     <Width>85</Width>
     <Height>98</Height>
   </Button>
@@ -55,9 +55,81 @@
       <Clicked>img/dialog/control/button/skillboard/passive/clicked</Clicked>
     </Image>
 
-    <OffSetX>230</OffSetX>
-    <OffSetY>329</OffSetY>
+    <X>230</X>
+    <Y>329</Y>
     <Width>85</Width>
     <Height>98</Height>
+  </Button>
+
+  <Button id ="5">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>14</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="6">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>84</X>
+    <Y>82</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="7">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>153</X>
+    <Y>82</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="8">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>150</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="9">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>153</X>
+    <Y>150</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="10">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>85</X>
+    <Y>219</Y>
+    <Width>48</Width>
+    <Height>48</Height>
   </Button>
 </root>

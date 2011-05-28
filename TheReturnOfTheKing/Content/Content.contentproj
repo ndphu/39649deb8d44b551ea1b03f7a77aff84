@@ -37454,6 +37454,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="img\skillicon\idle\05.png">
+      <Name>05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="img\skillicon\idle\06.png">
       <Name>06</Name>
       <Importer>TextureImporter</Importer>
@@ -37461,8 +37468,50 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="img\skillicon\idle\05.png">
-      <Name>05</Name>
+    <Compile Include="img\dialog\control\button\skillboard\temp\temp.png">
+      <Name>temp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\about\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\help\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\load\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\newgame\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\option\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\quit\clicked.png">
+      <Name>clicked</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

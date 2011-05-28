@@ -53,7 +53,6 @@ namespace TheReturnOfTheKing
             _newgameButton.Owner = _newgameFrame;
             _newgameButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_NewGame);
             _newgameButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_NewGame);
-            _newgameButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_NewGame);
 
             _loadgameFrame = (GameFrame)objectManagerArray[1].CreateObject(1);
             _loadgameFrame.Move_Complete += new GameFrame.OnMoveCompletedHandler(StateMenu_Move_Complete_Load);
@@ -62,7 +61,6 @@ namespace TheReturnOfTheKing
             _loadgameButton.Owner = _loadgameFrame;
             _loadgameButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_Load);
             _loadgameButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_Load);
-            _loadgameButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_Load);
 
             _optionFrame = (GameFrame)objectManagerArray[1].CreateObject(2);
             _optionFrame.Move_Complete += new GameFrame.OnMoveCompletedHandler(StateMenu_Move_Complete_Option);
@@ -71,7 +69,6 @@ namespace TheReturnOfTheKing
             _optionButton.Owner = _optionFrame;
             _optionButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_Option);
             _optionButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_Option);
-            _optionButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_Option);
 
             _helpFrame = (GameFrame)objectManagerArray[1].CreateObject(3);
             _helpFrame.Move_Complete += new GameFrame.OnMoveCompletedHandler(StateMenu_Move_Complete_Help);
@@ -80,7 +77,6 @@ namespace TheReturnOfTheKing
             _helpButton.Owner = _helpFrame;
             _helpButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_Help);
             _helpButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_Help);
-            _helpButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_Help);
 
             _aboutFrame = (GameFrame)objectManagerArray[1].CreateObject(4);
             _aboutFrame.Move_Complete += new GameFrame.OnMoveCompletedHandler(StateMenu_Move_Complete_About);
@@ -89,7 +85,6 @@ namespace TheReturnOfTheKing
             _aboutButton.Owner = _aboutFrame;
             _aboutButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_About);
             _aboutButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_About);
-            _aboutButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_About);
 
             _quitFrame = (GameFrame)objectManagerArray[1].CreateObject(5);
             _quitFrame.Move_Complete += new GameFrame.OnMoveCompletedHandler(StateMenu_Move_Complete_Quit);
@@ -98,7 +93,6 @@ namespace TheReturnOfTheKing
             _quitButton.Owner = _quitFrame;
             _quitButton.Mouse_Click += new Button.OnMouseClickHandler(StateMenu_Mouse_Click_Quit);
             _quitButton.Mouse_Hover += new Button.OnMouseHoverHandler(StateMenu_Mouse_Hover_Quit);
-            _quitButton.Mouse_Released += new Button.OnMouseReleasedHandler(StateMenu_Mouse_Released_Quit);
 
             _menuFrame = (GameFrame)objectManagerArray[1].CreateObject(6);
         }
@@ -147,12 +141,6 @@ namespace TheReturnOfTheKing
         {
             ButtonHoverEffect((Button)sender);
         }
-
-        void StateMenu_Mouse_Released_NewGame(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
-        }
-
 //------------------Su kien Button Quit------------------
         void StateMenu_Mouse_Click_Quit(object sender, EventArgs e)
         {
@@ -163,12 +151,6 @@ namespace TheReturnOfTheKing
         {
             ButtonHoverEffect((Button)sender);
         }
-
-        void StateMenu_Mouse_Released_Quit(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
-        }
-
 //------------------Su kien Button Option------------------
         void StateMenu_Mouse_Click_Option(object sender, EventArgs e)
         {
@@ -178,11 +160,6 @@ namespace TheReturnOfTheKing
         void StateMenu_Mouse_Hover_Option(object sender, EventArgs e)
         {
             ButtonHoverEffect((Button)sender);
-        }
-
-        void StateMenu_Mouse_Released_Option(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
         }
 //-------------------Su kien Button Help------------------
         void StateMenu_Mouse_Click_Help(object sender, EventArgs e)
@@ -194,11 +171,6 @@ namespace TheReturnOfTheKing
         {
             ButtonHoverEffect((Button)sender);
         }
-
-        void StateMenu_Mouse_Released_Help(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
-        }
 //-------------------Su kien Button About------------------
         void StateMenu_Mouse_Click_About(object sender, EventArgs e)
         {
@@ -208,11 +180,6 @@ namespace TheReturnOfTheKing
         void StateMenu_Mouse_Hover_About(object sender, EventArgs e)
         {
             ButtonHoverEffect((Button)sender);
-        }
-
-        void StateMenu_Mouse_Released_About(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
         }
 //--------------------Su kien Button Load------------------
         void StateMenu_Mouse_Click_Load(object sender, EventArgs e)
@@ -224,12 +191,6 @@ namespace TheReturnOfTheKing
         {
             ButtonHoverEffect((Button)sender);
         }
-
-        void StateMenu_Mouse_Released_Load(object sender, EventArgs e)
-        {
-            ButtonReleasedEffect((Button)sender);
-        }
-
 //--------------------Su kien New Game frame------------------
         void StateMenu_Move_Complete_NewGame(object sender, EventArgs e)
         {
@@ -308,12 +269,5 @@ namespace TheReturnOfTheKing
             _button._sprite[0].Itexture2D = 1;
             GlobalVariables.GameCursor.IsHover = true;
         }
-
-        void ButtonReleasedEffect(Button _button)
-        {
-            _button._sprite[0].Itexture2D = 0;
-            GlobalVariables.GameCursor.IsIdle = true;
-        }
     }
-
 }

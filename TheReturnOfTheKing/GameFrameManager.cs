@@ -62,6 +62,8 @@ namespace TheReturnOfTheKing
             
             _prototype[id].X = int.Parse(_frame.SelectSingleNode("X").InnerText);
             _prototype[id].Y = int.Parse(_frame.SelectSingleNode("Y").InnerText);
+            _prototype[id].OffSetX = _prototype[id].X;
+            _prototype[id].OffSetY = _prototype[id].Y;
             _prototype[id].Width = int.Parse(_frame.SelectSingleNode("Width").InnerText);
             _prototype[id].Height = int.Parse(_frame.SelectSingleNode("Height").InnerText);
             _prototype[id].Rect = new Rectangle((int)_prototype[id].X,

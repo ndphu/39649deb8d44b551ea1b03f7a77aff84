@@ -56,6 +56,9 @@ namespace TheReturnOfTheKing
             ((ProcessBar)_prototype[id]).Direction = _processbar.SelectSingleNode(@"Direction").InnerText;
             _prototype[id].X = float.Parse(_processbar.SelectSingleNode(@"X").InnerText);
             _prototype[id].Y = float.Parse(_processbar.SelectSingleNode(@"Y").InnerText);
+            _prototype[id].OffSetX = _prototype[id].X;
+            _prototype[id].OffSetY = _prototype[id].Y;
+
             _prototype[id].Width = float.Parse(_processbar.SelectSingleNode(@"Width").InnerText);
             _prototype[id].Height = float.Parse(_processbar.SelectSingleNode(@"Height").InnerText);
 
