@@ -21,12 +21,13 @@ namespace TheReturnOfTheKing
         public List<Portral> _listPortral = new List<Portral>();
         public List<MapObstacle> _listObstacle = new List<MapObstacle>();
         public PlayerCharacter _char;
-        public Frog _frog;
+        public Fog _frog;
         public GameObjectManager[] _objectManagerArray;
         public List<VisibleGameEntity> _listToDraw;
         public List<Projectile> _listProjectile = new List<Projectile>();
         public HealthBar _healthBar;
         public SkillBoard _skillBoard;
+        public DisplayMessageLayer _displayMessageLayer;
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -40,9 +41,11 @@ namespace TheReturnOfTheKing
             _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");
 
-            _frog = new Frog();
+            _frog = new Fog();
             _frog.Init(owner.Content);
             _frog.SetCharacter(_char);
+
+            _displayMessageLayer = new DisplayMessageLayer();
 
             //Phần healthbar--------------------------------------------------------------------
             _healthBar = new HealthBar();
@@ -160,7 +163,7 @@ namespace TheReturnOfTheKing
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
-
+            _displayMessageLayer.Update(gameTime);
             _frog.Update(gameTime);
         }
         
@@ -186,6 +189,7 @@ namespace TheReturnOfTheKing
                         _listToDraw[i].Draw(gameTime, sb);
                 }
             }
+            _displayMessageLayer.Draw(gameTime, sb);
             _frog.Draw(gameTime, sb);
             GlobalVariables.GameCursor.Draw(gameTime, sb);
             _skillBoard.Draw(gameTime, sb);

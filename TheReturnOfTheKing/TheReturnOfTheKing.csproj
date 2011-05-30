@@ -94,6 +94,7 @@
     <Compile Include="CurseAttackSkill.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="Dialog.cs" />
+    <Compile Include="DisplayMessageLayer.cs" />
     <Compile Include="EquipItem.cs" />
     <Compile Include="Frog.cs" />
     <Compile Include="GameFrame.cs" />

@@ -123,16 +123,7 @@ namespace TheReturnOfTheKing
                     State = 0;
             }
         }
-        /// <summary>
-        /// Danh sach cac skill da tac dung len quai vat, de tranh truong hop quai vat bi danh boi nhieu projectile cua cung 1 skill
-        /// </summary>
-        List<Skill> _effectedSkill = new List<Skill>();
-
-        public List<Skill> EffectedSkill
-        {
-            get { return _effectedSkill; }
-            set { _effectedSkill = value; }
-        }
+        
 
         public override void Update(GameTime gameTime)
         {

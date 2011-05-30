@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheReturnOfTheKing
 {
@@ -50,8 +51,20 @@ namespace TheReturnOfTheKing
                 ((Monster)target).BashTime = ListLevel[Level].ListSkillInfo[0].BashTime;
                 Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(6);
                 prjt.X = target.X;
-                prjt.Y = target.Y;
+                prjt.Y = target.Y; 
                 ((Monster)target).AdditionnalEffect.Add(prjt);
+                ((Monster)target).Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    {
+                        X = ((Monster)target).X,
+                        Y = ((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim,
+                        Owner = this,
+                        DeltaY = -1,
+                        LifeTime = 45,
+                        MessageContent = "Bash " + (ListLevel[Level].ListSkillInfo[0].BashTime / 60).ToString() + "s",
+                        TextColor = Color.Gray,
+                        DelayTime = 10,
+                        MinY = (int)((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim - 30,
+                    });
             }
         }
     }

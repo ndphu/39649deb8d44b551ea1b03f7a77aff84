@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheReturnOfTheKing
 {
@@ -59,6 +60,18 @@ namespace TheReturnOfTheKing
                     prjt.X = target.X;
                     prjt.Y = target.Y;
                     ((Monster)target).AdditionnalEffect.Add(prjt);
+                    ((Monster)target).Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    {
+                        X = ((Monster)target).X,
+                        Y = ((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim,
+                        Owner = this,
+                        DeltaY = -1,
+                        LifeTime = 45,
+                        MessageContent = (-skillInfo.AmorReduce).ToString() + " Amor",
+                        TextColor = Color.Yellow,
+                        MinY = (int)((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim - 30,
+                    }
+                );
                 }
 
             }

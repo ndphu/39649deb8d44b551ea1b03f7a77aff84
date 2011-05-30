@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheReturnOfTheKing
 {
-    public class Frog : Misc
+    public class Fog : Misc
     {
         SpriteFont sf;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheReturnOfTheKing
 {
@@ -44,7 +45,8 @@ namespace TheReturnOfTheKing
         public override void DoAdditionalEffect(VisibleGameEntity target)
         {
             base.DoAdditionalEffect(target);
-            PlayerOwner.Hp += -((Monster)target).RecentHPLost * ListLevel[Level].ListSkillInfo[0].PercentLifeSteal / 100;
+            int _hpRestore = -((Monster)target).RecentHPLost * ListLevel[Level].ListSkillInfo[0].PercentLifeSteal / 100;
+            PlayerOwner.Hp += _hpRestore;
             //Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(4);
             //prjt.X = PlayerOwner.X;
             //prjt.Y = PlayerOwner.Y;
@@ -53,6 +55,18 @@ namespace TheReturnOfTheKing
             prjt.X = ((Monster)target).X;
             prjt.Y = ((Monster)target).Y;
             ((Monster)target).AdditionnalEffect.Add(prjt);
+            PlayerOwner.Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+            {
+                X = PlayerOwner.X,
+                Y = PlayerOwner.Y - 2 * GlobalVariables.MapCollisionDim,
+                Owner = this,
+                DeltaY = -1,
+                LifeTime = 45,
+                MessageContent = "+ " + _hpRestore.ToString(),
+                TextColor = Color.LightGreen,
+                DelayTime = 10,
+                MinY = (int)PlayerOwner.Y - 2 * GlobalVariables.MapCollisionDim - 30,
+            });
         }
     }
 }
