@@ -319,7 +319,7 @@ namespace TheReturnOfTheKing
                 {
                     Random r = new Random((int)DateTime.Now.Ticks);
                     int rate = r.Next(0, 100);
-                    if (rate < this.CriticalRate || _listLeftHandSkill[_leftHandSkillIndex] != null)
+                    if (rate < this.CriticalRate || _leftHandSkillIndex != 0)
                         State = 16;
                     else
                         State = 24;
@@ -437,49 +437,47 @@ namespace TheReturnOfTheKing
                 }
             }
 
-            
-            
+
+
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.A))
-                _leftHandSkillIndex = 0;
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.S))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _leftHandSkillIndex = 0;
+                _listLeftHandSkill[_leftHandSkillIndex].Active();
+            }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.S))
+            {                
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 1;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 2;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.F))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 3;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.G))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 4;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.H))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 5;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.J))
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
-                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 6;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
@@ -571,7 +569,7 @@ namespace TheReturnOfTheKing
             int Damage = r.Next(MinDamage, MaxDamage);
             if (State == 16)
             {
-                if (_listLeftHandSkill[_leftHandSkillIndex] != null)
+                if (_leftHandSkillIndex != 0)
                     _listLeftHandSkill[_leftHandSkillIndex].DoEffect(Target);
                 else
                 {
@@ -610,19 +608,19 @@ namespace TheReturnOfTheKing
         {
             OldNDelay = _sprite[16].NDelay;
             _listLeftHandSkill = new List<Skill>();
-            _listLeftHandSkill.Add(null);
-            _listLeftHandSkill.Add((CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0)));
-            _listLeftHandSkill.Add((CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1)));
-            _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2)));
-            _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(3)));
-            _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
-            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(5)));
+            _listLeftHandSkill.Add((NormalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0)));
+            _listLeftHandSkill.Add((CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1)));
+            _listLeftHandSkill.Add((CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2)));
+            _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(3)));
+            _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
+            _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(5)));
+            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(6)));
             for (int i = 1; i < _listLeftHandSkill.Count; ++i)
             {
                 if (_listLeftHandSkill[i] != null)
                 {
                     _listLeftHandSkill[i].PlayerOwner = this;
-                    _listLeftHandSkill[i].Level = 1;
+                    _listLeftHandSkill[i].Level = 0;
                 }
             }
             _listRightHandSkill = new List<Skill>();
