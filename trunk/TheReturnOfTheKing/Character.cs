@@ -17,6 +17,17 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+        /// <summary>
+        /// Danh sach cac skill da tac dung len quai vat, de tranh truong hop quai vat bi danh boi nhieu projectile cua cung 1 skill
+        /// </summary>
+        List<Skill> _effectedSkill = new List<Skill>();
+
+        public List<Skill> EffectedSkill
+        {
+            get { return _effectedSkill; }
+            set { _effectedSkill = value; }
+        }
+
         List<Projectile> _additionnalEffect = new List<Projectile>();
 
         public List<Projectile> AdditionnalEffect
@@ -49,17 +60,10 @@ namespace TheReturnOfTheKing
             set 
             { 
                 _damage = value;
-                _displayDamageTime = 30;
             }
         }
 
-        int _displayDamageTime;
-
-        public int DisplayDamageTime
-        {
-            get { return _displayDamageTime; }
-            set { _displayDamageTime = value; }
-        }
+        
 
         /// <summary>
         /// Máu
@@ -492,11 +496,11 @@ namespace TheReturnOfTheKing
             for (int i = 0; i < AdditionnalEffect.Count; ++i)
                 AdditionnalEffect[i].Draw(gameTime, sb);
             _sprite[_dir].Draw(gameTime, sb);
-            if (_displayDamageTime > 0 && Math.Abs(_damage) > 0)
-            {
-                _displayDamageTime -= 1;
-                sb.DrawString(GlobalVariables.Sf, _damage.ToString(), new Vector2(X + GlobalVariables.dX , Y + _displayDamageTime + GlobalVariables.dY + _sprite[Dir].Yoffset - 20), Color.Red);
-            }
+            //if (_displayDamageTime > 0 && Math.Abs(_damage) > 0)
+            //{
+            //    _displayDamageTime -= 1;
+            //    sb.DrawString(GlobalVariables.Sf, _damage.ToString(), new Vector2(X + GlobalVariables.dX , Y + _displayDamageTime + GlobalVariables.dY + _sprite[Dir].Yoffset - 20), Color.Red);
+            //}
             
         }
 
@@ -505,6 +509,19 @@ namespace TheReturnOfTheKing
             for (int i = 0; i < AdditionnalEffect.Count; ++i)
             {
                 AdditionnalEffect[i].Update(gameTime);
+                
+                if (AdditionnalEffect[i].IsCollisionWith(this) && AdditionnalEffect[i].HitFrames.Contains(AdditionnalEffect[i]._sprite[0].Itexture2D) && AdditionnalEffect[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(AdditionnalEffect[i].SkillOwner))
+                {
+                    Random r = new Random((int)DateTime.Now.Ticks);
+                    this.BeHit(r.Next(AdditionnalEffect[i].MinDamage, AdditionnalEffect[i].MaxDamage));
+                    if (AdditionnalEffect[i].SkillOwner != null)
+                        AdditionnalEffect[i].SkillOwner.DoAdditionalEffect(this);
+                    this.EffectedSkill.Add(AdditionnalEffect[i].SkillOwner);
+                }
+                else
+                    if (AdditionnalEffect[i]._sprite[0].Itexture2D == AdditionnalEffect[i]._sprite[0].Ntexture2D - 2)
+                        this.EffectedSkill.Remove(AdditionnalEffect[i].SkillOwner);
+
                 if (AdditionnalEffect[i]._sprite[0].Itexture2D == AdditionnalEffect[i]._sprite[0].Ntexture2D - 1)
                     AdditionnalEffect.Remove(AdditionnalEffect[i]);
             }
@@ -646,10 +663,7 @@ namespace TheReturnOfTheKing
                                             this.X += (float)(Speed / Math.Sqrt(2));
                                             this.Y += (float)(Speed / Math.Sqrt(2));
 
-                                        }
-        
-
-            
+                                        }       
             //for (int i = 0; i < Owner._listToDraw.Count; ++i)
             //    if (!this.Equals(Owner._listToDraw[i]) && this.IsCollisionWith(Owner._listToDraw[i]))
             //    {
@@ -676,6 +690,7 @@ namespace TheReturnOfTheKing
             {
                 IsStanding = true;
                 CellToMove = new List<Point>();
+                return;
             }
             int oldDir = _dir;
             x += GlobalVariables.MapCollisionDim / 2;
@@ -743,6 +758,20 @@ namespace TheReturnOfTheKing
                 Damage = Math.Min(-(damage - this.Defense), 0);
                 Hp += Damage;
                 _recentHPLost = Damage;
+                if (Damage != 0)
+                {
+                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    {
+                        X = this.X,
+                        Y = this.Y - 2 * GlobalVariables.MapCollisionDim,
+                        Owner = this,
+                        DeltaY = -1,
+                        LifeTime = 45,
+                        MessageContent = Damage.ToString(),
+                        TextColor = Color.Red,
+                        MinY = (int)this.Y - 2 * GlobalVariables.MapCollisionDim - 30,
+                    });
+                }
             }
             
         }

@@ -21,6 +21,7 @@ namespace TheReturnOfTheKing
             };
         }
 
+
         public override void Active()
         {
             base.Active();
@@ -57,6 +58,11 @@ namespace TheReturnOfTheKing
             prjt.SkillOwner = this;
             PlayerOwner.Owner._listProjectile.Add(prjt);
             PlayerOwner.Hp += this.ListLevel[Level].ListSkillInfo[0].Hp;
+
+            prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(5);
+            prjt.X = PlayerOwner.X;
+            prjt.Y = PlayerOwner.Y;
+            PlayerOwner.AdditionnalEffect.Add(prjt);
         }
     }
 }

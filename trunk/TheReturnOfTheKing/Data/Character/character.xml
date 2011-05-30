@@ -10,7 +10,7 @@
     <MinDamage>45</MinDamage>
     <MaxDamage>85</MaxDamage>
     <Defense>7</Defense>
-    <AttackSpeed>4</AttackSpeed>
+    <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
     <HitFrame>9</HitFrame>
     <CastFrame>11</CastFrame>

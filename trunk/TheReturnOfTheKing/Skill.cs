@@ -84,7 +84,7 @@ namespace TheReturnOfTheKing
             set 
             { 
                 _level = value;
-                if (value > 1)
+                if (value > 0)
                     Active();
             }
         }

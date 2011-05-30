@@ -130,6 +130,8 @@ namespace TheReturnOfTheKing
 
                 prjt.SkillOwner = this;
                 PlayerOwner.Owner._listProjectile.Add(prjt);
+
+
             }
             PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
