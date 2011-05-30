@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <Skill id="0">
+    <Name>Normal Attack</Name>
+    <Clicked>img/skillicon/Clicked/00</Clicked>
+    <Idle>img/skillicon/Idle/00</Idle>
+    <Large>img/skillicon/Large/00</Large>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+  </Skill>
+  <Skill id="1">
     <Name>Cleaving Attack</Name>
     <Clicked>img/skillicon/Clicked/01</Clicked>
     <Idle>img/skillicon/Idle/01</Idle>
@@ -27,7 +38,7 @@
     </Level>    
   </Skill>
   
-  <Skill id="1">
+  <Skill id="2">
     <Name>Critical Attack</Name>
     <Clicked>img/skillicon/Clicked/02</Clicked>
     <Idle>img/skillicon/Idle/02</Idle>
@@ -54,7 +65,7 @@
     </Level>
   </Skill>
 
-  <Skill id="2">
+  <Skill id="3">
     <Name>Curse Attack</Name>
     <Clicked>img/skillicon/Clicked/03</Clicked>
     <Idle>img/skillicon/Idle/03</Idle>
@@ -89,7 +100,7 @@
     </Level>
   </Skill>
 
-  <Skill id="3">
+  <Skill id="4">
     <Name>OverSpeed Attack</Name>
     <Clicked>img/skillicon/Clicked/04</Clicked>
     <Idle>img/skillicon/Idle/04</Idle>
@@ -116,7 +127,7 @@
     </Level>    
   </Skill>
 
-  <Skill id="4">
+  <Skill id="5">
     <Name>LifeSteal Attack</Name>
     <Clicked>img/skillicon/Clicked/05</Clicked>
     <Idle>img/skillicon/Idle/05</Idle>
@@ -143,7 +154,7 @@
     </Level>
   </Skill>
 
-  <Skill id="5">
+  <Skill id="6">
     <Name>Bash Attack</Name>
     <Clicked>img/skillicon/Clicked/06</Clicked>
     <Idle>img/skillicon/Idle/06</Idle>

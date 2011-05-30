@@ -48,6 +48,27 @@ namespace TheReturnOfTheKing
             XmlNode _skill = _doc.SelectSingleNode(@"//Skill[@id = '" + id.ToString() + "']");
             switch (_skill.SelectSingleNode(@"Name").InnerText)
             {
+                case "Normal Attack":
+                    {
+                        _prototype[id] = new NormalAttackSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((NormalAttackSkill)_prototype[id]).Name = "Normal Attack";
+                        ((NormalAttackSkill)_prototype[id]).Level = 0;
+                        ((NormalAttackSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
+                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((NormalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 case "Cleaving Attack":
                     {
                         _prototype[id] = new CleavingAttackSkill();

@@ -15,7 +15,7 @@ namespace TheReturnOfTheKing
             set { _owner = value; }
         }
 
-        public virtual UpdatePosition(GameTime gameTime)
+        public virtual void UpdatePosition(GameTime gameTime)
         {
         }
     }

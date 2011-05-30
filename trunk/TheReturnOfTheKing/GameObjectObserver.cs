@@ -13,30 +13,4 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheReturnOfTheKing
 {
-    public abstract class GameObjectObserver
-    {
-        private List<VisibleGameObject> _observers = new List<VisibleGameObject>();
-
-        public List<VisibleGameObject> Observers
-        {
-            get { return _observers; }
-            set { _observers = value; }
-        }
-
-        public void RegisterObserver(VisibleGameObject observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void UnregisterObserver(VisibleGameObject observer)
-        {
-            _observers.Remove(observer);
-        }
-
-        public virtual void Update(GameTime gt)
-        {
-           
-            
-        }
-    }
 }
