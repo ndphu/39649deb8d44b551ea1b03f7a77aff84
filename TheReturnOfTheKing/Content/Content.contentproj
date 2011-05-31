@@ -37303,11 +37303,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="img\dialog\frame\skillboard\mainframe.png">
-      <Name>mainframe</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="img\dialog\frame\skillboard\passive.png">
       <Name>passive</Name>
       <Importer>TextureImporter</Importer>
@@ -37533,6 +37528,25 @@
   <ItemGroup>
     <Compile Include="img\skillicon\large\00.png">
       <Name>00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\frame\skillboard\mainframe.png">
+      <Name>mainframe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="img\dialog\control\button\command-exit\clicked.png">
+      <Name>clicked</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\dialog\control\button\command-exit\idle.png">
+      <Name>idle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

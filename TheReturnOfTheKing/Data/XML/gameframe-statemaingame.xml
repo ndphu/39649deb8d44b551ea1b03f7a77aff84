@@ -15,9 +15,9 @@
 
   <Frame id="1">
     <BackGround>img\dialog\frame\skillboard\mainframe</BackGround>
-    <X>-437</X>
+    <X>840</X>
     <Y>-2</Y>
-    <Width>398</Width>
+    <Width>400</Width>
     <Height>558</Height>
     <DelayTime>0</DelayTime>
     <MoveInfo>
@@ -27,9 +27,9 @@
 
   <Frame id="2">
     <BackGround>img\dialog\frame\skillboard\lefthand</BackGround>
-    <X>77</X>
+    <X>0</X>
     <Y>64</Y>
-    <Width>319</Width>
+    <Width>320</Width>
     <Height>432</Height>
     <DelayTime>0</DelayTime>
     <MoveInfo>
@@ -39,9 +39,9 @@
 
   <Frame id="3">
     <BackGround>img\dialog\frame\skillboard\righthand</BackGround>
-    <X>77</X>
+    <X>0</X>
     <Y>64</Y>
-    <Width>319</Width>
+    <Width>320</Width>
     <Height>432</Height>
     <DelayTime>0</DelayTime>
     <MoveInfo>
@@ -51,9 +51,9 @@
 
   <Frame id="4">
     <BackGround>img\dialog\frame\skillboard\passive</BackGround>
-    <X>77</X>
+    <X>0</X>
     <Y>64</Y>
-    <Width>319</Width>
+    <Width>320</Width>
     <Height>432</Height>
     <DelayTime>0</DelayTime>
     <MoveInfo>
