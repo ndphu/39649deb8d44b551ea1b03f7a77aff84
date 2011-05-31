@@ -207,13 +207,13 @@ namespace TheReturnOfTheKing
         {
             if (_iDelayTime == _delayTime && _isVisible == true)
             {
-                if (_sprite != null)
-                {
-                    sb.Draw(_sprite[0].Texture2D[0], new Vector2(X, Y), Color.White);
-                }
                 for (int i = 0; i < _nChild; i++)
                 {
                     _child[i].Draw(gameTime, sb);
+                }
+                if (_sprite != null)
+                {
+                    sb.Draw(_sprite[0].Texture2D[0], new Vector2(X, Y), Color.White);
                 }
             }
         }

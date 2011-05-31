@@ -97,6 +97,14 @@ namespace TheReturnOfTheKing
             set { _listLevel = value; }
         }
 
+        bool _toShowDetails = false;
+
+        public bool ToShowDetails
+        {
+            get { return _toShowDetails; }
+            set { _toShowDetails = value; }
+        }
+
         public override VisibleGameObject Clone()
         {
             return new Skill
@@ -117,8 +125,10 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            base.Draw(gameTime, sb);
-
+            if (_toShowDetails)
+            {
+                sb.Draw(LargeIcon, new Vector2(X, Y), Color.White);
+            }
         }
 
         public virtual void DoAdditionalEffect(VisibleGameEntity target)

@@ -47,6 +47,14 @@ namespace TheReturnOfTheKing
 
             _displayMessageLayer = new DisplayMessageLayer();
 
+            //Phần ???---------------------------------------------------------------------------
+            _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
+            _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
+            _objectManagerArray = objectManagerArray;
+            _listToDraw = new List<VisibleGameEntity>();
+
+            _char.InitSkill();
+
             //Phần healthbar--------------------------------------------------------------------
             _healthBar = new HealthBar();
             _healthBar.SetCharacter(_char);
@@ -56,14 +64,6 @@ namespace TheReturnOfTheKing
             _resourcesForHealthbar.Add(objectManagerArray[9]);
             _resourcesForHealthbar.Add(objectManagerArray[10]);
             _healthBar.GetResources(_resourcesForHealthbar);
-
-            //Phần ???---------------------------------------------------------------------------
-            _listPortral = _map.InitPortralList((PortralManager)objectManagerArray[4], @"Data\Map\map01\map01_portral.xml");
-            _listObstacle = _map.InitObstacle((MapObstacleManager)objectManagerArray[5], @"Data\Map\map01\map01_obstacle.xml");
-            _objectManagerArray = objectManagerArray;
-            _listToDraw = new List<VisibleGameEntity>();
-
-            _char.InitSkill();
 
             //Phần SkillBoard------------------------------------------------------------------
             _skillBoard = new SkillBoard();

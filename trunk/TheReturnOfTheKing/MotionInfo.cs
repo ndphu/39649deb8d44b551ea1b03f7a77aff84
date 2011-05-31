@@ -94,6 +94,14 @@ namespace TheReturnOfTheKing
             get { return _isStanding; }
             set { _isStanding = value; }
         }
+
+        private Vector2 _velGoOut = new Vector2(30, 0);
+
+        public Vector2 VelGoOut
+        {
+            get { return _velGoOut; }
+            set { _velGoOut = value; }
+        }
 //----------------------FUNCTION-----------------------------------------------------
 
         //Hàm chuyển động, nhận vào vị trí trước đó và trả về vị trí cần cập nhật..
@@ -139,6 +147,34 @@ namespace TheReturnOfTheKing
                         }
                     case "Left":
                         {
+                            #region
+                            if (_nowDirection == "Left")
+                            {
+                                _vel -= _accel;
+                                _newPosition -= _vel;
+                                if (_vel.X < 0)
+                                {
+                                    _nowDirection = "Right";
+                                    _vel.X = 0;
+                                }
+                            }
+                            else
+                            {
+                                _vel += _accel;
+                                _newPosition += _vel;
+                                if (_newPosition.X >= _standingGround)
+                                {
+                                    if (_vel.X <= _accel.X)
+                                    {
+                                        _isStanding = true;
+                                        _newPosition.X = _standingGround;
+                                    }
+                                    _newPosition.X = _standingGround;
+                                    _nowDirection = "Left";
+                                    _vel *= _decelerationRate;
+                                }
+                            }
+                            #endregion
                             break;
                         }
                     case "Up":
@@ -212,6 +248,28 @@ namespace TheReturnOfTheKing
                         }
                     case "Left":
                         {
+                            #region
+                            if (_nowDirection == "Left")
+                            {
+                                _vel -= _accel;
+                                _newPosition -= _vel;
+                                if (_vel.X <= 0)
+                                {
+                                    _nowDirection = "Right";
+                                    _vel = _velGoOut;
+                                }
+                            }
+                            else
+                            {
+                                _vel += _accel;
+                                _newPosition += _vel;
+                                if (_newPosition.X > GlobalVariables.ScreenWidth + 0.1 * _owner.Width)
+                                {
+                                    _isStanding = true;
+                                    _newPosition.X = (int)(GlobalVariables.ScreenWidth + 0.1 * _owner.Width);
+                                }
+                            }
+                            #endregion
                             break;
                         }
                     case "Up":

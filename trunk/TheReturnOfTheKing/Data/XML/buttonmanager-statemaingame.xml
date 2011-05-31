@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <root>
+  <!--2 red button command trên healthbar-->
   <Button id ="0">
     <Image>
       <Idle>img/dialog/control/button/command-red/idle</Idle>
@@ -25,6 +26,7 @@
     <Height>30</Height>
   </Button>
 
+  <!--3 button control trên skill board-->
   <Button id ="2">
     <Image>
       <Idle>img/dialog/control/button/skillboard/lefthand/idle</Idle>
@@ -61,6 +63,7 @@
     <Height>98</Height>
   </Button>
 
+  <!--6 Button skill tren bảng leaft hand skill-->
   <Button id ="5">
     <Image>
       <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
@@ -127,8 +130,58 @@
       <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
     </Image>
 
-    <X>85</X>
+    <X>84</X>
     <Y>219</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <!--3 button exit trên bảng skill-->
+  <Button id ="11">
+    <Image>
+      <Idle>img/dialog/control/button/command-exit/idle</Idle>
+      <Clicked>img/dialog/control/button/command-exit/clicked</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>385</Y>
+    <Width>32</Width>
+    <Height>32</Height>
+  </Button>
+
+  <Button id ="12">
+    <Image>
+      <Idle>img/dialog/control/button/command-exit/idle</Idle>
+      <Clicked>img/dialog/control/button/command-exit/clicked</Clicked>
+    </Image>
+
+    <X>100</X>
+    <Y>385</Y>
+    <Width>32</Width>
+    <Height>32</Height>
+  </Button>
+
+  <Button id ="13">
+    <Image>
+      <Idle>img/dialog/control/button/command-exit/idle</Idle>
+      <Clicked>img/dialog/control/button/command-exit/clicked</Clicked>
+    </Image>
+
+    <X>171</X>
+    <Y>385</Y>
+    <Width>32</Width>
+    <Height>32</Height>
+  </Button>
+  
+  <!--Button left hand skill trên healthbar-->
+  <Button id ="14">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>6</Y>
     <Width>48</Width>
     <Height>48</Height>
   </Button>
