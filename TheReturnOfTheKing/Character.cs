@@ -512,8 +512,8 @@ namespace TheReturnOfTheKing
                 
                 if (AdditionnalEffect[i].IsCollisionWith(this) && AdditionnalEffect[i].HitFrames.Contains(AdditionnalEffect[i]._sprite[0].Itexture2D) && AdditionnalEffect[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(AdditionnalEffect[i].SkillOwner))
                 {
-                    Random r = new Random((int)DateTime.Now.Ticks);
-                    this.BeHit(r.Next(AdditionnalEffect[i].MinDamage, AdditionnalEffect[i].MaxDamage));
+                    
+                    this.BeHit(GlobalVariables.GlobalRandom.Next(AdditionnalEffect[i].MinDamage, AdditionnalEffect[i].MaxDamage));
                     if (AdditionnalEffect[i].SkillOwner != null)
                         AdditionnalEffect[i].SkillOwner.DoAdditionalEffect(this);
                     this.EffectedSkill.Add(AdditionnalEffect[i].SkillOwner);
@@ -742,9 +742,9 @@ namespace TheReturnOfTheKing
         {
             if (Target == null)
                 return;
-            Random r = new Random((int)DateTime.Now.Ticks);
-            int Damage = r.Next(MinDamage, MaxDamage);            
-            if (r.Next(0, 100) < this.CriticalRate)
+            
+            int Damage = GlobalVariables.GlobalRandom.Next(MinDamage, MaxDamage);            
+            if (GlobalVariables.GlobalRandom.Next(0, 100) < this.CriticalRate)
                 Target.BeHit(Damage * 2);
             else
                 Target.BeHit(Damage);
@@ -752,8 +752,9 @@ namespace TheReturnOfTheKing
 
         public virtual void BeHit(int damage)
         {
-            Random r = new Random((int)DateTime.Now.Ticks);
-            if (r.Next(0, 100) >= this.ChangeToDodge)
+            if (damage == 0)
+                return;
+            if (GlobalVariables.GlobalRandom.Next(0, 100) >= this.ChangeToDodge)
             {
                 Damage = Math.Min(-(damage - this.Defense), 0);
                 Hp += Damage;

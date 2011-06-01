@@ -17,6 +17,8 @@ namespace TheReturnOfTheKing
 {
     public class Utility
     {
+
+
         public static Color GetPixel(Texture2D tex, int x, int y)
         {
             Rectangle sourceRectangle =

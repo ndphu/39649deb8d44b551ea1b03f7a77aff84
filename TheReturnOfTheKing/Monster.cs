@@ -149,14 +149,14 @@ namespace TheReturnOfTheKing
 
             if (Target == null && CellToMove.Count == 0 && this.X == DestPoint.X && this.Y == DestPoint.Y)
             {
-                Random r = new Random((int)DateTime.Now.Ticks);
+                
                 if (true)
                 {
                     Point curentPosition = Map.PointToCell(new Point((int)X, (int)Y));
-                    r = new Random((int)DateTime.Now.Ticks);
-                    int nX = (int)r.Next((int)curentPosition.X - 3, (int)curentPosition.X + 3);
-                    r = new Random((int)DateTime.Now.Ticks);
-                    int nY = (int)r.Next((int)curentPosition.Y - 3, (int)curentPosition.Y + 3);
+                    
+                    int nX = (int)GlobalVariables.GlobalRandom.Next((int)curentPosition.X - 3, (int)curentPosition.X + 3);
+                    
+                    int nY = (int)GlobalVariables.GlobalRandom.Next((int)curentPosition.Y - 3, (int)curentPosition.Y + 3);
                     Point newPosition = new Point(nX, nY);
                     CellToMove = Utility.FindPath(Map.Matrix, curentPosition, newPosition);
                     IsMoving = true;
@@ -182,10 +182,10 @@ namespace TheReturnOfTheKing
             
             for (int i = 0; i < Owner._listProjectile.Count; ++i)
             {
-                if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 && !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner))
+                if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 /*&& !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner)*/)
                 {
-                    Random r = new Random((int)DateTime.Now.Ticks);
-                    this.BeHit(r.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
+                    
+                    this.BeHit(GlobalVariables.GlobalRandom.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
                     if (Owner._listProjectile[i].SkillOwner != null)
                         Owner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
                     this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);

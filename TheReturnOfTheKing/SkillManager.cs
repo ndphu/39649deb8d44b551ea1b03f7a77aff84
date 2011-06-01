@@ -62,7 +62,7 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo = new List<SkillInfo>();
                             SkillInfo _skillInfo = new SkillInfo();
                             _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
-                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((NormalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
@@ -83,7 +83,7 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo = new List<SkillInfo>();
                             SkillInfo _skillInfo = new SkillInfo();
                             _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
-                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CleavingAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
@@ -104,7 +104,7 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo = new List<SkillInfo>();
                             SkillInfo _skillInfo = new SkillInfo();
                             _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
-                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((CriticalAttackSkill)_prototype[id]).ListLevel.Add(_skillLevel);
@@ -125,7 +125,7 @@ namespace TheReturnOfTheKing
                             _skillLevel.ListSkillInfo = new List<SkillInfo>();
                             SkillInfo _skillInfo = new SkillInfo();
                             _skillInfo.PercentDamage = int.Parse(_levelList[i].SelectSingleNode(@"PercentDamage").InnerText);
-                            _skillInfo.Type = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillInfo.AmorReduce = int.Parse(_levelList[i].SelectSingleNode(@"AmorReduce").InnerText);
                             _skillInfo.ChanceToCurse = int.Parse(_levelList[i].SelectSingleNode(@"ChanceToCurse").InnerText);
@@ -198,6 +198,78 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "Deadly Bee":
+                    {
+                        _prototype[id] = new DeadlyBeeSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((DeadlyBeeSkill)_prototype[id]).Name = "Deadly Bee";
+                        ((DeadlyBeeSkill)_prototype[id]).Level = 0;
+                        ((DeadlyBeeSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);
+                            _skillInfo.NumOfBee = int.Parse(_levelList[i].SelectSingleNode(@"NumberOfBee").InnerText);
+                            _skillInfo.BeeLifeTime = int.Parse(_levelList[i].SelectSingleNode(@"BeeLifeTime").InnerText) * 60;
+                            _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((DeadlyBeeSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "Lightning Field":
+                    {
+                        _prototype[id] = new LightningFieldSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((LightningFieldSkill)_prototype[id]).Name = "Lightning Field";
+                        ((LightningFieldSkill)_prototype[id]).Level = 0;
+                        ((LightningFieldSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel(); 
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);                            
+                            _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((LightningFieldSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "Earth Shake":
+                    {
+                        _prototype[id] = new EarthShakeSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((EarthShakeSkill)_prototype[id]).Name = "Earth Shake";
+                        ((EarthShakeSkill)_prototype[id]).Level = 0;
+                        ((EarthShakeSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);
+                            _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.BashTime = int.Parse(_levelList[i].SelectSingleNode(@"BashTime").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((EarthShakeSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         _prototype[id] = new Skill();
@@ -215,7 +287,7 @@ namespace TheReturnOfTheKing
                             {
                                 _skillInfo.ListSkillInfo.Add(new SkillInfo
                                 {
-                                    Type = int.Parse(_projectiles[j].SelectSingleNode(@"Type").InnerText),
+                                    ProjectileType = int.Parse(_projectiles[j].SelectSingleNode(@"Type").InnerText),
                                     X = int.Parse(_projectiles[j].SelectSingleNode(@"X").InnerText),
                                     Y = int.Parse(_projectiles[j].SelectSingleNode(@"Y").InnerText),
                                 });
