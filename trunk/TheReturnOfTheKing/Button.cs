@@ -24,6 +24,32 @@ namespace TheReturnOfTheKing
             set { _isPressButton = value; }
         }
 
+        bool _endalbe = true;
+
+        public bool Endalbe
+        {
+            get { return _endalbe; }
+            set { 
+                _endalbe = value;
+                if (_endalbe)
+                {
+                    _colorToDraw = Color.White;
+                }
+                else
+                {
+                    _colorToDraw = Color.Gray;
+                }
+            }
+        }
+
+        Color _colorToDraw = Color.White;
+
+        public Color ColorToDraw
+        {
+            get { return _colorToDraw; }
+            set { _colorToDraw = value; }
+        }
+
         public override float X
         {
             get
@@ -110,7 +136,7 @@ namespace TheReturnOfTheKing
                 IsMouseHover = true;
                 OnMouse_Hover(this, null);
 
-                if (_mouseValidation)
+                if (_mouseValidation && _endalbe)
                 {
                     if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed)
                     {
@@ -142,7 +168,7 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            sb.Draw(_sprite[0].Texture2D[_sprite[0].Itexture2D], new Vector2(X, Y), Color.White);
+            sb.Draw(_sprite[0].Texture2D[_sprite[0].Itexture2D], new Vector2(X, Y), _colorToDraw);
         }
 
         //Button Effect---

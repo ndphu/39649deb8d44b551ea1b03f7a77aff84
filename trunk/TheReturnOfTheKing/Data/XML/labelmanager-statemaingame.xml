@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <!--Label trên left-hand skill board-->
+  <Label id="0">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/00</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>57</X>
+    <Y>56</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="1">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/01</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>126</X>
+    <Y>125</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="2">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/02</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>195</X>
+    <Y>125</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="3">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/03</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>57</X>
+    <Y>193</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="4">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/04</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>195</X>
+    <Y>193</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="5">
+    <BackGround>img/dialog/control/label/skillboard/lefthand/05</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>126</X>
+    <Y>261</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+  
+</root>

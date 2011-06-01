@@ -28,6 +28,7 @@ namespace TheReturnOfTheKing
         public HealthBar _healthBar;
         public SkillBoard _skillBoard;
         public DisplayMessageLayer _displayMessageLayer;
+        public LHSkillSelectionFrame _lhSkillSelectionFrame;
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -72,9 +73,17 @@ namespace TheReturnOfTheKing
             List<GameObjectManager> _resourcesForSkillBoard = new List<GameObjectManager>();
             _resourcesForSkillBoard.Add(objectManagerArray[8]);
             _resourcesForSkillBoard.Add(objectManagerArray[10]);
+            _resourcesForSkillBoard.Add(objectManagerArray[11]);
             _skillBoard.GetResources(_resourcesForSkillBoard);
 
-            _healthBar.SkillBoard = _skillBoard; //trỏ tới cái bảng skill
+            //Phần Left-hand selection frame
+            _lhSkillSelectionFrame = new LHSkillSelectionFrame();
+            _lhSkillSelectionFrame.SetCharacter(_char);
+
+            List<GameObjectManager> _resourceForLHSSelectionFrame = new List<GameObjectManager>();
+            _resourceForLHSSelectionFrame.Add(_objectManagerArray[8]);
+            _resourceForLHSSelectionFrame.Add(_objectManagerArray[10]);
+            _lhSkillSelectionFrame.GetResources(_resourceForLHSSelectionFrame);
         }
 
         public override void EnterState()
@@ -96,6 +105,7 @@ namespace TheReturnOfTheKing
 
             _skillBoard.Update(gameTime);
             _healthBar.Update(gameTime);
+            _lhSkillSelectionFrame.Update(gameTime);
 
             _listToDraw.Clear();
 
@@ -163,6 +173,7 @@ namespace TheReturnOfTheKing
                 Owner.GameState.EnterState();
                 Owner.ResetElapsedTime();
             }
+
             _displayMessageLayer.Update(gameTime);
             _frog.Update(gameTime);
         }
@@ -193,6 +204,7 @@ namespace TheReturnOfTheKing
             _frog.Draw(gameTime, sb);
             GlobalVariables.GameCursor.Draw(gameTime, sb);
             _skillBoard.Draw(gameTime, sb);
+            _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);
         }
 

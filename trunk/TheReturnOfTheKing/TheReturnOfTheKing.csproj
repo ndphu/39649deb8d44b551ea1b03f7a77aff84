@@ -113,6 +113,9 @@
     <Compile Include="InsectFlyingController.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemManager.cs" />
+    <Compile Include="Label.cs" />
+    <Compile Include="LabelManager.cs" />
+    <Compile Include="LHSkillSelectionFrame.cs" />
     <Compile Include="LifeStealAttackSkill.cs" />
     <Compile Include="LightningFieldSkill.cs" />
     <Compile Include="LightningMovingController.cs" />
@@ -228,6 +231,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\healthbar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\XML\labelmanager-statemaingame.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\XML\processbar-stateloading.xml">

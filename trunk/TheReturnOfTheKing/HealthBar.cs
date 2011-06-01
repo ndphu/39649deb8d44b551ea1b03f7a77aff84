@@ -47,17 +47,10 @@ namespace TheReturnOfTheKing
             set { _manaPro = value; }
         }
 
-        SkillBoard _skillBoard;
-
-        public SkillBoard SkillBoard
-        {
-            get { return _skillBoard; }
-            set { _skillBoard = value; }
-        }
-
         public void SetCharacter(PlayerCharacter _char)
         {
             _character = _char;
+            _char.Healthbar = this;
         }
 
         public void GetResources(List<GameObjectManager> _resouces)
@@ -112,13 +105,28 @@ namespace TheReturnOfTheKing
             _bloodPro.Draw(gameTime, sb);
             _manaPro.Draw(gameTime, sb);
 
-            //Vẽ những detail skill nếu có.
-            //4 vị trái đầu tiên trên tab là các button control
-            for (int i = 4; i < _skillBoard.CurrentBoard.Child.Count; i++)
+            switch (_character.Skillboard.ICurrentBoard)
             {
-                ((Skill)((Button)_skillBoard.CurrentBoard.Child[i]).Owner).Draw(gameTime, sb);
+                case 0:
+                    {
+                        ((Skill)_character.Skillboard.BtSkillCleaving.Owner).Draw(gameTime, sb);
+                        ((Skill)_character.Skillboard.BtSkillCritical.Owner).Draw(gameTime, sb);
+                        ((Skill)_character.Skillboard.BtSkillCurse.Owner).Draw(gameTime, sb);
+                        ((Skill)_character.Skillboard.BtSkillOverSpeed.Owner).Draw(gameTime, sb);
+                        ((Skill)_character.Skillboard.BtSkillLifeSteal.Owner).Draw(gameTime, sb);
+                        ((Skill)_character.Skillboard.BtSkillBash.Owner).Draw(gameTime, sb);
+                        break;
+                    }
+                case 1:
+                    {
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
             }
-            ((Skill)((Button)_healbarFrame.Child[2]).Owner).Draw(gameTime, sb);
+            //((Skill)((Button)_healbarFrame.Child[2]).Owner).Draw(gameTime, sb);
         }
 
 //---Su kien cho Left Command Button---
@@ -129,23 +137,32 @@ namespace TheReturnOfTheKing
 //---Su kien cho Right Command Button---
         public void RightCommandButon_Clicked(object sender, EventArgs e)
         {
-            if (_skillBoard.BoardFrame.IsVisible)
+            if (_character.Skillboard.BoardFrame.IsVisible)
             {
-                _skillBoard.CreateMotion_GoOut();
-                _skillBoard.BoardFrame.Motion = _skillBoard.MotionGoOut;
-                _skillBoard.BoardFrame.Motion.IsStanding = false;
+                _character.Skillboard.CreateMotion_GoOut();
+                _character.Skillboard.BoardFrame.Motion = _character.Skillboard.MotionGoOut;
+                _character.Skillboard.BoardFrame.Motion.IsStanding = false;
             }
             else
             {
-                _skillBoard.CreateMotion_GoIn();
-                _skillBoard.BoardFrame.Motion = _skillBoard.MotionGoIn;
-                _skillBoard.BoardFrame.Motion.IsStanding = false;
+                _character.Skillboard.CreateMotion_GoIn();
+                _character.Skillboard.BoardFrame.Motion = _character.Skillboard.MotionGoIn;
+                _character.Skillboard.BoardFrame.Motion.IsStanding = false;
             }
         }
 //---Su kien cho Left Button Skill---
         public void LeftSkillButon_Clicked(object sender, EventArgs e)
         {
+            if (_character.LhSkillSelectionFrame.MainFrame.IsVisible)
+            {
 
+            }
+            else
+            {
+                _character.LhSkillSelectionFrame.CreateMotion_GoIn();
+                _character.LhSkillSelectionFrame.MainFrame.Motion = _character.LhSkillSelectionFrame.MotionGoIn;
+                _character.LhSkillSelectionFrame.MainFrame.Motion.IsStanding = false;
+            }
         }
 
         public void LeftSkillButon_Hover(object sender, EventArgs e)
