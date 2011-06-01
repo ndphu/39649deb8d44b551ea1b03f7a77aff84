@@ -92,7 +92,104 @@
     <ObstacleHeight>1</ObstacleHeight>
     <HitFrame>0</HitFrame>
   </Projectile>
-  
+
+  <Projectile id="8">
+    <ContentName>img/skill/skill10/D0</ContentName>
+    <NumOfFrame>7</NumOfFrame>
+    <XOffset>-41</XOffset>
+    <YOffset>-39</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>1</HitFrame>
+    <HitFrame>3</HitFrame>
+    <HitFrame>5</HitFrame>
+  </Projectile>
+
+  <Projectile id="9">
+    <ContentName>img/skill/skill09/D0</ContentName>
+    <NumOfFrame>16</NumOfFrame>
+    <XOffset>-24</XOffset>
+    <YOffset>-6</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>2</HitFrame>
+    <HitFrame>6</HitFrame>
+    <HitFrame>10</HitFrame>
+    <HitFrame>14</HitFrame>
+  </Projectile>
+
+  <Projectile id="10">
+    <ContentName>img/skill/skill11/D0</ContentName>
+    <NumOfFrame>41</NumOfFrame>
+    <XOffset>-43</XOffset>
+    <YOffset>-20</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>3</ObstacleHeight>
+    <HitFrame>8</HitFrame>
+    <HitFrame>12</HitFrame>
+    <HitFrame>16</HitFrame>
+    <HitFrame>20</HitFrame>
+    <HitFrame>24</HitFrame>
+    <HitFrame>28</HitFrame>
+    <HitFrame>32</HitFrame>
+  </Projectile>
+
+  <Projectile id="11">
+    <ContentName>img/skill/skill12/D0</ContentName>
+    <NumOfFrame>41</NumOfFrame>
+    <XOffset>-73</XOffset>
+    <YOffset>-37</YOffset>
+    <StartObstacleX>-2</StartObstacleX>
+    <StartObstacleY>-2</StartObstacleY>
+    <ObstacleWidth>5</ObstacleWidth>
+    <ObstacleHeight>5</ObstacleHeight>
+    <HitFrame>8</HitFrame>
+    <HitFrame>12</HitFrame>
+    <HitFrame>16</HitFrame>
+    <HitFrame>20</HitFrame>
+    <HitFrame>24</HitFrame>
+    <HitFrame>28</HitFrame>
+    <HitFrame>32</HitFrame>
+  </Projectile>
+
+  <Projectile id="12">
+    <ContentName>img/skill/skill13/D0</ContentName>
+    <NumOfFrame>41</NumOfFrame>
+    <XOffset>-104</XOffset>
+    <YOffset>-56</YOffset>
+    <StartObstacleX>-3</StartObstacleX>
+    <StartObstacleY>-3</StartObstacleY>
+    <ObstacleWidth>7</ObstacleWidth>
+    <ObstacleHeight>7</ObstacleHeight>
+    <HitFrame>8</HitFrame>
+    <HitFrame>12</HitFrame>
+    <HitFrame>16</HitFrame>
+    <HitFrame>20</HitFrame>
+    <HitFrame>24</HitFrame>
+    <HitFrame>28</HitFrame>
+    <HitFrame>32</HitFrame>
+  </Projectile>
+
+  <Projectile id="13">
+    <ContentName>img/skill/skill14/D0</ContentName>
+    <NumOfFrame>12</NumOfFrame>
+    <XOffset>-5</XOffset>
+    <YOffset>-52</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>2</HitFrame>
+    <HitFrame>5</HitFrame>
+    <HitFrame>8</HitFrame>    
+  </Projectile>
+
   <!--<Projectile id="0">
     <ContentName>img/skill/skill01/D</ContentName>
     <NumOfFrame>20</NumOfFrame>

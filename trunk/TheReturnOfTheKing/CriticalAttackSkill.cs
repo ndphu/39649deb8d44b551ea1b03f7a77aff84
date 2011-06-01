@@ -58,15 +58,15 @@ namespace TheReturnOfTheKing
                     break;
             }*/
 
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].Type);
+            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = ((Monster)_object).X;
             prjt.Y = ((Monster)_object).Y;
-            Random r = new Random((int)DateTime.Now.Ticks);
+            
 
             prjt.MinDamage = PlayerOwner.MinDamage + PlayerOwner.MinDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;
             prjt.MaxDamage = PlayerOwner.MaxDamage + PlayerOwner.MaxDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;
             
-            if (r.Next(0, 100) < PlayerOwner.CriticalRate)
+            if (GlobalVariables.GlobalRandom.Next(0, 100) < PlayerOwner.CriticalRate)
             {
                 prjt.MinDamage *= 2;
                 prjt.MaxDamage *= 2;

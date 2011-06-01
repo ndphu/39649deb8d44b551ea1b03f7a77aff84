@@ -26,15 +26,15 @@ namespace TheReturnOfTheKing
             base.DoEffect(_object);
             if (_object == null || PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
                 return;
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].Type);
+            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = ((Monster)_object).X;
             prjt.Y = ((Monster)_object).Y;
-            Random r = new Random((int)DateTime.Now.Ticks);
+            
 
             prjt.MinDamage = PlayerOwner.MinDamage + PlayerOwner.MinDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;
             prjt.MaxDamage = PlayerOwner.MaxDamage + PlayerOwner.MaxDamage * ListLevel[Level].ListSkillInfo[0].PercentDamage / 100;
 
-            if (r.Next(0, 100) < PlayerOwner.CriticalRate)
+            if (GlobalVariables.GlobalRandom.Next(0, 100) < PlayerOwner.CriticalRate)
             {
                 prjt.MinDamage *= 2;
                 prjt.MaxDamage *= 2;
@@ -48,12 +48,14 @@ namespace TheReturnOfTheKing
         public override void DoAdditionalEffect(VisibleGameEntity target)
         {
             base.DoAdditionalEffect(target);
+            if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
+                return;
             if (target != null)
             {
                 SkillInfo skillInfo = ListLevel[Level].ListSkillInfo[0];
-                Random r = new Random((int)DateTime.Now.Ticks);
+               
 
-                if (r.Next(0, 100) < skillInfo.ChanceToCurse)
+                if (GlobalVariables.GlobalRandom.Next(0, 100) < skillInfo.ChanceToCurse)
                 {
                     ((Monster)target).Defense -= skillInfo.AmorReduce;
                     Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(7);
@@ -75,6 +77,7 @@ namespace TheReturnOfTheKing
                 }
 
             }
+            PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
     }
 }

@@ -158,5 +158,13 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._previousKeyboardState; }
             set { GlobalVariables._previousKeyboardState = value; }
         }
+
+        private static Random _globalRandom = new Random();
+
+        public static Random GlobalRandom
+        {
+            get { return GlobalVariables._globalRandom; }
+            set { GlobalVariables._globalRandom = value; }
+        }
     }
 }

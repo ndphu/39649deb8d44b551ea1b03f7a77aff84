@@ -6,12 +6,12 @@ namespace TheReturnOfTheKing
 {
     public class SkillInfo
     {
-        int _type;
+        int _projectileType;
 
-        public int Type
+        public int ProjectileType
         {
-            get { return _type; }
-            set { _type = value; }
+            get { return _projectileType; }
+            set { _projectileType = value; }
         }
 
         int _x;
@@ -116,6 +116,34 @@ namespace TheReturnOfTheKing
         {
             get { return _bashTime; }
             set { _bashTime = value; }
+        }
+        /// <summary>
+        /// So luong ruoi tha ra
+        /// </summary>
+        int _numOfBee;
+
+        public int NumOfBee
+        {
+            get { return _numOfBee; }
+            set { _numOfBee = value; }
+        }
+        /// <summary>
+        /// Thoi gian song cua ruoi
+        /// </summary>
+        int _beeLifeTime;
+
+        public int BeeLifeTime
+        {
+            get { return _beeLifeTime; }
+            set { _beeLifeTime = value; }
+        }
+
+        int _coolDown;
+
+        public int CoolDown
+        {
+            get { return _coolDown; }
+            set { _coolDown = value; }
         }
     }
 

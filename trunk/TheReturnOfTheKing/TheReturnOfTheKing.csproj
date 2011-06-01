@@ -93,9 +93,12 @@
     <Compile Include="CriticalAttackSkill.cs" />
     <Compile Include="CurseAttackSkill.cs" />
     <Compile Include="Cursor.cs" />
+    <Compile Include="DeadlyBeeSkill.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DisplayMessageLayer.cs" />
+    <Compile Include="EarthShakeSkill.cs" />
     <Compile Include="EquipItem.cs" />
+    <Compile Include="FireWallSkill.cs" />
     <Compile Include="Frog.cs" />
     <Compile Include="GameFrame.cs" />
     <Compile Include="GameFrameManager.cs" />
@@ -111,6 +114,8 @@
     <Compile Include="Item.cs" />
     <Compile Include="ItemManager.cs" />
     <Compile Include="LifeStealAttackSkill.cs" />
+    <Compile Include="LightningFieldSkill.cs" />
+    <Compile Include="LightningMovingController.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapManager.cs" />
     <Compile Include="MapObstacle.cs" />

@@ -37,13 +37,13 @@ namespace TheReturnOfTheKing
             set { _playerOwner = value; }
         }
 
-        bool _isEffected;
+        //bool _isEffected;
 
-        public bool IsEffected
-        {
-            get { return _isEffected; }
-            set { _isEffected = value; }
-        }
+        //public bool IsEffected
+        //{
+        //    get { return _isEffected; }
+        //    set { _isEffected = value; }
+        //}
         /// <summary>
         /// Hinh anh dai dien cho skill (64x64)
         /// </summary>
@@ -75,7 +75,9 @@ namespace TheReturnOfTheKing
             get { return _largeIcon; }
             set { _largeIcon = value; }
         }
-
+        /// <summary>
+        /// Cap do cua skill
+        /// </summary>
         int _level = 0;
 
         public int Level
@@ -88,7 +90,9 @@ namespace TheReturnOfTheKing
                     Active();
             }
         }
-
+        /// <summary>
+        /// Danh sach thong tin cac level cua skill
+        /// </summary>
         List<SkillLevel> _listLevel;
 
         public List<SkillLevel> ListLevel

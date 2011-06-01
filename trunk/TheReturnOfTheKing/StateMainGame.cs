@@ -136,7 +136,7 @@ namespace TheReturnOfTheKing
             for (int i = 0; i < _listProjectile.Count; ++i)
             {
                 _listProjectile[i].Update(gameTime);
-                if (_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1)
+                if ((_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1 && _listProjectile[i].IsRemoveAfterEffect) || (_listProjectile[i].LifeTime <= 0 && !_listProjectile[i].IsRemoveAfterEffect))
                     _listProjectile.Remove(_listProjectile[i]);
             }
             _char.Update(gameTime);

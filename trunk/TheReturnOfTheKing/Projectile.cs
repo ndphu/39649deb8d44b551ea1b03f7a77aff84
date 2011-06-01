@@ -51,7 +51,14 @@ namespace TheReturnOfTheKing
             get { return _hitFrames; }
             set { _hitFrames = value; }
         }
-        
+
+        bool _isRemoveAfterEffect = true;
+
+        public bool IsRemoveAfterEffect
+        {
+            get { return _isRemoveAfterEffect; }
+            set { _isRemoveAfterEffect = value; }
+        }
                 
         public override VisibleGameObject Clone()
         {
@@ -107,9 +114,33 @@ namespace TheReturnOfTheKing
             }
         }
 
+        ProjectileController _projectileController;
+
+        public ProjectileController ProjectileController
+        {
+            get { return _projectileController; }
+            set { _projectileController = value; }
+        }
+
+        int _lifeTime;
+
+        public int LifeTime
+        {
+            get { return _lifeTime; }
+            set { _lifeTime = value; }
+        }
+
         public virtual void DoEffect(VisibleGameEntity _object)
         {
             _skillOwner.DoEffect(_object);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            LifeTime -= 1;
+            if (ProjectileController != null)
+                ProjectileController.UpdatePosition(gameTime);
         }
     }
 }

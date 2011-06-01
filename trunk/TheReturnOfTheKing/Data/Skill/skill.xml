@@ -184,6 +184,124 @@
       <BashTime>180</BashTime>
     </Level>
   </Skill>
+  
+  <Skill id="7">
+    <Name>Deadly Bee</Name>
+    <Clicked>img/skillicon/Clicked/06</Clicked>
+    <Idle>img/skillicon/Idle/06</Idle>
+    <Large>img/skillicon/Large/06</Large>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <MP>0</MP>
+      <ProjectileType>8</ProjectileType>
+      <NumberOfBee>0</NumberOfBee>
+      <CoolDown>0</CoolDown>
+      <BeeLifeTime>0</BeeLifeTime>
+    </Level>
+    <Level>
+      <MinDamage>35</MinDamage>
+      <MaxDamage>85</MaxDamage>
+      <MP>-100</MP>
+      <ProjectileType>8</ProjectileType>
+      <NumberOfBee>4</NumberOfBee>
+      <CoolDown>7</CoolDown>
+      <BeeLifeTime>4</BeeLifeTime>
+    </Level>
+    <Level>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>160</MaxDamage>
+      <MP>-250</MP>
+      <ProjectileType>8</ProjectileType>
+      <NumberOfBee>7</NumberOfBee>
+      <CoolDown>12</CoolDown>
+      <BeeLifeTime>7</BeeLifeTime>
+    </Level>
+    <Level>
+      <MinDamage>170</MinDamage>
+      <MaxDamage>290</MaxDamage>
+      <MP>-500</MP>
+      <ProjectileType>8</ProjectileType>
+      <NumberOfBee>12</NumberOfBee>
+      <CoolDown>17</CoolDown>
+      <BeeLifeTime>12</BeeLifeTime>
+    </Level>    
+  </Skill>
+
+  <Skill id="8">
+    <Name>Lightning Field</Name>
+    <Clicked>img/skillicon/Clicked/06</Clicked>
+    <Idle>img/skillicon/Idle/06</Idle>
+    <Large>img/skillicon/Large/06</Large>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <MP>0</MP>
+      <ProjectileType>13</ProjectileType>      
+      <CoolDown>0</CoolDown>
+    </Level>
+    <Level>
+      <MinDamage>55</MinDamage>
+      <MaxDamage>85</MaxDamage>
+      <MP>-100</MP>
+      <ProjectileType>13</ProjectileType>
+      <CoolDown>3</CoolDown>
+    </Level>
+    <Level>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>150</MaxDamage>
+      <MP>-200</MP>
+      <ProjectileType>13</ProjectileType>
+      <CoolDown>5</CoolDown>
+    </Level>
+    <Level>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>425</MaxDamage>
+      <MP>-300</MP>
+      <ProjectileType>13</ProjectileType>
+      <CoolDown>7</CoolDown>
+    </Level>
+  </Skill>
+
+  <Skill id="9">
+    <Name>Earth Shake</Name>
+    <Clicked>img/skillicon/Clicked/06</Clicked>
+    <Idle>img/skillicon/Idle/06</Idle>
+    <Large>img/skillicon/Large/06</Large>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <MP>0</MP>
+      <ProjectileType>10</ProjectileType>
+      <CoolDown>0</CoolDown>
+      <BashTime>0</BashTime>
+    </Level>
+    <Level>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>200</MaxDamage>
+      <MP>-100</MP>
+      <ProjectileType>10</ProjectileType>
+      <CoolDown>3</CoolDown>
+      <BashTime>3</BashTime>
+    </Level>
+    <Level>
+      <MinDamage>200</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <MP>-200</MP>
+      <ProjectileType>11</ProjectileType>
+      <CoolDown>5</CoolDown>
+      <BashTime>4</BashTime>
+    </Level>
+    <Level>
+      <MinDamage>400</MinDamage>
+      <MaxDamage>600</MaxDamage>
+      <MP>-300</MP>
+      <ProjectileType>12</ProjectileType>
+      <CoolDown>7</CoolDown>
+      <BashTime>6</BashTime>
+    </Level>
+  </Skill>
+  
   <!--
   <Skill id="2">
     <Name>Other</Name>
