@@ -226,6 +226,30 @@ namespace TheReturnOfTheKing
             }
         }
 
+        HealthBar _healthbar;
+
+        public HealthBar Healthbar
+        {
+            get { return _healthbar; }
+            set { _healthbar = value; }
+        }
+
+        SkillBoard _skillboard;
+
+        public SkillBoard Skillboard
+        {
+            get { return _skillboard; }
+            set { _skillboard = value; }
+        }
+
+        LHSkillSelectionFrame _lhSkillSelectionFrame;
+
+        public LHSkillSelectionFrame LhSkillSelectionFrame
+        {
+            get { return _lhSkillSelectionFrame; }
+            set { _lhSkillSelectionFrame = value; }
+        }
+
         public override void SetMap(Map map)
         {
             base.SetMap(map);

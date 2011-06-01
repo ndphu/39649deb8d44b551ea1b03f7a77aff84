@@ -63,38 +63,192 @@ namespace TheReturnOfTheKing
             set { _motionGoIn = value; }
         }
 
+//Các control trên tab......
+        #region Các button dùng chung trên tab control
+        Button _btLeftSkillControl;
+        public Button BtLeftSkillControl
+        {
+            get { return _btLeftSkillControl; }
+            set { _btLeftSkillControl = value; }
+        }
+
+        Button _btRightSkillControl;
+        public Button BtRightSkillControl
+        {
+            get { return _btRightSkillControl; }
+            set { _btRightSkillControl = value; }
+        }
+
+        Button _btPassiveSkillControl;
+        public Button BtPassiveSkillControl
+        {
+            get { return _btPassiveSkillControl; }
+            set { _btPassiveSkillControl = value; }
+        }
+        #endregion
+   //Left
+        Button _btLefthandExit;
+        public Button BtLefthandExit
+        {
+            get { return _btLefthandExit; }
+            set { _btLefthandExit = value; }
+        }
+
+        Button _btSkillCleaving;
+        public Button BtSkillCleaving
+        {
+            get { return _btSkillCleaving; }
+            set { _btSkillCleaving = value; }
+        }
+
+        Button _btSkillCritical;
+        public Button BtSkillCritical
+        {
+            get { return _btSkillCritical; }
+            set { _btSkillCritical = value; }
+        }
+
+        Button _btSkillCurse;
+        public Button BtSkillCurse
+        {
+            get { return _btSkillCurse; }
+            set { _btSkillCurse = value; }
+        }
+
+        Button _btSkillOverSpeed;
+        public Button BtSkillOverSpeed
+        {
+            get { return _btSkillOverSpeed; }
+            set { _btSkillOverSpeed = value; }
+        }
+
+        Button _btSkillLifeSteal;
+        public Button BtSkillLifeSteal
+        {
+            get { return _btSkillLifeSteal; }
+            set { _btSkillLifeSteal = value; }
+        }
+
+        Button _btSkillBash;
+        public Button BtSkillBash
+        {
+            get { return _btSkillBash; }
+            set { _btSkillBash = value; }
+        }
+
+        Label _lbSkillCleaving;
+        public Label LbSkillCleaving
+        {
+            get { return _lbSkillCleaving; }
+            set { _lbSkillCleaving = value; }
+        }
+
+        Label _lbSkillCritical;
+        public Label LbSkillCritical
+        {
+            get { return _lbSkillCritical; }
+            set { _lbSkillCritical = value; }
+        }
+
+        Label _lbSkillCurse;
+        public Label LbSkillCurse
+        {
+            get { return _lbSkillCurse; }
+            set { _lbSkillCurse = value; }
+        }
+
+        Label _lbSkillOverspeed;
+        public Label LbSkillOverspeed
+        {
+            get { return _lbSkillOverspeed; }
+            set { _lbSkillOverspeed = value; }
+        }
+
+        Label _lbSkillLifeSteal;
+        public Label LbSkillLifeSteal
+        {
+            get { return _lbSkillLifeSteal; }
+            set { _lbSkillLifeSteal = value; }
+        }
+
+        Label _lbSkillBash;
+        public Label LbSkillBash
+        {
+            get { return _lbSkillBash; }
+            set { _lbSkillBash = value; }
+        }
+
+        GameFrame _lefthandFrame;
+        public GameFrame LefthandFrame
+        {
+            get { return _lefthandFrame; }
+            set { _lefthandFrame = value; }
+        }
+   //Right
+        Button _btRighthandExit;
+        public Button BtRighthandExit
+        {
+            get { return _btRighthandExit; }
+            set { _btRighthandExit = value; }
+        }
+
+        GameFrame _rightthandFrame;
+        public GameFrame RightthandFrame
+        {
+            get { return _rightthandFrame; }
+            set { _rightthandFrame = value; }
+        }
+   //Passive
+        Button _btPassiveExit;
+        public Button BtPassiveExit
+        {
+            get { return _btPassiveExit; }
+            set { _btPassiveExit = value; }
+        }
+
+        GameFrame _passiveFrame;
+        public GameFrame PassiveFrame
+        {
+            get { return _passiveFrame; }
+            set { _passiveFrame = value; }
+        }
+
+//---------------------------------------------------------------------------------------------------
         public void GetResources(List<GameObjectManager> _resources)
         {
             _boardFrame = (GameFrame)_resources[0].CreateObject(1);
             _boardFrame.IsVisible = false;
 
             //Press Button sử dụng chung trên 3 tab.
-            Button _leftSkillControl = (Button)_resources[1].CreateObject(2);
-            _leftSkillControl._sprite[0].Itexture2D = 1; //Được click trước tiên
-            _leftSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_LeftButtonControl);
-            _leftSkillControl.IsPressButton = true;
+            _btLeftSkillControl = (Button)_resources[1].CreateObject(2);
+            _btLeftSkillControl._sprite[0].Itexture2D = 1; //Được click trước tiên
+            _btLeftSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_LeftButtonControl);
+            _btLeftSkillControl.IsPressButton = true;
 
-            Button _rightSkillControl = (Button)_resources[1].CreateObject(3);
-            _rightSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_RightButtonControl);
-            _rightSkillControl.IsPressButton = true;
+            _btRightSkillControl = (Button)_resources[1].CreateObject(3);
+            _btRightSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_RightButtonControl);
+            _btRightSkillControl.IsPressButton = true;
 
-            Button _passiveSkillControl = (Button)_resources[1].CreateObject(4);
-            _passiveSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_PassiveButtonControl);
-            _passiveSkillControl.IsPressButton = true;
+            _btPassiveSkillControl = (Button)_resources[1].CreateObject(4);
+            _btPassiveSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_PassiveButtonControl);
+            _btPassiveSkillControl.IsPressButton = true;
 
-            //LeftHand tab
-            Button _btLefthandExit = (Button)_resources[1].CreateObject(11);
+ //LeftHand tab
+            _btLefthandExit = (Button)_resources[1].CreateObject(11);
             _btLefthandExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_LeftExit);
-
-            Button _btSkillCleaving = (Button)_resources[1].CreateObject(5);
+            //Cleaving
+            _btSkillCleaving = (Button)_resources[1].CreateObject(5);
             _btSkillCleaving.Owner = _character.ListLeftHandSkill[1];
             _btSkillCleaving.GetNewIdleTexture(_character.ListLeftHandSkill[1].IdleIcon);
             _btSkillCleaving.GetNewClickedTexture(_character.ListLeftHandSkill[1].ClickedIcon);
             _btSkillCleaving.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_CleavingAttack);
             _btSkillCleaving.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_CleavingAttack);
             _btSkillCleaving.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_CleavingAttack);
-
-            Button _btSkillCritical = (Button)_resources[1].CreateObject(6);
+            
+            _lbSkillCleaving = (Label)_resources[2].CreateObject(0);
+            _lbSkillCleaving.Owner = _character.ListLeftHandSkill[1];
+            //Critical
+            _btSkillCritical = (Button)_resources[1].CreateObject(6);
             _btSkillCritical.Owner = _character.ListLeftHandSkill[2];
             _btSkillCritical.GetNewIdleTexture(_character.ListLeftHandSkill[2].IdleIcon);
             _btSkillCritical.GetNewClickedTexture(_character.ListLeftHandSkill[2].ClickedIcon);
@@ -102,7 +256,10 @@ namespace TheReturnOfTheKing
             _btSkillCritical.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_CriticalAttack);
             _btSkillCritical.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_CriticalAttack);
 
-            Button _btSkillCurse = (Button)_resources[1].CreateObject(7);
+            _lbSkillCritical = (Label)_resources[2].CreateObject(1);
+            _lbSkillCritical.Owner = _character.ListLeftHandSkill[2];
+            //Curse
+            _btSkillCurse = (Button)_resources[1].CreateObject(7);
             _btSkillCurse.Owner = _character.ListLeftHandSkill[3];
             _btSkillCurse.GetNewIdleTexture(_character.ListLeftHandSkill[3].IdleIcon);
             _btSkillCurse.GetNewClickedTexture(_character.ListLeftHandSkill[3].ClickedIcon);
@@ -110,7 +267,10 @@ namespace TheReturnOfTheKing
             _btSkillCurse.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_CurseAttack);
             _btSkillCurse.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_CurseAttack);
 
-            Button _btSkillOverSpeed = (Button)_resources[1].CreateObject(8);
+            _lbSkillCurse = (Label)_resources[2].CreateObject(2);
+            _lbSkillCurse.Owner = _character.ListLeftHandSkill[3];
+            //Overspeed
+            _btSkillOverSpeed = (Button)_resources[1].CreateObject(8);
             _btSkillOverSpeed.Owner = _character.ListLeftHandSkill[4];
             _btSkillOverSpeed.GetNewIdleTexture(_character.ListLeftHandSkill[4].IdleIcon);
             _btSkillOverSpeed.GetNewClickedTexture(_character.ListLeftHandSkill[4].ClickedIcon);
@@ -118,7 +278,10 @@ namespace TheReturnOfTheKing
             _btSkillOverSpeed.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_OverSpeedAttack);
             _btSkillOverSpeed.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_OverSpeedAttack);
 
-            Button _btSkillLifeSteal = (Button)_resources[1].CreateObject(9);
+            _lbSkillOverspeed = (Label)_resources[2].CreateObject(3);
+            _lbSkillOverspeed.Owner = _character.ListLeftHandSkill[4];
+            //Lifesteal
+            _btSkillLifeSteal = (Button)_resources[1].CreateObject(9);
             _btSkillLifeSteal.Owner = _character.ListLeftHandSkill[5];
             _btSkillLifeSteal.GetNewIdleTexture(_character.ListLeftHandSkill[5].IdleIcon);
             _btSkillLifeSteal.GetNewClickedTexture(_character.ListLeftHandSkill[5].ClickedIcon);
@@ -126,7 +289,10 @@ namespace TheReturnOfTheKing
             _btSkillLifeSteal.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_LifeStealAttack);
             _btSkillLifeSteal.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_LifeStealAttack);
 
-            Button _btSkillBash = (Button)_resources[1].CreateObject(10);
+            _lbSkillLifeSteal = (Label)_resources[2].CreateObject(4);
+            _lbSkillLifeSteal.Owner = _character.ListLeftHandSkill[5];
+            //Bash
+            _btSkillBash = (Button)_resources[1].CreateObject(10);
             _btSkillBash.Owner = _character.ListLeftHandSkill[6];
             _btSkillBash.GetNewIdleTexture(_character.ListLeftHandSkill[6].IdleIcon);
             _btSkillBash.GetNewClickedTexture(_character.ListLeftHandSkill[6].ClickedIcon);
@@ -134,54 +300,69 @@ namespace TheReturnOfTheKing
             _btSkillBash.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_BashAttack);
             _btSkillBash.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_BashAttack);
 
-            GameFrame _lefthandFrame = (GameFrame)_resources[0].CreateObject(2);
+            _lbSkillBash = (Label)_resources[2].CreateObject(5);
+            _lbSkillBash.Owner = _character.ListLeftHandSkill[6];
+
+            _lefthandFrame = (GameFrame)_resources[0].CreateObject(2);
+
             //4 vị trí đầu là các control trên tab
-            _lefthandFrame.AddChild(_leftSkillControl);
-            _lefthandFrame.AddChild(_rightSkillControl);
-            _lefthandFrame.AddChild(_passiveSkillControl);
+            _lefthandFrame.AddChild(_btLeftSkillControl);
+            _lefthandFrame.AddChild(_btRightSkillControl);
+            _lefthandFrame.AddChild(_btPassiveSkillControl);
             _lefthandFrame.AddChild(_btLefthandExit);
             //Các vị trí còn lại là các button Skill
             _lefthandFrame.AddChild(_btSkillCleaving);
+            _lefthandFrame.AddChild(_lbSkillCleaving);
+
             _lefthandFrame.AddChild(_btSkillCritical);
+            _lefthandFrame.AddChild(_lbSkillCritical);
+
             _lefthandFrame.AddChild(_btSkillCurse);
+            _lefthandFrame.AddChild(_lbSkillCurse);
+
             _lefthandFrame.AddChild(_btSkillOverSpeed);
+            _lefthandFrame.AddChild(_lbSkillOverspeed);
+
             _lefthandFrame.AddChild(_btSkillLifeSteal);
+            _lefthandFrame.AddChild(_lbSkillLifeSteal);
+
             _lefthandFrame.AddChild(_btSkillBash);
+            _lefthandFrame.AddChild(_lbSkillBash);
+
             //Add vào tab control (Frame mẹ)
             _boardFrame.AddChild(_lefthandFrame);
 
-            //RightHand tab
-            Button _btRighthandExit = (Button)_resources[1].CreateObject(12);
+//RightHand tab
+            _btRighthandExit = (Button)_resources[1].CreateObject(12);
             _btRighthandExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_RightExit);
 
-            GameFrame _rightthandFrame = (GameFrame)_resources[0].CreateObject(3);
-            _rightthandFrame.AddChild(_leftSkillControl);
-            _rightthandFrame.AddChild(_rightSkillControl);
-            _rightthandFrame.AddChild(_passiveSkillControl);
+            _rightthandFrame = (GameFrame)_resources[0].CreateObject(3);
+            _rightthandFrame.AddChild(_btLeftSkillControl);
+            _rightthandFrame.AddChild(_btRightSkillControl);
+            _rightthandFrame.AddChild(_btPassiveSkillControl);
             _rightthandFrame.AddChild(_btRighthandExit);
             _boardFrame.AddChild(_rightthandFrame);
 
             //Passive tab
-            Button _btPassiveExit = (Button)_resources[1].CreateObject(13);
+            _btPassiveExit = (Button)_resources[1].CreateObject(13);
             _btPassiveExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_PassiveExit);
 
-            GameFrame _passiveFrame = (GameFrame)_resources[0].CreateObject(4);
-            _passiveFrame.AddChild(_leftSkillControl);
-            _passiveFrame.AddChild(_rightSkillControl);
-            _passiveFrame.AddChild(_passiveSkillControl);
+            _passiveFrame = (GameFrame)_resources[0].CreateObject(4);
+            _passiveFrame.AddChild(_btLeftSkillControl);
+            _passiveFrame.AddChild(_btRightSkillControl);
+            _passiveFrame.AddChild(_btPassiveSkillControl);
             _passiveFrame.AddChild(_btPassiveExit);
             _boardFrame.AddChild(_passiveFrame);
 
-            
             _iCurrentBoard = 0;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
             _rect = new Rectangle((int)_boardFrame.X, (int)_boardFrame.Y, (int)_boardFrame.Width, (int)_boardFrame.Height);
-             
         }
 
         public void SetCharacter(PlayerCharacter _char)
         {
             _character = _char;
+            _char.Skillboard = this;
         }
 
         public override void Update(GameTime gameTime)
@@ -209,6 +390,30 @@ namespace TheReturnOfTheKing
             }
 
             _currentBoard.Update(gameTime);
+
+            //Update thong tin cac label
+            switch (_iCurrentBoard)
+            {
+                case 0:
+                    {
+                        GetSkillLevel(_lbSkillCleaving);
+                        GetSkillLevel(_lbSkillCritical);
+                        GetSkillLevel(_lbSkillCurse);
+                        GetSkillLevel(_lbSkillOverspeed);
+                        GetSkillLevel(_lbSkillLifeSteal);
+                        GetSkillLevel(_lbSkillBash);
+                        break;
+                    }
+                case 1:
+                    {
+
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
+            }
 
             _rect = new Rectangle((int)_boardFrame.X, (int)_boardFrame.Y, (int)_boardFrame.Width, (int)_boardFrame.Height);
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
@@ -255,8 +460,8 @@ namespace TheReturnOfTheKing
         {
             if (_iCurrentBoard == 0)
                 return;
-            ((GameFrame)_boardFrame.Child[0]).Child[1]._sprite[0].Itexture2D = 0;
-            ((GameFrame)_boardFrame.Child[0]).Child[2]._sprite[0].Itexture2D = 0;
+            _btRightSkillControl._sprite[0].Itexture2D = 0;
+            _btPassiveSkillControl._sprite[0].Itexture2D = 0;
             _iCurrentBoard = 0;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
         }
@@ -271,7 +476,7 @@ namespace TheReturnOfTheKing
         #region CleavingAttack Skill
         public void SkillBoard_MouseClick_CleavingAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CleavingAttack(object sender, EventArgs e)
@@ -288,7 +493,7 @@ namespace TheReturnOfTheKing
         #region CriticalAttack Skill
         public void SkillBoard_MouseClick_CriticalAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CriticalAttack(object sender, EventArgs e)
@@ -305,7 +510,7 @@ namespace TheReturnOfTheKing
         #region CurseAttack Skill
         public void SkillBoard_MouseClick_CurseAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CurseAttack(object sender, EventArgs e)
@@ -322,7 +527,7 @@ namespace TheReturnOfTheKing
         #region OverSpeedAttack Skill
         public void SkillBoard_MouseClick_OverSpeedAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_OverSpeedAttack(object sender, EventArgs e)
@@ -339,7 +544,7 @@ namespace TheReturnOfTheKing
         #region LifeStealAttack Skill
         public void SkillBoard_MouseClick_LifeStealAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_LifeStealAttack(object sender, EventArgs e)
@@ -356,7 +561,7 @@ namespace TheReturnOfTheKing
         #region BashAttack Skill
         public void SkillBoard_MouseClick_BashAttack(object sender, EventArgs e)
         {
-
+            LevelUp((Button)sender);
         }
 
         public void SkillBoard_MouseHover_BashAttack(object sender, EventArgs e)
@@ -378,8 +583,8 @@ namespace TheReturnOfTheKing
         {
             if (_iCurrentBoard == 1)
                 return;
-            ((GameFrame)_boardFrame.Child[1]).Child[0]._sprite[0].Itexture2D = 0;
-            ((GameFrame)_boardFrame.Child[1]).Child[2]._sprite[0].Itexture2D = 0;
+            _btLeftSkillControl._sprite[0].Itexture2D = 0;
+            _btPassiveSkillControl._sprite[0].Itexture2D = 0;
             _iCurrentBoard = 1;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
         }
@@ -399,8 +604,8 @@ namespace TheReturnOfTheKing
         {
             if (_iCurrentBoard == 2)
                 return;
-            ((GameFrame)_boardFrame.Child[2]).Child[0]._sprite[0].Itexture2D = 0;
-            ((GameFrame)_boardFrame.Child[2]).Child[1]._sprite[0].Itexture2D = 0;
+            _btLeftSkillControl._sprite[0].Itexture2D = 0;
+            _btRightSkillControl._sprite[0].Itexture2D = 0;
             _iCurrentBoard = 2;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
         }
@@ -442,6 +647,25 @@ namespace TheReturnOfTheKing
         public void HideDetailSkill(Button _button)
         {
             ((Skill)_button.Owner).ToShowDetails = false;
+        }
+
+        public void LevelUp(Button _button)
+        {
+            if (((Skill)_button.Owner).Level < ((Skill)_button.Owner).ListLevel.Count - 1)
+            {
+                ((Skill)_button.Owner).Level++;
+                if (((Skill)_button.Owner).Level == ((Skill)_button.Owner).ListLevel.Count - 1)
+                    _button.Endalbe = false;
+            }
+        }
+
+        public void GetSkillLevel (Label _label)
+        {
+            _label.StringInfo = ((Skill)_label.Owner).Level.ToString();
+            if (((Skill)_label.Owner).Level == ((Skill)_label.Owner).ListLevel.Count - 1)
+            {
+                _label.StringColor = Color.Red;
+            }
         }
     }
 }

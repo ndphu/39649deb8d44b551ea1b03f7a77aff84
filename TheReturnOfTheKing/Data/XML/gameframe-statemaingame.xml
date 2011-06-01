@@ -60,4 +60,16 @@
       <FirstDirection>Null</FirstDirection>
     </MoveInfo>
   </Frame>
+
+  <Frame id="5">
+    <BackGround>Null</BackGround>
+    <X>116</X>
+    <Y>609</Y>
+    <Width>244</Width>
+    <Height>97</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
 </root>

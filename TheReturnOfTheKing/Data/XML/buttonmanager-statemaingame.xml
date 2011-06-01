@@ -185,4 +185,89 @@
     <Width>48</Width>
     <Height>48</Height>
   </Button>
+  
+  <!--Button trên Left hand skill selection frame-->
+  <Button id ="15">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="16">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>49</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="17">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>98</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="18">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>147</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="19">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>196</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="20">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>196</X>
+    <Y>0</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="21">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>147</X>
+    <Y>0</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
 </root>

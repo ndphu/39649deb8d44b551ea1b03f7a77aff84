@@ -179,7 +179,35 @@ namespace TheReturnOfTheKing
                         }
                     case "Up":
                         {
+                            #region
+                            if (_nowDirection == "Up")
+                            {
+                                _vel -= _accel;
+                                _newPosition -= _vel;
+                                if (_vel.Y <= 0)
+                                {
+                                    _nowDirection = "Down";
+                                    _vel.Y = 0;
+                                }
+                            }
+                            else
+                            {
+                                _vel += _accel;
+                                _newPosition += _vel;
+                                if (_newPosition.Y >= _standingGround)
+                                {
+                                    if (_vel.Y <= _accel.Y)
+                                    {
+                                        _isStanding = true;
+                                        _newPosition.Y = _standingGround;
+                                    }
+                                    _newPosition.Y = _standingGround;
+                                    _nowDirection = "Up";
+                                    _vel *= _decelerationRate;
+                                }
+                            }
                             break;
+                            #endregion
                         }
                     case "Down":
                         {
