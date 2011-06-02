@@ -41,6 +41,14 @@ namespace TheReturnOfTheKing
             set { _maxDamage = value; }
         }
 
+        int _delayTime;
+
+        public int DelayTime
+        {
+            get { return _delayTime; }
+            set { _delayTime = value; }
+        }
+
         /// <summary>
         /// Frame hinh gay sat thuong
         /// </summary>
@@ -132,15 +140,27 @@ namespace TheReturnOfTheKing
 
         public virtual void DoEffect(VisibleGameEntity _object)
         {
-            _skillOwner.DoEffect(_object);
+            if (DelayTime == 0)
+                _skillOwner.DoEffect(_object);
         }
 
         public override void Update(GameTime gameTime)
         {
+            if (DelayTime > 0)
+            {
+                --DelayTime;
+                return;
+            }
             base.Update(gameTime);
             LifeTime -= 1;
             if (ProjectileController != null)
                 ProjectileController.UpdatePosition(gameTime);
+        }
+
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
+        {
+            if (DelayTime == 0)
+                base.Draw(gameTime, sb);
         }
     }
 }

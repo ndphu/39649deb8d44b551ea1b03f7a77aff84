@@ -60,12 +60,18 @@ namespace TheReturnOfTheKing
             _prototype[id]._sprite[0].Xoffset = int.Parse(_projectile.SelectSingleNode(@"XOffset").InnerText);
             _prototype[id]._sprite[0].Yoffset = int.Parse(_projectile.SelectSingleNode(@"YOffset").InnerText);
             _prototype[id]._sprite[0].NDelay = 3;
-            
+
             ((Projectile)_prototype[id]).StartObstacleX = int.Parse(_projectile.SelectSingleNode(@"StartObstacleX").InnerText);
             ((Projectile)_prototype[id]).StartObstacleY = int.Parse(_projectile.SelectSingleNode(@"StartObstacleY").InnerText);
             ((Projectile)_prototype[id]).ObstacleWidth = int.Parse(_projectile.SelectSingleNode(@"ObstacleWidth").InnerText);
             ((Projectile)_prototype[id]).ObstacleHeight = int.Parse(_projectile.SelectSingleNode(@"ObstacleHeight").InnerText);
-            
+            try
+            {
+                ((Projectile)_prototype[id])._sprite[0].NDelay = int.Parse(_projectile.SelectSingleNode(@"NDelay").InnerText);
+            }
+            catch
+            {
+            }
             ((Projectile)_prototype[id]).HitFrames = new List<int>();
             XmlNodeList _frameList = _projectile.SelectNodes(@"HitFrame");
             for (int i = 0; i < _frameList.Count; ++i)

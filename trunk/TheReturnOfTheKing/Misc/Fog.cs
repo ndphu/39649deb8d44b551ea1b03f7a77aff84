@@ -15,8 +15,6 @@ namespace TheReturnOfTheKing
 {
     public class Fog : Misc
     {
-        SpriteFont sf;
-
         PlayerCharacter _character;
 
         public PlayerCharacter Character
@@ -54,19 +52,7 @@ namespace TheReturnOfTheKing
         }
 
 
-        Texture2D _normalAttackLeft;
-        Texture2D _normalAttackRight;
-        public override void Init(ContentManager content)
-        {
-            /*_nsprite = 1;
-            _sprite = new GameSprite[_nsprite];
-            _sprite[0] = new GameSprite(content.Load<Texture2D>("img/misc/frog/frog"), 0, 0);
-            _normalAttackLeft = content.Load<Texture2D>("img/skillicon/medium/normal_attack");
-            _normalAttackRight = content.Load<Texture2D>("img/skillicon/medium/normal_attack");
-            sf = content.Load<SpriteFont>("sf");
-            GlobalVariables.Sf = sf;*/
-        }
-
+        
         public void SetCharacter(PlayerCharacter _char)
         {
             _character = _char;

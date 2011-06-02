@@ -109,17 +109,14 @@
 
   <Projectile id="9">
     <ContentName>img/skill/skill09/D0</ContentName>
-    <NumOfFrame>16</NumOfFrame>
+    <NumOfFrame>10</NumOfFrame>
     <XOffset>-24</XOffset>
     <YOffset>-6</YOffset>
     <StartObstacleX>0</StartObstacleX>
     <StartObstacleY>0</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
-    <HitFrame>2</HitFrame>
-    <HitFrame>6</HitFrame>
-    <HitFrame>10</HitFrame>
-    <HitFrame>14</HitFrame>
+    <HitFrame>1</HitFrame>
   </Projectile>
 
   <Projectile id="10">
@@ -199,6 +196,18 @@
     <HitFrame>16</HitFrame>
     <HitFrame>20</HitFrame>
     <HitFrame>24</HitFrame>
+  </Projectile>
+
+  <Projectile id="15">
+    <ContentName>img/skill/skill16/D</ContentName>
+    <NumOfFrame>6</NumOfFrame>
+    <XOffset>-15</XOffset>
+    <YOffset>-215</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>0</ObstacleWidth>
+    <ObstacleHeight>0</ObstacleHeight>
+    <NDelay>0</NDelay>
   </Projectile>
 
   <!--<Projectile id="0">

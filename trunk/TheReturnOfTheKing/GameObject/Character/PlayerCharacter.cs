@@ -765,9 +765,10 @@ namespace TheReturnOfTheKing
             }
             _listRightHandSkill = new List<Skill>();
             _listRightHandSkill.Add((DeadlyBeeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(7)));
-            _listRightHandSkill.Add((SoulReleaseSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
+            _listRightHandSkill.Add((SoulsReleaseSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
             _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(9)));
             _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
+            _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(11)));
 
             for (int i = 0; i < _listRightHandSkill.Count; ++i)
             {

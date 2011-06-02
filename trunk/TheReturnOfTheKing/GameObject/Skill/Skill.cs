@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheReturnOfTheKing
 {
-    public class Skill : VisibleGameEntity
+    public abstract class Skill : VisibleGameEntity
     {
         /// <summary>
         /// Tên của skill
@@ -132,15 +132,7 @@ namespace TheReturnOfTheKing
 
         public override VisibleGameObject Clone()
         {
-            return new Skill
-            {
-                X = this.X,
-                Y = this.Y,
-                Level = this.Level,
-                ListLevel = this.ListLevel,
-                IdleIcon = this.IdleIcon,
-                LargeIcon = this.LargeIcon,
-            };
+            return null; 
         }
 
         public override void Update(GameTime gameTime)
