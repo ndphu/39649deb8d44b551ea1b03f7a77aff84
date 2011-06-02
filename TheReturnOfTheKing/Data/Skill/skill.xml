@@ -229,7 +229,7 @@
   </Skill>
 
   <Skill id="8">
-    <Name>Lightning Field</Name>
+    <Name>Souls Release</Name>
     <Clicked>img/skillicon/Clicked/06</Clicked>
     <Idle>img/skillicon/Idle/06</Idle>
     <Large>img/skillicon/Large/06</Large>
@@ -345,7 +345,51 @@
       <CastRange>450</CastRange>
     </Level>
   </Skill>
-  
+
+  <Skill id="11">
+    <Name>Lightning Field</Name>
+    <Clicked>img/skillicon/Clicked/02</Clicked>
+    <Idle>img/skillicon/Idle/02</Idle>
+    <Large>img/skillicon/Large/02</Large>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <MP>0</MP>
+      <ProjectileType>15</ProjectileType>
+      <CoolDown>0</CoolDown>
+      <NumberOfStar>0</NumberOfStar>
+      <Duration>0</Duration>
+    </Level>
+    <Level>
+      <MinDamage>150</MinDamage>
+      <MaxDamage>300</MaxDamage>
+      <MP>-100</MP>
+      <ProjectileType>15</ProjectileType>
+      <CoolDown>5</CoolDown>
+      <NumberOfStar>30</NumberOfStar>
+      <Duration>4</Duration>
+    </Level>
+    <Level>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>500</MaxDamage>
+      <MP>-200</MP>
+      <ProjectileType>15</ProjectileType>
+      <CoolDown>7</CoolDown>
+      <NumberOfStar>50</NumberOfStar>
+      <Duration>5</Duration>
+    </Level>
+    <Level>
+      <MinDamage>600</MinDamage>
+      <MaxDamage>1100</MaxDamage>
+      <MP>-300</MP>
+      <ProjectileType>15</ProjectileType>
+      <CoolDown>9</CoolDown>
+      <NumberOfStar>85</NumberOfStar>
+      <Duration>6</Duration>
+    </Level>
+  </Skill>
+
+
   <!--
   <Skill id="2">
     <Name>Other</Name>

@@ -223,13 +223,13 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
-                case "Lightning Field":
+                case "Souls Release":
                     {
-                        _prototype[id] = new SoulReleaseSkill();
+                        _prototype[id] = new SoulsReleaseSkill();
                         _prototype[id]._nsprite = 0;
-                        ((SoulReleaseSkill)_prototype[id]).Name = "Lightning Field";
-                        ((SoulReleaseSkill)_prototype[id]).Level = 0;
-                        ((SoulReleaseSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        ((SoulsReleaseSkill)_prototype[id]).Name = "Souls Release";
+                        ((SoulsReleaseSkill)_prototype[id]).Level = 0;
+                        ((SoulsReleaseSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
                         XmlNodeList _levelList = _skill.SelectNodes(@"Level");
                         for (int i = 0; i < _levelList.Count; ++i)
                         {
@@ -243,7 +243,7 @@ namespace TheReturnOfTheKing
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
-                            ((SoulReleaseSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                            ((SoulsReleaseSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
                     }
                     break;
@@ -296,30 +296,34 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
-                default:
+                case "Lightning Field":
                     {
-                        _prototype[id] = new Skill();
+                        _prototype[id] = new LightningFieldSkill();
                         _prototype[id]._nsprite = 0;
-
-                        ((Skill)_prototype[id]).Level = 0;
-                        ((Skill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        ((LightningFieldSkill)_prototype[id]).Name = "Lightning Field";
+                        ((LightningFieldSkill)_prototype[id]).Level = 0;
+                        ((LightningFieldSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
                         XmlNodeList _levelList = _skill.SelectNodes(@"Level");
                         for (int i = 0; i < _levelList.Count; ++i)
                         {
-                            SkillLevel _skillInfo = new SkillLevel();
-                            _skillInfo.ListSkillInfo = new List<SkillInfo>();
-                            XmlNodeList _projectiles = _levelList[i].SelectNodes(@"Projectile");
-                            for (int j = 0; j < _projectiles.Count; ++j)
-                            {
-                                _skillInfo.ListSkillInfo.Add(new SkillInfo
-                                {
-                                    ProjectileType = int.Parse(_projectiles[j].SelectSingleNode(@"Type").InnerText),
-                                    X = int.Parse(_projectiles[j].SelectSingleNode(@"X").InnerText),
-                                    Y = int.Parse(_projectiles[j].SelectSingleNode(@"Y").InnerText),
-                                });
-                            }
-                            ((Skill)_prototype[id]).ListLevel.Add(_skillInfo);
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);
+                            _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.NumberOfStar = int.Parse(_levelList[i].SelectSingleNode(@"NumberOfStar").InnerText);
+                            _skillInfo.Duration = int.Parse(_levelList[i].SelectSingleNode(@"Duration").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((LightningFieldSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
+                    }
+                    break;
+                default:
+                    {
+                        
                     }
                     break;
             }

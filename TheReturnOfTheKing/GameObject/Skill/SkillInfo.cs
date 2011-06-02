@@ -164,6 +164,22 @@ namespace TheReturnOfTheKing
             get { return _castRange; }
             set { _castRange = value; }
         }
+
+        int _numberOfStar;
+
+        public int NumberOfStar
+        {
+            get { return _numberOfStar; }
+            set { _numberOfStar = value; }
+        }
+
+        int _duration;
+
+        public int Duration
+        {
+            get { return _duration; }
+            set { _duration = value; }
+        }
     }
 
     public class SkillLevel

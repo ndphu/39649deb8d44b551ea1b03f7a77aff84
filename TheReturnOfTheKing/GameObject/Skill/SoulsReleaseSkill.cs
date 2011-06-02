@@ -5,11 +5,11 @@ using Microsoft.Xna.Framework;
 
 namespace TheReturnOfTheKing
 {
-    public class SoulReleaseSkill : Skill
+    public class SoulsReleaseSkill : Skill
     {
         public override VisibleGameObject Clone()
         {
-            return new SoulReleaseSkill
+            return new SoulsReleaseSkill
             {
                 X = this.X,
                 Y = this.Y,
