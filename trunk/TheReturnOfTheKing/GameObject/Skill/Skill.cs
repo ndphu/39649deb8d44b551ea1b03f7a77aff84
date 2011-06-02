@@ -54,17 +54,15 @@ namespace TheReturnOfTheKing
             get { return _checkCoolDown; }
             set { _checkCoolDown = value; }
         }
-
-        
         /// <summary>
-        /// Skill dang cooldown
+        /// Thoi gian cooldown
         /// </summary>
-        bool _isCoolDown;
+        int _coolDownTime;
 
-        public bool IsCoolDown
+        public int CoolDownTime
         {
-            get { return _isCoolDown; }
-            set { _isCoolDown = value; }
+            get { return _coolDownTime; }
+            set { _coolDownTime = value; }
         }
 
         /// <summary>
@@ -149,19 +147,15 @@ namespace TheReturnOfTheKing
         {
             base.Update(gameTime);
             if (_checkCoolDown != 0)
-            {
                 --_checkCoolDown;
-                IsCoolDown = true;
-            }
             else
-                IsCoolDown = false;
-
+                _coolDownTime = 0;
         }
 
         public virtual void DoEffect(VisibleGameEntity _object)
         {
             _checkCoolDown = ListLevel[Level].ListSkillInfo[0].CoolDown;
-           
+            _coolDownTime = _checkCoolDown;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)

@@ -424,7 +424,7 @@ namespace TheReturnOfTheKing
                     }
                     else
                     {
-                        if (ListRightHandSkill[RightHandSkillIndex].IsCoolDown)
+                        if (ListRightHandSkill[RightHandSkillIndex].CheckCoolDown != 0)
                         {
                             Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                                 {

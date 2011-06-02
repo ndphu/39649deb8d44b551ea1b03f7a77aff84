@@ -129,13 +129,16 @@ namespace TheReturnOfTheKing
         {
             
             base.Update(gameTime);
+            if (IsDying || IsDyed)
+            {
+                BashTime = 0;
+                return;
+            }
             if (BashTime > 0)
             {
                 IsStanding = true;
                 CellToMove = new List<Point>();
             }
-            if (IsDying || IsDyed)
-                return;
 
             if (Target != null && Math.Sqrt(Math.Pow(this.X - Target.X, 2) - Math.Pow(this.Y - Target.Y, 2)) > this.Sight)
                 Target = null;
