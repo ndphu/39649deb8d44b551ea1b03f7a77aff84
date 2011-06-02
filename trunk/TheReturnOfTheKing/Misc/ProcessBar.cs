@@ -137,7 +137,7 @@ namespace TheReturnOfTheKing
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
             {
                 GlobalVariables.AlreadyUseLeftMouse = true;
-                //GlobalVariables.AlreadyUseRightMouse = true;
+                GlobalVariables.AlreadyUseRightMouse = true;
             }
         }
 

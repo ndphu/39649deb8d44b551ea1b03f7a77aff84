@@ -23,8 +23,6 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
-                return;
 
             PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
         }

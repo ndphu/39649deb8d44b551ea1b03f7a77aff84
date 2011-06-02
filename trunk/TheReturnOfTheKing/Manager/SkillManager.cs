@@ -278,7 +278,7 @@ namespace TheReturnOfTheKing
                         ((WaveFormSkill)_prototype[id]).Name = "Wave Form";
                         ((WaveFormSkill)_prototype[id]).Level = 0;
                         ((WaveFormSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
-                        ((WaveFormSkill)_prototype[id]).Delay = int.Parse(_skill.SelectSingleNode(@"Delay").InnerText);
+                        ((WaveFormSkill)_prototype[id]).ReleaseProjectileDelay = int.Parse(_skill.SelectSingleNode(@"Delay").InnerText);
                         XmlNodeList _levelList = _skill.SelectNodes(@"Level");
                         for (int i = 0; i < _levelList.Count; ++i)
                         {
@@ -290,6 +290,7 @@ namespace TheReturnOfTheKing
                             _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.CastRange = int.Parse(_levelList[i].SelectSingleNode(@"CastRange").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((WaveFormSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }

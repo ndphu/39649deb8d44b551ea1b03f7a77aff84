@@ -45,6 +45,29 @@ namespace TheReturnOfTheKing
         //    set { _isEffected = value; }
         //}
         /// <summary>
+        /// Bien kiem tra trang thai cooldown
+        /// </summary>
+        int _checkCoolDown;
+
+        public int CheckCoolDown
+        {
+            get { return _checkCoolDown; }
+            set { _checkCoolDown = value; }
+        }
+
+        
+        /// <summary>
+        /// Skill dang cooldown
+        /// </summary>
+        bool _isCoolDown;
+
+        public bool IsCoolDown
+        {
+            get { return _isCoolDown; }
+            set { _isCoolDown = value; }
+        }
+
+        /// <summary>
         /// Hinh anh dai dien cho skill (64x64)
         /// </summary>
         Texture2D _clickedIcon;
@@ -122,9 +145,23 @@ namespace TheReturnOfTheKing
             };
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (_checkCoolDown != 0)
+            {
+                --_checkCoolDown;
+                IsCoolDown = true;
+            }
+            else
+                IsCoolDown = false;
+
+        }
+
         public virtual void DoEffect(VisibleGameEntity _object)
         {
-            
+            _checkCoolDown = ListLevel[Level].ListSkillInfo[0].CoolDown;
+           
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)

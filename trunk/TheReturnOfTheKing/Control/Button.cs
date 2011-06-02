@@ -151,6 +151,7 @@ namespace TheReturnOfTheKing
                     }
                 }
                 GlobalVariables.AlreadyUseLeftMouse = true;
+                GlobalVariables.AlreadyUseRightMouse = true;
             }
             else
             {

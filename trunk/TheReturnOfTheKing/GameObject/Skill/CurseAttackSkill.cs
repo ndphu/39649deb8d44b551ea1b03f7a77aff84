@@ -24,8 +24,6 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            if (_object == null || PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
-                return;
             Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = ((Monster)_object).X;
             prjt.Y = ((Monster)_object).Y;

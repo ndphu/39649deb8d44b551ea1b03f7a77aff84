@@ -193,10 +193,12 @@
     <StartObstacleY>-1</StartObstacleY>
     <ObstacleWidth>3</ObstacleWidth>
     <ObstacleHeight>3</ObstacleHeight>
-    <HitFrame>2</HitFrame>
     <HitFrame>4</HitFrame>
-    <HitFrame>6</HitFrame>
-    <HitFrame>8</HitFrame>    
+    <HitFrame>8</HitFrame>
+    <HitFrame>12</HitFrame>
+    <HitFrame>16</HitFrame>
+    <HitFrame>20</HitFrame>
+    <HitFrame>24</HitFrame>
   </Projectile>
 
   <!--<Projectile id="0">

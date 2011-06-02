@@ -156,6 +156,14 @@ namespace TheReturnOfTheKing
             get { return _coolDown; }
             set { _coolDown = value; }
         }
+
+        int _castRange = int.MaxValue;
+
+        public int CastRange
+        {
+            get { return _castRange; }
+            set { _castRange = value; }
+        }
     }
 
     public class SkillLevel
