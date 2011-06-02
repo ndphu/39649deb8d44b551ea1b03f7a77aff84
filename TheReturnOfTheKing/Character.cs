@@ -413,6 +413,8 @@ namespace TheReturnOfTheKing
         }
 
 
+
+
         /// <summary>
         /// Tốc độ di chuyển
         /// </summary>
@@ -506,6 +508,7 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            
             for (int i = 0; i < AdditionnalEffect.Count; ++i)
             {
                 AdditionnalEffect[i].Update(gameTime);

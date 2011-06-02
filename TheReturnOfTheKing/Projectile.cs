@@ -95,7 +95,7 @@ namespace TheReturnOfTheKing
                 base.X = value;
                 for (int i = 0; i < _nsprite; ++i)
                     _sprite[i].X = value;
-                CollisionRect = new Rectangle((int)X + (int)GlobalVariables.MapCollisionDim * StartObstacleX, (int)Y - (int)GlobalVariables.MapCollisionDim * StartObstacleY, (int)GlobalVariables.MapCollisionDim * ObstacleWidth, (int)GlobalVariables.MapCollisionDim * ObstacleHeight);
+                CollisionRect = new Rectangle((int)X + (int)GlobalVariables.MapCollisionDim * StartObstacleX, (int)Y + (int)GlobalVariables.MapCollisionDim * StartObstacleY, (int)GlobalVariables.MapCollisionDim * ObstacleWidth, (int)GlobalVariables.MapCollisionDim * ObstacleHeight);
             }
         }
 
@@ -110,7 +110,7 @@ namespace TheReturnOfTheKing
                 base.Y = value;
                 for (int i = 0; i < _nsprite; ++i)
                     _sprite[i].Y = value;
-                CollisionRect = new Rectangle((int)X, (int)Y, (int)GlobalVariables.MapCollisionDim, (int)GlobalVariables.MapCollisionDim);
+                CollisionRect = new Rectangle((int)X + (int)GlobalVariables.MapCollisionDim * StartObstacleX, (int)Y + (int)GlobalVariables.MapCollisionDim * StartObstacleY, (int)GlobalVariables.MapCollisionDim * ObstacleWidth, (int)GlobalVariables.MapCollisionDim * ObstacleHeight);
             }
         }
 

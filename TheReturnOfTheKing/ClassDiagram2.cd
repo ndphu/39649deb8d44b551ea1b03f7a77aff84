@@ -164,7 +164,7 @@
   <Class Name="TheReturnOfTheKing.HealthBar" Collapsed="true">
     <Position X="23.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQAAggAAAgAAkAAAAAAgAAAAAEAAAAAAAAAGBGACAA=</HashCode>
+      <HashCode>gAQCAggACAgAAkAAAAAggAAAAAGAAAAgAAAAGBGQCAA=</HashCode>
       <FileName>HealthBar.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -269,7 +269,7 @@
   <Class Name="TheReturnOfTheKing.MotionInfo" Collapsed="true">
     <Position X="64" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgACCEMABIAAAAAgBAAAAAgAEIAQAQEAAAgAAAAA=</HashCode>
+      <HashCode>AAAAgQCCEMABIAAAAAgBAAAAAgAEIAQAREAAAgAAAAA=</HashCode>
       <FileName>MotionInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -353,7 +353,7 @@
   <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
     <Position X="57" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEABAgAAAAAAAACAACAAAABACCAAgAAAQAAAAYDQ=</HashCode>
+      <HashCode>AAQAEABAgCAAAAAAACAACAAAABACCAAgAAgQAAAAYDQ=</HashCode>
       <FileName>Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -374,21 +374,21 @@
   <Class Name="TheReturnOfTheKing.Skill" Collapsed="true">
     <Position X="35.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAMCAAgAIQAgAAACAAAQUiABAgAAChAAAAAABAARA=</HashCode>
+      <HashCode>AAAAMCAAgAIQAgAAACAAARQiABAggAAhAAAAAABAARA=</HashCode>
       <FileName>Skill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillBoard" Collapsed="true">
     <Position X="16.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAxEAAABAATgQkAAQAIAhAEgAgAgAAAIAIAACACACgE=</HashCode>
+      <HashCode>gIxEAgABCAXgQkAAQAIAjAEgAgCwAAAoIIgkGACACgE=</HashCode>
       <FileName>SkillBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillInfo" Collapsed="true">
     <Position X="69.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEgAQCAIgAQACoREAQRAAAAIAAAKCICgAQQADCECYgA=</HashCode>
+      <HashCode>AEgARCAIgAQACoHEAQRAAgAIAAAKCICgAAQADCECYgA=</HashCode>
       <FileName>SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -465,7 +465,7 @@
   <Class Name="TheReturnOfTheKing.ProjectileController" Collapsed="true">
     <Position X="52.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ProjectileController.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -476,32 +476,39 @@
       <FileName>InsectFlyingController.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheReturnOfTheKing.LightningFieldSkill" Collapsed="true">
+  <Class Name="TheReturnOfTheKing.NormalAttackSkill" Collapsed="true">
     <Position X="43.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>LightningFieldSkill.cs</FileName>
+      <FileName>NormalAttackSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.EarthShakeSkill" Collapsed="true">
     <Position X="38.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAABA=</HashCode>
       <FileName>EarthShakeSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.FireWallSkill" Collapsed="true">
     <Position X="41" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>FireWallSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheReturnOfTheKing.LightningMovingController" Collapsed="true">
+  <Class Name="TheReturnOfTheKing.EarthShakeController" Collapsed="true">
     <Position X="54" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LightningMovingController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>EarthShakeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.WaveFormSkill" Collapsed="true">
+    <Position X="35.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAABA=</HashCode>
+      <FileName>WaveFormSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
