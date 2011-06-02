@@ -226,6 +226,47 @@ namespace TheReturnOfTheKing
             }
         }
 
+        public override float X
+        {
+            get
+            {
+                return base.X;
+            }
+            set
+            {
+                base.X = value;
+                GlobalVariables.dX = -X + GlobalVariables.ScreenWidth / 2;
+                if (GlobalVariables.dX > 0)
+                    GlobalVariables.dX = 0;
+                if (Map != null && Math.Abs(GlobalVariables.dX) > Map.Cols * Map.PieceWidth - GlobalVariables.ScreenWidth)
+                    GlobalVariables.dX = -Map.Cols * Map.PieceWidth + GlobalVariables.ScreenWidth;
+            }
+        }
+
+        public override float Y
+        {
+            get
+            {
+                return base.Y;
+            }
+            set
+            {
+                base.Y = value;
+                GlobalVariables.dY = -Y + GlobalVariables.ScreenHeight / 2;
+                if (GlobalVariables.dY > 0)
+                    GlobalVariables.dY = 0;
+                if (Map != null && Math.Abs(GlobalVariables.dY) > Map.Rows * Map.PieceHeight - GlobalVariables.ScreenHeight)
+                    GlobalVariables.dY = -Map.Rows * Map.PieceHeight + GlobalVariables.ScreenHeight;
+            }
+        }
+
+        bool _isWaveForm = false;
+
+        public bool IsWaveForm
+        {
+            get { return _isWaveForm; }
+            set { _isWaveForm = value; }
+        }
         HealthBar _healthbar;
 
         public HealthBar Healthbar
@@ -249,6 +290,7 @@ namespace TheReturnOfTheKing
             get { return _lhSkillSelectionFrame; }
             set { _lhSkillSelectionFrame = value; }
         }
+
 
         public override void SetMap(Map map)
         {
@@ -325,7 +367,11 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
-            
+            if (IsWaveForm)
+            {
+                ListRightHandSkill[RightHandSkillIndex].DoEffect(null);
+                return;
+            }
             base.Update(gameTime);
             if (BashTime > 0)
             {
@@ -350,76 +396,113 @@ namespace TheReturnOfTheKing
                     UpdateDirection(this.X, this.Y);
                 }
             }
-            if (IsMoving)
-            {   
-                if (this.Y == DestPoint.Y && this.X < DestPoint.X)
-                {
-                    if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-                        GlobalVariables.dX -= Speed;
-                }
-                else
-                    if (this.Y > DestPoint.Y && this.X < DestPoint.X)
-                    {
-                        if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-                            GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
-                        if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-                            GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
-                    }
-                    else
-                        if (this.Y > DestPoint.Y && this.X == DestPoint.X)
-                        {
-                            if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-                                GlobalVariables.dY += Speed;
-                        }
-                        else
-                            if (this.Y > DestPoint.Y && this.X > DestPoint.X)
-                            {
-                                if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-                                    GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
-                                if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-                                    GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
-                            }
-                            else
-                                if (this.Y == DestPoint.Y && this.X > DestPoint.X)
-                                {
-                                    if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-                                        GlobalVariables.dX += Speed;
-                                }
-                                else
-                                    if (this.Y < DestPoint.Y && this.X > DestPoint.X)
-                                    {
-                                        if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-                                            GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
-                                        if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-                                            GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
-                                    }
-                                    else
-                                        if (this.Y < DestPoint.Y && this.X == DestPoint.X)
-                                        {
-                                            if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-                                                GlobalVariables.dY -= Speed;
-                                        }
-                                        else
-                                            if (this.Y < DestPoint.Y && this.X < DestPoint.X)
-                                            {
-                                                if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-                                                    GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
-                                                if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-                                                    GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
-                                            }
-            }
+            //if (IsMoving)
+            //{
+            //    if (this.Y == DestPoint.Y && this.X < DestPoint.X)
+            //    {
+            //        if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
+            //            GlobalVariables.dX -= Speed;
+            //    }
+            //    else
+            //        if (this.Y > DestPoint.Y && this.X < DestPoint.X)
+            //        {
+            //            if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
+            //                GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
+            //            if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
+            //                GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
+            //        }
+            //        else
+            //            if (this.Y > DestPoint.Y && this.X == DestPoint.X)
+            //            {
+            //                if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
+            //                    GlobalVariables.dY += Speed;
+            //            }
+            //            else
+            //                if (this.Y > DestPoint.Y && this.X > DestPoint.X)
+            //                {
+            //                    if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
+            //                        GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
+            //                    if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
+            //                        GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
+            //                }
+            //                else
+            //                    if (this.Y == DestPoint.Y && this.X > DestPoint.X)
+            //                    {
+            //                        if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
+            //                            GlobalVariables.dX += Speed;
+            //                    }
+            //                    else
+            //                        if (this.Y < DestPoint.Y && this.X > DestPoint.X)
+            //                        {
+            //                            if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
+            //                                GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
+            //                            if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
+            //                                GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
+            //                        }
+            //                        else
+            //                            if (this.Y < DestPoint.Y && this.X == DestPoint.X)
+            //                            {
+            //                                if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
+            //                                    GlobalVariables.dY -= Speed;
+            //                            }
+            //                            else
+            //                                if (this.Y < DestPoint.Y && this.X < DestPoint.X)
+            //                                {
+            //                                    if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
+            //                                        GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
+            //                                    if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
+            //                                        GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
+            //                                }
+            //}
             
            
-            if (GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
+            if (GlobalVariables.PreviousMouseState.RightButton == ButtonState.Released && GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
             {
-                IsCasting = true;
-                waitToCast = true;
-                Target = null;
-                CellToMove = new List<Point>();
-                DestPoint = new Point((int)this.X, (int)this.Y);
-                UpdateCastingDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
-                targetSkillX = GlobalVariables.GameCursor.X;
-                targetSkillY = GlobalVariables.GameCursor.Y;
+                if (Map.Matrix[(int)(GlobalVariables.GameCursor.Y / GlobalVariables.MapCollisionDim)][(int)(GlobalVariables.GameCursor.X / GlobalVariables.MapCollisionDim)] != false)
+                {
+                    if (Mp + ListRightHandSkill[RightHandSkillIndex].ListLevel[ListRightHandSkill[RightHandSkillIndex].Level].ListSkillInfo[0].Mp < 0)
+                    {
+                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        {
+                            MessageContent = "No enough mana",
+                            TextColor = Color.OrangeRed,
+                            X = this.X,
+                            Y = this.Y - 32,
+                            LifeTime = 150,
+                            MinY = 0,
+                            DelayTime = 0,
+                            DeltaY = -1,
+                            Owner = this,
+                        });
+                    }
+                    else
+                    {
+                        IsCasting = true;
+                        waitToCast = true;
+                        Target = null;
+                        CellToMove = new List<Point>();
+                        DestPoint = new Point((int)this.X, (int)this.Y);
+                        UpdateCastingDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
+                        targetSkillX = GlobalVariables.GameCursor.X;
+                        targetSkillY = GlobalVariables.GameCursor.Y;
+                    }
+                }
+                else
+                {
+                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        {
+                            MessageContent = "Cannot cast skill there",
+                            TextColor = Color.Yellow,
+                            X = this.X,
+                            Y = this.Y - 32,
+                            LifeTime = 150,
+                            MinY = 0,
+                            DelayTime = 0,
+                            DeltaY = -1,
+                            Owner = this,
+                        });
+                }
+
             }
             
             if (48 <= Dir && Dir <= 55)
@@ -713,8 +796,9 @@ namespace TheReturnOfTheKing
             }
             _listRightHandSkill = new List<Skill>();
             _listRightHandSkill.Add((DeadlyBeeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(7)));
-            _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
+            _listRightHandSkill.Add((SoulReleaseSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
             _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(9)));
+            _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
 
             for (int i = 0; i < _listRightHandSkill.Count; ++i)
             {

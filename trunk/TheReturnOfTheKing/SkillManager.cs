@@ -225,11 +225,11 @@ namespace TheReturnOfTheKing
                     break;
                 case "Lightning Field":
                     {
-                        _prototype[id] = new LightningFieldSkill();
+                        _prototype[id] = new SoulReleaseSkill();
                         _prototype[id]._nsprite = 0;
-                        ((LightningFieldSkill)_prototype[id]).Name = "Lightning Field";
-                        ((LightningFieldSkill)_prototype[id]).Level = 0;
-                        ((LightningFieldSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        ((SoulReleaseSkill)_prototype[id]).Name = "Lightning Field";
+                        ((SoulReleaseSkill)_prototype[id]).Level = 0;
+                        ((SoulReleaseSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
                         XmlNodeList _levelList = _skill.SelectNodes(@"Level");
                         for (int i = 0; i < _levelList.Count; ++i)
                         {
@@ -239,10 +239,11 @@ namespace TheReturnOfTheKing
                             _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
                             _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);                            
                             _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.NumOfSoul = int.Parse(_levelList[i].SelectSingleNode(@"NumberOfSoul").InnerText);
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
-                            ((LightningFieldSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                            ((SoulReleaseSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
                     }
                     break;
@@ -267,6 +268,30 @@ namespace TheReturnOfTheKing
                             _skillInfo.BashTime = int.Parse(_levelList[i].SelectSingleNode(@"BashTime").InnerText);
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((EarthShakeSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "Wave Form":
+                    {
+                        _prototype[id] = new WaveFormSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((WaveFormSkill)_prototype[id]).Name = "Wave Form";
+                        ((WaveFormSkill)_prototype[id]).Level = 0;
+                        ((WaveFormSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        ((WaveFormSkill)_prototype[id]).Delay = int.Parse(_skill.SelectSingleNode(@"Delay").InnerText);
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);
+                            _skillInfo.CoolDown = int.Parse(_levelList[i].SelectSingleNode(@"CoolDown").InnerText) * 60;
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((WaveFormSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }
                     }
                     break;

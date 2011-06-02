@@ -63,6 +63,8 @@ namespace TheReturnOfTheKing
             ((Map)_prototype[id]).CpF = GlobalVariables.ScreenWidth / _pieceWidth + 1;
             ((Map)_prototype[id]).StartPointX = int.Parse(_map.SelectSingleNode("StartPointX").InnerText);
             ((Map)_prototype[id]).StartPointY = int.Parse(_map.SelectSingleNode("StartPointY").InnerText);
+            ((Map)_prototype[id]).PieceWidth = int.Parse(_map.SelectSingleNode(@"PieceWidth").InnerText);
+            ((Map)_prototype[id]).PieceHeight = int.Parse(_map.SelectSingleNode(@"PieceHeight").InnerText);
 
             string collisionName = _map.SelectSingleNode("Collision").InnerText;
             List<List<bool>> matrix = new List<List<bool>>();

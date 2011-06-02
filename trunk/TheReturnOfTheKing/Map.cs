@@ -101,6 +101,22 @@ namespace TheReturnOfTheKing
             set { _cpF = value; }
         }
 
+        int _pieceWidth;
+
+        public int PieceWidth
+        {
+            get { return _pieceWidth; }
+            set { _pieceWidth = value; }
+        }
+
+        int _pieceHeight;
+
+        public int PieceHeight
+        {
+            get { return _pieceHeight; }
+            set { _pieceHeight = value; }
+        }
+
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             //base.Draw(gameTime, sb);
@@ -158,6 +174,8 @@ namespace TheReturnOfTheKing
                 _startPointX = this._startPointX,
                 _startPointY = this._startPointY,
                 _mapName = this._mapName,
+                _pieceHeight = this._pieceHeight,
+                _pieceWidth = this._pieceWidth,
             };
         }
         /// <summary>

@@ -137,6 +137,17 @@ namespace TheReturnOfTheKing
             get { return _beeLifeTime; }
             set { _beeLifeTime = value; }
         }
+        /// <summary>
+        /// So linh hon
+        /// </summary>
+        int _numOfSoul;
+
+        public int NumOfSoul
+        {
+            get { return _numOfSoul; }
+            set { _numOfSoul = value; }
+        }
+
 
         int _coolDown;
 

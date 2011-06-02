@@ -96,6 +96,7 @@
     <Compile Include="DeadlyBeeSkill.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="DisplayMessageLayer.cs" />
+    <Compile Include="EarthShakeController.cs" />
     <Compile Include="EarthShakeSkill.cs" />
     <Compile Include="EquipItem.cs" />
     <Compile Include="FireWallSkill.cs" />
@@ -117,8 +118,8 @@
     <Compile Include="LabelManager.cs" />
     <Compile Include="LHSkillSelectionFrame.cs" />
     <Compile Include="LifeStealAttackSkill.cs" />
-    <Compile Include="LightningFieldSkill.cs" />
-    <Compile Include="LightningMovingController.cs" />
+    <Compile Include="SoulReleaseSkill.cs" />
+    <Compile Include="SoulMovingController.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapManager.cs" />
     <Compile Include="MapObstacle.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Utility.cs" />
     <Compile Include="VisibleGameEntity.cs" />
     <Compile Include="VisibleGameObject.cs" />
+    <Compile Include="WaveFormSkill.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Character\character.xml">

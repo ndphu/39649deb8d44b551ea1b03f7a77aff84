@@ -27,12 +27,16 @@ namespace TheReturnOfTheKing
             if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
                 return;
             Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
-            prjt.X = PlayerOwner.X;
-            prjt.Y = PlayerOwner.Y;
+            prjt.X = PlayerOwner.TargetSkillX;
+            prjt.Y = PlayerOwner.TargetSkillY;
             prjt.MinDamage = ListLevel[Level].ListSkillInfo[0].MinDamage;
             prjt.MaxDamage = ListLevel[Level].ListSkillInfo[0].MaxDamage;
             prjt.SkillOwner = this;
+            EarthShakeController esc = new EarthShakeController();
+            esc.Owner = prjt;
+            prjt.ProjectileController = esc;
             PlayerOwner.Owner._listProjectile.Add(prjt);
+
             PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
         }
 

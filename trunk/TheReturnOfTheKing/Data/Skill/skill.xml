@@ -239,27 +239,31 @@
       <MP>0</MP>
       <ProjectileType>13</ProjectileType>      
       <CoolDown>0</CoolDown>
+      <NumberOfSoul>0</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>55</MinDamage>
-      <MaxDamage>85</MaxDamage>
+      <MinDamage>6</MinDamage>
+      <MaxDamage>9</MaxDamage>
       <MP>-100</MP>
       <ProjectileType>13</ProjectileType>
       <CoolDown>3</CoolDown>
+      <NumberOfSoul>9</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>100</MinDamage>
-      <MaxDamage>150</MaxDamage>
+      <MinDamage>10</MinDamage>
+      <MaxDamage>15</MaxDamage>
       <MP>-200</MP>
       <ProjectileType>13</ProjectileType>
       <CoolDown>5</CoolDown>
+      <NumberOfSoul>18</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>200</MinDamage>
-      <MaxDamage>425</MaxDamage>
+      <MinDamage>20</MinDamage>
+      <MaxDamage>43</MaxDamage>
       <MP>-300</MP>
       <ProjectileType>13</ProjectileType>
       <CoolDown>7</CoolDown>
+      <NumberOfSoul>36</NumberOfSoul>
     </Level>
   </Skill>
 
@@ -288,7 +292,7 @@
       <MinDamage>200</MinDamage>
       <MaxDamage>300</MaxDamage>
       <MP>-200</MP>
-      <ProjectileType>11</ProjectileType>
+      <ProjectileType>10</ProjectileType>
       <CoolDown>5</CoolDown>
       <BashTime>4</BashTime>
     </Level>
@@ -296,9 +300,45 @@
       <MinDamage>400</MinDamage>
       <MaxDamage>600</MaxDamage>
       <MP>-300</MP>
-      <ProjectileType>12</ProjectileType>
+      <ProjectileType>10</ProjectileType>
       <CoolDown>7</CoolDown>
       <BashTime>6</BashTime>
+    </Level>
+  </Skill>
+
+  <Skill id="10">
+    <Name>Wave Form</Name>
+    <Clicked>img/skillicon/Clicked/06</Clicked>
+    <Idle>img/skillicon/Idle/06</Idle>
+    <Large>img/skillicon/Large/06</Large>
+    <Delay>5</Delay>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <MP>0</MP>
+      <ProjectileType>14</ProjectileType>
+      <CoolDown>0</CoolDown>
+    </Level>
+    <Level>
+      <MinDamage>35</MinDamage>
+      <MaxDamage>155</MaxDamage>
+      <MP>-100</MP>
+      <ProjectileType>14</ProjectileType>
+      <CoolDown>3</CoolDown>      
+    </Level>
+    <Level>
+      <MinDamage>185</MinDamage>
+      <MaxDamage>350</MaxDamage>
+      <MP>-200</MP>
+      <ProjectileType>14</ProjectileType>
+      <CoolDown>5</CoolDown>
+    </Level>
+    <Level>
+      <MinDamage>400</MinDamage>
+      <MaxDamage>600</MaxDamage>
+      <MP>-300</MP>
+      <ProjectileType>14</ProjectileType>
+      <CoolDown>7</CoolDown>
     </Level>
   </Skill>
   
