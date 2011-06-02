@@ -508,7 +508,11 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
-            
+            if (IsDying || IsDyed)
+            {
+                BashTime = 0;
+                return;
+            }
             for (int i = 0; i < AdditionnalEffect.Count; ++i)
             {
                 AdditionnalEffect[i].Update(gameTime);
