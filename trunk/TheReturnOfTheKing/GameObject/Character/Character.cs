@@ -511,7 +511,6 @@ namespace TheReturnOfTheKing
             if (IsDying || IsDyed)
             {
                 BashTime = 0;
-                return;
             }
             for (int i = 0; i < AdditionnalEffect.Count; ++i)
             {
@@ -545,15 +544,15 @@ namespace TheReturnOfTheKing
             
             if (IsDying)
             {
+                UpdateDirection(X, Y);
                 if (Target != null)
                 {
-                    UpdateDirection(_target.X, _target.Y);
                     Target = null;
                 }
                 if (_sprite[Dir].Itexture2D == _sprite[Dir].Ntexture2D - 1)
                 {
                     IsDyed = true;
-                    UpdateDirection(X, Y);
+                    
                 }
                 return;
             }
