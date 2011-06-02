@@ -27,8 +27,6 @@ namespace TheReturnOfTheKing
             
             List<Point> _listProjectileTarget = new List<Point>();
             int _dir = PlayerOwner.Dir % 8;
-            if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
-                return;
             switch (_dir)
             {
                 case 0:

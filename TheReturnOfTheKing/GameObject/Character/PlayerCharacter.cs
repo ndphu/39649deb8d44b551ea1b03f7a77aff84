@@ -367,6 +367,12 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            for (int i = 0; i < ListLeftHandSkill.Count; ++i)
+                if (ListLeftHandSkill[i] != null)
+                    ListLeftHandSkill[i].Update(gameTime);
+            for (int i = 0; i < ListRightHandSkill.Count; ++i)
+                if (ListRightHandSkill[i] != null)
+                    ListRightHandSkill[i].Update(gameTime);
             if (IsWaveForm)
             {
                 ListRightHandSkill[RightHandSkillIndex].DoEffect(null);
@@ -395,68 +401,9 @@ namespace TheReturnOfTheKing
                         State = 24;
                     UpdateDirection(this.X, this.Y);
                 }
-            }
-            //if (IsMoving)
-            //{
-            //    if (this.Y == DestPoint.Y && this.X < DestPoint.X)
-            //    {
-            //        if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-            //            GlobalVariables.dX -= Speed;
-            //    }
-            //    else
-            //        if (this.Y > DestPoint.Y && this.X < DestPoint.X)
-            //        {
-            //            if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-            //                GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
-            //            if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-            //                GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
-            //        }
-            //        else
-            //            if (this.Y > DestPoint.Y && this.X == DestPoint.X)
-            //            {
-            //                if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-            //                    GlobalVariables.dY += Speed;
-            //            }
-            //            else
-            //                if (this.Y > DestPoint.Y && this.X > DestPoint.X)
-            //                {
-            //                    if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-            //                        GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
-            //                    if (GlobalVariables.dY < 0 && this.Y < Map.Height - GlobalVariables.ScreenHeight / 2)
-            //                        GlobalVariables.dY += (float)(Speed / Math.Sqrt(2));
-            //                }
-            //                else
-            //                    if (this.Y == DestPoint.Y && this.X > DestPoint.X)
-            //                    {
-            //                        if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-            //                            GlobalVariables.dX += Speed;
-            //                    }
-            //                    else
-            //                        if (this.Y < DestPoint.Y && this.X > DestPoint.X)
-            //                        {
-            //                            if (GlobalVariables.dX < 0 && this.X < Map.Width - GlobalVariables.ScreenWidth / 2)
-            //                                GlobalVariables.dX += (float)(Speed / Math.Sqrt(2));
-            //                            if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-            //                                GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
-            //                        }
-            //                        else
-            //                            if (this.Y < DestPoint.Y && this.X == DestPoint.X)
-            //                            {
-            //                                if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-            //                                    GlobalVariables.dY -= Speed;
-            //                            }
-            //                            else
-            //                                if (this.Y < DestPoint.Y && this.X < DestPoint.X)
-            //                                {
-            //                                    if (this.X > GlobalVariables.ScreenWidth / 2 && GlobalVariables.dX > GlobalVariables.ScreenWidth - Map.Width)
-            //                                        GlobalVariables.dX -= (float)(Speed / Math.Sqrt(2));
-            //                                    if (this.Y > GlobalVariables.ScreenHeight / 2 && GlobalVariables.dY > GlobalVariables.ScreenHeight - Map.Height)
-            //                                        GlobalVariables.dY -= (float)(Speed / Math.Sqrt(2));
-            //                                }
-            //}
-            
+            }            
            
-            if (GlobalVariables.PreviousMouseState.RightButton == ButtonState.Released && GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
+            if (!GlobalVariables.AlreadyUseRightMouse && GlobalVariables.PreviousMouseState.RightButton == ButtonState.Released && GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
             {
                 if (Map.Matrix[(int)(GlobalVariables.GameCursor.Y / GlobalVariables.MapCollisionDim)][(int)(GlobalVariables.GameCursor.X / GlobalVariables.MapCollisionDim)] != false)
                 {
@@ -477,14 +424,50 @@ namespace TheReturnOfTheKing
                     }
                     else
                     {
-                        IsCasting = true;
-                        waitToCast = true;
-                        Target = null;
-                        CellToMove = new List<Point>();
-                        DestPoint = new Point((int)this.X, (int)this.Y);
-                        UpdateCastingDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
-                        targetSkillX = GlobalVariables.GameCursor.X;
-                        targetSkillY = GlobalVariables.GameCursor.Y;
+                        if (ListRightHandSkill[RightHandSkillIndex].IsCoolDown)
+                        {
+                            Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                                {
+                                    MessageContent = "This skill is not ready yet",
+                                    TextColor = Color.Yellow,
+                                    X = this.X,
+                                    Y = this.Y - 32,
+                                    LifeTime = 150,
+                                    MinY = 0,
+                                    DelayTime = 0,
+                                    DeltaY = -1,
+                                    Owner = this,
+                                });
+                        }
+                        else
+                        {
+                            if (ListRightHandSkill[RightHandSkillIndex].ListLevel[ListRightHandSkill[RightHandSkillIndex].Level].ListSkillInfo[0].CastRange < Math.Sqrt(Math.Pow(this.X - GlobalVariables.GameCursor.X, 2) + Math.Pow(this.Y - GlobalVariables.GameCursor.Y, 2)))
+                            {
+                                Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                                {
+                                    MessageContent = "Target out of range",
+                                    TextColor = Color.Yellow,
+                                    X = this.X,
+                                    Y = this.Y - 32,
+                                    LifeTime = 150,
+                                    MinY = 0,
+                                    DelayTime = 0,
+                                    DeltaY = -1,
+                                    Owner = this,
+                                });
+                            }
+                            else
+                            {
+                                IsCasting = true;
+                                waitToCast = true;
+                                Target = null;
+                                CellToMove = new List<Point>();
+                                DestPoint = new Point((int)this.X, (int)this.Y);
+                                UpdateCastingDirection(GlobalVariables.GameCursor.X, GlobalVariables.GameCursor.Y);
+                                targetSkillX = GlobalVariables.GameCursor.X;
+                                targetSkillY = GlobalVariables.GameCursor.Y;
+                            }
+                        }
                     }
                 }
                 else
@@ -718,20 +701,6 @@ namespace TheReturnOfTheKing
                 if (_listRightHandSkill[_rightHandSkillIndex] != null && _listRightHandSkill[_rightHandSkillIndex].Level != 0)
                 {
                     _listRightHandSkill[_rightHandSkillIndex].DoEffect(Target);
-
-                    //SkillLevel skillLevel = RightHandSkill.ListLevel[RightHandSkill.Level];
-                    //for (int i = 0; i < skillLevel.ListSkillInfo.Count; ++i)
-                    //{
-                    //    SkillInfo skillInfo = skillLevel.ListSkillInfo[i];
-                    //    Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(skillInfo.Type);
-                    //    prjt.X = targetSkillX + skillInfo.X;
-                    //    prjt.Y = targetSkillY + skillInfo.Y;
-                    //    Owner._listProjectile.Add(prjt);
-                    //    ProjectileInfo projectileInfo = prjt.ListLevel[prjt.Level];
-                    //    this.Hp += projectileInfo.Hp;
-                    //    this.Mp += projectileInfo.Mp;
-                    //}
-
                 }
                 waitToCast = false;
             }

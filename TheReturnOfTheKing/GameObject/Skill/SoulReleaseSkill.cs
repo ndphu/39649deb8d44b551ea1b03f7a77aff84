@@ -5,11 +5,11 @@ using Microsoft.Xna.Framework;
 
 namespace TheReturnOfTheKing
 {
-    public class LightningFieldSkill : Skill
+    public class SoulReleaseSkill : Skill
     {
         public override VisibleGameObject Clone()
         {
-            return new LightningFieldSkill
+            return new SoulReleaseSkill
             {
                 X = this.X,
                 Y = this.Y,
@@ -24,11 +24,9 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
-                return;
-            for (int i = 0; i < 360; i+=6)
+            for (int i = 0; i < 360; i += 360 / ListLevel[Level].ListSkillInfo[0].NumOfSoul)
             {
-                LightningMovingController lmc = new LightningMovingController();
+                SoulMovingController lmc = new SoulMovingController();
                 lmc.Rad = MathHelper.ToRadians(i);
                 lmc.MaxA = 300;
                 lmc.MaxB = 200;

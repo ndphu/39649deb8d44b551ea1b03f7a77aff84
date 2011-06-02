@@ -311,27 +311,30 @@
     <Clicked>img/skillicon/Clicked/06</Clicked>
     <Idle>img/skillicon/Idle/06</Idle>
     <Large>img/skillicon/Large/06</Large>
-    <Delay>5</Delay>
+    <Delay>3</Delay>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
       <MP>0</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>0</CoolDown>
+      <CastRange>0</CastRange>
     </Level>
     <Level>
-      <MinDamage>35</MinDamage>
-      <MaxDamage>155</MaxDamage>
+      <MinDamage>30</MinDamage>
+      <MaxDamage>100</MaxDamage>
       <MP>-100</MP>
       <ProjectileType>14</ProjectileType>
-      <CoolDown>3</CoolDown>      
+      <CoolDown>3</CoolDown>
+      <CastRange>150</CastRange>
     </Level>
     <Level>
-      <MinDamage>185</MinDamage>
+      <MinDamage>160</MinDamage>
       <MaxDamage>350</MaxDamage>
       <MP>-200</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>5</CoolDown>
+      <CastRange>225</CastRange>
     </Level>
     <Level>
       <MinDamage>400</MinDamage>
@@ -339,6 +342,7 @@
       <MP>-300</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>7</CoolDown>
+      <CastRange>450</CastRange>
     </Level>
   </Skill>
   

@@ -18,7 +18,7 @@ namespace TheReturnOfTheKing
                 IdleIcon = this.IdleIcon,
                 LargeIcon = this.LargeIcon,
                 ClickedIcon = this.ClickedIcon,
-                Delay = this.Delay,
+                ReleaseProjectileDelay = this.ReleaseProjectileDelay,
             };
         }
 
@@ -30,12 +30,12 @@ namespace TheReturnOfTheKing
         //    set { _isEffected = value; }
         //}
 
-        int _delay;
+        int _releaseProjectileDelay;
 
-        public int Delay
+        public int ReleaseProjectileDelay
         {
-            get { return _delay; }
-            set { _delay = value; }
+            get { return _releaseProjectileDelay; }
+            set { _releaseProjectileDelay = value; }
         }
 
         int _check;
@@ -53,8 +53,6 @@ namespace TheReturnOfTheKing
 
             if (!PlayerOwner.IsWaveForm)
             {
-                if (PlayerOwner.Mp + this.ListLevel[Level].ListSkillInfo[0].Mp < 0)
-                    return;
                 PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
             }
             Vector2 vector = new Vector2(PlayerOwner.TargetSkillX - PlayerOwner.X, PlayerOwner.TargetSkillY - PlayerOwner.Y);
@@ -76,7 +74,7 @@ namespace TheReturnOfTheKing
                     prjt.MaxDamage = ListLevel[Level].ListSkillInfo[0].MaxDamage;
                     prjt.SkillOwner = this;
                     PlayerOwner.Owner._listProjectile.Add(prjt);
-                    Check = Delay;
+                    Check = ReleaseProjectileDelay;
                 }
                 else
                     Check -= 1;

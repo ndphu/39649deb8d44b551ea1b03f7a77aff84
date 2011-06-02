@@ -91,7 +91,7 @@ namespace TheReturnOfTheKing
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
             {
                 GlobalVariables.AlreadyUseLeftMouse = true;
-                //GlobalVariables.AlreadyUseRightMouse = true;
+                GlobalVariables.AlreadyUseRightMouse = true;
             }
 
             //Update chỗ này chỉ để chặn con chuột -> khá dỡ.
