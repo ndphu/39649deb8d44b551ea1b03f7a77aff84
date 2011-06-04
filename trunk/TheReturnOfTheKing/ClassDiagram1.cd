@@ -458,7 +458,7 @@
   <Class Name="TheReturnOfTheKing.DisplayMessageLayer" Collapsed="true">
     <Position X="73.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAAAAAAACAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIQAAAAAAAACAgAAAAAAAAAAAAAAAAAQAAAAAEAAAAA=</HashCode>
       <FileName>Misc\DisplayMessageLayer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -557,14 +557,28 @@
     <Position X="46.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>LightningFieldSkill.cs</FileName>
+      <FileName>GameObject\Skill\LightningFieldSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.LightningProjectileController" Collapsed="true">
     <Position X="7.25" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LightningProjectileController.cs</FileName>
+      <FileName>GameObject\Projectile\LightningProjectileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.InvisiblePoisonSkill">
+    <Position X="33" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAABA=</HashCode>
+      <FileName>GameObject\Skill\InvisiblePoisonSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.PoisonWormController" Collapsed="true">
+    <Position X="9.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObject\Projectile\PoisonWormController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

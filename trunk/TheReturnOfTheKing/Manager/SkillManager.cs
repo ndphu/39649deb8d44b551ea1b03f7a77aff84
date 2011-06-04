@@ -321,6 +321,29 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "Invisible Poison":
+                    {
+                        _prototype[id] = new InvisiblePoisonSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((InvisiblePoisonSkill)_prototype[id]).Name = "Invisible Poison";
+                        ((InvisiblePoisonSkill)_prototype[id]).Level = 0;
+                        ((InvisiblePoisonSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.MaxDamage = int.Parse(_levelList[i].SelectSingleNode(@"MaxDamage").InnerText);
+                            _skillInfo.MinDamage = int.Parse(_levelList[i].SelectSingleNode(@"MinDamage").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillInfo.Hp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((InvisiblePoisonSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         

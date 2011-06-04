@@ -403,7 +403,7 @@ namespace TheReturnOfTheKing
                 }
             }            
            
-            if (!GlobalVariables.AlreadyUseRightMouse && GlobalVariables.PreviousMouseState.RightButton == ButtonState.Released && GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
+            if (GlobalVariables.CurrentMouseState.X >= 0 && GlobalVariables.CurrentMouseState.Y >= 0 && GlobalVariables.CurrentMouseState.X <= GlobalVariables.ScreenWidth && GlobalVariables.CurrentMouseState.Y <= GlobalVariables.ScreenHeight && !GlobalVariables.AlreadyUseRightMouse && GlobalVariables.PreviousMouseState.RightButton == ButtonState.Released && GlobalVariables.CurrentMouseState.RightButton == ButtonState.Pressed && GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Released && !IsCasting)
             {
                 if (Map.Matrix[(int)(GlobalVariables.GameCursor.Y / GlobalVariables.MapCollisionDim)][(int)(GlobalVariables.GameCursor.X / GlobalVariables.MapCollisionDim)] != false)
                 {
@@ -769,7 +769,7 @@ namespace TheReturnOfTheKing
             _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(9)));
             _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
             _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(11)));
-
+            _listRightHandSkill.Add((InvisiblePoisonSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(12)));
             for (int i = 0; i < _listRightHandSkill.Count; ++i)
             {
                     _listRightHandSkill[i].PlayerOwner = this;

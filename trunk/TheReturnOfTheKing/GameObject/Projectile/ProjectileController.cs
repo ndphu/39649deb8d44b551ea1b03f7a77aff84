@@ -7,9 +7,9 @@ namespace TheReturnOfTheKing
 {
     public class ProjectileController
     {
-        VisibleGameEntity _owner;
+        Projectile _owner;
 
-        public VisibleGameEntity Owner
+        public Projectile Owner
         {
             get { return _owner; }
             set { _owner = value; }
