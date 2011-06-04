@@ -84,8 +84,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LightningFieldSkill.cs" />
-    <Compile Include="LightningProjectileController.cs" />
+    <Compile Include="GameObject\Skill\InvisiblePoisonSkill.cs" />
+    <Compile Include="GameObject\Skill\LightningFieldSkill.cs" />
+    <Compile Include="GameObject\Projectile\LightningProjectileController.cs" />
+    <Compile Include="GameObject\Skill\PoisonDamage.cs" />
     <Compile Include="Manager\BackgroundManager.cs" />
     <Compile Include="GameObject\Skill\BashAttackSkill.cs" />
     <Compile Include="Manager\ButtonManger.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="GameObject\Projectile\Projectile.cs" />
     <Compile Include="GameObject\Projectile\ProjectileController.cs" />
     <Compile Include="Manager\ProjectileManager.cs" />
+    <Compile Include="GameObject\Projectile\PoisonWormController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />

@@ -111,12 +111,21 @@ namespace TheReturnOfTheKing
             }
  
         }
+
         List<Message> _messageArray = new List<Message>();
 
         public List<Message> MessageArray
         {
             get { return _messageArray; }
             set { _messageArray = value; }
+        }
+
+        List<Message> _infoMessageArray = new List<Message>();
+
+        public List<Message> InfoMessageArray
+        {
+            get { return _infoMessageArray; }
+            set { _infoMessageArray = value; }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)

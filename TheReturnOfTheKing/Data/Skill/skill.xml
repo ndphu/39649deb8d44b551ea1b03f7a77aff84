@@ -389,6 +389,40 @@
     </Level>
   </Skill>
 
+  <Skill id="12">
+    <Name>Invisible Poison</Name>
+    <Clicked>img/skillicon/Clicked/02</Clicked>
+    <Idle>img/skillicon/Idle/02</Idle>
+    <Large>img/skillicon/Large/02</Large>
+    <Level>
+      <MinDamage>0</MinDamage>
+      <MaxDamage>0</MaxDamage>
+      <HP>0</HP>
+      <MP>0</MP>
+      <ProjectileType>16</ProjectileType>
+    </Level>
+    <Level>
+      <MinDamage>100</MinDamage>
+      <MaxDamage>150</MaxDamage>
+      <HP>-30</HP>
+      <MP>-30</MP>
+      <ProjectileType>16</ProjectileType>      
+    </Level>
+    <Level>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>450</MaxDamage>
+      <HP>-100</HP>
+      <MP>-100</MP>
+      <ProjectileType>16</ProjectileType>
+    </Level>
+    <Level>
+      <MinDamage>600</MinDamage>
+      <MaxDamage>1000</MaxDamage>
+      <MP>-250</MP>
+      <HP>-250</HP>
+      <ProjectileType>16</ProjectileType>
+    </Level>
+  </Skill>
 
   <!--
   <Skill id="2">

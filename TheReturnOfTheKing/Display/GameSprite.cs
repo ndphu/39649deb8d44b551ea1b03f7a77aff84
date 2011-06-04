@@ -89,6 +89,15 @@ namespace TheReturnOfTheKing
             set { _ntexture2D = value; }
         }
 
+        Color _color = Color.White;
+
+        public Color Color
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
+
+
         public GameSprite(Texture2D[] _inputtexture2D, float _inputx, float _inputy)
         {
             _texture2D = _inputtexture2D;
@@ -124,7 +133,7 @@ namespace TheReturnOfTheKing
 
         public void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            sb.Draw(_texture2D[_itexture2D], new Vector2(_x + GlobalVariables.dX + Xoffset, _y + GlobalVariables.dY + Yoffset), Color.White);
+            sb.Draw(_texture2D[_itexture2D], new Vector2(_x + GlobalVariables.dX + Xoffset, _y + GlobalVariables.dY + Yoffset), _color);
         }
 
         public GameSprite Clone()

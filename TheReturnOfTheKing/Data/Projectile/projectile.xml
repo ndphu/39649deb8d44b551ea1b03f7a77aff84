@@ -117,6 +117,7 @@
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
     <HitFrame>1</HitFrame>
+    <NDelay>0</NDelay>
   </Projectile>
 
   <Projectile id="10">
@@ -208,6 +209,18 @@
     <ObstacleWidth>0</ObstacleWidth>
     <ObstacleHeight>0</ObstacleHeight>
     <NDelay>0</NDelay>
+  </Projectile>
+
+  <Projectile id="16">
+    <ContentName>img/skill/skill17/D0</ContentName>
+    <NumOfFrame>7</NumOfFrame>
+    <XOffset>-38</XOffset>
+    <YOffset>-14</YOffset>
+    <StartObstacleX>-1</StartObstacleX>
+    <StartObstacleY>-1</StartObstacleY>
+    <ObstacleWidth>3</ObstacleWidth>
+    <ObstacleHeight>3</ObstacleHeight>
+    <HitFrame>2</HitFrame>
   </Projectile>
 
   <!--<Projectile id="0">

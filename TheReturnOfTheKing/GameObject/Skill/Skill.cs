@@ -130,6 +130,14 @@ namespace TheReturnOfTheKing
             set { _toShowDetails = value; }
         }
 
+        bool _isActivated;
+
+        public bool IsActivated
+        {
+            get { return _isActivated; }
+            set { _isActivated = value; }
+        }
+
         public override VisibleGameObject Clone()
         {
             return null; 
@@ -165,9 +173,11 @@ namespace TheReturnOfTheKing
 
         public virtual void Active()
         {
+            IsActivated = true;
         }
         public virtual void Deactive()
-        { 
+        {
+            IsActivated = false;
         }
     }
 }

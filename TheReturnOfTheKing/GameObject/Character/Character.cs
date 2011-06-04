@@ -412,8 +412,33 @@ namespace TheReturnOfTheKing
             }
         }
 
+        bool _isPoisoning;
 
+        public bool IsPoisoning
+        {
+            get { return _isPoisoning; }
+            set 
+            {
+                if (_isPoisoning != value)
+                {
+                    _isPoisoning = value;
+                    if (value)
+                        for (int i = 0; i < _nsprite; ++i)
+                            _sprite[i].Color = Color.DarkGreen;
+                    else
+                        for (int i = 0; i < _nsprite; ++i)
+                            _sprite[i].Color = Color.White;
+                }
+            }
+        }
 
+        List<PoisonDamage> _listPoisonDamage = new List<PoisonDamage>();
+
+        internal List<PoisonDamage> ListPoisonDamage
+        {
+            get { return _listPoisonDamage; }
+            set { _listPoisonDamage = value; }
+        }
 
         /// <summary>
         /// Tốc độ di chuyển
@@ -508,6 +533,43 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            if (_listPoisonDamage.Count != 0)
+                IsPoisoning = true;
+            else
+                IsPoisoning = false;
+            for (int i = 0; i < _listPoisonDamage.Count; ++i)
+            {
+                if (_listPoisonDamage[i].Duration % _listPoisonDamage[i].EffectMoment == 0)
+                    RecentHPLost += _listPoisonDamage[i].DamageValue;
+                _listPoisonDamage[i].Duration -= 1;
+                if (_listPoisonDamage[i].Duration == 0)
+                    _listPoisonDamage.Remove(_listPoisonDamage[i]);
+            }
+            if (CheckForDisplayDamage == 0)
+            {
+                if (RecentHPLost != 0)
+                {
+                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    {
+                        X = this.X,
+                        Y = this.Y - 2 * GlobalVariables.MapCollisionDim,
+                        Owner = this,
+                        DeltaY = -1,
+                        LifeTime = 45,
+                        MessageContent = RecentHPLost.ToString(),
+                        TextColor = Color.Red,
+                        MinY = (int)this.Y - 2 * GlobalVariables.MapCollisionDim - 30,
+                    });
+                }
+
+                Hp += RecentHPLost;
+                RecentHPLost = 0;
+                CheckForDisplayDamage = 30;
+            }
+            else
+            {
+                --CheckForDisplayDamage;
+            }
             if (IsDying || IsDyed)
             {
                 BashTime = 0;
@@ -742,7 +804,13 @@ namespace TheReturnOfTheKing
                 _sprite[oldDir].Itexture2D = 0;
         }
 
-       
+        int _checkForDisplayDamage = 25;
+
+        public int CheckForDisplayDamage
+        {
+            get { return _checkForDisplayDamage; }
+            set { _checkForDisplayDamage = value; }
+        }
         
         public virtual void Hit()
         {
@@ -755,7 +823,7 @@ namespace TheReturnOfTheKing
             else
                 Target.BeHit(Damage);
         }
-
+         
         public virtual void BeHit(int damage)
         {
             if (damage == 0)
@@ -763,22 +831,7 @@ namespace TheReturnOfTheKing
             if (GlobalVariables.GlobalRandom.Next(0, 100) >= this.ChangeToDodge)
             {
                 Damage = Math.Min(-(damage - this.Defense), 0);
-                Hp += Damage;
-                _recentHPLost = Damage;
-                if (Damage != 0)
-                {
-                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
-                    {
-                        X = this.X,
-                        Y = this.Y - 2 * GlobalVariables.MapCollisionDim,
-                        Owner = this,
-                        DeltaY = -1,
-                        LifeTime = 45,
-                        MessageContent = Damage.ToString(),
-                        TextColor = Color.Red,
-                        MinY = (int)this.Y - 2 * GlobalVariables.MapCollisionDim - 30,
-                    });
-                }
+                _recentHPLost += Damage;                
             }
             
         }
