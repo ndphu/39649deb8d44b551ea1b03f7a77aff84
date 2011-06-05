@@ -130,6 +130,16 @@ namespace TheReturnOfTheKing
             set { _toShowDetails = value; }
         }
 
+        /// <summary>
+        /// Nhiều button cùng trỏ vào một skill, biến này để cho biết button nào đang giành quyền trên button
+        /// </summary>
+        Button _currentButton;
+        public Button CurrentButton
+        {
+            get { return _currentButton; }
+            set { _currentButton = value; }
+        }
+
         bool _isActivated;
 
         public bool IsActivated
