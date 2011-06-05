@@ -100,6 +100,11 @@ namespace TheReturnOfTheKing
             _nChild++;
         }
 
+        public void RemoveChild(int _index)
+        {
+            _child.RemoveAt(_index);
+        }
+
         public override float X
         {
             get

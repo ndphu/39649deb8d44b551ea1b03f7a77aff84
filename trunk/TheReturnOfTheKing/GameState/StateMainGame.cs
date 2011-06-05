@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
-
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.GamerServices;
@@ -29,6 +28,7 @@ namespace TheReturnOfTheKing
         public SkillBoard _skillBoard;
         public DisplayMessageLayer _displayMessageLayer;
         public LHSkillSelectionFrame _lhSkillSelectionFrame;
+        public RHSkillSelectionFrame _rhSkillSelectionFrame;
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -84,6 +84,11 @@ namespace TheReturnOfTheKing
             _resourceForLHSSelectionFrame.Add(_objectManagerArray[8]);
             _resourceForLHSSelectionFrame.Add(_objectManagerArray[10]);
             _lhSkillSelectionFrame.GetResources(_resourceForLHSSelectionFrame);
+
+            //Phần Right-hand selection frame
+            _rhSkillSelectionFrame = new RHSkillSelectionFrame();
+            _rhSkillSelectionFrame.SetCharacter(_char);
+            _rhSkillSelectionFrame.GetResources(_resourceForLHSSelectionFrame);
         }
 
         public override void EnterState()
@@ -103,12 +108,12 @@ namespace TheReturnOfTheKing
             GlobalVariables.AlreadyUseLeftMouse = false;
             GlobalVariables.AlreadyUseRightMouse = false;
 
-            _skillBoard.Update(gameTime);
             _healthBar.Update(gameTime);
             _lhSkillSelectionFrame.Update(gameTime);
+            _rhSkillSelectionFrame.Update(gameTime);
+            _skillBoard.Update(gameTime);
 
             _listToDraw.Clear();
-
             _map.Update(gameTime);
             
 
@@ -204,6 +209,7 @@ namespace TheReturnOfTheKing
             _frog.Draw(gameTime, sb);
             GlobalVariables.GameCursor.Draw(gameTime, sb);
             _skillBoard.Draw(gameTime, sb);
+            _rhSkillSelectionFrame.Draw(gameTime, sb);
             _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);
         }

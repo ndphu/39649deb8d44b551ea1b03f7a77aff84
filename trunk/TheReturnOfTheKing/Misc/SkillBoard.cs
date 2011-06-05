@@ -86,7 +86,7 @@ namespace TheReturnOfTheKing
             set { _btPassiveSkillControl = value; }
         }
         #endregion
-   //Left
+   //Left hand skill
         Button _btLefthandExit;
         public Button BtLefthandExit
         {
@@ -184,7 +184,7 @@ namespace TheReturnOfTheKing
             get { return _lefthandFrame; }
             set { _lefthandFrame = value; }
         }
-   //Right
+   //Right hand skill
         Button _btRighthandExit;
         public Button BtRighthandExit
         {
@@ -198,7 +198,92 @@ namespace TheReturnOfTheKing
             get { return _rightthandFrame; }
             set { _rightthandFrame = value; }
         }
-   //Passive
+
+        Button _btDeadlyBeesSkill;
+        public Button BtDeadlyBeesSkill
+        {
+            get { return _btDeadlyBeesSkill; }
+            set { _btDeadlyBeesSkill = value; }
+        }
+
+        Label _lbDeadlyBeesSkill;
+        public Label LbDeadlyBeesSkill
+        {
+            get { return _lbDeadlyBeesSkill; }
+            set { _lbDeadlyBeesSkill = value; }
+        }
+
+        Button _btSoulRelease;
+        public Button BtSoulRelease
+        {
+            get { return _btSoulRelease; }
+            set { _btSoulRelease = value; }
+        }
+
+        Label _lbSoulRelease;
+        public Label LbSoulRelease
+        {
+            get { return _lbSoulRelease; }
+            set { _lbSoulRelease = value; }
+        }
+
+        Button _btEathShakeSkill;
+        public Button BtEathShakeSkill
+        {
+            get { return _btEathShakeSkill; }
+            set { _btEathShakeSkill = value; }
+        }
+
+        Label _lbEathShakeSkill;
+        public Label LbEathShakeSkill
+        {
+            get { return _lbEathShakeSkill; }
+            set { _lbEathShakeSkill = value; }
+        }
+
+        Button _btWaveFormSkill;
+        public Button BtWaveFormSkill
+        {
+            get { return _btWaveFormSkill; }
+            set { _btWaveFormSkill = value; }
+        }
+
+        Label _lbWaveFormSkill;
+        public Label LbWaveFormSkill
+        {
+            get { return _lbWaveFormSkill; }
+            set { _lbWaveFormSkill = value; }
+        }
+
+        Button _btLightingField;
+        public Button BtLightingField
+        {
+            get { return _btLightingField; }
+            set { _btLightingField = value; }
+        }
+
+        Label _lbLightingField;
+        public Label LbLightingField
+        {
+            get { return _lbLightingField; }
+            set { _lbLightingField = value; }
+        }
+
+        Button _btInvisible;
+        public Button BtInvisible
+        {
+            get { return _btInvisible; }
+            set { _btInvisible = value; }
+        }
+
+        Label _lbInvisible;
+        public Label LbInvisible
+        {
+            get { return _lbInvisible; }
+            set { _lbInvisible = value; }
+        }
+
+   //Passive skill
         Button _btPassiveExit;
         public Button BtPassiveExit
         {
@@ -213,6 +298,47 @@ namespace TheReturnOfTheKing
             set { _passiveFrame = value; }
         }
 
+        Button _btDamAndDefSkill;
+        public Button BtDamAndDefSkill
+        {
+            get { return _btDamAndDefSkill; }
+            set { _btDamAndDefSkill = value; }
+        }
+
+        Label _lbDamAndDefSkill;
+        public Label LbDamAndDefSkill
+        {
+            get { return _lbDamAndDefSkill; }
+            set { _lbDamAndDefSkill = value; }
+        }
+
+        Button _btMsAndAsSkill;
+        public Button BtMsAndAsSkill
+        {
+            get { return _btMsAndAsSkill; }
+            set { _btMsAndAsSkill = value; }
+        }
+
+        Label _lbMsAndAsSkill;
+        public Label LbMsAndAsSkill
+        {
+            get { return _lbMsAndAsSkill; }
+            set { _lbMsAndAsSkill = value; }
+        }
+
+        Button _btMissSkill;
+        public Button BtMissSkill
+        {
+            get { return _btMissSkill; }
+            set { _btMissSkill = value; }
+        }
+
+        Label _lbMissSkill;
+        public Label LbMissSkill
+        {
+            get { return _lbMissSkill; }
+            set { _lbMissSkill = value; }
+        }
 //---------------------------------------------------------------------------------------------------
         public void GetResources(List<GameObjectManager> _resources)
         {
@@ -233,7 +359,8 @@ namespace TheReturnOfTheKing
             _btPassiveSkillControl.Mouse_Down += new Button.OnMouseDownHandler(SkillBoard_MouseDown_PassiveButtonControl);
             _btPassiveSkillControl.IsPressButton = true;
 
- //LeftHand tab
+//LeftHand tab
+            #region
             _btLefthandExit = (Button)_resources[1].CreateObject(11);
             _btLefthandExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_LeftExit);
             //Cleaving
@@ -244,7 +371,7 @@ namespace TheReturnOfTheKing
             _btSkillCleaving.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_CleavingAttack);
             _btSkillCleaving.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_CleavingAttack);
             _btSkillCleaving.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_CleavingAttack);
-            
+
             _lbSkillCleaving = (Label)_resources[2].CreateObject(0);
             _lbSkillCleaving.Owner = _character.ListLeftHandSkill[1];
             //Critical
@@ -331,19 +458,107 @@ namespace TheReturnOfTheKing
 
             //Add vào tab control (Frame mẹ)
             _boardFrame.AddChild(_lefthandFrame);
-
+            #endregion
 //RightHand tab
+            #region
             _btRighthandExit = (Button)_resources[1].CreateObject(12);
             _btRighthandExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_RightExit);
+    //Deadly bees
+            _btDeadlyBeesSkill = (Button)_resources[1].CreateObject(23);
+            _btDeadlyBeesSkill.Owner = (Skill)_character.ListRightHandSkill[0];
+            _btDeadlyBeesSkill.GetNewIdleTexture(_character.ListRightHandSkill[0].IdleIcon);
+            _btDeadlyBeesSkill.GetNewClickedTexture(_character.ListRightHandSkill[0].ClickedIcon);
+            _btDeadlyBeesSkill.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_DeadlyBees);
+            _btDeadlyBeesSkill.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_DeadlyBees);
+            _btDeadlyBeesSkill.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_DeadlyBees);
+    
+            _lbDeadlyBeesSkill = (Label)_resources[2].CreateObject(6);
+            _lbDeadlyBeesSkill.Owner = _character.ListRightHandSkill[0];
+    //SoulRelease
+            _btSoulRelease = (Button)_resources[1].CreateObject(24);
+            _btSoulRelease.Owner = _character.ListRightHandSkill[1];
+            _btSoulRelease.GetNewIdleTexture(_character.ListRightHandSkill[1].IdleIcon);
+            _btSoulRelease.GetNewClickedTexture(_character.ListRightHandSkill[1].ClickedIcon);
+            _btSoulRelease.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_SoulRelease);
+            _btSoulRelease.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_SoulRelease);
+            _btSoulRelease.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_SoulRelease);
 
+            _lbSoulRelease = (Label)_resources[2].CreateObject(7);
+            _lbSoulRelease.Owner = _character.ListRightHandSkill[1];
+    //Earth shake
+            _btEathShakeSkill = (Button)_resources[1].CreateObject(25);
+            _btEathShakeSkill.Owner = _character.ListRightHandSkill[2];
+            _btEathShakeSkill.GetNewIdleTexture(_character.ListRightHandSkill[2].IdleIcon);
+            _btEathShakeSkill.GetNewClickedTexture(_character.ListRightHandSkill[2].ClickedIcon);
+            _btEathShakeSkill.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_EarthShake);
+            _btEathShakeSkill.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_EarthShake);
+            _btEathShakeSkill.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_EarthShake);
+
+            _lbEathShakeSkill = (Label)_resources[2].CreateObject(8);
+            _lbEathShakeSkill.Owner = _character.ListRightHandSkill[2];
+    //Wave form
+            _btWaveFormSkill = (Button)_resources[1].CreateObject(26);
+            _btWaveFormSkill.Owner = _character.ListRightHandSkill[3];
+            _btWaveFormSkill.GetNewIdleTexture(_character.ListRightHandSkill[3].IdleIcon);
+            _btWaveFormSkill.GetNewClickedTexture(_character.ListRightHandSkill[3].ClickedIcon);
+            _btWaveFormSkill.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_WaveForm);
+            _btWaveFormSkill.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_WaveForm);
+            _btWaveFormSkill.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_WaveForm);
+
+            _lbWaveFormSkill = (Label)_resources[2].CreateObject(9);
+            _lbWaveFormSkill.Owner = _character.ListRightHandSkill[3];
+            
+    //Lighting Field
+            _btLightingField = (Button)_resources[1].CreateObject(27);
+            _btLightingField.Owner = _character.ListRightHandSkill[4];
+            _btLightingField.GetNewIdleTexture(_character.ListRightHandSkill[4].IdleIcon);
+            _btLightingField.GetNewClickedTexture(_character.ListRightHandSkill[4].ClickedIcon);
+            _btLightingField.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_LightingField);
+            _btLightingField.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_LightingField);
+            _btLightingField.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_LightingField);
+
+            _lbLightingField = (Label)_resources[2].CreateObject(10);
+            _lbLightingField.Owner = _character.ListRightHandSkill[4];
+    //Invisible
+            _btInvisible = (Button)_resources[1].CreateObject(28);
+            _btInvisible.Owner = _character.ListRightHandSkill[5];
+            _btInvisible.GetNewIdleTexture(_character.ListRightHandSkill[5].IdleIcon);
+            _btInvisible.GetNewClickedTexture(_character.ListRightHandSkill[5].ClickedIcon);
+            _btInvisible.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_Invisible);
+            _btInvisible.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_Invisible);
+            _btInvisible.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_Invisible);
+
+            _lbInvisible = (Label)_resources[2].CreateObject(11);
+            _lbInvisible.Owner = _character.ListRightHandSkill[5];
+             
+    //RightthandFrame-hand frame           
             _rightthandFrame = (GameFrame)_resources[0].CreateObject(3);
             _rightthandFrame.AddChild(_btLeftSkillControl);
             _rightthandFrame.AddChild(_btRightSkillControl);
             _rightthandFrame.AddChild(_btPassiveSkillControl);
             _rightthandFrame.AddChild(_btRighthandExit);
-            _boardFrame.AddChild(_rightthandFrame);
 
-            //Passive tab
+            _rightthandFrame.AddChild(_btDeadlyBeesSkill);
+            _rightthandFrame.AddChild(_lbDeadlyBeesSkill);
+
+            _rightthandFrame.AddChild(_btSoulRelease);
+            _rightthandFrame.AddChild(_lbSoulRelease);
+
+            _rightthandFrame.AddChild(_btEathShakeSkill);
+            _rightthandFrame.AddChild(_lbEathShakeSkill);
+
+            _rightthandFrame.AddChild(_btWaveFormSkill);
+            _rightthandFrame.AddChild(_lbWaveFormSkill);
+
+            _rightthandFrame.AddChild(_btLightingField);
+            _rightthandFrame.AddChild(_lbLightingField);
+
+            _rightthandFrame.AddChild(_btInvisible);
+            _rightthandFrame.AddChild(_lbInvisible);
+
+            _boardFrame.AddChild(_rightthandFrame);
+            #endregion
+//Passive tab
             _btPassiveExit = (Button)_resources[1].CreateObject(13);
             _btPassiveExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_PassiveExit);
 
@@ -406,7 +621,12 @@ namespace TheReturnOfTheKing
                     }
                 case 1:
                     {
-
+                        GetSkillLevel(_lbDeadlyBeesSkill);
+                        GetSkillLevel(_lbSoulRelease);
+                        GetSkillLevel(_lbEathShakeSkill);
+                        GetSkillLevel(_lbWaveFormSkill);
+                        GetSkillLevel(_lbLightingField);
+                        GetSkillLevel(_lbInvisible);
                         break;
                     }
                 case 2:
@@ -595,9 +815,112 @@ namespace TheReturnOfTheKing
             BoardFrame.Motion = MotionGoOut;
             BoardFrame.Motion.IsStanding = false;
         }
+
+        #region Deadly bees skill
+        public void SkillBoard_MouseClick_DeadlyBees(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_DeadlyBees(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_DeadlyBees(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
         #endregion
 
-//-----------------Su kien cho Button trên tab Passive------------------------------------------------------------------------------
+        #region Soul Release
+        public void SkillBoard_MouseClick_SoulRelease(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_SoulRelease(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_SoulRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #region Earth Share skill
+        public void SkillBoard_MouseClick_EarthShake(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_EarthShake(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_EarthShake(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+        
+        #region Wave form
+        public void SkillBoard_MouseClick_WaveForm(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_WaveForm(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_WaveForm(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #region Lighting Field
+        public void SkillBoard_MouseClick_LightingField(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_LightingField(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_LightingField(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #region Invisible posiiotn
+        public void SkillBoard_MouseClick_Invisible(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_Invisible(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_Invisible(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #endregion
+
+        #region-----------------Su kien cho Button trên tab Passive------------------------------------------------------------------------------
 
         #region Su kien cho Button trên tab Passive
         public void SkillBoard_MouseDown_PassiveButtonControl(object sender, EventArgs e)
@@ -618,7 +941,9 @@ namespace TheReturnOfTheKing
         }
         #endregion
 
-//Hàm dùng chung-----------------------------------------------------
+        #endregion
+
+        //Hàm dùng chung-----------------------------------------------------
 
         public Vector2 GetSkillDetailLocation(Button _button, int _picWid, int _picHei)
         {
@@ -639,6 +964,7 @@ namespace TheReturnOfTheKing
         public void ShowDetailSkill(Button _button)
         {
             ((Skill)_button.Owner).ToShowDetails = true;
+            ((Skill)_button.Owner).CurrentButton = _button;
             Vector2 _location = GetSkillDetailLocation(_button, ((Skill)_button.Owner).LargeIcon.Width, ((Skill)_button.Owner).LargeIcon.Height);
             ((Skill)_button.Owner).X = _location.X;
             ((Skill)_button.Owner).Y = _location.Y;
@@ -647,6 +973,7 @@ namespace TheReturnOfTheKing
         public void HideDetailSkill(Button _button)
         {
             ((Skill)_button.Owner).ToShowDetails = false;
+            ((Skill)_button.Owner).CurrentButton = null;
         }
 
         public void LevelUp(Button _button)
@@ -655,7 +982,10 @@ namespace TheReturnOfTheKing
             {
                 ((Skill)_button.Owner).Level++;
                 if (((Skill)_button.Owner).Level == ((Skill)_button.Owner).ListLevel.Count - 1)
+                {
                     _button.Endalbe = false;
+                    _button.ColorToDraw = Color.White;
+                }
             }
         }
 

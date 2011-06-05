@@ -61,9 +61,22 @@
     </MoveInfo>
   </Frame>
 
+  <!--2 cái frame cua selection skill-->
   <Frame id="5">
-    <BackGround>Null</BackGround>
+    <BackGround>img/dialog/frame/skillselection/lefthand</BackGround>
     <X>116</X>
+    <Y>609</Y>
+    <Width>244</Width>
+    <Height>97</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="6">
+    <BackGround>img/dialog/frame/skillselection/righthand</BackGround>
+    <X>439</X>
     <Y>609</Y>
     <Width>244</Width>
     <Height>97</Height>

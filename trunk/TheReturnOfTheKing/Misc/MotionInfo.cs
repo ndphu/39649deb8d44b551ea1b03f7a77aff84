@@ -95,13 +95,22 @@ namespace TheReturnOfTheKing
             set { _isStanding = value; }
         }
 
-        private Vector2 _velGoOut = new Vector2(30, 0);
+        private Vector2 _velGoOutX = new Vector2(30, 0);
 
-        public Vector2 VelGoOut
+        public Vector2 VelGoOutX
         {
-            get { return _velGoOut; }
-            set { _velGoOut = value; }
+            get { return _velGoOutX; }
+            set { _velGoOutX = value; }
         }
+
+        private Vector2 _velGoOutY = new Vector2(0, 30);
+
+        public Vector2 VelGoOutY
+        {
+            get { return _velGoOutY; }
+            set { _velGoOutY = value; }
+        }
+
 //----------------------FUNCTION-----------------------------------------------------
 
         //Hàm chuyển động, nhận vào vị trí trước đó và trả về vị trí cần cập nhật..
@@ -284,7 +293,7 @@ namespace TheReturnOfTheKing
                                 if (_vel.X <= 0)
                                 {
                                     _nowDirection = "Right";
-                                    _vel = _velGoOut;
+                                    _vel = _velGoOutX;
                                 }
                             }
                             else
@@ -302,6 +311,26 @@ namespace TheReturnOfTheKing
                         }
                     case "Up":
                         {
+                            if (_nowDirection == "Up")
+                            {
+                                _vel -= _accel;
+                                _newPosition -= _vel;
+                                if (_vel.Y <= 0)
+                                {
+                                    _nowDirection = "Down";
+                                    _vel = _velGoOutY;
+                                }
+                            }
+                            else
+                            {
+                                _vel += _accel;
+                                _newPosition += _vel;
+                                if (_newPosition.Y > GlobalVariables.ScreenHeight + 0.1 * _owner.Height)
+                                {
+                                    _isStanding = true;
+                                    _newPosition.Y = (int)(GlobalVariables.ScreenHeight + 0.1 * _owner.Height);
+                                }
+                            }
                             break;
                         }
                     case "Down":
