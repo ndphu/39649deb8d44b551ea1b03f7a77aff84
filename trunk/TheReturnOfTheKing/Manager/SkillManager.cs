@@ -339,6 +339,7 @@ namespace TheReturnOfTheKing
                             _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
                             _skillInfo.Hp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
                             _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Duration = int.Parse(_levelList[i].SelectSingleNode(@"Duration").InnerText) * 60;
                             _skillLevel.ListSkillInfo.Add(_skillInfo);
                             ((InvisiblePoisonSkill)_prototype[id]).ListLevel.Add(_skillLevel);
                         }

@@ -400,27 +400,31 @@
       <HP>0</HP>
       <MP>0</MP>
       <ProjectileType>16</ProjectileType>
+      <Duration>0</Duration>
     </Level>
     <Level>
-      <MinDamage>100</MinDamage>
-      <MaxDamage>150</MaxDamage>
+      <MinDamage>50</MinDamage>
+      <MaxDamage>75</MaxDamage>
       <HP>-30</HP>
       <MP>-30</MP>
-      <ProjectileType>16</ProjectileType>      
+      <ProjectileType>16</ProjectileType>
+      <Duration>4</Duration>
     </Level>
     <Level>
-      <MinDamage>300</MinDamage>
+      <MinDamage>150</MinDamage>
       <MaxDamage>450</MaxDamage>
-      <HP>-100</HP>
-      <MP>-100</MP>
+      <HP>-60</HP>
+      <MP>-60</MP>
       <ProjectileType>16</ProjectileType>
+      <Duration>5</Duration>
     </Level>
     <Level>
       <MinDamage>600</MinDamage>
       <MaxDamage>1000</MaxDamage>
-      <MP>-250</MP>
-      <HP>-250</HP>
+      <MP>-120</MP>
+      <HP>-120</HP>
       <ProjectileType>16</ProjectileType>
+      <Duration>6</Duration>
     </Level>
   </Skill>
 

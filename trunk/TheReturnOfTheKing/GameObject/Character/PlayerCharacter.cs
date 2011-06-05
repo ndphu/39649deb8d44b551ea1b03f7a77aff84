@@ -528,44 +528,44 @@ namespace TheReturnOfTheKing
             }
 
             //RH
-            
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Q))
+
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Q) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.Q))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 0;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.W))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.W) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.W))
             {                
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 1;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.E))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.E) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.E))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 2;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.R))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.R) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.R))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 3;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.T))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.T) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.T))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 4;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Y))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Y) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.Y))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 5;
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.U))
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.U) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.U))
             {
                 _listRightHandSkill[_rightHandSkillIndex].Deactive();
                 _rightHandSkillIndex = 6;
