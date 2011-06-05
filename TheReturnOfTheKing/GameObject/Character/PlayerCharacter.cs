@@ -291,6 +291,13 @@ namespace TheReturnOfTheKing
             set { _lhSkillSelectionFrame = value; }
         }
 
+        RHSkillSelectionFrame _rhSkillSelectionFrame;
+
+        public RHSkillSelectionFrame RhSkillSelectionFrame
+        {
+            get { return _rhSkillSelectionFrame; }
+            set { _rhSkillSelectionFrame = value; }
+        }
 
         public override void SetMap(Map map)
         {
@@ -572,15 +579,13 @@ namespace TheReturnOfTheKing
                 _listRightHandSkill[_rightHandSkillIndex].Active();
             }
 
-
-
-
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.A))
             {
                 _listLeftHandSkill[_leftHandSkillIndex].Deactive();
                 _leftHandSkillIndex = 0;
                 _listLeftHandSkill[_leftHandSkillIndex].Active();
             }
+
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.S))
             {
                 _listLeftHandSkill[_leftHandSkillIndex].Deactive();

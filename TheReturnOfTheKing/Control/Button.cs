@@ -38,6 +38,7 @@ namespace TheReturnOfTheKing
                 else
                 {
                     _colorToDraw = Color.Gray;
+                    _sprite[0].Itexture2D = 0;
                 }
             }
         }

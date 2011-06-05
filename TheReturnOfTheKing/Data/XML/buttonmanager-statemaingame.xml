@@ -270,4 +270,175 @@
     <Width>48</Width>
     <Height>48</Height>
   </Button>
+  
+  <!--Button right hand trên thanh healthbar-->
+  <Button id ="22">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/none-idle</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/none-clicked</Clicked>
+    </Image>
+
+    <X>522</X>
+    <Y>6</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+  
+  <!--6 button skill right hand tren skill board-->
+  <Button id ="23">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>14</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="24">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>153</X>
+    <Y>14</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="25">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>84</X>
+    <Y>82</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="26">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>150</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="27">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>84</X>
+    <Y>150</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="28">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>153</X>
+    <Y>219</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+  
+  <!--6 button tren right-hand selection frame-->
+  <Button id ="29">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>196</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="30">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>147</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="31">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>98</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="32">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>49</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="33">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>49</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="34">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>0</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+  <!--main button trên health bar-->
+  <Button id ="35">
+    <Image>
+      <Idle>img/dialog/control/button/healthbar/mainbutton/up/idle</Idle>
+      <Clicked>img/dialog/control/button/healthbar/mainbutton/up/clicked</Clicked>
+    </Image>
+
+    <X>277</X>
+    <Y>16</Y>
+    <Width>14</Width>
+    <Height>24</Height>
+  </Button>
 </root>

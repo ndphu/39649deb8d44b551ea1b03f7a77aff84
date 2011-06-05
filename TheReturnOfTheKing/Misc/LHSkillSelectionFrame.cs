@@ -102,42 +102,56 @@ namespace TheReturnOfTheKing
             _btNormalAttack.GetNewIdleTexture(Character.ListLeftHandSkill[0].IdleIcon);
             _btNormalAttack.GetNewClickedTexture(Character.ListLeftHandSkill[0].ClickedIcon);
             _btNormalAttack.Mouse_Click += new Button.OnMouseClickHandler(NormalAttack_MouseClicked);
+            _btNormalAttack.Mouse_Hover += new Button.OnMouseHoverHandler(NormalAttack_MouseHover);
+            _btNormalAttack.Mouse_Released += new Button.OnMouseReleasedHandler(NormalAttack_MouseRelease);
 
             _btSkillCleaving = (Button)_resources[1].CreateObject(16);
             _btSkillCleaving.Owner = Character.ListLeftHandSkill[1];
             _btSkillCleaving.GetNewIdleTexture(Character.ListLeftHandSkill[1].IdleIcon);
             _btSkillCleaving.GetNewClickedTexture(Character.ListLeftHandSkill[1].ClickedIcon);
             _btSkillCleaving.Mouse_Click += new Button.OnMouseClickHandler(SkillCleaving_MouseClicked);
+            _btSkillCleaving.Mouse_Hover += new Button.OnMouseHoverHandler(SkillCleaving_MouseHover);
+            _btSkillCleaving.Mouse_Released += new Button.OnMouseReleasedHandler(SkillCleaving_MouseRelease);
 
             _btSkillCritical = (Button)_resources[1].CreateObject(17);
             _btSkillCritical.Owner = Character.ListLeftHandSkill[2];
             _btSkillCritical.GetNewIdleTexture(Character.ListLeftHandSkill[2].IdleIcon);
             _btSkillCritical.GetNewClickedTexture(Character.ListLeftHandSkill[2].ClickedIcon);
             _btSkillCritical.Mouse_Click += new Button.OnMouseClickHandler(SkillCritical_MouseClicked);
+            _btSkillCritical.Mouse_Hover += new Button.OnMouseHoverHandler(SkillCritical_MouseHover);
+            _btSkillCritical.Mouse_Released += new Button.OnMouseReleasedHandler(SkillCritical_MouseRelease);
 
             _btSkillCurse = (Button)_resources[1].CreateObject(18);
             _btSkillCurse.Owner = Character.ListLeftHandSkill[3];
             _btSkillCurse.GetNewIdleTexture(Character.ListLeftHandSkill[3].IdleIcon);
             _btSkillCurse.GetNewClickedTexture(Character.ListLeftHandSkill[3].ClickedIcon);
             _btSkillCurse.Mouse_Click += new Button.OnMouseClickHandler(SkillCurse_MouseClicked);
+            _btSkillCurse.Mouse_Hover += new Button.OnMouseHoverHandler(SkillCurse_MouseHover);
+            _btSkillCurse.Mouse_Released += new Button.OnMouseReleasedHandler(SkillCurse_MouseRelease);
 
             _btSkillOverspeed = (Button)_resources[1].CreateObject(19);
             _btSkillOverspeed.Owner = Character.ListLeftHandSkill[4];
             _btSkillOverspeed.GetNewIdleTexture(Character.ListLeftHandSkill[4].IdleIcon);
             _btSkillOverspeed.GetNewClickedTexture(Character.ListLeftHandSkill[4].ClickedIcon);
             _btSkillOverspeed.Mouse_Click += new Button.OnMouseClickHandler(SkillOverspeed_MouseClicked);
+            _btSkillOverspeed.Mouse_Hover += new Button.OnMouseHoverHandler(SkillOverSpeed_MouseHover);
+            _btSkillOverspeed.Mouse_Released += new Button.OnMouseReleasedHandler(SkillOverSpeed_MouseRelease);
 
             _btSkillLifeSteal = (Button)_resources[1].CreateObject(20);
             _btSkillLifeSteal.Owner = Character.ListLeftHandSkill[5];
             _btSkillLifeSteal.GetNewIdleTexture(Character.ListLeftHandSkill[5].IdleIcon);
             _btSkillLifeSteal.GetNewClickedTexture(Character.ListLeftHandSkill[5].ClickedIcon);
             _btSkillLifeSteal.Mouse_Click += new Button.OnMouseClickHandler(SkillLifeSteal_MouseClicked);
+            _btSkillLifeSteal.Mouse_Hover += new Button.OnMouseHoverHandler(SkillLifeSteal_MouseHover);
+            _btSkillLifeSteal.Mouse_Released += new Button.OnMouseReleasedHandler(SkillLifeSteal_MouseRelease);
 
             _btSkillBash = (Button)_resources[1].CreateObject(21);
             _btSkillBash.Owner = Character.ListLeftHandSkill[6];
             _btSkillBash.GetNewIdleTexture(Character.ListLeftHandSkill[6].IdleIcon);
             _btSkillBash.GetNewClickedTexture(Character.ListLeftHandSkill[6].ClickedIcon);
             _btSkillBash.Mouse_Click += new Button.OnMouseClickHandler(SkillBash_MouseClicked);
+            _btSkillBash.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBash_MouseHover);
+            _btSkillBash.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBash_MouseRelease);
 
             _mainFrame.AddChild(_btNormalAttack);
             _mainFrame.AddChild(_btSkillCleaving);
@@ -176,22 +190,43 @@ namespace TheReturnOfTheKing
                         _mainFrame.OnMove_Complete(this, null);
                     }
                 }
-
                 for (int i = 0; i < _mainFrame.Child.Count; i++)
                 {
-                    //if (((Skill)((Button)_mainFrame.Child[i]).Owner).Level > 0)
-                        ((Button)_mainFrame.Child[i]).Update(gameTime);
+                    ((Button)_mainFrame.Child[i]).Update(gameTime);
                 }
             }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            for (int i = 0; i < _mainFrame.Child.Count; i++)
+            sb.Draw(_mainFrame._sprite[0].Texture2D[0], new Vector2(_mainFrame.X, _mainFrame.Y), Color.White);
+            ((Button)_mainFrame.Child[0]).Draw(gameTime, sb);
+            for (int i = 1; i < _mainFrame.Child.Count; i++)
             {
-                //if (((Skill)((Button)_mainFrame.Child[i]).Owner).Level > 0)
+                if (((Skill)((Button)_mainFrame.Child[i]).Owner).Level > 0)
                     ((Button)_mainFrame.Child[i]).Draw(gameTime, sb);
             }
+
+            if (((Skill)BtNormalAttack.Owner).CurrentButton == BtNormalAttack)
+                ((Skill)BtNormalAttack.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillCleaving.Owner).Level > 0 && ((Skill)BtSkillCleaving.Owner).CurrentButton == BtSkillCleaving)
+                ((Skill)BtSkillCleaving.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillCritical.Owner).Level > 0 && ((Skill)BtSkillCritical.Owner).CurrentButton == BtSkillCritical)
+                ((Skill)BtSkillCritical.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillCurse.Owner).Level > 0 && ((Skill)BtSkillCurse.Owner).CurrentButton == BtSkillCurse)
+                ((Skill)BtSkillCurse.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillOverspeed.Owner).Level > 0 && ((Skill)BtSkillOverspeed.Owner).CurrentButton == BtSkillOverspeed)
+                ((Skill)BtSkillOverspeed.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillLifeSteal.Owner).Level > 0 && ((Skill)BtSkillLifeSteal.Owner).CurrentButton == BtSkillLifeSteal)
+                ((Skill)BtSkillLifeSteal.Owner).Draw(gameTime, sb);
+
+            if (((Skill)BtSkillBash.Owner).Level > 0 && ((Skill)BtSkillBash.Owner).CurrentButton == BtSkillBash)
+                ((Skill)BtSkillBash.Owner).Draw(gameTime, sb);
         }
 
         public void CreateMotion_GoIn()
@@ -207,42 +242,168 @@ namespace TheReturnOfTheKing
 
         public void CreateMotion_GoOut()
         {
-            
+            _motionGoOut = new MotionInfo();
+            _motionGoOut.FirstDection = "Up";
+            _motionGoOut.IsStanding = true;
+            _motionGoOut.StandingGround = float.MinValue;
+            _motionGoOut.Vel = new Vector2(0, 0);
+            _motionGoOut.Accel = new Vector2(0, 1f);
+            _motionGoOut.DecelerationRate = 0.6f;
         }
 
+        #region SỰ kiện Click button
         public void NormalAttack_MouseClicked(object sender, EventArgs e)
         {
- 
+            ChangeSkill(0);
         }
 
         public void SkillCleaving_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(1);
         }
 
         public void SkillCritical_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(2);
         }
 
         public void SkillCurse_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(3);
         }
 
         public void SkillOverspeed_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(4);
         }
 
         public void SkillLifeSteal_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(5);
         }
 
         public void SkillBash_MouseClicked(object sender, EventArgs e)
         {
-
+            ChangeSkill(6);
         }
+        #endregion
+
+        #region Sự kiện Hover button
+        public void NormalAttack_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillCleaving_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillCritical_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillCurse_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillOverSpeed_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillLifeSteal_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBash_MouseHover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #region Sự kiện Release button
+        public void NormalAttack_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillCleaving_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillCritical_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillCurse_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillOverSpeed_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillLifeSteal_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        public void SkillBash_MouseRelease(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+        #endregion
+
+        #region Hàm dùng chung
+        public void MoveOut()
+        {
+            CreateMotion_GoOut();
+            _mainFrame.Motion = MotionGoOut;
+            _mainFrame.Motion.IsStanding = false;
+        }
+
+        public void ChangeSkill(int _skillIndex)
+        {
+            if (_character.ListLeftHandSkill[_skillIndex].Level == 0 && _skillIndex != 0)
+                return;
+            MoveOut();
+            _character.ListLeftHandSkill[_character.LeftHandSkillIndex].Deactive();
+            _character.LeftHandSkillIndex = _skillIndex;
+            _character.ListLeftHandSkill[_character.LeftHandSkillIndex].Active();
+            _character.Healthbar.BtLefthandSkill.Owner = (Skill)_character.ListLeftHandSkill[_character.LeftHandSkillIndex];
+            ((Button)_character.Healthbar.BtLefthandSkill).GetNewIdleTexture(((Skill)_character.ListLeftHandSkill[_character.LeftHandSkillIndex]).IdleIcon);
+            ((Button)_character.Healthbar.BtLefthandSkill).GetNewClickedTexture(((Skill)_character.ListLeftHandSkill[_character.LeftHandSkillIndex]).ClickedIcon);
+        }
+
+        
+        public Vector2 GetSkillDetailLocation(Button _button, int _picWid, int _picHei)
+        {
+            Vector2 _result = new Vector2(_button.X + _button.Width, _button.Y - _picHei - 2);
+            return _result;
+        }
+
+        public void ShowDetailSkill(Button _button)
+        {
+            ((Skill)_button.Owner).ToShowDetails = true;
+            ((Skill)_button.Owner).CurrentButton = _button;
+            Vector2 _location = GetSkillDetailLocation(_button, ((Skill)_button.Owner).LargeIcon.Width, ((Skill)_button.Owner).LargeIcon.Height);
+            ((Skill)_button.Owner).X = _location.X;
+            ((Skill)_button.Owner).Y = _location.Y;
+        }
+
+        public void HideDetailSkill(Button _button)
+        {
+            ((Skill)_button.Owner).ToShowDetails = false;
+            ((Skill)_button.Owner).CurrentButton = null;
+        }
+        #endregion
     }
 }

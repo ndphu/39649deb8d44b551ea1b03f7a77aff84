@@ -34,4 +34,36 @@
     <Width>115</Width>
     <Height>105</Height>
   </ProcessBar>
+
+  <ProcessBar id="2">
+    <AnimateProcessBar>img/misc/processbar/cooldown/Animate</AnimateProcessBar>
+    <StandingProcessBar>img/misc/processbar/cooldown/Standing</StandingProcessBar>
+
+    <StartAnimate>48</StartAnimate>
+    <EndAnimate>0</EndAnimate>
+
+    <Direction>Up</Direction>
+
+    <X>522</X>
+    <Y>6</Y>
+
+    <Width>48</Width>
+    <Height>48</Height>
+  </ProcessBar>
+
+  <ProcessBar id="3">
+    <AnimateProcessBar>img/misc/processbar/cooldown/Animate</AnimateProcessBar>
+    <StandingProcessBar>img/misc/processbar/cooldown/Standing</StandingProcessBar>
+
+    <StartAnimate>48</StartAnimate>
+    <EndAnimate>0</EndAnimate>
+
+    <Direction>Up</Direction>
+
+    <X>0</X>
+    <Y>6</Y>
+
+    <Width>48</Width>
+    <Height>48</Height>
+  </ProcessBar>
 </root>

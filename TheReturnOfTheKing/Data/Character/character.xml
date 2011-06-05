@@ -4,8 +4,8 @@
     <Speed>2</Speed>
     <Hp>15000</Hp>
     <MaxHp>15000</MaxHp>
-    <Mp>10000</Mp>
-    <MaxMp>10000</MaxMp>
+    <Mp>5000</Mp>
+    <MaxMp>5000</MaxMp>
     <CriticalRate>15</CriticalRate>
     <MinDamage>45</MinDamage>
     <MaxDamage>85</MaxDamage>

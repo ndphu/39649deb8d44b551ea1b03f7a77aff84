@@ -131,6 +131,7 @@ namespace TheReturnOfTheKing
             }
         }
 
+        //Update chỉ dủng để chặn sự kiện chuột.
         public override void Update(GameTime gameTime)
         {
             _rect = new Rectangle((int)_x, (int)_y, (int)_width, (int)_height);

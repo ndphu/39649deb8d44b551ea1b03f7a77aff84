@@ -187,9 +187,9 @@
   
   <Skill id="7">
     <Name>Deadly Bee</Name>
-    <Clicked>img/skillicon/Clicked/06</Clicked>
-    <Idle>img/skillicon/Idle/06</Idle>
-    <Large>img/skillicon/Large/06</Large>
+    <Clicked>img/skillicon/Clicked/07</Clicked>
+    <Idle>img/skillicon/Idle/07</Idle>
+    <Large>img/skillicon/Large/07</Large>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
@@ -230,9 +230,9 @@
 
   <Skill id="8">
     <Name>Souls Release</Name>
-    <Clicked>img/skillicon/Clicked/06</Clicked>
-    <Idle>img/skillicon/Idle/06</Idle>
-    <Large>img/skillicon/Large/06</Large>
+    <Clicked>img/skillicon/Clicked/08</Clicked>
+    <Idle>img/skillicon/Idle/08</Idle>
+    <Large>img/skillicon/Large/08</Large>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
@@ -269,9 +269,9 @@
 
   <Skill id="9">
     <Name>Earth Shake</Name>
-    <Clicked>img/skillicon/Clicked/06</Clicked>
-    <Idle>img/skillicon/Idle/06</Idle>
-    <Large>img/skillicon/Large/06</Large>
+    <Clicked>img/skillicon/Clicked/09</Clicked>
+    <Idle>img/skillicon/Idle/09</Idle>
+    <Large>img/skillicon/Large/09</Large>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
@@ -308,9 +308,9 @@
 
   <Skill id="10">
     <Name>Wave Form</Name>
-    <Clicked>img/skillicon/Clicked/06</Clicked>
-    <Idle>img/skillicon/Idle/06</Idle>
-    <Large>img/skillicon/Large/06</Large>
+    <Clicked>img/skillicon/Clicked/10</Clicked>
+    <Idle>img/skillicon/Idle/10</Idle>
+    <Large>img/skillicon/Large/10</Large>
     <Delay>3</Delay>
     <Level>
       <MinDamage>0</MinDamage>
@@ -348,9 +348,9 @@
 
   <Skill id="11">
     <Name>Lightning Field</Name>
-    <Clicked>img/skillicon/Clicked/02</Clicked>
-    <Idle>img/skillicon/Idle/02</Idle>
-    <Large>img/skillicon/Large/02</Large>
+    <Clicked>img/skillicon/Clicked/11</Clicked>
+    <Idle>img/skillicon/Idle/11</Idle>
+    <Large>img/skillicon/Large/11</Large>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
@@ -391,9 +391,9 @@
 
   <Skill id="12">
     <Name>Invisible Poison</Name>
-    <Clicked>img/skillicon/Clicked/02</Clicked>
-    <Idle>img/skillicon/Idle/02</Idle>
-    <Large>img/skillicon/Large/02</Large>
+    <Clicked>img/skillicon/Clicked/12</Clicked>
+    <Idle>img/skillicon/Idle/12</Idle>
+    <Large>img/skillicon/Large/12</Large>
     <Level>
       <MinDamage>0</MinDamage>
       <MaxDamage>0</MaxDamage>
