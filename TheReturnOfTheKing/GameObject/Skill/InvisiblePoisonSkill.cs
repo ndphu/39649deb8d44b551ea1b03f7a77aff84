@@ -26,21 +26,22 @@ namespace TheReturnOfTheKing
         public override void Active()
         {
             base.Active();
-            if (prjt != null)
-                PlayerOwner.Owner._listProjectile.Remove(prjt);
-            prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
-            prjt.ProjectileController = new PoisonWormController();
-            prjt.ProjectileController.Owner = prjt;
-            prjt.SkillOwner = this;
-            prjt.DelayTime = 0;
-            prjt.LifeTime = int.MaxValue;
-            prjt.IsRemoveAfterEffect = false;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            if (!PlayerOwner.Owner._listProjectile.Contains(prjt))
+            {
+                prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                prjt.ProjectileController = new PoisonWormController();
+                prjt.ProjectileController.Owner = prjt;
+                prjt.SkillOwner = this;
+                prjt.DelayTime = 0;
+                prjt.LifeTime = int.MaxValue;
+                prjt.IsRemoveAfterEffect = false;
+                PlayerOwner.Owner._listProjectile.Add(prjt);
+            }
         }
         public override void Deactive()
         {
             base.Deactive();
-            if (prjt != null)
+            if (prjt != null && PlayerOwner.Owner._listProjectile.Contains(prjt))
                 PlayerOwner.Owner._listProjectile.Remove(prjt);
         }
 
@@ -82,7 +83,7 @@ namespace TheReturnOfTheKing
                     _listMonster[i].ListPoisonDamage.Add(new PoisonDamage
                     {
                         DamageValue = -GlobalVariables.GlobalRandom.Next(ListLevel[Level].ListSkillInfo[0].MinDamage, ListLevel[Level].ListSkillInfo[0].MaxDamage),
-                        Duration = 6 * 30,
+                        Duration = ListLevel[Level].ListSkillInfo[0].Duration,
                         EffectMoment = 30,
                     });
                 }
