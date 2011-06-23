@@ -88,6 +88,10 @@
     <Compile Include="GameObject\Skill\LightningFieldSkill.cs" />
     <Compile Include="GameObject\Projectile\LightningProjectileController.cs" />
     <Compile Include="GameObject\Skill\PoisonDamage.cs" />
+    <Compile Include="GameState\StateHelps.cs" />
+    <Compile Include="GameState\StateLoadGame.cs" />
+    <Compile Include="GameState\StateMenuManager.cs" />
+    <Compile Include="GameState\StateOptions.cs" />
     <Compile Include="Manager\BackgroundManager.cs" />
     <Compile Include="GameObject\Skill\BashAttackSkill.cs" />
     <Compile Include="Manager\ButtonManger.cs" />

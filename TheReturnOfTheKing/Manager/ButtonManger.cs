@@ -27,7 +27,7 @@ namespace TheReturnOfTheKing
             {
                 _xmlInfo = xmlInfo;
                 XmlDocument _doc = new XmlDocument();
-
+                
                 _doc.Load(_xmlInfo);
                 XmlNodeList _listButton = _doc.SelectNodes(@"//Button");
                 _nprototype = _listButton.Count;
