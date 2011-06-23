@@ -26,7 +26,17 @@ namespace TheReturnOfTheKing
             set { _owner = value; }
         }
 
-        
+        /// <summary>
+        /// Đối tượng cho biết state này là con của một gameState khác nào (sử dụng trong trường hợp
+        ///     một gamestate quản lý nhiếu gamestate khác).
+        /// </summary>
+        GameState _gameStateOwner = null;
+
+        public GameState GameStateOwner
+        {
+            get { return _gameStateOwner; }
+            set { _gameStateOwner = value; }
+        }
 
         //Mảng các objectManager: người dùng cần phải biết mảng hiện thời gôm những
         //objectManager nào và vị trí của nó nằm trong mảng
@@ -66,6 +76,22 @@ namespace TheReturnOfTheKing
         public virtual void DrawState(GameTime gameTime, SpriteBatch sb)
         { 
 
+        }
+
+        /// <summary>
+        /// Hàm chuyển động đi ra của 1 state
+        /// </summary>
+        public virtual void GoOut()
+        {
+ 
+        }
+
+        /// <summary>
+        /// Hàm chuyển động đi vào của 1 state
+        /// </summary>
+        public virtual void GoIn()
+        {
+ 
         }
     }
 }

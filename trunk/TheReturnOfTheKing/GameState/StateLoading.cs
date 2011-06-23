@@ -169,9 +169,9 @@ namespace TheReturnOfTheKing
                     {
                         switch (_type.Name)
                         {
-                            case "StateMenu":
+                            case "StateMenuManager":
                                 {
-                                    temp = new StateMenu();
+                                    temp = new StateMenuManager();
                                     temp.InitState(_objectManagerArray, this.Owner);
                                     temp.EnterState();
                                     _completedSteps++;

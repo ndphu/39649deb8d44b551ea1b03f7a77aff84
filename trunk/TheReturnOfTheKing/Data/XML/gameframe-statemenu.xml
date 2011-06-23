@@ -3,7 +3,7 @@
 <root>
   <Frame id="0">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>150</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -23,7 +23,7 @@
       <!--Null: Không có Standing Ground-->
 
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -38,7 +38,7 @@
 
   <Frame id="1">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>216</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -48,7 +48,7 @@
       <StandingGround>-10</StandingGround>
       
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -63,7 +63,7 @@
 
   <Frame id="2">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>282</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -73,7 +73,7 @@
       <StandingGround>-10</StandingGround>
 
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -88,7 +88,7 @@
 
   <Frame id="3">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>348</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -98,7 +98,7 @@
       <StandingGround>-10</StandingGround>
 
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -113,7 +113,7 @@
 
   <Frame id="4">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>414</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -123,7 +123,7 @@
       <StandingGround>-10</StandingGround>
 
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -138,7 +138,7 @@
 
   <Frame id="5">
     <BackGround>Null</BackGround>
-    <X>-250</X>
+    <X>-275</X>
     <Y>480</Y>
     <Width>250</Width>
     <Height>56</Height>
@@ -148,7 +148,7 @@
       <StandingGround>-10</StandingGround>
 
       <Velocity>
-        <X>24</X>
+        <X>25</X>
         <Y>0</Y>
       </Velocity>
 
@@ -161,14 +161,15 @@
     </MoveInfo>
   </Frame>
 
+  <!--Frame Menu chính-->
   <Frame id="6">
     <BackGround>img/dialog/menu/menu01</BackGround>
     <X>0</X>
-    <Y>-658</Y>
+    <Y>-723</Y>
     <Width>274</Width>
     <Height>658</Height>
 
-    <DelayTime>10</DelayTime>
+    <DelayTime>20</DelayTime>
 
     <MoveInfo>
       <FirstDirection>Down</FirstDirection>
@@ -177,7 +178,7 @@
 
       <Velocity>
         <X>0</X>
-        <Y>51</Y>
+        <Y>53</Y>
       </Velocity>
 
       <Acceleration>
@@ -186,6 +187,211 @@
       </Acceleration>
 
       <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+  
+  <!--Frame gioi thieu chung-->
+  <Frame id="7">
+    <BackGround>Null</BackGround>
+    <X>350</X>
+    <Y>-723</Y>
+    <Width>450</Width>
+    <Height>658</Height>
+
+    <DelayTime>20</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Down</FirstDirection>
+
+      <StandingGround>-85</StandingGround>
+
+      <Velocity>
+        <X>0</X>
+        <Y>53</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>0</X>
+        <Y>2</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="8">
+    <BackGround>img/dialog/menu/intro/selectmode</BackGround>
+    <X>0</X>
+    <Y>-723</Y>
+    <Width>274</Width>
+    <Height>658</Height>
+
+    <DelayTime>20</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Down</FirstDirection>
+
+      <StandingGround>-85</StandingGround>
+
+      <Velocity>
+        <X>0</X>
+        <Y>53</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>0</X>
+        <Y>2</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+
+  <!--MỘt số frame button trong state intro-->
+  <!--fream cua 3 button select mode-->
+  <Frame id="9">
+    <BackGround>Null</BackGround>
+    <X>-275</X>
+    <Y>150</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>60</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>25</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+  
+  <Frame id="10">
+    <BackGround>Null</BackGround>
+    <X>-275</X>
+    <Y>216</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>65</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>25</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+  
+  <Frame id="11">
+    <BackGround>Null</BackGround>
+    <X>-275</X>
+    <Y>282</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>70</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>25</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+  
+  <!--fram button exit-->
+  <Frame id="12">
+    <BackGround>Null</BackGround>
+    <X>-275</X>
+    <Y>490</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+    <DelayTime>75</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Right</FirstDirection>
+      <StandingGround>-10</StandingGround>
+
+      <Velocity>
+        <X>25</X>
+        <Y>0</Y>
+      </Velocity>
+
+      <Acceleration>
+        <X>1</X>
+        <Y>0</Y>
+      </Acceleration>
+
+      <DecelerationRate>6</DecelerationRate>
+    </MoveInfo>
+  </Frame>
+  
+  <!--frame programer 1-->
+  <Frame id="13">
+    <BackGround>img/dialog/menu/intro/DacPhu</BackGround>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>450</Width>
+    <Height>658</Height>
+
+    <DelayTime>20</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+  
+  <!--frame programer 2-->
+  <Frame id="14">
+    <BackGround>img/dialog/menu/intro/MinhQuan</BackGround>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>450</Width>
+    <Height>658</Height>
+
+    <DelayTime>20</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+  
+  <!--about game-->
+  <Frame id="15">
+    <BackGround>img/dialog/menu/intro/introgame</BackGround>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>450</Width>
+    <Height>658</Height>
+
+    <DelayTime>20</DelayTime>
+
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
     </MoveInfo>
   </Frame>
 </root>

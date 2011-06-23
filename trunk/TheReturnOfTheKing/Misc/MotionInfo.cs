@@ -113,6 +113,20 @@ namespace TheReturnOfTheKing
 
 //----------------------FUNCTION-----------------------------------------------------
 
+        public MotionInfo Clone()
+        {
+            MotionInfo _save = new MotionInfo();
+            _save.Owner = Owner;
+            _save.FirstDection = FirstDection;
+            _save.NowDirection = NowDirection;
+            _save.StandingGround = StandingGround;
+            _save.Vel = Vel;
+            _save.Accel = Accel;
+            _save.DecelerationRate = DecelerationRate;
+            _save.IsStanding = IsStanding;
+            return _save;
+        }
+
         //Hàm chuyển động, nhận vào vị trí trước đó và trả về vị trí cần cập nhật..
         public void Move(Vector2 _prePosition)
         {
@@ -311,6 +325,7 @@ namespace TheReturnOfTheKing
                         }
                     case "Up":
                         {
+                            #region
                             if (_nowDirection == "Up")
                             {
                                 _vel -= _accel;
@@ -332,10 +347,33 @@ namespace TheReturnOfTheKing
                                 }
                             }
                             break;
+                            #endregion
                         }
                     case "Down":
                         {
+                            #region
+                            if (_nowDirection == "Down")
+                            {
+                                _vel -= _accel;
+                                _newPosition += _vel;
+                                if (_vel.Y <= 0)
+                                {
+                                    _nowDirection = "Up";
+                                    _vel = _velGoOutY;
+                                }
+                            }
+                            else
+                            {
+                                _vel += _accel;
+                                _newPosition -= _vel;
+                                if (_newPosition.Y < (0.1 * _owner.Height + _owner.Height) * -1)
+                                {
+                                    _isStanding = true;
+                                    _newPosition.Y = (int) ((0.1 * _owner.Height + _owner.Height) * -1);
+                                }
+                            }
                             break;
+                            #endregion
                         }
                 }
             }

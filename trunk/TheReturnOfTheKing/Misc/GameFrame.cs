@@ -210,7 +210,8 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            if (_iDelayTime == _delayTime && _isVisible == true)
+            //if (_iDelayTime == _delayTime && _isVisible == true)
+            if (_isVisible == true)
             {
                 for (int i = 0; i < _nChild; i++)
                 {

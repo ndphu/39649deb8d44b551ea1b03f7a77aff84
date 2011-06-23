@@ -72,4 +72,40 @@
     <Height>56</Height>
   </Button>
   
+  <!--State Intro-->
+  <Button id ="6">
+    <Image>
+      <Idle>img/dialog/control/button/aboutgame/idle</Idle>
+      <Clicked>img/dialog/control/button/aboutgame/clicked</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>0</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+  
+  <Button id ="7">
+    <Image>
+      <Idle>img/dialog/control/button/programer1/idle</Idle>
+      <Clicked>img/dialog/control/button/programer1/clicked</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>0</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="8">
+    <Image>
+      <Idle>img/dialog/control/button/programer2/idle</Idle>
+      <Clicked>img/dialog/control/button/programer2/clicked</Clicked>
+    </Image>
+
+    <X>0</X>
+    <Y>0</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
 </root>
