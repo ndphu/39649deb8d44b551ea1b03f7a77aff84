@@ -269,17 +269,21 @@ namespace TheReturnOfTheKing
             GameFrame _frame = (GameFrame)sender;
             if (_frame.IsVisible == false)
             {
-                int nObjectManager = 8;
+                int nObjectManager = 12;
                 GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
 
                 objectManagerArray[1] = new MapManager(@"Data\Map\map.xml");
                 objectManagerArray[0] = new PlayerCharacterManager(@"Data\character\character.xml");
                 objectManagerArray[2] = new MonsterManager(@"Data\monster\monster.xml");
-                objectManagerArray[3] = new ProcessBarManager(@"Data\XML\loadingprocessbar.xml");
+                objectManagerArray[3] = new ProcessBarManager(@"Data\XML\processbar-stateloading.xml");
                 objectManagerArray[4] = new PortralManager(@"Data\Portral\Portral.xml");
                 objectManagerArray[5] = new MapObstacleManager(@"Data\MapObstacle\MapObstacle.xml");
                 objectManagerArray[6] = new ProjectileManager(@"Data\Projectile\Projectile.xml");
                 objectManagerArray[7] = new SkillManager(@"Data\Skill\Skill.xml");
+                objectManagerArray[8] = new GameFrameManager(@"Data\XML\gameframe-statemaingame.xml");
+                objectManagerArray[9] = new ProcessBarManager(@"Data\XML\processbar-statemaingame.xml");
+                objectManagerArray[10] = new ButtonManger(@"Data\XML\buttonmanager-statemaingame.xml");
+                objectManagerArray[11] = new LabelManager(@"Data\XML\labelmanager-statemaingame.xml");
 
 
                 Owner.GameState = new StateLoading();
