@@ -775,11 +775,14 @@ namespace TheReturnOfTheKing
             _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
             _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(11)));
             _listRightHandSkill.Add((InvisiblePoisonSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(12)));
-            for (int i = 0; i < _listRightHandSkill.Count; ++i)
+            _listRightHandSkill.Add((LightningStrike)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(13)));
+            for (int i = 0; i < _listRightHandSkill.Count - 1; ++i)
             {
                     _listRightHandSkill[i].PlayerOwner = this;
                     _listRightHandSkill[i].Level = 0;
             }
+            _listRightHandSkill[_listRightHandSkill.Count - 1].PlayerOwner = this;
+            _listRightHandSkill[_listRightHandSkill.Count - 1].Level = 1;
         }
     }
 }
