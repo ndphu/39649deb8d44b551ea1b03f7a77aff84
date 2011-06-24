@@ -92,6 +92,7 @@
     <Compile Include="GameState\StateLoadGame.cs" />
     <Compile Include="GameState\StateMenuManager.cs" />
     <Compile Include="GameState\StateOptions.cs" />
+    <Compile Include="LightningStrike.cs" />
     <Compile Include="Manager\BackgroundManager.cs" />
     <Compile Include="GameObject\Skill\BashAttackSkill.cs" />
     <Compile Include="Manager\ButtonManger.cs" />

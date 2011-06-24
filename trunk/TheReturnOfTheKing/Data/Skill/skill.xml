@@ -426,8 +426,17 @@
       <ProjectileType>16</ProjectileType>
       <Duration>6</Duration>
     </Level>
+    <Skill id="13">
+      <Name>Lightning Strike</Name>
+      <Clicked>img/skillicon/Clicked/00</Clicked>
+      <Idle>img/skillicon/Idle/00</Idle>
+      <Large>img/skillicon/Large/00</Large>
+      <Level>
+        <MP>-10</MP>
+        <ProjectileType>17</ProjectileType>
+      </Level>
+    </Skill>
   </Skill>
-
   <!--
   <Skill id="2">
     <Name>Other</Name>

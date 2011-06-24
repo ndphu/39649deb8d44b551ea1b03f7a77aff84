@@ -223,6 +223,18 @@
     <HitFrame>2</HitFrame>
   </Projectile>
 
+  <Projectile id="17">
+    <ContentName>img/skill/skill18/D0</ContentName>
+    <NumOfFrame>10</NumOfFrame>
+    <XOffset>-15</XOffset>
+    <YOffset>-18</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>1</ObstacleWidth>
+    <ObstacleHeight>1</ObstacleHeight>
+    <HitFrame>5</HitFrame>
+  </Projectile>
+
   <!--<Projectile id="0">
     <ContentName>img/skill/skill01/D</ContentName>
     <NumOfFrame>20</NumOfFrame>

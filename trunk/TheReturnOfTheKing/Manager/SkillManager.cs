@@ -345,6 +345,26 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "Lightning Strike":
+                    {
+                        _prototype[id] = new LightningStrike();
+                        _prototype[id]._nsprite = 0;
+                        ((LightningStrike)_prototype[id]).Name = "Lightning Strike";
+                        ((LightningStrike)_prototype[id]).Level = 0;
+                        ((LightningStrike)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.ProjectileType = int.Parse(_levelList[i].SelectSingleNode(@"ProjectileType").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((LightningStrike)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         
