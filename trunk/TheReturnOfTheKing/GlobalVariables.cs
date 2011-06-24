@@ -166,5 +166,13 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables._globalRandom; }
             set { GlobalVariables._globalRandom = value; }
         }
+
+        static bool isPauseGame;
+
+        public static bool IsPauseGame
+        {
+            get { return GlobalVariables.isPauseGame; }
+            set { GlobalVariables.isPauseGame = value; }
+        }
     }
 }

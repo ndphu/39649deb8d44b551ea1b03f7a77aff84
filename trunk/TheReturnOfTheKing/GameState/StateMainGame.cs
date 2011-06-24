@@ -99,88 +99,96 @@ namespace TheReturnOfTheKing
         public override void UpdateState(GameTime gameTime)
         {
             base.UpdateState(gameTime);
+            if (!GlobalVariables.IsPauseGame)
+            {               
 
-            float minX = Math.Abs(GlobalVariables.dX);
-            float maxX = Math.Abs(GlobalVariables.dX) + GlobalVariables.ScreenWidth;
-            float minY = Math.Abs(GlobalVariables.dY);
-            float maxY = Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight;
-            GlobalVariables.GameCursor.IsIdle = true;
-            GlobalVariables.AlreadyUseLeftMouse = false;
-            GlobalVariables.AlreadyUseRightMouse = false;
+                float minX = Math.Abs(GlobalVariables.dX);
+                float maxX = Math.Abs(GlobalVariables.dX) + GlobalVariables.ScreenWidth;
+                float minY = Math.Abs(GlobalVariables.dY);
+                float maxY = Math.Abs(GlobalVariables.dY) + GlobalVariables.ScreenHeight;
+                GlobalVariables.GameCursor.IsIdle = true;
+                GlobalVariables.AlreadyUseLeftMouse = false;
+                GlobalVariables.AlreadyUseRightMouse = false;
 
-            _healthBar.Update(gameTime);
-            _lhSkillSelectionFrame.Update(gameTime);
-            _rhSkillSelectionFrame.Update(gameTime);
-            _skillBoard.Update(gameTime);
+                _healthBar.Update(gameTime);
+                _lhSkillSelectionFrame.Update(gameTime);
+                _rhSkillSelectionFrame.Update(gameTime);
+                _skillBoard.Update(gameTime);
 
-            _listToDraw.Clear();
-            _map.Update(gameTime);
-            
+                _listToDraw.Clear();
+                _map.Update(gameTime);
 
-            for (int i = 0; i < _listObstacle.Count; ++i)
-            {
-                if (minX < _listObstacle[i].X && _listObstacle[i].X < maxX && minY < _listObstacle[i].Y && _listObstacle[i].Y < maxY)
+
+                for (int i = 0; i < _listObstacle.Count; ++i)
                 {
-                    _listObstacle[i].Update(gameTime);
-                    _listToDraw.Add(_listObstacle[i]);
-                }
-            }
-
-            for (int i = 0; i < _listPortral.Count; ++i)
-            {
-                if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
-                {
-                    _listPortral[i].Update(gameTime);
-                    _listToDraw.Add(_listPortral[i]);
-                }
-            }
-
-            for (int i = 0; i < _listMonsters.Count; ++i)
-            {
-                if (minX < _listMonsters[i].X && _listMonsters[i].X < maxX && minY < _listMonsters[i].Y && _listMonsters[i].Y < maxY)
-                {
-                    _listMonsters[i].Update(gameTime);
-                    _listToDraw.Add(_listMonsters[i]);
-                    
-                    if (_listMonsters[i].IsDyed)
+                    if (minX < _listObstacle[i].X && _listObstacle[i].X < maxX && minY < _listObstacle[i].Y && _listObstacle[i].Y < maxY)
                     {
-                        _listMonsters.Remove(_listMonsters[i]);
+                        _listObstacle[i].Update(gameTime);
+                        _listToDraw.Add(_listObstacle[i]);
                     }
                 }
-            }
-            for (int i = 0; i < _listProjectile.Count; ++i)
-            {
-                _listProjectile[i].Update(gameTime);
-                if ((_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1 && _listProjectile[i].IsRemoveAfterEffect) || (_listProjectile[i].LifeTime <= 0 && !_listProjectile[i].IsRemoveAfterEffect))
-                    _listProjectile.Remove(_listProjectile[i]);
-            }
-            _char.Update(gameTime);
-            _listToDraw.Add(_char);
 
+                for (int i = 0; i < _listPortral.Count; ++i)
+                {
+                    if (minX < _listPortral[i].X && _listPortral[i].X < maxX && minY < _listPortral[i].Y && _listPortral[i].Y < maxY)
+                    {
+                        _listPortral[i].Update(gameTime);
+                        _listToDraw.Add(_listPortral[i]);
+                    }
+                }
+
+                for (int i = 0; i < _listMonsters.Count; ++i)
+                {
+                    if (minX < _listMonsters[i].X && _listMonsters[i].X < maxX && minY < _listMonsters[i].Y && _listMonsters[i].Y < maxY)
+                    {
+                        _listMonsters[i].Update(gameTime);
+                        _listToDraw.Add(_listMonsters[i]);
+
+                        if (_listMonsters[i].IsDyed)
+                        {
+                            _listMonsters.Remove(_listMonsters[i]);
+                        }
+                    }
+                }
+                for (int i = 0; i < _listProjectile.Count; ++i)
+                {
+                    _listProjectile[i].Update(gameTime);
+                    if ((_listProjectile[i]._sprite[0].Itexture2D == _listProjectile[i]._sprite[0].Ntexture2D - 1 && _listProjectile[i].IsRemoveAfterEffect) || (_listProjectile[i].LifeTime <= 0 && !_listProjectile[i].IsRemoveAfterEffect))
+                        _listProjectile.Remove(_listProjectile[i]);
+                }
+                _char.Update(gameTime);
+                _listToDraw.Add(_char);
+
+
+
+                if (_char.IsDyed)
+                {
+                    int nObjectManager = 4;
+                    GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
+                    objectManagerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
+                    objectManagerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
+                    objectManagerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
+                    objectManagerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
+
+                    GlobalVariables.dX = 0;
+                    GlobalVariables.dY = 0;
+
+                    Owner.GameState.ExitState();
+                    Owner.GameState = new StateLoading();
+                    Owner.GameState.InitState(null, this.Owner);
+                    ((StateLoading)Owner.GameState).GetDataLoading(this.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
+                    Owner.GameState.EnterState();
+                    Owner.ResetElapsedTime();
+                }
+
+                _displayMessageLayer.Update(gameTime);
+                _frog.Update(gameTime);
+            }
             
-
-            if (_char.IsDyed)
-            {
-                int nObjectManager = 4;
-                GameObjectManager[] objectManagerArray = new GameObjectManager[nObjectManager];
-                objectManagerArray[0] = new ButtonManger(@"./Data/XML/buttonmanager.xml");
-                objectManagerArray[1] = new BackgroundManager(@"./Data/XML/menubg.xml");
-                objectManagerArray[2] = new MenuFrameManager(@"./Data/XML/menuframe.xml");
-                objectManagerArray[3] = new GameTitleManager(@"./Data/XML/gametitle.xml");
-
-                GlobalVariables.dX = 0;
-                GlobalVariables.dY = 0;
-
-                Owner.GameState.ExitState();
-                Owner.GameState = new StateLoading();
-                Owner.GameState.InitState(null, this.Owner);
-                ((StateLoading)Owner.GameState).GetDataLoading(this.Owner.Content, @"./Data/XML/loadingtomenu.xml", objectManagerArray, typeof(StateMenu));
-                Owner.GameState.EnterState();
-                Owner.ResetElapsedTime();
-            }
-
-            _displayMessageLayer.Update(gameTime);
-            _frog.Update(gameTime);
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.N))
+                GlobalVariables.IsPauseGame = true;
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.M))
+                GlobalVariables.IsPauseGame = false;
         }
         
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -212,6 +220,11 @@ namespace TheReturnOfTheKing
             _rhSkillSelectionFrame.Draw(gameTime, sb);
             _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);
+            if (GlobalVariables.IsPauseGame)
+            {
+                Texture2D texture = Owner.Content.Load<Texture2D>("manhinhmo");
+                sb.Draw(texture, new Vector2(0, 0), Color.White);
+            }
         }
 
         public override void ExitState()

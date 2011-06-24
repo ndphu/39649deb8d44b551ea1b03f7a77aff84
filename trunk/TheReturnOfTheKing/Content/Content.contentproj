@@ -38510,6 +38510,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="manhinhmo.png">
+      <Name>manhinhmo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="img\item\" />
     <Folder Include="snd\" />
   </ItemGroup>
