@@ -33,7 +33,26 @@
     <Y>52</Y>
     <Type>2</Type>
   </Monster>
-
+  <Monster>
+    <X>17</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
+  <Monster>
+    <X>17</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
+  <Monster>
+    <X>17</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
+  <Monster>
+    <X>17</X>
+    <Y>52</Y>
+    <Type>2</Type>
+  </Monster>
   <Monster>
     <X>15</X>
     <Y>52</Y>

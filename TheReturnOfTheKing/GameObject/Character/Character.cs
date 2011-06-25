@@ -639,14 +639,14 @@ namespace TheReturnOfTheKing
                     {
                         Owner._char.Level += 1;
                         Owner._char.CurrentEXP = 0;
-                        Owner._char.NextLevelEXP += Owner._char.NextLevelEXP * 25 / 10;
+                        Owner._char.NextLevelEXP += Owner._char.NextLevelEXP * 80 / 100;
                         Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(18);
                         prjt.X = Owner._char.X;
                         prjt.Y = Owner._char.Y; 
                         Owner._char.AdditionnalEffect.Add(prjt);
                         Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                         {
-                            MessageContent = "Up to " + Owner._char.Level.ToString(),
+                            MessageContent = "Level up to " + Owner._char.Level.ToString(),
                             TextColor = Color.LightBlue,
                             X = Owner._char.X,
                             Y = Owner._char.Y - 32,

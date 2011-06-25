@@ -372,6 +372,7 @@ namespace TheReturnOfTheKing
                 MaxMp = this.MaxMp,
                 ChangeToDodge = this.ChangeToDodge,
                 NextLevelEXP = this.NextLevelEXP,
+                Level = this.Level,
             };
         }
         
