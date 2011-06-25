@@ -63,6 +63,28 @@ namespace TheReturnOfTheKing
             set { _motionGoIn = value; }
         }
 
+        int _lhAddition;
+        public int LhAddition
+        {
+            get { return _lhAddition; }
+            set { _lhAddition = value; }
+        }
+
+        int _rhAddition;
+        public int RhAddition
+        {
+            get { return _rhAddition; }
+            set { _rhAddition = value; }
+        }
+
+        int _passiveAddition;
+        public int PassiveAddition
+        {
+            get { return _passiveAddition; }
+            set { _passiveAddition = value; }
+        }
+
+        int _preLevelOfChar;
 //Các control trên tab......
         #region Các button dùng chung trên tab control
         Button _btLeftSkillControl;
@@ -293,6 +315,29 @@ namespace TheReturnOfTheKing
             get { return _lbInvisible; }
             set { _lbInvisible = value; }
         }
+
+        //Label điểm cộng skill
+        Label _lbLHAddition;
+        public Label LbLHAddition
+        {
+            get { return _lbLHAddition; }
+            set { _lbLHAddition = value; }
+        }
+
+        Label _lbRHAddition;
+
+        public Label LbRHAddition
+        {
+            get { return _lbRHAddition; }
+            set { _lbRHAddition = value; }
+        }
+
+        Label _lbPassiveAddtion;
+        public Label LbPassiveAddtion
+        {
+            get { return _lbPassiveAddtion; }
+            set { _lbPassiveAddtion = value; }
+        }
 #endregion
 
         #region Passive skill
@@ -358,6 +403,12 @@ namespace TheReturnOfTheKing
         //---------------------------------------------------------------------------------------------------
         public void GetResources(List<GameObjectManager> _resources)
         {
+            //Khoi tao cac bien Addition
+            _lhAddition = 1;
+            _rhAddition = 1;
+            _passiveAddition = 1;
+            _preLevelOfChar = _character.Level;
+
             _boardFrame = (GameFrame)_resources[0].CreateObject(1);
             _boardFrame.IsVisible = false;
 
@@ -446,6 +497,10 @@ namespace TheReturnOfTheKing
             _lbSkillBash = (Label)_resources[2].CreateObject(5);
             _lbSkillBash.Owner = _character.ListLeftHandSkill[6];
 
+            //Label diem cong
+            _lbLHAddition = (Label)_resources[2].CreateObject(15);
+            _lbLHAddition.StringInfo = _lhAddition.ToString();
+
             _lefthandFrame = (GameFrame)_resources[0].CreateObject(2);
 
             //4 vị trí đầu là các control trên tab
@@ -471,6 +526,8 @@ namespace TheReturnOfTheKing
 
             _lefthandFrame.AddChild(_btSkillBash);
             _lefthandFrame.AddChild(_lbSkillBash);
+
+            _lefthandFrame.AddChild(_lbLHAddition);
 
             //Add vào tab control (Frame mẹ)
             _boardFrame.AddChild(_lefthandFrame);
@@ -546,6 +603,10 @@ namespace TheReturnOfTheKing
 
             _lbInvisible = (Label)_resources[2].CreateObject(11);
             _lbInvisible.Owner = _character.ListRightHandSkill[6];
+
+            //Label diem cong
+            _lbRHAddition = (Label)_resources[2].CreateObject(15);
+            _lbRHAddition.StringInfo = _rhAddition.ToString();
              
     //RightthandFrame-hand frame           
             _rightthandFrame = (GameFrame)_resources[0].CreateObject(3);
@@ -572,10 +633,13 @@ namespace TheReturnOfTheKing
             _rightthandFrame.AddChild(_btInvisible);
             _rightthandFrame.AddChild(_lbInvisible);
 
+            _rightthandFrame.AddChild(_lbRHAddition);
+
             _boardFrame.AddChild(_rightthandFrame);
             #endregion
 
 //Passive tab
+            #region
             _btPassiveExit = (Button)_resources[1].CreateObject(13);
             _btPassiveExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_PassiveExit);
 
@@ -615,6 +679,10 @@ namespace TheReturnOfTheKing
             _lbBlur = (Label)_resources[2].CreateObject(14);
             _lbBlur.Owner = _character.ListPassiveSkill[2];
 
+            //label diem cong
+            _lbPassiveAddtion = (Label)_resources[2].CreateObject(15);
+            _lbPassiveAddtion.StringInfo = _passiveAddition.ToString();
+
             //Passive frame
             _passiveFrame = (GameFrame)_resources[0].CreateObject(4);
             _passiveFrame.AddChild(_btLeftSkillControl);
@@ -631,10 +699,28 @@ namespace TheReturnOfTheKing
             _passiveFrame.AddChild(_btBlur);
             _passiveFrame.AddChild(_lbBlur);
 
+            _passiveFrame.AddChild(_lbPassiveAddtion);
+
             _boardFrame.AddChild(_passiveFrame);
+            #endregion
             _iCurrentBoard = 0;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
             _rect = new Rectangle((int)_boardFrame.X, (int)_boardFrame.Y, (int)_boardFrame.Width, (int)_boardFrame.Height);
+            
+            //Khởi tạo 1 số giá trị mặt định về skill của nhân vật
+            //Left hand
+            _btSkillCurse.Endalbe = false;
+            _btSkillOverSpeed.Endalbe = false;
+            _btSkillLifeSteal.Endalbe = false;
+            _btSkillBash.Endalbe = false;
+            //Right
+            _btEathShakeSkill.Endalbe = false;
+            _btWaveFormSkill.Endalbe = false;
+            _btLightingField.Endalbe = false;
+            _btInvisible.Endalbe = false;
+            //Passive
+            //_btGodStrength.Endalbe = false;
+            //_btBlur.Endalbe = false;
         }
 
         public void SetCharacter(PlayerCharacter _char)
@@ -666,6 +752,51 @@ namespace TheReturnOfTheKing
                     }
                 }
             }
+
+            //Update level của Character
+            if (_character.Level > _preLevelOfChar)
+            {
+                _preLevelOfChar = _character.Level;
+                _lhAddition++;
+                _lbLHAddition.StringInfo = _lhAddition.ToString();
+                _lbLHAddition.StringColor = new Color(235, 235, 235);
+
+                _rhAddition++;
+                _lbRHAddition.StringInfo = _rhAddition.ToString();
+                _lbRHAddition.StringColor = new Color(235, 235, 235);
+                //chỉ o nhung~ level lẻ, người choi mới co dc 1 diem cộng cho skill passive
+                if ((_preLevelOfChar % 2) == 1)
+                {
+                    _passiveAddition++;
+                    _lbPassiveAddtion.StringInfo = _passiveAddition.ToString();
+                    _lbPassiveAddtion.StringColor = new Color(235, 235, 235);
+                }
+                
+                if (_preLevelOfChar == 6)
+                {
+                    //left hand
+                    _btSkillCurse.Endalbe = true;
+                    _btSkillOverSpeed.Endalbe = true;
+                    //right hand
+                    _btEathShakeSkill.Endalbe = true;
+                    _btWaveFormSkill.Endalbe = true;
+                    //passive
+                    _btGodStrength.Endalbe = true;
+                }
+                if (_preLevelOfChar == 12)
+                {
+                    //left hand
+                    _btSkillLifeSteal.Endalbe = true;
+                    _btSkillBash.Endalbe = true;
+                    //right hand
+                    _btLightingField.Endalbe = true;
+                    _btInvisible.Endalbe = true;
+                    //passive
+                    _btBlur.Endalbe = true;
+                }
+            }
+
+            //update các label thong bao mức cộng của skill
 
             _currentBoard.Update(gameTime);
 
@@ -762,7 +893,7 @@ namespace TheReturnOfTheKing
         #region CleavingAttack Skill
         public void SkillBoard_MouseClick_CleavingAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CleavingAttack(object sender, EventArgs e)
@@ -779,7 +910,7 @@ namespace TheReturnOfTheKing
         #region CriticalAttack Skill
         public void SkillBoard_MouseClick_CriticalAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CriticalAttack(object sender, EventArgs e)
@@ -796,7 +927,7 @@ namespace TheReturnOfTheKing
         #region CurseAttack Skill
         public void SkillBoard_MouseClick_CurseAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_CurseAttack(object sender, EventArgs e)
@@ -813,7 +944,7 @@ namespace TheReturnOfTheKing
         #region OverSpeedAttack Skill
         public void SkillBoard_MouseClick_OverSpeedAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_OverSpeedAttack(object sender, EventArgs e)
@@ -830,7 +961,7 @@ namespace TheReturnOfTheKing
         #region LifeStealAttack Skill
         public void SkillBoard_MouseClick_LifeStealAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_LifeStealAttack(object sender, EventArgs e)
@@ -847,7 +978,7 @@ namespace TheReturnOfTheKing
         #region BashAttack Skill
         public void SkillBoard_MouseClick_BashAttack(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpLeftHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_BashAttack(object sender, EventArgs e)
@@ -885,7 +1016,7 @@ namespace TheReturnOfTheKing
         #region Deadly bees skill
         public void SkillBoard_MouseClick_DeadlyBees(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_DeadlyBees(object sender, EventArgs e)
@@ -902,7 +1033,7 @@ namespace TheReturnOfTheKing
         #region Soul Release
         public void SkillBoard_MouseClick_SoulRelease(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_SoulRelease(object sender, EventArgs e)
@@ -919,7 +1050,7 @@ namespace TheReturnOfTheKing
         #region Earth Share skill
         public void SkillBoard_MouseClick_EarthShake(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_EarthShake(object sender, EventArgs e)
@@ -936,7 +1067,7 @@ namespace TheReturnOfTheKing
         #region Wave form
         public void SkillBoard_MouseClick_WaveForm(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_WaveForm(object sender, EventArgs e)
@@ -953,7 +1084,7 @@ namespace TheReturnOfTheKing
         #region Lighting Field
         public void SkillBoard_MouseClick_LightingField(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_LightingField(object sender, EventArgs e)
@@ -970,7 +1101,7 @@ namespace TheReturnOfTheKing
         #region Invisible posiiotn
         public void SkillBoard_MouseClick_Invisible(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpRightHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_Invisible(object sender, EventArgs e)
@@ -1009,7 +1140,7 @@ namespace TheReturnOfTheKing
         //Great Fortitude
         public void SkillBoard_MouseClick_GreatFortitude(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpPassiveHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_GreatFortitude(object sender, EventArgs e)
@@ -1025,7 +1156,7 @@ namespace TheReturnOfTheKing
         //GodStrenght
         public void SkillBoard_MouseClick_GodStrenght(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpPassiveHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_GodStrenght(object sender, EventArgs e)
@@ -1041,7 +1172,7 @@ namespace TheReturnOfTheKing
         //Blur
         public void SkillBoard_MouseClick_Blur(object sender, EventArgs e)
         {
-            LevelUp((Button)sender);
+            LevelUpPassiveHand((Button)sender);
         }
 
         public void SkillBoard_MouseHover_Blur(object sender, EventArgs e)
@@ -1090,11 +1221,64 @@ namespace TheReturnOfTheKing
             ((Skill)_button.Owner).CurrentButton = null;
         }
 
-        public void LevelUp(Button _button)
+        public void LevelUpLeftHand(Button _button)
         {
+            if (_lhAddition < 1)
+                return;
             if (((Skill)_button.Owner).Level < ((Skill)_button.Owner).ListLevel.Count - 1)
             {
                 ((Skill)_button.Owner).Level++;
+                _lhAddition--;
+                _lbLHAddition.StringInfo = _lhAddition.ToString();
+                if (_lhAddition == 0)
+                {
+                    _lbLHAddition.StringColor = Color.Red;
+                }
+
+                if (((Skill)_button.Owner).Level == ((Skill)_button.Owner).ListLevel.Count - 1)
+                {
+                    _button.Endalbe = false;
+                    _button.ColorToDraw = Color.White;
+                }
+            }
+        }
+
+        public void LevelUpRightHand(Button _button)
+        {
+            if (_rhAddition < 1)
+                return;
+            if (((Skill)_button.Owner).Level < ((Skill)_button.Owner).ListLevel.Count - 1)
+            {
+                ((Skill)_button.Owner).Level++;
+                _rhAddition--;
+                _lbRHAddition.StringInfo = _rhAddition.ToString();
+                if (_rhAddition == 0)
+                {
+                    _lbRHAddition.StringColor = Color.Red;
+                }
+
+                if (((Skill)_button.Owner).Level == ((Skill)_button.Owner).ListLevel.Count - 1)
+                {
+                    _button.Endalbe = false;
+                    _button.ColorToDraw = Color.White;
+                }
+            }
+        }
+
+        public void LevelUpPassiveHand(Button _button)
+        {
+            //if (_passiveAddition < 1)
+            //    return;
+            if (((Skill)_button.Owner).Level < ((Skill)_button.Owner).ListLevel.Count - 1)
+            {
+                ((Skill)_button.Owner).Level++;
+                _passiveAddition--;
+                _lbPassiveAddtion.StringInfo = _passiveAddition.ToString();
+                if (_passiveAddition == 0)
+                {
+                    _lbPassiveAddtion.StringColor = Color.Red;
+                }
+
                 if (((Skill)_button.Owner).Level == ((Skill)_button.Owner).ListLevel.Count - 1)
                 {
                     _button.Endalbe = false;

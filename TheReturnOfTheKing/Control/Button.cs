@@ -34,6 +34,7 @@ namespace TheReturnOfTheKing
                 if (_endalbe)
                 {
                     _colorToDraw = Color.White;
+                    _sprite[0].Itexture2D = 0;
                 }
                 else
                 {
