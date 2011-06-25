@@ -121,6 +121,31 @@ namespace TheReturnOfTheKing
             get { return _level; }
             set { _level = value; }
         }
+        /// <summary>
+        /// Điểm kinh nghiệm hiện có
+        /// </summary>
+        int _currentEXP;
+
+        public int CurrentEXP
+        {
+            get { return _currentEXP; }
+            set { _currentEXP = value; }
+        }
+        /// <summary>
+        /// Điểm kinh nghiệm cần có để lên cấp tiếp theo
+        /// </summary>
+        int _nextLevelEXP;
+
+        public int NextLevelEXP
+        {
+            get { return _nextLevelEXP; }
+            set { _nextLevelEXP = value; }
+        }
+
+
+        /// <summary>
+        /// Đang cast skill
+        /// </summary>
 
         public override bool IsCasting
         {
@@ -346,6 +371,7 @@ namespace TheReturnOfTheKing
                 MaxHp = this.MaxHp,
                 MaxMp = this.MaxMp,
                 ChangeToDodge = this.ChangeToDodge,
+                NextLevelEXP = this.NextLevelEXP,
             };
         }
         
@@ -391,6 +417,7 @@ namespace TheReturnOfTheKing
                 IsStanding = true;
                 CellToMove = new List<Point>();
             }
+            
             if (IsDying || IsDyed)
                 return;
 
@@ -769,20 +796,21 @@ namespace TheReturnOfTheKing
                     _listLeftHandSkill[i].Level = 0;
             }
             _listRightHandSkill = new List<Skill>();
+            _listRightHandSkill.Add((LightningStrike)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(13)));
             _listRightHandSkill.Add((DeadlyBeeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(7)));
             _listRightHandSkill.Add((SoulsReleaseSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
             _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(9)));
             _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
             _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(11)));
             _listRightHandSkill.Add((InvisiblePoisonSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(12)));
-            _listRightHandSkill.Add((LightningStrike)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(13)));
-            for (int i = 0; i < _listRightHandSkill.Count - 1; ++i)
+            _listRightHandSkill[0].PlayerOwner = this;
+            _listRightHandSkill[0].Level = 1;
+            for (int i = 1; i < _listRightHandSkill.Count; ++i)
             {
                     _listRightHandSkill[i].PlayerOwner = this;
                     _listRightHandSkill[i].Level = 0;
             }
-            _listRightHandSkill[_listRightHandSkill.Count - 1].PlayerOwner = this;
-            _listRightHandSkill[_listRightHandSkill.Count - 1].Level = 1;
+            
         }
     }
 }

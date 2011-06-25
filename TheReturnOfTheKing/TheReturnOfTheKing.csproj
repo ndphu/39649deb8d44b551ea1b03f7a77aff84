@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObject\Projectile\LightningStrikeProjectileController.cs" />
     <Compile Include="GameObject\Skill\InvisiblePoisonSkill.cs" />
     <Compile Include="GameObject\Skill\LightningFieldSkill.cs" />
     <Compile Include="GameObject\Projectile\LightningProjectileController.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="GameState\StateLoadGame.cs" />
     <Compile Include="GameState\StateMenuManager.cs" />
     <Compile Include="GameState\StateOptions.cs" />
-    <Compile Include="LightningStrike.cs" />
+    <Compile Include="GameObject\Skill\LightningStrike.cs" />
     <Compile Include="Manager\BackgroundManager.cs" />
     <Compile Include="GameObject\Skill\BashAttackSkill.cs" />
     <Compile Include="Manager\ButtonManger.cs" />

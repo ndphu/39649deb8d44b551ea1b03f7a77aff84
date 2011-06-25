@@ -435,6 +435,10 @@
         <MP>-10</MP>
         <ProjectileType>17</ProjectileType>
       </Level>
+      <Level>
+        <MP>-10</MP>
+        <ProjectileType>17</ProjectileType>
+      </Level>
     </Skill>
   </Skill>
   <!--

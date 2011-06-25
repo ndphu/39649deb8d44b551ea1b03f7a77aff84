@@ -17,6 +17,14 @@ namespace TheReturnOfTheKing
 {
     public class Character : VisibleGameEntity
     {
+        int _expReward;
+
+        public int ExpReward
+        {
+            get { return _expReward; }
+            set { _expReward = value; }
+        }
+
         /// <summary>
         /// Danh sach cac skill da tac dung len quai vat, de tranh truong hop quai vat bi danh boi nhieu projectile cua cung 1 skill
         /// </summary>
@@ -614,7 +622,41 @@ namespace TheReturnOfTheKing
                 if (_sprite[Dir].Itexture2D == _sprite[Dir].Ntexture2D - 1)
                 {
                     IsDyed = true;
-                    
+                    Owner._char.CurrentEXP += ExpReward;
+                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    {
+                        MessageContent = "Gain " + ExpReward.ToString() + " exp",
+                        TextColor = Color.WhiteSmoke,
+                        X = Owner._char.X,
+                        Y = Owner._char.Y - 32,
+                        LifeTime = 60,
+                        MinY = 0,
+                        DelayTime = 0,
+                        DeltaY = -1,
+                        Owner = this,
+                    });
+                    if (Owner._char.CurrentEXP >= Owner._char.NextLevelEXP)
+                    {
+                        Owner._char.Level += 1;
+                        Owner._char.CurrentEXP = 0;
+                        Owner._char.NextLevelEXP += Owner._char.NextLevelEXP * 25 / 10;
+                        Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(18);
+                        prjt.X = Owner._char.X;
+                        prjt.Y = Owner._char.Y; 
+                        Owner._char.AdditionnalEffect.Add(prjt);
+                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        {
+                            MessageContent = "Up to " + Owner._char.Level.ToString(),
+                            TextColor = Color.LightBlue,
+                            X = Owner._char.X,
+                            Y = Owner._char.Y - 32,
+                            LifeTime = 60,
+                            MinY = 0,
+                            DelayTime = 15,
+                            DeltaY = -1,
+                            Owner = this,
+                        });
+                    }
                 }
                 return;
             }

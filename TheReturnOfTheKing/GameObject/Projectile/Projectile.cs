@@ -15,6 +15,7 @@ namespace TheReturnOfTheKing
 {
     public class Projectile : VisibleGameEntity
     {
+        
         /// <summary>
         /// Skill ma projectile nay thuoc ve
         /// </summary>

@@ -51,6 +51,7 @@ namespace TheReturnOfTheKing
                 MaxHp = this.MaxHp,
                 MaxMp = this.MaxMp,
                 ChangeToDodge = this.ChangeToDodge,
+                ExpReward = this.ExpReward,
             };
         }
         

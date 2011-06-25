@@ -232,7 +232,23 @@
     <StartObstacleY>0</StartObstacleY>
     <ObstacleWidth>1</ObstacleWidth>
     <ObstacleHeight>1</ObstacleHeight>
-    <HitFrame>5</HitFrame>
+    <HitFrame>0</HitFrame>
+    <HitFrame>2</HitFrame>
+    <HitFrame>4</HitFrame>
+    <HitFrame>6</HitFrame>
+    <HitFrame>8</HitFrame>
+    <HitFrame>10</HitFrame>
+  </Projectile>
+
+  <Projectile id="18">
+    <ContentName>img/skill/skill19/D0</ContentName>
+    <NumOfFrame>21</NumOfFrame>
+    <XOffset>-50</XOffset>
+    <YOffset>-102</YOffset>
+    <StartObstacleX>0</StartObstacleX>
+    <StartObstacleY>0</StartObstacleY>
+    <ObstacleWidth>0</ObstacleWidth>
+    <ObstacleHeight>0</ObstacleHeight>
   </Projectile>
 
   <!--<Projectile id="0">
