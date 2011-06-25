@@ -9,8 +9,8 @@
     <!--Nếu là Null thì viết cho InnerText là "Null"-->
     <StandingProcessBar>img/misc/processbar/Standing</StandingProcessBar>
 
-    <StartAnimate>20</StartAnimate>
-    <EndAnimate>420</EndAnimate>
+    <StartAnimate>24</StartAnimate>
+    <EndAnimate>417</EndAnimate>
 
     <!--Khi process bar TĂNG giá trị thì tăng theo chiều nào-->
     <!--Có 4 giá trị là "Left", "Right", "Up", "Down". Phải gõ đúng nhé-->

@@ -66,4 +66,21 @@
     <Width>48</Width>
     <Height>48</Height>
   </ProcessBar>
+  
+  <!--Level-->
+  <ProcessBar id="4">
+    <AnimateProcessBar>img/misc/processbar/level/Animate</AnimateProcessBar>
+    <StandingProcessBar>img/misc/processbar/level/Standing</StandingProcessBar>
+
+    <StartAnimate>1</StartAnimate>
+    <EndAnimate>122</EndAnimate>
+
+    <Direction>Right</Direction>
+
+    <X>139</X>
+    <Y>13</Y>
+
+    <Width>123</Width>
+    <Height>6</Height>
+  </ProcessBar>
 </root>
