@@ -23,6 +23,7 @@ namespace TheReturnOfTheKing
             set { _character = value; }
         }
 
+        //frame chính
         GameFrame _mainFrame;
         public GameFrame MainFrame
         {
@@ -30,6 +31,15 @@ namespace TheReturnOfTheKing
             set { _mainFrame = value; }
         }
 
+        //basic
+        Button _btLightingStrike;
+        public Button BtLightingStrike
+        {
+            get { return _btLightingStrike; }
+            set { _btLightingStrike = value; }
+        }
+
+        //bead bee
         Button _btDeadlyBees;
         public Button BtDeadlyBees
         {
@@ -37,6 +47,7 @@ namespace TheReturnOfTheKing
             set { _btDeadlyBees = value; }
         }
 
+        //release souls
         Button _btSoulsRelease;
         public Button BtSoulsRelease
         {
@@ -44,6 +55,7 @@ namespace TheReturnOfTheKing
             set { _btSoulsRelease = value; }
         }
 
+        //earth shake
         Button _btEathShake;
         public Button BtEathShake
         {
@@ -51,6 +63,7 @@ namespace TheReturnOfTheKing
             set { _btEathShake = value; }
         }
 
+        //waveform
         Button _btWaveForm;
         public Button BtWaveForm
         {
@@ -58,6 +71,7 @@ namespace TheReturnOfTheKing
             set { _btWaveForm = value; }
         }
 
+        //lightin field
         Button _btLightingField;
         public Button BtLightingField
         {
@@ -65,6 +79,7 @@ namespace TheReturnOfTheKing
             set { _btLightingField = value; }
         }
 
+        //Invisible
         Button _btInvisible;
         public Button BtInvisible
         {
@@ -72,6 +87,7 @@ namespace TheReturnOfTheKing
             set { _btInvisible = value; }
         }
 
+        //Motion di chuyển
         MotionInfo _motionGoOut;
 
         public MotionInfo MotionGoOut
@@ -93,54 +109,64 @@ namespace TheReturnOfTheKing
             _mainFrame = (GameFrame)_resources[0].CreateObject(6);
             _mainFrame.IsVisible = false;
 
-            _btDeadlyBees = (Button)_resources[1].CreateObject(29);
-            _btDeadlyBees.Owner = _character.ListRightHandSkill[0];
-            _btDeadlyBees.GetNewIdleTexture(_character.ListRightHandSkill[0].IdleIcon);
-            _btDeadlyBees.GetNewClickedTexture(_character.ListRightHandSkill[0].ClickedIcon);
+            _btLightingStrike = (Button)_resources[1].CreateObject(29);
+            _btLightingStrike.Owner = _character.ListRightHandSkill[0];
+            _btLightingStrike.GetNewIdleTexture(_character.ListRightHandSkill[0].IdleIcon);
+            _btLightingStrike.GetNewClickedTexture(_character.ListRightHandSkill[0].ClickedIcon);
+            _btLightingStrike.Mouse_Click += new Button.OnMouseClickHandler(LightingStrike_Clicked);
+            _btLightingStrike.Mouse_Hover += new Button.OnMouseHoverHandler(LightingStrike_Hover);
+            _btLightingStrike.Mouse_Released += new Button.OnMouseReleasedHandler(LightingStrike_Release);
+
+            _btDeadlyBees = (Button)_resources[1].CreateObject(30);
+            _btDeadlyBees.Owner = _character.ListRightHandSkill[1];
+            _btDeadlyBees.GetNewIdleTexture(_character.ListRightHandSkill[1].IdleIcon);
+            _btDeadlyBees.GetNewClickedTexture(_character.ListRightHandSkill[1].ClickedIcon);
             _btDeadlyBees.Mouse_Click += new Button.OnMouseClickHandler(DeadlyBees_Clicked);
             _btDeadlyBees.Mouse_Hover += new Button.OnMouseHoverHandler(DeadlyBees_Hover);
             _btDeadlyBees.Mouse_Released += new Button.OnMouseReleasedHandler(DeadlyBees_Release);
 
-            _btSoulsRelease = (Button)_resources[1].CreateObject(30);
-            _btSoulsRelease.Owner = _character.ListRightHandSkill[1];
-            _btSoulsRelease.GetNewIdleTexture(_character.ListRightHandSkill[1].IdleIcon);
-            _btSoulsRelease.GetNewClickedTexture(_character.ListRightHandSkill[1].ClickedIcon);
+            _btSoulsRelease = (Button)_resources[1].CreateObject(31);
+            _btSoulsRelease.Owner = _character.ListRightHandSkill[2];
+            _btSoulsRelease.GetNewIdleTexture(_character.ListRightHandSkill[2].IdleIcon);
+            _btSoulsRelease.GetNewClickedTexture(_character.ListRightHandSkill[2].ClickedIcon);
             _btSoulsRelease.Mouse_Click += new Button.OnMouseClickHandler(SouldRelease_Clicked);
             _btSoulsRelease.Mouse_Hover += new Button.OnMouseHoverHandler(SouldRelease_Hover);
             _btSoulsRelease.Mouse_Released += new Button.OnMouseReleasedHandler(SouldRelease_Release);
 
-            _btEathShake = (Button)_resources[1].CreateObject(31);
-            _btEathShake.Owner = _character.ListRightHandSkill[2];
-            _btEathShake.GetNewIdleTexture(_character.ListRightHandSkill[2].IdleIcon);
-            _btEathShake.GetNewClickedTexture(_character.ListRightHandSkill[2].ClickedIcon);
+            _btEathShake = (Button)_resources[1].CreateObject(32);
+            _btEathShake.Owner = _character.ListRightHandSkill[3];
+            _btEathShake.GetNewIdleTexture(_character.ListRightHandSkill[3].IdleIcon);
+            _btEathShake.GetNewClickedTexture(_character.ListRightHandSkill[3].ClickedIcon);
             _btEathShake.Mouse_Click += new Button.OnMouseClickHandler(EarthShake_Clicked);
             _btEathShake.Mouse_Hover += new Button.OnMouseHoverHandler(EarthShake_Hover);
             _btEathShake.Mouse_Released += new Button.OnMouseReleasedHandler(EarthShake_Release);
 
-            _btWaveForm = (Button)_resources[1].CreateObject(32);
-            _btWaveForm.Owner = _character.ListRightHandSkill[3];
-            _btWaveForm.GetNewIdleTexture(_character.ListRightHandSkill[3].IdleIcon);
-            _btWaveForm.GetNewClickedTexture(_character.ListRightHandSkill[3].ClickedIcon);
+            _btWaveForm = (Button)_resources[1].CreateObject(33);
+            _btWaveForm.Owner = _character.ListRightHandSkill[4];
+            _btWaveForm.GetNewIdleTexture(_character.ListRightHandSkill[4].IdleIcon);
+            _btWaveForm.GetNewClickedTexture(_character.ListRightHandSkill[4].ClickedIcon);
             _btWaveForm.Mouse_Click += new Button.OnMouseClickHandler(WaveForm_Clicked);
             _btWaveForm.Mouse_Hover += new Button.OnMouseHoverHandler(WaveForm_Hover);
             _btWaveForm.Mouse_Released += new Button.OnMouseReleasedHandler(WaveForm_Release);
 
-            _btLightingField = (Button)_resources[1].CreateObject(33);
-            _btLightingField.Owner = _character.ListRightHandSkill[4];
-            _btLightingField.GetNewIdleTexture(_character.ListRightHandSkill[4].IdleIcon);
-            _btLightingField.GetNewClickedTexture(_character.ListRightHandSkill[4].ClickedIcon);
+            _btLightingField = (Button)_resources[1].CreateObject(34);
+            _btLightingField.Owner = _character.ListRightHandSkill[5];
+            _btLightingField.GetNewIdleTexture(_character.ListRightHandSkill[5].IdleIcon);
+            _btLightingField.GetNewClickedTexture(_character.ListRightHandSkill[5].ClickedIcon);
             _btLightingField.Mouse_Click += new Button.OnMouseClickHandler(LightingField_Clicked);
             _btLightingField.Mouse_Hover += new Button.OnMouseHoverHandler(LightingField_Hover);
             _btLightingField.Mouse_Released += new Button.OnMouseReleasedHandler(LightingField_Release);
 
-            _btInvisible = (Button)_resources[1].CreateObject(34);
-            _btInvisible.Owner = _character.ListRightHandSkill[5];
-            _btInvisible.GetNewIdleTexture(_character.ListRightHandSkill[5].IdleIcon);
-            _btInvisible.GetNewClickedTexture(_character.ListRightHandSkill[5].ClickedIcon);
+            //Vì sửa lai XML nen thang cuối cùng bi nhảy lên 36
+            _btInvisible = (Button)_resources[1].CreateObject(36);
+            _btInvisible.Owner = _character.ListRightHandSkill[6];
+            _btInvisible.GetNewIdleTexture(_character.ListRightHandSkill[6].IdleIcon);
+            _btInvisible.GetNewClickedTexture(_character.ListRightHandSkill[6].ClickedIcon);
             _btInvisible.Mouse_Click += new Button.OnMouseClickHandler(InvisiblePoison_Clicked);
             _btInvisible.Mouse_Hover += new Button.OnMouseHoverHandler(InvisiblePoison_Hover);
             _btInvisible.Mouse_Released += new Button.OnMouseReleasedHandler(InvisiblePoison_Release);
 
+            _mainFrame.AddChild(_btLightingStrike);
             _mainFrame.AddChild(_btDeadlyBees);
             _mainFrame.AddChild(_btSoulsRelease);
             _mainFrame.AddChild(_btEathShake);
@@ -190,11 +216,14 @@ namespace TheReturnOfTheKing
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Draw(_mainFrame._sprite[0].Texture2D[0], new Vector2(_mainFrame.X, _mainFrame.Y), Color.White);
-            for (int i = 0; i < _mainFrame.Child.Count; i++)
+            ((Button)_mainFrame.Child[0]).Draw(gameTime, sb);
+            for (int i = 1; i < _mainFrame.Child.Count; i++)
             {
                 if (((Skill)((Button)_mainFrame.Child[i]).Owner).Level > 0)
                     ((Button)_mainFrame.Child[i]).Draw(gameTime, sb);
             }
+            if (((Skill)BtLightingStrike.Owner).CurrentButton == BtLightingStrike)
+                ((Skill)BtLightingStrike.Owner).Draw(gameTime, sb);
 
             if (((Skill)BtDeadlyBees.Owner).Level > 0 && ((Skill)BtDeadlyBees.Owner).CurrentButton == BtDeadlyBees)
                 ((Skill)BtDeadlyBees.Owner).Draw(gameTime, sb);
@@ -238,38 +267,47 @@ namespace TheReturnOfTheKing
         }
 
         #region Sự kiện Click cho Button
-        public void DeadlyBees_Clicked(object sender, EventArgs e)
+        public void LightingStrike_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(0);
         }
 
-        public void SouldRelease_Clicked(object sender, EventArgs e)
+        public void DeadlyBees_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(1);
         }
 
-        public void EarthShake_Clicked(object sender, EventArgs e)
+        public void SouldRelease_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(2);
         }
 
-        public void WaveForm_Clicked(object sender, EventArgs e)
+        public void EarthShake_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(3);
         }
 
-        public void LightingField_Clicked(object sender, EventArgs e)
+        public void WaveForm_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(4);
         }
 
-        public void InvisiblePoison_Clicked(object sender, EventArgs e)
+        public void LightingField_Clicked(object sender, EventArgs e)
         {
             ChangeSkill(5);
+        }
+
+        public void InvisiblePoison_Clicked(object sender, EventArgs e)
+        {
+            ChangeSkill(6);
         }
         #endregion
 
         #region Sự kiện Hover button
+        public void LightingStrike_Hover(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
 
         public void DeadlyBees_Hover(object sender, EventArgs e)
         {
@@ -303,6 +341,10 @@ namespace TheReturnOfTheKing
         #endregion
 
         #region Sự kiện Release button
+        public void LightingStrike_Release(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
 
         public void DeadlyBees_Release(object sender, EventArgs e)
         {

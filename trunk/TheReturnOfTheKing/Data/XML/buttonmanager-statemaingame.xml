@@ -441,4 +441,17 @@
     <Width>14</Width>
     <Height>24</Height>
   </Button>
+  
+  <!--bổ sung thêm cai button nữa, trên cai select RH-->
+  <Button id ="36">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>49</X>
+    <Y>0</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
 </root>
