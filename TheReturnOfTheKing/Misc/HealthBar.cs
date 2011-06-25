@@ -125,6 +125,9 @@ namespace TheReturnOfTheKing
 
             //Button right
             _btRighthandSkill = (Button)_resouces[2].CreateObject(22);
+            _btRighthandSkill.Owner = _character.ListRightHandSkill[0];
+            _btRighthandSkill.GetNewIdleTexture(_character.ListRightHandSkill[0].IdleIcon);
+            _btRighthandSkill.GetNewClickedTexture(_character.ListRightHandSkill[0].ClickedIcon);
             _btRighthandSkill.Mouse_Click += new Button.OnMouseClickHandler(RightSkillButon_Clicked);
             _btRighthandSkill.Mouse_Hover += new Button.OnMouseHoverHandler(RightSkillButon_Hover);
             _btRighthandSkill.Mouse_Released += new Button.OnMouseReleasedHandler(RightSkillButon_Release);
