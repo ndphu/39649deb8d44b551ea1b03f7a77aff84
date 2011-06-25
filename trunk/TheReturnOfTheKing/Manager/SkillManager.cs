@@ -365,6 +365,66 @@ namespace TheReturnOfTheKing
                         }
                     }
                     break;
+                case "Great Fortitude":
+                    {
+                        _prototype[id] = new GreatFortitudeSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((GreatFortitudeSkill)_prototype[id]).Name = "Great Fortitude";
+                        ((GreatFortitudeSkill)_prototype[id]).Level = 0;
+                        ((GreatFortitudeSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.Defense = int.Parse(_levelList[i].SelectSingleNode(@"Defense").InnerText);
+                            _skillInfo.Hp = int.Parse(_levelList[i].SelectSingleNode(@"HP").InnerText);
+                            _skillInfo.Mp = int.Parse(_levelList[i].SelectSingleNode(@"MP").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((GreatFortitudeSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "God Strength":
+                    {
+                        _prototype[id] = new GodStrengthSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((GodStrengthSkill)_prototype[id]).Name = "God Strength";
+                        ((GodStrengthSkill)_prototype[id]).Level = 0;
+                        ((GodStrengthSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.AS = int.Parse(_levelList[i].SelectSingleNode(@"AS").InnerText);
+                            _skillInfo.MS = int.Parse(_levelList[i].SelectSingleNode(@"MS").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((GodStrengthSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
+                case "Blur":
+                    {
+                        _prototype[id] = new BlurSkill();
+                        _prototype[id]._nsprite = 0;
+                        ((BlurSkill)_prototype[id]).Name = "Blur";
+                        ((BlurSkill)_prototype[id]).Level = 0;
+                        ((BlurSkill)_prototype[id]).ListLevel = new List<SkillLevel>();
+                        XmlNodeList _levelList = _skill.SelectNodes(@"Level");
+                        for (int i = 0; i < _levelList.Count; ++i)
+                        {
+                            SkillLevel _skillLevel = new SkillLevel();
+                            _skillLevel.ListSkillInfo = new List<SkillInfo>();
+                            SkillInfo _skillInfo = new SkillInfo();
+                            _skillInfo.ChangeToDodge = int.Parse(_levelList[i].SelectSingleNode(@"ChanceToDodge").InnerText);
+                            _skillLevel.ListSkillInfo.Add(_skillInfo);
+                            ((BlurSkill)_prototype[id]).ListLevel.Add(_skillLevel);
+                        }
+                    }
+                    break;
                 default:
                     {
                         

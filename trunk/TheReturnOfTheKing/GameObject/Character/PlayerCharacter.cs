@@ -142,6 +142,20 @@ namespace TheReturnOfTheKing
             set { _nextLevelEXP = value; }
         }
 
+        public override int ChangeToDodge
+        {
+            get
+            {
+                if (_listPassiveSkill == null)
+                    return base.ChangeToDodge;
+                else
+                    return base.ChangeToDodge + _listPassiveSkill[2].ListLevel[_listPassiveSkill[2].Level].ListSkillInfo[0].ChangeToDodge;
+            }
+            set
+            {
+                base.ChangeToDodge = value;
+            }
+        }
 
         /// <summary>
         /// Đang cast skill
@@ -251,6 +265,14 @@ namespace TheReturnOfTheKing
             }
         }
 
+        int _passiveSkillCheck;
+
+        public int PassiveSkillCheck
+        {
+            get { return _passiveSkillCheck; }
+            set { _passiveSkillCheck = value; }
+        }
+        
         public override float X
         {
             get
@@ -373,6 +395,7 @@ namespace TheReturnOfTheKing
                 ChangeToDodge = this.ChangeToDodge,
                 NextLevelEXP = this.NextLevelEXP,
                 Level = this.Level,
+                PassiveSkillCheck = this.PassiveSkillCheck,
             };
         }
         
@@ -401,6 +424,13 @@ namespace TheReturnOfTheKing
 
         public override void Update(GameTime gameTime)
         {
+            PassiveSkillCheck -= 1;
+            if (PassiveSkillCheck == 0)
+            {
+                PassiveSkillCheck = 60;
+                this.Hp += _listPassiveSkill[0].ListLevel[_listPassiveSkill[0].Level].ListSkillInfo[0].Hp;
+                this.Mp += _listPassiveSkill[0].ListLevel[_listPassiveSkill[0].Level].ListSkillInfo[0].Mp;
+            }
             for (int i = 0; i < ListLeftHandSkill.Count; ++i)
                 if (ListLeftHandSkill[i] != null)
                     ListLeftHandSkill[i].Update(gameTime);
@@ -811,7 +841,10 @@ namespace TheReturnOfTheKing
                     _listRightHandSkill[i].PlayerOwner = this;
                     _listRightHandSkill[i].Level = 0;
             }
-            
+            _listPassiveSkill = new List<Skill>();
+            _listPassiveSkill.Add((GreatFortitudeSkill)Owner._objectManagerArray[7].CreateObject(14));
+            _listPassiveSkill.Add((GodStrengthSkill)Owner._objectManagerArray[7].CreateObject(15));
+            _listPassiveSkill.Add((BlurSkill)Owner._objectManagerArray[7].CreateObject(16));
         }
     }
 }

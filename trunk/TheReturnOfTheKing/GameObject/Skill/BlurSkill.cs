@@ -4,11 +4,11 @@ using System.Text;
 
 namespace TheReturnOfTheKing
 {
-    public class FireWallSkill : Skill
+    public class BlurSkill : Skill
     {
         public override VisibleGameObject Clone()
         {
-            return new FireWallSkill
+            return new BlurSkill
             {
                 X = this.X,
                 Y = this.Y,
@@ -18,13 +18,6 @@ namespace TheReturnOfTheKing
                 LargeIcon = this.LargeIcon,
                 ClickedIcon = this.ClickedIcon,
             };
-        }
-
-        public override void DoEffect(VisibleGameEntity _object)
-        {
-            base.DoEffect(_object);
-
-            PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
         }
     }
 }

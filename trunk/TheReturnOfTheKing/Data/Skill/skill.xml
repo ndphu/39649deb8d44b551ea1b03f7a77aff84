@@ -441,6 +441,72 @@
       </Level>
     </Skill>
   </Skill>
+  <Skill id="14">
+    <Name>Great Fortitude</Name>
+    <Clicked>img/skillicon/Clicked/00</Clicked>
+    <Idle>img/skillicon/Idle/00</Idle>
+    <Large>img/skillicon/Large/00</Large>
+    <Level>
+      <HP>0</HP>
+      <MP>0</MP>
+      <Defense>0</Defense>
+    </Level>
+    <Level>
+      <HP>2</HP>
+      <MP>1</MP>
+      <Defense>7</Defense>
+    </Level>
+    <Level>
+      <HP>6</HP>
+      <MP>3</MP>
+      <Defense>18</Defense>
+    </Level>
+    <Level>
+      <HP>16</HP>
+      <MP>8</MP>
+      <Defense>30</Defense>
+    </Level>
+  </Skill>
+  <Skill id="15">
+    <Name>God Strength</Name>
+    <Clicked>img/skillicon/Clicked/00</Clicked>
+    <Idle>img/skillicon/Idle/00</Idle>
+    <Large>img/skillicon/Large/00</Large>
+    <Level>
+      <AS>0</AS>
+      <MS>0</MS>
+    </Level>
+    <Level>
+      <AS>25</AS>
+      <MS>20</MS>
+    </Level>
+    <Level>
+      <AS>75</AS>
+      <MS>30</MS>
+    </Level>
+    <Level>
+      <AS>150</AS>
+      <MS>40</MS>
+    </Level>
+  </Skill>
+  <Skill id="16">
+    <Name>Blur</Name>
+    <Clicked>img/skillicon/Clicked/00</Clicked>
+    <Idle>img/skillicon/Idle/00</Idle>
+    <Large>img/skillicon/Large/00</Large>
+    <Level>
+      <ChanceToDodge>0</ChanceToDodge>
+    </Level>
+    <Level>
+      <ChanceToDodge>10</ChanceToDodge>
+    </Level>
+    <Level>
+      <ChanceToDodge>20</ChanceToDodge>
+    </Level>
+    <Level>
+      <ChanceToDodge>30</ChanceToDodge>
+    </Level>
+  </Skill>
   <!--
   <Skill id="2">
     <Name>Other</Name>

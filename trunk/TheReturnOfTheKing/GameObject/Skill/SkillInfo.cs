@@ -180,6 +180,36 @@ namespace TheReturnOfTheKing
             get { return _duration; }
             set { _duration = value; }
         }
+
+        int _defense;
+
+        public int Defense
+        {
+            get { return _defense; }
+            set { _defense = value; }
+        }
+
+        int _aS;
+
+        public int AS
+        {
+            get { return _aS; }
+            set { _aS = value; }
+        }
+        int _mS;
+
+        public int MS
+        {
+            get { return _mS; }
+            set { _mS = value; }
+        }
+        int _changeToDodge;
+
+        public int ChangeToDodge
+        {
+            get { return _changeToDodge; }
+            set { _changeToDodge = value; }
+        }
     }
 
     public class SkillLevel
