@@ -31,7 +31,7 @@
   <Class Name="TheReturnOfTheKing.Character" Collapsed="true">
     <Position X="31.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BByAwBDChJkISgAgECJJiCEFQtBGCgesBE5ILgQIYgA=</HashCode>
+      <HashCode>BByAwBDChJkISgAgECJJiCEFQtlGCgesBE5ILgQIYgA=</HashCode>
       <FileName>GameObject\Character\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,7 +52,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="33.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UBRAAIEIQAmMAoAAAKMACQUSAgAESAEDgAAAAJFQYBE=</HashCode>
+      <HashCode>UBRAAIEIQAmOAoAAAKMACQUSAgAESAUDgQAAAJFQYBE=</HashCode>
       <FileName>GameObject\Character\PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -627,7 +627,7 @@
     <Position X="36.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>LightningStrike.cs</FileName>
+      <FileName>GameObject\Skill\LightningStrike.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

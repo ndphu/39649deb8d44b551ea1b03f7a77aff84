@@ -103,6 +103,8 @@ namespace TheReturnOfTheKing
                 ((PlayerCharacter)_prototype[id]).MaxHp = int.Parse(_char.SelectSingleNode(@"MaxHp").InnerText);
                 ((PlayerCharacter)_prototype[id]).MaxMp = int.Parse(_char.SelectSingleNode(@"MaxMp").InnerText);
                 ((PlayerCharacter)_prototype[id]).ChangeToDodge = int.Parse(_char.SelectSingleNode(@"ChangeToDodge").InnerText);
+                ((PlayerCharacter)_prototype[id]).CurrentEXP = 0;
+                ((PlayerCharacter)_prototype[id]).NextLevelEXP = 100;
                 return true;
             }
             catch

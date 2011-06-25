@@ -16,6 +16,7 @@
     <HitFrame>12</HitFrame>
     <Sight>150</Sight>
     <ChangeToDodge>15</ChangeToDodge>
+    <ExpReward>150</ExpReward>
     <Stand>
       <ContentName>img/character/fallenangel/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -63,6 +64,7 @@
     <HitFrame>12</HitFrame>
     <Sight>100</Sight>
     <ChangeToDodge>15</ChangeToDodge>
+    <ExpReward>100</ExpReward>
     <Stand>
       <ContentName>img/character/demon/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -97,8 +99,8 @@
   <!--Zoombie-->
   <Monster id="2">
     <Speed>1</Speed>
-    <Hp>35000</Hp>
-    <MaxHp>35000</MaxHp>
+    <Hp>3500</Hp>
+    <MaxHp>3500</MaxHp>
     <Mp>10</Mp>
     <MaxMp>10</MaxMp>
     <CriticalRate>50</CriticalRate>
@@ -110,6 +112,7 @@
     <HitFrame>10</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>0</ChangeToDodge>
+    <ExpReward>35</ExpReward>
     <Stand>
       <ContentName>img/character/zombie/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
