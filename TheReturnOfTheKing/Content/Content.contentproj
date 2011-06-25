@@ -38693,6 +38693,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="img\misc\processbar\level\Animate.png">
+      <Name>Animate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="img\misc\processbar\level\Standing.png">
+      <Name>Standing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="img\item\" />
     <Folder Include="snd\" />
   </ItemGroup>

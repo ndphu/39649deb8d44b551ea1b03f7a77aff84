@@ -144,7 +144,7 @@ namespace TheReturnOfTheKing
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            if (_direction == "Up")
+            /*if (_direction == "Up")
             {
                 sb.Draw(_sprite[1].Texture2D[0], new Vector2(X, Y), Color.White);
                 sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
@@ -153,7 +153,9 @@ namespace TheReturnOfTheKing
             {
                 sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
                 sb.Draw(_sprite[1].Texture2D[0], new Vector2(X, Y), Color.White);
-            }
+            }*/
+            sb.Draw(_sprite[1].Texture2D[0], new Vector2(X, Y), Color.White);
+            sb.Draw(_sprite[0].Texture2D[0], _pointToDraw, _recToDraw, Color.White);
         }
     }
 }

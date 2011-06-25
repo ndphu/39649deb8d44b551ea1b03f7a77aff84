@@ -92,6 +92,15 @@ namespace TheReturnOfTheKing
             get { return _btCMUpButton; }
             set { _btCMUpButton = value; }
         }
+
+        //level process
+        ProcessBar _levelProcess;
+
+        public ProcessBar LevelProcess
+        {
+            get { return _levelProcess; }
+            set { _levelProcess = value; }
+        }
 //------------------
         public void SetCharacter(PlayerCharacter _char)
         {
@@ -138,6 +147,9 @@ namespace TheReturnOfTheKing
 
             _coolDownLeftSkill = (ProcessBar)_resouces[1].CreateObject(3);
             _healbarFrame.AddChild(_coolDownLeftSkill);
+
+            _levelProcess = (ProcessBar)_resouces[1].CreateObject(4);
+            _healbarFrame.AddChild(_levelProcess);
 
             _btCMUpButton = (Button)_resouces[2].CreateObject(35);
             _btCMUpButton.Mouse_Click += new Button.OnMouseClickHandler(UpCommandbutton_Clicked);
@@ -189,6 +201,9 @@ namespace TheReturnOfTheKing
             //update của ống mana
             float _manaRate = (float)_character.Mp / (float)_character.MaxMp;
             _manaPro.UpdateDrawRect(_manaRate);
+            //update ống level
+            float _levelRate = (float)_character.CurrentEXP / (float)_character.NextLevelEXP;
+            _levelProcess.UpdateDrawRect(_levelRate);
             //update main rect
             _rect = new Rectangle((int)_healbarFrame.X, (int)_healbarFrame.Y, (int)_healbarFrame.Width, (int)_healbarFrame.Height);
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
