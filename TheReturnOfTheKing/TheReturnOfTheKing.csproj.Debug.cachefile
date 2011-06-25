@@ -136,6 +136,7 @@ Content\img\character\Duriel\move\D04-11.xnb
 Content\img\character\Duriel\dying\D06-05.xnb
 Content\img\character\Kunkka\dying\D04-11.xnb
 Content\img\character\G1\stand\D04-02.xnb
+Content\img\dialog\control\label\skillboard\passive\01.xnb
 Content\img\character\G2\dying\D02-07.xnb
 Content\img\character\G2\attack\D04-12.xnb
 Content\img\character\Demon\attack\D05-14.xnb
@@ -3834,6 +3835,7 @@ Content\img\character\G1\dying\D07-14.xnb
 Content\img\character\GY\move\D06-05.xnb
 Content\img\character\GY\attack\D03-06.xnb
 Content\img\character\GY\stand\D03-02.xnb
+Content\img\dialog\control\label\skillboard\passive\00.xnb
 Content\img\character\Butcher\dying\D00-02.xnb
 Content\img\character\FD\stand\D05-06.xnb
 Content\img\character\Demon\stand\D02-07.xnb
@@ -7407,6 +7409,7 @@ Content\img\character\Duriel\move\D04-02.xnb
 Content\img\skill\skill05\D002.xnb
 Content\img\character\GY\dying\D00-13.xnb
 Content\img\character\Butcher\move\D02-03.xnb
+Content\img\dialog\control\label\skillboard\passive\02.xnb
 Content\img\character\Butcher\move\D01-05.xnb
 Content\img\character\Duriel\move\D07-04.xnb
 Content\img\character\G2\attack\D06-05.xnb
