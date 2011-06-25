@@ -182,4 +182,50 @@
       <B>235</B>
     </Color>
   </Label>
+  
+  <!--3 label tren passive skill board-->
+  <Label id="12">
+    <BackGround>img/dialog/control/label/skillboard/passive/00</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>126</X>
+    <Y>57</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="13">
+    <BackGround>img/dialog/control/label/skillboard/passive/01</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>195</X>
+    <Y>57</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="14">
+    <BackGround>img/dialog/control/label/skillboard/passive/02</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>57</X>
+    <Y>125</Y>
+    <DrawOffSetX>7</DrawOffSetX>
+    <DrawOffSetY>2</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
 </root>

@@ -310,47 +310,49 @@ namespace TheReturnOfTheKing
             get { return _passiveFrame; }
             set { _passiveFrame = value; }
         }
-
-        Button _btDamAndDefSkill;
-        public Button BtDamAndDefSkill
+        //Great Fortitude
+        Button _btGreatFortitude;
+        public Button BtGreatFortitude
         {
-            get { return _btDamAndDefSkill; }
-            set { _btDamAndDefSkill = value; }
+            get { return _btGreatFortitude; }
+            set { _btGreatFortitude = value; }
         }
 
-        Label _lbDamAndDefSkill;
-        public Label LbDamAndDefSkill
+        Label _lbbtGreatFortitude;
+        public Label LbbtGreatFortitude
         {
-            get { return _lbDamAndDefSkill; }
-            set { _lbDamAndDefSkill = value; }
+            get { return _lbbtGreatFortitude; }
+            set { _lbbtGreatFortitude = value; }
         }
 
-        Button _btMsAndAsSkill;
-        public Button BtMsAndAsSkill
+        //God Strength
+        Button _btGodStrength;
+        public Button BtGodStrength
         {
-            get { return _btMsAndAsSkill; }
-            set { _btMsAndAsSkill = value; }
+            get { return _btGodStrength; }
+            set { _btGodStrength = value; }
         }
 
-        Label _lbMsAndAsSkill;
-        public Label LbMsAndAsSkill
+        Label _lbGodStrength;
+        public Label LbGodStrength
         {
-            get { return _lbMsAndAsSkill; }
-            set { _lbMsAndAsSkill = value; }
+            get { return _lbGodStrength; }
+            set { _lbGodStrength = value; }
         }
 
-        Button _btMissSkill;
-        public Button BtMissSkill
+        //Blur
+        Button _btBlur;
+        public Button BtBlur
         {
-            get { return _btMissSkill; }
-            set { _btMissSkill = value; }
+            get { return _btBlur; }
+            set { _btBlur = value; }
         }
 
-        Label _lbMissSkill;
-        public Label LbMissSkill
+        Label _lbBlur;
+        public Label LbBlur
         {
-            get { return _lbMissSkill; }
-            set { _lbMissSkill = value; }
+            get { return _lbBlur; }
+            set { _lbBlur = value; }
         }
         #endregion
         //---------------------------------------------------------------------------------------------------
@@ -577,13 +579,59 @@ namespace TheReturnOfTheKing
             _btPassiveExit = (Button)_resources[1].CreateObject(13);
             _btPassiveExit.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_PassiveExit);
 
+            //Great Fortitude
+            _btGreatFortitude = (Button)_resources[1].CreateObject(37);
+            _btGreatFortitude.Owner = _character.ListPassiveSkill[0];
+            _btGreatFortitude.GetNewIdleTexture(_character.ListPassiveSkill[0].IdleIcon);
+            _btGreatFortitude.GetNewClickedTexture(_character.ListPassiveSkill[0].ClickedIcon);
+            _btGreatFortitude.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_GreatFortitude);
+            _btGreatFortitude.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_GreatFortitude);
+            _btGreatFortitude.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_GreatFortitude);
+
+            _lbbtGreatFortitude = (Label)_resources[2].CreateObject(12);
+            _lbbtGreatFortitude.Owner = _character.ListPassiveSkill[0];
+            
+            //God Strenght
+            _btGodStrength = (Button)_resources[1].CreateObject(38);
+            _btGodStrength.Owner = _character.ListPassiveSkill[1];
+            _btGodStrength.GetNewIdleTexture(_character.ListPassiveSkill[1].IdleIcon);
+            _btGodStrength.GetNewClickedTexture(_character.ListPassiveSkill[1].ClickedIcon);
+            _btGodStrength.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_GodStrenght);
+            _btGodStrength.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_GodStrenght);
+            _btGodStrength.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_GodStrenght);
+
+            _lbGodStrength = (Label)_resources[2].CreateObject(13);
+            _lbGodStrength.Owner = _character.ListPassiveSkill[1];
+
+            //BLur
+            _btBlur = (Button)_resources[1].CreateObject(39);
+            _btBlur.Owner = _character.ListPassiveSkill[2];
+            _btBlur.GetNewIdleTexture(_character.ListPassiveSkill[2].IdleIcon);
+            _btBlur.GetNewClickedTexture(_character.ListPassiveSkill[2].ClickedIcon);
+            _btBlur.Mouse_Click += new Button.OnMouseClickHandler(SkillBoard_MouseClick_Blur);
+            _btBlur.Mouse_Hover += new Button.OnMouseHoverHandler(SkillBoard_MouseHover_Blur);
+            _btBlur.Mouse_Released += new Button.OnMouseReleasedHandler(SkillBoard_MouseRelease_Blur);
+
+            _lbBlur = (Label)_resources[2].CreateObject(14);
+            _lbBlur.Owner = _character.ListPassiveSkill[2];
+
+            //Passive frame
             _passiveFrame = (GameFrame)_resources[0].CreateObject(4);
             _passiveFrame.AddChild(_btLeftSkillControl);
             _passiveFrame.AddChild(_btRightSkillControl);
             _passiveFrame.AddChild(_btPassiveSkillControl);
             _passiveFrame.AddChild(_btPassiveExit);
-            _boardFrame.AddChild(_passiveFrame);
 
+            _passiveFrame.AddChild(_btGreatFortitude);
+            _passiveFrame.AddChild(_lbbtGreatFortitude);
+
+            _passiveFrame.AddChild(_btGodStrength);
+            _passiveFrame.AddChild(_lbGodStrength);
+
+            _passiveFrame.AddChild(_btBlur);
+            _passiveFrame.AddChild(_lbBlur);
+
+            _boardFrame.AddChild(_passiveFrame);
             _iCurrentBoard = 0;
             _currentBoard = (GameFrame)_boardFrame.Child[_iCurrentBoard];
             _rect = new Rectangle((int)_boardFrame.X, (int)_boardFrame.Y, (int)_boardFrame.Width, (int)_boardFrame.Height);
@@ -646,6 +694,9 @@ namespace TheReturnOfTheKing
                     }
                 case 2:
                     {
+                        GetSkillLevel(_lbbtGreatFortitude);
+                        GetSkillLevel(_lbGodStrength);
+                        GetSkillLevel(_lbBlur);
                         break;
                     }
             }
@@ -953,6 +1004,54 @@ namespace TheReturnOfTheKing
             CreateMotion_GoOut();
             BoardFrame.Motion = MotionGoOut;
             BoardFrame.Motion.IsStanding = false;
+        }
+
+        //Great Fortitude
+        public void SkillBoard_MouseClick_GreatFortitude(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_GreatFortitude(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_GreatFortitude(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        //GodStrenght
+        public void SkillBoard_MouseClick_GodStrenght(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_GodStrenght(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_GodStrenght(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
+        }
+
+        //Blur
+        public void SkillBoard_MouseClick_Blur(object sender, EventArgs e)
+        {
+            LevelUp((Button)sender);
+        }
+
+        public void SkillBoard_MouseHover_Blur(object sender, EventArgs e)
+        {
+            ShowDetailSkill((Button)sender);
+        }
+
+        public void SkillBoard_MouseRelease_Blur(object sender, EventArgs e)
+        {
+            HideDetailSkill((Button)sender);
         }
         #endregion
 

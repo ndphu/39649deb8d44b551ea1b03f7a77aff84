@@ -256,6 +256,14 @@ namespace TheReturnOfTheKing
                         }
                     case 2:
                         {
+                            if (((Skill)_character.Skillboard.BtGreatFortitude.Owner).CurrentButton == _character.Skillboard.BtGreatFortitude)
+                                ((Skill)_character.Skillboard.BtGreatFortitude.Owner).Draw(gameTime, sb);
+
+                            if (((Skill)_character.Skillboard.BtGodStrength.Owner).CurrentButton == _character.Skillboard.BtGodStrength)
+                                ((Skill)_character.Skillboard.BtGodStrength.Owner).Draw(gameTime, sb);
+
+                            if (((Skill)_character.Skillboard.BtBlur.Owner).CurrentButton == _character.Skillboard.BtBlur)
+                                ((Skill)_character.Skillboard.BtBlur.Owner).Draw(gameTime, sb);
                             break;
                         }
                 }

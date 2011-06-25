@@ -454,4 +454,41 @@
     <Width>48</Width>
     <Height>48</Height>
   </Button>
+  
+  <!--Button trên passive frame-->
+  <Button id ="37">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>84</X>
+    <Y>15</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="38">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>153</X>
+    <Y>15</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
+
+  <Button id ="39">
+    <Image>
+      <Idle>img/dialog/control/button/skillboard/temp/temp</Idle>
+      <Clicked>img/dialog/control/button/skillboard/temp/temp</Clicked>
+    </Image>
+
+    <X>15</X>
+    <Y>83</Y>
+    <Width>48</Width>
+    <Height>48</Height>
+  </Button>
 </root>
