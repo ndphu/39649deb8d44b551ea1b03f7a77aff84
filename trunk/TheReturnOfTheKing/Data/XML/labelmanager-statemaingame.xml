@@ -228,4 +228,20 @@
       <B>235</B>
     </Color>
   </Label>
+  
+  <!--label the hien so diem co the tang skill-->
+  <Label id="15">
+    <BackGround>img/dialog/control/label/skillboard/addition/00</BackGround>
+    <Font>sf-Calibri-16</Font>
+    <StringInfo></StringInfo>
+    <X>255</X>
+    <Y>64</Y>
+    <DrawOffSetX>15</DrawOffSetX>
+    <DrawOffSetY>-4</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
 </root>
