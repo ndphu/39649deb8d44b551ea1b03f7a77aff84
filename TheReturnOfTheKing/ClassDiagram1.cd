@@ -52,7 +52,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="33.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UBRAAIEIQAmOAoAAAKMACQUSAgAESAUDgQAAAJFQYBE=</HashCode>
+      <HashCode>UBRCAIEIQAmOAoAAAKMACQUSAgAESAUDgQAAgJFQYBE=</HashCode>
       <FileName>GameObject\Character\PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -203,13 +203,6 @@
       <FileName>GameObject\Skill\EarthShakeSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TheReturnOfTheKing.FireWallSkill" Collapsed="true">
-    <Position X="65" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>GameObject\Skill\FireWallSkill.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="TheReturnOfTheKing.InvisiblePoisonSkill" Collapsed="true">
     <Position X="38.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
@@ -262,7 +255,7 @@
   <Class Name="TheReturnOfTheKing.SkillInfo" Collapsed="true">
     <Position X="95.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEgARCAYgASCCoPEARRAAgAIAEAKCICgAAQADCECYgA=</HashCode>
+      <HashCode>AFgARCAYgAyCSoPEARRAAgAIAEAKCICgAAQADiEKZgA=</HashCode>
       <FileName>GameObject\Skill\SkillInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -628,6 +621,27 @@
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>GameObject\Skill\LightningStrike.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.GreatFortitudeSkill">
+    <Position X="47.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>GameObject\Skill\GreatFortitudeSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.GodStrengthSkill">
+    <Position X="51.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAABA=</HashCode>
+      <FileName>GameObject\Skill\GodStrengthSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheReturnOfTheKing.BlurSkill">
+    <Position X="54.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>GameObject\Skill\BlurSkill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

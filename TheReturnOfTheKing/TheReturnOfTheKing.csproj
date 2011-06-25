@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObject\Skill\BlurSkill.cs" />
     <Compile Include="GameObject\Projectile\LightningStrikeProjectileController.cs" />
     <Compile Include="GameObject\Skill\InvisiblePoisonSkill.cs" />
     <Compile Include="GameObject\Skill\LightningFieldSkill.cs" />
@@ -94,6 +95,8 @@
     <Compile Include="GameState\StateMenuManager.cs" />
     <Compile Include="GameState\StateOptions.cs" />
     <Compile Include="GameObject\Skill\LightningStrike.cs" />
+    <Compile Include="GameObject\Skill\GodStrengthSkill.cs" />
+    <Compile Include="GameObject\Skill\GreatFortitudeSkill.cs" />
     <Compile Include="Manager\BackgroundManager.cs" />
     <Compile Include="GameObject\Skill\BashAttackSkill.cs" />
     <Compile Include="Manager\ButtonManger.cs" />
@@ -109,7 +112,6 @@
     <Compile Include="GameObject\Projectile\EarthShakeController.cs" />
     <Compile Include="GameObject\Skill\EarthShakeSkill.cs" />
     <Compile Include="GameObject\Item\EquipItem.cs" />
-    <Compile Include="GameObject\Skill\FireWallSkill.cs" />
     <Compile Include="Misc\Fog.cs" />
     <Compile Include="Misc\GameFrame.cs" />
     <Compile Include="Manager\GameFrameManager.cs" />

@@ -119,7 +119,7 @@ namespace TheReturnOfTheKing
         /// </summary>
         int _changeToDodge;
 
-        public int ChangeToDodge
+        public virtual int ChangeToDodge
         {
             get { return _changeToDodge; }
             set { _changeToDodge = value; }
