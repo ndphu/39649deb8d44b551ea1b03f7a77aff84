@@ -31,8 +31,6 @@ namespace TheReturnOfTheKing
             set { _currentState = value; }
         }
 
-
-
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
             base.InitState(objectManagerArray, owner);

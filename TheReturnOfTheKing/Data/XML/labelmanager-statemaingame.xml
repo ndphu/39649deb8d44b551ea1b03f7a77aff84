@@ -244,4 +244,50 @@
       <B>235</B>
     </Color>
   </Label>
+  
+  <!--Label cho cac item-->
+  <Label id="16">
+    <BackGround>img/dialog/control/label/item/temp</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>11</X>
+    <Y>9</Y>
+    <DrawOffSetX>11</DrawOffSetX>
+    <DrawOffSetY>8</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="17">
+    <BackGround>img/dialog/control/label/item/temp</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>42</X>
+    <Y>9</Y>
+    <DrawOffSetX>11</DrawOffSetX>
+    <DrawOffSetY>8</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="18">
+    <BackGround>img/dialog/control/label/item/temp</BackGround>
+    <Font>sf-Calibri-10</Font>
+    <StringInfo></StringInfo>
+    <X>73</X>
+    <Y>9</Y>
+    <DrawOffSetX>11</DrawOffSetX>
+    <DrawOffSetY>8</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
 </root>
