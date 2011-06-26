@@ -624,90 +624,148 @@ namespace TheReturnOfTheKing
 
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Q) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.Q))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 0;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[0].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 0;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.W) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.W))
-            {                
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 1;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+            {
+                if (_listRightHandSkill[1].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 1;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.E) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.E))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 2;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[2].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 2;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.R) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.R))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 3;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[3].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 3;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.T) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.T))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 4;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[4].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 4;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.Y) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.Y))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 5;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[5].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 5;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.U) && !GlobalVariables.PreviousKeyboardState.IsKeyDown(Keys.U))
             {
-                _listRightHandSkill[_rightHandSkillIndex].Deactive();
-                _rightHandSkillIndex = 6;
-                _listRightHandSkill[_rightHandSkillIndex].Active();
+                if (_listRightHandSkill[6].Level > 0)
+                {
+                    _listRightHandSkill[_rightHandSkillIndex].Deactive();
+                    _rightHandSkillIndex = 6;
+                    _listRightHandSkill[_rightHandSkillIndex].Active();
+                    Update_To_HealthBar(_listRightHandSkill[_rightHandSkillIndex], false);
+                }
             }
 
+            //LH
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.A))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 0;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[0].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 0;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
 
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.S))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 1;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[1].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 1;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.D))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 2;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[2].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 2;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.F))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 3;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[3].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 3;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.G))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 4;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[4].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 4;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.H))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 5;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[5].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 5;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
             if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.J))
             {
-                _listLeftHandSkill[_leftHandSkillIndex].Deactive();
-                _leftHandSkillIndex = 6;
-                _listLeftHandSkill[_leftHandSkillIndex].Active();
+                if (_listLeftHandSkill[6].Level > 0)
+                {
+                    _listLeftHandSkill[_leftHandSkillIndex].Deactive();
+                    _leftHandSkillIndex = 6;
+                    _listLeftHandSkill[_leftHandSkillIndex].Active();
+                    Update_To_HealthBar(_listLeftHandSkill[_leftHandSkillIndex], true);
+                }
             }
+
 
             if (_listLeftHandSkill[_leftHandSkillIndex] != null)
             {
@@ -903,6 +961,22 @@ namespace TheReturnOfTheKing
             {
                 _listPassiveSkill[i].PlayerOwner = this;
                 _listPassiveSkill[i].Level = 0;
+            }
+        }
+
+        public void Update_To_HealthBar(Skill _newSkill, bool _left)
+        {
+            if (_left)
+            {
+                this.Healthbar.BtLefthandSkill.Owner = _newSkill;
+                this.Healthbar.BtLefthandSkill.GetNewIdleTexture(_newSkill.IdleIcon);
+                this.Healthbar.BtLefthandSkill.GetNewClickedTexture(_newSkill.ClickedIcon);
+            }
+            else
+            {
+                this.Healthbar.BtRighthandSkill.Owner = _newSkill;
+                this.Healthbar.BtRighthandSkill.GetNewIdleTexture(_newSkill.IdleIcon);
+                this.Healthbar.BtRighthandSkill.GetNewClickedTexture(_newSkill.ClickedIcon);
             }
         }
     }

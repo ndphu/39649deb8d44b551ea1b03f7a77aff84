@@ -499,7 +499,7 @@
       <Clicked>img/dialog/control/button/submenu/onoff/clicked</Clicked>
     </Image>
 
-    <X>75</X>
+    <X>70</X>
     <Y>160</Y>
     <Width>30</Width>
     <Height>30</Height>
@@ -511,7 +511,7 @@
       <Clicked>img/dialog/control/button/submenu/onoff/clicked</Clicked>
     </Image>
 
-    <X>172</X>
+    <X>170</X>
     <Y>160</Y>
     <Width>30</Width>
     <Height>30</Height>
@@ -524,7 +524,7 @@
     </Image>
 
     <X>30</X>
-    <Y>205</Y>
+    <Y>210</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -536,7 +536,7 @@
     </Image>
 
     <X>30</X>
-    <Y>272</Y>
+    <Y>273</Y>
     <Width>250</Width>
     <Height>56</Height>
   </Button>
@@ -576,5 +576,42 @@
     <Y>75</Y>
     <Width>200</Width>
     <Height>56</Height>
+  </Button>
+  
+  <!--Button item tren healthbar-->
+  <Button id ="47">
+    <Image>
+      <Idle>img/item/portion/00</Idle>
+      <Clicked>img/item/portion/00</Clicked>
+    </Image>
+
+    <X>3</X>
+    <Y>1</Y>
+    <Width>28</Width>
+    <Height>28</Height>
+  </Button>
+
+  <Button id ="48">
+    <Image>
+      <Idle>img/item/portion/01</Idle>
+      <Clicked>img/item/portion/01</Clicked>
+    </Image>
+
+    <X>34</X>
+    <Y>1</Y>
+    <Width>28</Width>
+    <Height>28</Height>
+  </Button>
+
+  <Button id ="49">
+    <Image>
+      <Idle>img/item/portion/02</Idle>
+      <Clicked>img/item/portion/02</Clicked>
+    </Image>
+
+    <X>65</X>
+    <Y>1</Y>
+    <Width>28</Width>
+    <Height>28</Height>
   </Button>
 </root>

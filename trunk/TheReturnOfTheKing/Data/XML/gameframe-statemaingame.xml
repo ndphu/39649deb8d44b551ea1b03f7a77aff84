@@ -123,4 +123,17 @@
       <FirstDirection>Null</FirstDirection>
     </MoveInfo>
   </Frame>
+  
+  <!--frame danh choitem tren healthbar-->
+  <Frame id="10">
+    <BackGround>img/healthbar/itemframe</BackGround>
+    <X>306</X>
+    <Y>14</Y>
+    <Width>125</Width>
+    <Height>33</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
 </root>

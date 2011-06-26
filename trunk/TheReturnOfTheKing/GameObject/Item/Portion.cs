@@ -34,7 +34,6 @@ namespace TheReturnOfTheKing
                 LifeTime = 120,
                 TextColor = Color.LightGreen,
             });
-            
         }
     }
 }

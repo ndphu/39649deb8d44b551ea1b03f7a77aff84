@@ -65,6 +65,7 @@ namespace TheReturnOfTheKing
             _resourcesForHealthbar.Add(objectManagerArray[8]);
             _resourcesForHealthbar.Add(objectManagerArray[9]);
             _resourcesForHealthbar.Add(objectManagerArray[10]);
+            _resourcesForHealthbar.Add(objectManagerArray[11]);
             _healthBar.GetResources(_resourcesForHealthbar);
 
             //Phần SkillBoard------------------------------------------------------------------

@@ -637,7 +637,6 @@ namespace TheReturnOfTheKing
 
             _boardFrame.AddChild(_rightthandFrame);
             #endregion
-
 //Passive tab
             #region
             _btPassiveExit = (Button)_resources[1].CreateObject(13);

@@ -37,7 +37,6 @@ namespace TheReturnOfTheKing
         Button _btOK;
 
         Button _btCancel;
-
         StateMainGame _stateOwner;
 
         public void GetResources(List<GameObjectManager> _resources)
@@ -76,7 +75,6 @@ namespace TheReturnOfTheKing
             _mainFrame.AddChild(_btResume);
 
             _backGround.AddChild(_mainFrame);
-
 
             _btOK = (Button)_resources[1].CreateObject(45);
             _btOK.Mouse_Click += new Button.OnMouseClickHandler(OKButton_Click);
@@ -117,13 +115,13 @@ namespace TheReturnOfTheKing
         }
         
 
-        //su kien button On
+        //su kien button On effect
         public void OnButton_Down(object sender, EventArgs e)
         {
             _btOffButton._sprite[0].Itexture2D = 0;
         }
 
-        //su kien button off
+        //su kien button off effect
         public void OffButton_Down(object sender, EventArgs e)
         {
             _btOnButton._sprite[0].Itexture2D = 0;

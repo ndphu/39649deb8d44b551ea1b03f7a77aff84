@@ -101,6 +101,62 @@ namespace TheReturnOfTheKing
             get { return _levelProcess; }
             set { _levelProcess = value; }
         }
+
+        GameFrame _itemFrame;
+
+        public GameFrame ItemFrame
+        {
+            get { return _itemFrame; }
+            set { _itemFrame = value; }
+        }
+
+        Button _btBlood;
+
+        public Button BtBlood
+        {
+            get { return _btBlood; }
+            set { _btBlood = value; }
+        }
+
+        Label _lbBlood;
+
+        public Label LbBlood
+        {
+            get { return _lbBlood; }
+            set { _lbBlood = value; }
+        }
+
+        Button _btMana;
+
+        public Button BtMana
+        {
+            get { return _btMana; }
+            set { _btMana = value; }
+        }
+
+        Label _lbMana;
+
+        public Label LbMana
+        {
+            get { return _lbMana; }
+            set { _lbMana = value; }
+        }
+
+        Button _btBloodNMana;
+
+        public Button BtBloodNMana
+        {
+            get { return _btBloodNMana; }
+            set { _btBloodNMana = value; }
+        }
+
+        Label _lbBloodNMana;
+
+        public Label LbBloodNMana
+        {
+            get { return _lbBloodNMana; }
+            set { _lbBloodNMana = value; }
+        }
 //------------------
         public void SetCharacter(PlayerCharacter _char)
         {
@@ -155,6 +211,40 @@ namespace TheReturnOfTheKing
             _btCMUpButton.Mouse_Click += new Button.OnMouseClickHandler(UpCommandbutton_Clicked);
             _healbarFrame.AddChild (_btCMUpButton);
 
+            //item blood, mana, both
+            _itemFrame = (GameFrame)_resouces[0].CreateObject(10);
+            _itemFrame.X += _healbarFrame.X;
+            _itemFrame.Y += _healbarFrame.Y;
+
+            _btBlood = (Button)_resouces[2].CreateObject(47);
+            _btBlood.Mouse_Click += new Button.OnMouseClickHandler(BloodButton_Clicked);
+
+            _lbBlood = (Label)_resouces[3].CreateObject(16);
+            _lbBlood.StringInfo = _character.HPPortion.Count.ToString();
+
+            _itemFrame.AddChild(_btBlood);
+            _itemFrame.AddChild(_lbBlood);
+            //mana
+            _btMana = (Button)_resouces[2].CreateObject(48);
+            _btMana.Mouse_Click += new Button.OnMouseClickHandler(ManaButton_Clicked);
+
+            _lbMana = (Label)_resouces[3].CreateObject(17);
+            _lbMana.StringInfo = _character.MPPortion.Count.ToString();
+
+            _itemFrame.AddChild(_btMana);
+            _itemFrame.AddChild(_lbMana);
+
+            //both
+            _btBloodNMana = (Button)_resouces[2].CreateObject(49);
+            _btBloodNMana.Mouse_Click += new Button.OnMouseClickHandler(BloodNManaButton_Clicked);
+
+            _lbBloodNMana = (Label)_resouces[3].CreateObject(18);
+            _lbBloodNMana.StringInfo = _character.RestorePortion.Count.ToString();
+
+            _itemFrame.AddChild(_btBloodNMana);
+            _itemFrame.AddChild(_lbBloodNMana);
+            
+
             _rect = new Rectangle((int)_healbarFrame.X, (int)_healbarFrame.Y, (int)_healbarFrame.Width, (int)_healbarFrame.Height);
         }
 
@@ -204,6 +294,11 @@ namespace TheReturnOfTheKing
             //update ống level
             float _levelRate = (float)_character.CurrentEXP / (float)_character.NextLevelEXP;
             _levelProcess.UpdateDrawRect(_levelRate);
+            //Update so luong item
+            _itemFrame.Update(gameTime); //trong cai update này co san~ cai update cua nhung button
+            _lbBlood.StringInfo = _character.HPPortion.Count.ToString();
+            _lbMana.StringInfo = _character.MPPortion.Count.ToString();
+            _lbBloodNMana.StringInfo = _character.RestorePortion.Count.ToString();
             //update main rect
             _rect = new Rectangle((int)_healbarFrame.X, (int)_healbarFrame.Y, (int)_healbarFrame.Width, (int)_healbarFrame.Height);
             if (_rect.Contains(GlobalVariables.CurrentMouseState.X, GlobalVariables.CurrentMouseState.Y))
@@ -220,6 +315,15 @@ namespace TheReturnOfTheKing
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             _healbarFrame.Draw(gameTime, sb);
+
+            //Itemframe khong duoc add vào trong healthbar frame de ve~ chung mà no tu ve~ -> do sai lam trong thiet ke :|
+            sb.Draw(_itemFrame._sprite[0].Texture2D[0], new Vector2 (_itemFrame.X, _itemFrame.Y), Color.White);
+            for (int i = 0; i < _itemFrame.Child.Count; i++)
+            {
+                _itemFrame.Child[i].Draw(gameTime, sb);
+            }
+
+            //Ve cac process bar
             _bloodPro.Draw(gameTime, sb);
             _manaPro.Draw(gameTime, sb);
 
@@ -311,7 +415,34 @@ namespace TheReturnOfTheKing
                 _character.Skillboard.BoardFrame.Motion.IsStanding = false;
             }
         }
+ //Su kien cho Item button
 
+        public void BloodButton_Clicked(object sender, EventArgs e)
+        {
+            if (_character.HPPortion.Count > 0)
+            {
+                _character.HPPortion[0].DoEffect();
+                _character.HPPortion.Remove(_character.HPPortion[0]);
+            }
+        }
+
+        public void ManaButton_Clicked(object sender, EventArgs e)
+        {
+            if (_character.MPPortion.Count > 0)
+            {
+                _character.MPPortion[0].DoEffect();
+                _character.MPPortion.Remove(_character.MPPortion[0]);
+            }
+        }
+
+        public void BloodNManaButton_Clicked(object sender, EventArgs e)
+        {
+            if (_character.RestorePortion.Count > 0)
+            {
+                _character.RestorePortion[0].DoEffect();
+                _character.RestorePortion.Remove(_character.RestorePortion[0]);
+            }
+        }
 //---Su kien cho Left Button Skill---
         public void LeftSkillButon_Clicked(object sender, EventArgs e)
         {
