@@ -26,6 +26,7 @@ namespace TheReturnOfTheKing
         public List<Projectile> _listProjectile = new List<Projectile>();
         public HealthBar _healthBar;
         public SkillBoard _skillBoard;
+        public InfoBoard _infoBoard;
         public DisplayMessageLayer _displayMessageLayer;
         public LHSkillSelectionFrame _lhSkillSelectionFrame;
         public RHSkillSelectionFrame _rhSkillSelectionFrame;
@@ -99,6 +100,15 @@ namespace TheReturnOfTheKing
             _resourceForSubMenu.Add(_objectManagerArray[10]);
             _subMenu.GetResources(_resourceForSubMenu);
             _subMenu.GetStateOwner(this);
+
+            //Phần infoBoard
+            _infoBoard = new InfoBoard();
+            _infoBoard.SetCharacter(_char);
+            List<GameObjectManager> _resourceForInfo = new List<GameObjectManager>();
+            _resourceForInfo.Add(_objectManagerArray[8]);
+            _resourceForInfo.Add(_objectManagerArray[10]);
+            _resourceForInfo.Add(_objectManagerArray[11]);
+            _infoBoard.GetResources(_resourceForInfo);
         }
 
         public override void EnterState()
@@ -128,6 +138,7 @@ namespace TheReturnOfTheKing
                 _lhSkillSelectionFrame.Update(gameTime);
                 _rhSkillSelectionFrame.Update(gameTime);
                 _skillBoard.Update(gameTime);
+                _infoBoard.Update(gameTime);
 
                 _listToDraw.Clear();
                 _map.Update(gameTime);
@@ -230,6 +241,7 @@ namespace TheReturnOfTheKing
             _frog.Draw(gameTime, sb);
             GlobalVariables.GameCursor.Draw(gameTime, sb);
             _skillBoard.Draw(gameTime, sb);
+            _infoBoard.Draw(gameTime, sb);
             _rhSkillSelectionFrame.Draw(gameTime, sb);
             _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);

@@ -127,6 +127,7 @@
     <Compile Include="GameObject\Item\ItemManager.cs" />
     <Compile Include="Control\Label.cs" />
     <Compile Include="Manager\LabelManager.cs" />
+    <Compile Include="Misc\InfoBoard.cs" />
     <Compile Include="Misc\LHSkillSelectionFrame.cs" />
     <Compile Include="GameObject\Skill\LifeStealAttackSkill.cs" />
     <Compile Include="GameObject\Skill\SoulsReleaseSkill.cs" />

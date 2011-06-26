@@ -136,4 +136,17 @@
       <FirstDirection>Null</FirstDirection>
     </MoveInfo>
   </Frame>
+  
+  <!--Frame Info-->
+  <Frame id="11">
+    <BackGround>img/dialog/frame/info/infoframe</BackGround>
+    <X>-440</X>
+    <Y>-2</Y>
+    <Width>400</Width>
+    <Height>558</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
 </root>

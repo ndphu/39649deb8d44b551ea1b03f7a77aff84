@@ -60,7 +60,10 @@ namespace TheReturnOfTheKing
         public int DrawOffSetX
         {
             get { return _drawOffSetX; }
-            set { _drawOffSetX = value; }
+            set { 
+                _drawOffSetX = value;
+                _drawX = (int)_x + _drawOffSetX;
+            }
         }
 
         int _drawOffSetY;
@@ -68,7 +71,10 @@ namespace TheReturnOfTheKing
         public int DrawOffSetY
         {
             get { return _drawOffSetY; }
-            set { _drawOffSetY = value; }
+            set { 
+                _drawOffSetY = value;
+                _drawY = (int)_y + _drawOffSetY;
+            }
         }
 
         public override float X
@@ -122,6 +128,16 @@ namespace TheReturnOfTheKing
             _new._drawOffSetX = _drawOffSetX;
             _new._drawOffSetY = _drawOffSetY;
             return _new;
+        }
+
+        public void UpdateOffset()
+        {
+            int _iwidth = _sprite[0].Texture2D[0].Width;
+            int _iheight = _sprite[0].Texture2D[0].Height;
+
+            Vector2 _temp = _sf.MeasureString(_stringInfo);
+            _drawOffSetX = (int)((_iwidth - _temp.X) / 2);
+            _drawOffSetY = (int)((_iheight - _temp.Y) / 2);
         }
 
         public override void Update(GameTime gameTime)
