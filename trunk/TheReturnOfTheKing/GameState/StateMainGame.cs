@@ -104,6 +104,10 @@ namespace TheReturnOfTheKing
         public override void EnterState()
         {
             base.EnterState();
+            if (GlobalVariables.BackgroundSound != null && GlobalVariables.BackgroundSound.IsPlaying)
+                GlobalVariables.BackgroundSound.Stop(AudioStopOptions.Immediate);
+            GlobalVariables.BackgroundSound = GlobalVariables.SoundBank.GetCue("dlvla");
+            GlobalVariables.BackgroundSound.Play();
         }
         
         public override void UpdateState(GameTime gameTime)
@@ -239,6 +243,8 @@ namespace TheReturnOfTheKing
         public override void ExitState()
         {
             base.ExitState();
+            if (GlobalVariables.BackgroundSound.IsPlaying == true)
+                GlobalVariables.BackgroundSound.Stop(AudioStopOptions.Immediate);
         }
     }
 }

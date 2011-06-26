@@ -10,8 +10,16 @@ namespace TheReturnOfTheKing
         public override void UpdatePosition(GameTime gameTime)
         {
             base.UpdatePosition(gameTime);
-            Owner.X = Owner.SkillOwner.PlayerOwner.X;
-            Owner.Y = Owner.SkillOwner.PlayerOwner.Y;
+            if (Owner.SkillOwner != null)
+            {
+                Owner.X = Owner.SkillOwner.PlayerOwner.X;
+                Owner.Y = Owner.SkillOwner.PlayerOwner.Y;
+            }
+            else
+            {
+                Owner.X = Owner.CharacterOwner.X;
+                Owner.Y = Owner.CharacterOwner.Y;
+            }
         }
     }
 }

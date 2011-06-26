@@ -15,6 +15,13 @@ namespace TheReturnOfTheKing
 {
     public abstract class VisibleGameObject
     {
+        string _soundName;
+
+        public string SoundName
+        {
+            get { return _soundName; }
+            set { _soundName = value; }
+        }
         public GameSprite[] _sprite;
         public int _nsprite;
 
@@ -117,6 +124,13 @@ namespace TheReturnOfTheKing
         public virtual void ChildNotify(VisibleGameObject child)
         {
 
+        }
+        Cue _cue;
+
+        public Cue Cue
+        {
+            get { return _cue; }
+            set { _cue = value; }
         }
     }
 }

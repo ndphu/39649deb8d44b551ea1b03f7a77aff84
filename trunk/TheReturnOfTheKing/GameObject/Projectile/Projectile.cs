@@ -15,7 +15,13 @@ namespace TheReturnOfTheKing
 {
     public class Projectile : VisibleGameEntity
     {
-        
+        Character _characterOwner;
+
+        public Character CharacterOwner
+        {
+            get { return _characterOwner; }
+            set { _characterOwner = value; }
+        }
         /// <summary>
         /// Skill ma projectile nay thuoc ve
         /// </summary>

@@ -125,7 +125,6 @@ namespace TheReturnOfTheKing
 
         public override void EnterState()
         {
-
         }
 
         public override void UpdateState(GameTime gameTime)

@@ -31,7 +31,7 @@
   <Class Name="TheReturnOfTheKing.Character" Collapsed="true">
     <Position X="31.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BByAwBDChJkISgAgECJJiCEFQtlGCgesBE5ILgQIYgA=</HashCode>
+      <HashCode>BByAQBDChJkISgAgECLJiCEFQtlGGgesBE5ILgQIYgA=</HashCode>
       <FileName>GameObject\Character\Character.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,7 +52,7 @@
   <Class Name="TheReturnOfTheKing.PlayerCharacter" Collapsed="true">
     <Position X="33.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UBRCAIEIQAmOAoAAAKMACQUSAgAESAUDgQAAgJFQYBE=</HashCode>
+      <HashCode>UBRCAIEIQAmOAoAAAKMACQUSAgAETAUDgQBAkJFQcBE=</HashCode>
       <FileName>GameObject\Character\PlayerCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="TheReturnOfTheKing.Item" Collapsed="true">
     <Position X="70.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAEAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAECAAAQAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameObject\Item\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,7 @@
   <Class Name="TheReturnOfTheKing.Portion" Collapsed="true">
     <Position X="69.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAUAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>GameObject\Item\Portion.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -136,7 +136,7 @@
   <Class Name="TheReturnOfTheKing.Projectile" Collapsed="true">
     <Position X="74" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEABAgCAAAgAAACAACAAAABACCAAgAAgQAAAAaDQ=</HashCode>
+      <HashCode>AAQAEABAgCAABgAAACAACAAAABACCAAgAAgQBAAAaDQ=</HashCode>
       <FileName>GameObject\Projectile\Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -290,14 +290,14 @@
   <Class Name="TheReturnOfTheKing.VisibleGameObject" Collapsed="true">
     <Position X="46" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAIRASAAwDAAAIAAEACADAAIAABAAECAAAAYBA=</HashCode>
+      <HashCode>AAQAAAAJRASAAwDAAAIAAEgCADAAIACBAAECAAAAYBA=</HashCode>
       <FileName>GameObject\VisibleGameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.GameState" Collapsed="true">
     <Position X="10" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgACAABAABAAAAAAAAAAQAACAAAAAAAoABAAACEA=</HashCode>
+      <HashCode>AAAAgACAABAADAAAAAAAAAAQAACAAAAAAAoABAAAGEA=</HashCode>
       <FileName>GameState\GameState.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -339,7 +339,7 @@
   <Class Name="TheReturnOfTheKing.StateMainGame" Collapsed="true">
     <Position X="19" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAECAAACAAAAIAAAAAEIAEQQAIGAAAEAAEoBBAAAAQA=</HashCode>
+      <HashCode>EAECAAACAAAAIAAAAAEIAEQQAIGAAAEAAEoBBAAAAQA=</HashCode>
       <FileName>GameState\StateMainGame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -367,7 +367,7 @@
   <Class Name="TheReturnOfTheKing.GlobalVariables" Collapsed="true">
     <Position X="91.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABiEAABUggAAAAAEBQAAABQABAARBAAAAIEgAKCIA=</HashCode>
+      <HashCode>AAEBiEAABUggAABAQEDQAEABQgBAARBAgAAIEgAKCII=</HashCode>
       <FileName>GlobalVariables.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -542,7 +542,7 @@
   <Class Name="TheReturnOfTheKing.HealthBar" Collapsed="true">
     <Position X="20" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gEQSAggCDAgACkQoAAAkgAAAAACCAAAgAAAUHBCQCAg=</HashCode>
+      <HashCode>gEQaAggCDAgACkQoAAAkgAAAAACCACAgAAAUHBCQCAg=</HashCode>
       <FileName>Misc\HealthBar.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -591,14 +591,14 @@
   <Class Name="TheReturnOfTheKing.RHSkillSelectionFrame" Collapsed="true">
     <Position X="13.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABYEAQAACCCAUmAJQEYkQAABBASMACBihCAACACKSoE=</HashCode>
+      <HashCode>CBYEgQAACCCAUmAJQEYkwAABBESMACBixCAACACKSoE=</HashCode>
       <FileName>Misc\RHSkillSelectionFrame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TheReturnOfTheKing.SkillBoard" Collapsed="true">
     <Position X="17.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>hI7UGkUlCwfi1+LkZMMQrY2hcxywAgToJJ4kGUCGP5U=</HashCode>
+      <HashCode>jM70mkUti8fi1+KkZMdQrI2gc5ywAgVqJJo0m0GKP50=</HashCode>
       <FileName>Misc\SkillBoard.cs</FileName>
     </TypeIdentifier>
   </Class>

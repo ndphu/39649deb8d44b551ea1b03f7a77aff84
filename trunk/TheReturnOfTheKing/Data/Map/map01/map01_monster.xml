@@ -42,6 +42,7 @@
     <Y>52</Y>
     <Type>2</Type>
   </Monster>
+  <!--
   <Monster>
     <X>17</X>
     <Y>52</Y>
@@ -127,5 +128,5 @@
     <Y>57</Y>
     <Type>2</Type>
   </Monster>
- 
+ -->
 </root>

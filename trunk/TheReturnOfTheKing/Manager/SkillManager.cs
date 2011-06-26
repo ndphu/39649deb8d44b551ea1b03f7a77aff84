@@ -434,6 +434,7 @@ namespace TheReturnOfTheKing
             ((Skill)_prototype[id]).LargeIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Large").InnerText);
             ((Skill)_prototype[id]).ClickedIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Clicked").InnerText);
             ((Skill)_prototype[id]).IdleIcon = content.Load<Texture2D>(_skill.SelectSingleNode(@"Idle").InnerText);
+            ((Skill)_prototype[id]).SoundName = _skill.SelectSingleNode(@"Sound").InnerText;
             return true;
         }
     }
