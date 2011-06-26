@@ -24,7 +24,7 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = ((Monster)_object).X;
             prjt.Y = ((Monster)_object).Y;
             
@@ -39,7 +39,7 @@ namespace TheReturnOfTheKing
             }
 
             prjt.SkillOwner = this;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            PlayerOwner.StateOwner._listProjectile.Add(prjt);
             PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
 
@@ -56,11 +56,11 @@ namespace TheReturnOfTheKing
                 if (GlobalVariables.GlobalRandom.Next(0, 100) < skillInfo.ChanceToCurse)
                 {
                     ((Monster)target).Defense -= skillInfo.AmorReduce;
-                    Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(7);
+                    Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(7);
                     prjt.X = target.X;
                     prjt.Y = target.Y;
                     ((Monster)target).AdditionnalEffect.Add(prjt);
-                    ((Monster)target).Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    ((Monster)target).StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                     {
                         X = ((Monster)target).X,
                         Y = ((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim,

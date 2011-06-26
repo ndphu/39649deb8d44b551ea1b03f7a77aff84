@@ -10,6 +10,21 @@
       <MP>0</MP>
       <ProjectileType>0</ProjectileType>
     </Level>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
+    <Level>
+      <PercentDamage>0</PercentDamage>
+      <MP>0</MP>
+      <ProjectileType>0</ProjectileType>
+    </Level>
   </Skill>
   <Skill id="1">
     <Name>Cleaving Attack</Name>
@@ -431,6 +446,14 @@
       <Clicked>img/skillicon/Clicked/00</Clicked>
       <Idle>img/skillicon/Idle/00</Idle>
       <Large>img/skillicon/Large/00</Large>
+      <Level>
+        <MP>-10</MP>
+        <ProjectileType>17</ProjectileType>
+      </Level>
+      <Level>
+        <MP>-10</MP>
+        <ProjectileType>17</ProjectileType>
+      </Level>
       <Level>
         <MP>-10</MP>
         <ProjectileType>17</ProjectileType>

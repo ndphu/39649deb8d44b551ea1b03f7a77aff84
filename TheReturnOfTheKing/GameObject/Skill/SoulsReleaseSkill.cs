@@ -30,7 +30,7 @@ namespace TheReturnOfTheKing
                 lmc.Rad = MathHelper.ToRadians(i);
                 lmc.MaxA = 300;
                 lmc.MaxB = 200;
-                Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                 prjt.X = PlayerOwner.X;
                 prjt.Y = PlayerOwner.Y;
                 prjt.IsRemoveAfterEffect = false;
@@ -40,7 +40,7 @@ namespace TheReturnOfTheKing
                 lmc.Owner = prjt;
                 prjt.ProjectileController = lmc;
                 prjt.LifeTime = int.MaxValue;
-                PlayerOwner.Owner._listProjectile.Add(prjt);                
+                PlayerOwner.StateOwner._listProjectile.Add(prjt);                
             }
             PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
         }

@@ -248,7 +248,7 @@ namespace TheReturnOfTheKing
                 ret[i].DestPoint = new Point((int)ret[i].X, (int)ret[i].Y);
                 ret[i].CellToMove = new List<Point>();
                 ret[i].SetMap(this);
-                ret[i].Owner = this.Owner;
+                ret[i].StateOwner = this.Owner;
             }
             return ret;
         }

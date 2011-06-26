@@ -88,13 +88,13 @@ namespace TheReturnOfTheKing
                 DB -= 0.125f;
                 if (GlobalVariables.GlobalRandom.Next(0, 100) < 15)
                 {
-                    Projectile prjt = ((Projectile)((Projectile)Owner).SkillOwner.PlayerOwner.Owner._objectManagerArray[6].CreateObject(((Projectile)Owner).SkillOwner.ListLevel[((Projectile)Owner).SkillOwner.Level].ListSkillInfo[0].ProjectileType));
+                    Projectile prjt = ((Projectile)((Projectile)Owner).SkillOwner.PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(((Projectile)Owner).SkillOwner.ListLevel[((Projectile)Owner).SkillOwner.Level].ListSkillInfo[0].ProjectileType));
                     prjt.X = Owner.X;
                     prjt.Y = Owner.Y;
                     prjt.SkillOwner = ((Projectile)Owner).SkillOwner;
                     prjt.MaxDamage = ((Projectile)Owner).MaxDamage;
                     prjt.MinDamage = ((Projectile)Owner).MinDamage;
-                    ((Projectile)Owner).SkillOwner.PlayerOwner.Owner._listProjectile.Add(prjt);
+                    ((Projectile)Owner).SkillOwner.PlayerOwner.StateOwner._listProjectile.Add(prjt);
                 }
                 if (A >= MaxA)
                     A = MaxA;

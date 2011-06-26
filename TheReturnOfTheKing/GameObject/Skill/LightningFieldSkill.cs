@@ -33,7 +33,7 @@ namespace TheReturnOfTheKing
             
             for (int i = 0; i < ListLevel[Level].ListSkillInfo[0].NumberOfStar; ++i)
             {
-                Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                 prjt.X = GlobalVariables.GlobalRandom.Next((int)PlayerOwner.X - 200, (int)PlayerOwner.X + 200);
                 prjt.Y = GlobalVariables.GlobalRandom.Next((int)PlayerOwner.Y - 100, (int)PlayerOwner.Y + 100);
                 prjt.MinDamage = ListLevel[Level].ListSkillInfo[0].MinDamage;
@@ -43,7 +43,7 @@ namespace TheReturnOfTheKing
                 lpc.Owner = prjt;
                 prjt.ProjectileController = lpc;
                 prjt.DelayTime = GlobalVariables.GlobalRandom.Next(0, ListLevel[Level].ListSkillInfo[0].Duration * 60);
-                PlayerOwner.Owner._listProjectile.Add(prjt);
+                PlayerOwner.StateOwner._listProjectile.Add(prjt);
                 
             }
             

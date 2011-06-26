@@ -24,7 +24,7 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = PlayerOwner.TargetSkillX;
             prjt.Y = PlayerOwner.TargetSkillY;
             prjt.MinDamage = ListLevel[Level].ListSkillInfo[0].MinDamage;
@@ -33,7 +33,7 @@ namespace TheReturnOfTheKing
             EarthShakeController esc = new EarthShakeController();
             esc.Owner = prjt;
             prjt.ProjectileController = esc;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            PlayerOwner.StateOwner._listProjectile.Add(prjt);
 
             PlayerOwner.Mp += ListLevel[Level].ListSkillInfo[0].Mp;
         }
@@ -44,11 +44,11 @@ namespace TheReturnOfTheKing
             if (((Monster)target).BashTime != 0)
                 return;
             ((Monster)target).BashTime = ListLevel[Level].ListSkillInfo[0].BashTime * 60;
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(6);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(6);
             prjt.X = target.X;
             prjt.Y = target.Y;
             ((Monster)target).AdditionnalEffect.Add(prjt);
-            ((Monster)target).Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+            ((Monster)target).StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
             {
                 X = ((Monster)target).X,
                 Y = ((Monster)target).Y - 2 * GlobalVariables.MapCollisionDim,

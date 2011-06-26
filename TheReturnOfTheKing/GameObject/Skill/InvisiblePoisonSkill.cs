@@ -26,23 +26,23 @@ namespace TheReturnOfTheKing
         public override void Active()
         {
             base.Active();
-            if (!PlayerOwner.Owner._listProjectile.Contains(prjt))
+            if (!PlayerOwner.StateOwner._listProjectile.Contains(prjt))
             {
-                prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                 prjt.ProjectileController = new PoisonWormController();
                 prjt.ProjectileController.Owner = prjt;
                 prjt.SkillOwner = this;
                 prjt.DelayTime = 0;
                 prjt.LifeTime = int.MaxValue;
                 prjt.IsRemoveAfterEffect = false;
-                PlayerOwner.Owner._listProjectile.Add(prjt);
+                PlayerOwner.StateOwner._listProjectile.Add(prjt);
             }
         }
         public override void Deactive()
         {
             base.Deactive();
-            if (prjt != null && PlayerOwner.Owner._listProjectile.Contains(prjt))
-                PlayerOwner.Owner._listProjectile.Remove(prjt);
+            if (prjt != null && PlayerOwner.StateOwner._listProjectile.Contains(prjt))
+                PlayerOwner.StateOwner._listProjectile.Remove(prjt);
         }
 
         public override void DoEffect(VisibleGameEntity _object)

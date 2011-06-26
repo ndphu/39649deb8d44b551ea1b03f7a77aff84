@@ -52,12 +52,12 @@ namespace TheReturnOfTheKing
             set { _bashTime = value; }
         }
 
-        StateMainGame _owner;
+        StateMainGame _stateOwner;
 
-        public StateMainGame Owner
+        public StateMainGame StateOwner
         {
-            get { return _owner; }
-            set { _owner = value; }
+            get { return _stateOwner; }
+            set { _stateOwner = value; }
         }
 
         int _damage;
@@ -557,7 +557,7 @@ namespace TheReturnOfTheKing
             {
                 if (RecentHPLost != 0)
                 {
-                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                     {
                         X = this.X,
                         Y = this.Y - 2 * GlobalVariables.MapCollisionDim,
@@ -622,39 +622,73 @@ namespace TheReturnOfTheKing
                 if (_sprite[Dir].Itexture2D == _sprite[Dir].Ntexture2D - 1)
                 {
                     IsDyed = true;
-                    Owner._char.CurrentEXP += ExpReward;
-                    Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                    int dropItemRate = GlobalVariables.GlobalRandom.Next(0, 100);
+                    if (dropItemRate < 35)
+                    {
+                        int portionKindRate = GlobalVariables.GlobalRandom.Next(0, 100);
+                        Portion portion = new Portion();
+                        portion.PlayerOwner = StateOwner._char;
+                        if (portionKindRate < 40)
+                        {
+                            portion.HP = 50;
+                            portion.MP = 0;                            
+                            StateOwner._char.HPPortion.Add(portion);
+                            StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
+                            {
+                                MessageContent = "Gain HP portion",
+                                LifeTime = 120,
+                                TextColor = Color.LightCoral,
+                            });
+                        }
+                        if (40 <= portionKindRate && portionKindRate < 80)
+                        {
+                            portion.HP = 0;
+                            portion.MP = 20;
+                            StateOwner._char.MPPortion.Add(portion);
+                            StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
+                            {
+                                MessageContent = "Gain MP portion",
+                                LifeTime = 120,
+                                TextColor = Color.LightBlue,
+                            });
+                        }
+                        if (80 <= portionKindRate)
+                        {
+                            portion.HP = 50;
+                            portion.MP = 20;
+                            StateOwner._char.RestorePortion.Add(portion);
+                            StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
+                            {
+                                MessageContent = "Gain Restore portion",
+                                LifeTime = 120,
+                                TextColor = Color.Violet,
+                            });
+                        }
+
+                    }
+                    StateOwner._char.CurrentEXP += ExpReward;
+                    
+                    StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
                     {
                         MessageContent = "Gain " + ExpReward.ToString() + " exp",
-                        TextColor = Color.WhiteSmoke,
-                        X = Owner._char.X,
-                        Y = Owner._char.Y - 32,
-                        LifeTime = 60,
-                        MinY = 0,
-                        DelayTime = 0,
-                        DeltaY = -1,
-                        Owner = this,
+                        LifeTime = 120,
+                        TextColor = Color.Wheat,
                     });
-                    if (Owner._char.CurrentEXP >= Owner._char.NextLevelEXP)
+                    if (StateOwner._char.CurrentEXP >= StateOwner._char.NextLevelEXP)
                     {
-                        Owner._char.Level += 1;
-                        Owner._char.CurrentEXP = 0;
-                        Owner._char.NextLevelEXP += Owner._char.NextLevelEXP * 80 / 100;
-                        Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(18);
-                        prjt.X = Owner._char.X;
-                        prjt.Y = Owner._char.Y; 
-                        Owner._char.AdditionnalEffect.Add(prjt);
-                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        StateOwner._char.Level += 1;
+                        StateOwner._char.CurrentEXP = 0;
+                        StateOwner._char.NextLevelEXP += StateOwner._char.NextLevelEXP * 80 / 100;
+                        Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(18);
+                        prjt.X = StateOwner._char.X;
+                        prjt.Y = StateOwner._char.Y; 
+                        StateOwner._char.AdditionnalEffect.Add(prjt);
+                        
+                        StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
                         {
-                            MessageContent = "Level up to " + Owner._char.Level.ToString(),
-                            TextColor = Color.LightBlue,
-                            X = Owner._char.X,
-                            Y = Owner._char.Y - 32,
-                            LifeTime = 60,
-                            MinY = 0,
-                            DelayTime = 15,
-                            DeltaY = -1,
-                            Owner = this,
+                            MessageContent = "Level up to " + StateOwner._char.Level.ToString(),
+                            LifeTime = 120,
+                            TextColor = Color.OrangeRed,
                         });
                     }
                 }

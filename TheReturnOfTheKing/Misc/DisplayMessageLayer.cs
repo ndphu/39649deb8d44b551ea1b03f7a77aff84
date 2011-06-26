@@ -17,8 +17,6 @@ namespace TheReturnOfTheKing
     {
         public class Message: VisibleGameEntity
         {
-
-
             /// <summary>
             /// Message nay thuoc doi tuong nao
             /// </summary>
@@ -111,7 +109,19 @@ namespace TheReturnOfTheKing
             }
  
         }
-
+        public class InfoMessage : Message
+        {
+            public override void Draw(GameTime gameTime, SpriteBatch sb)
+            {
+                //base.Draw(gameTime, sb);
+                sb.DrawString(GlobalVariables.Sf, MessageContent, new Vector2(X, Y ), TextColor);
+            }
+            public override void Update(GameTime gameTime)
+            {
+                //base.Update(gameTime);
+                LifeTime -= 1;
+            }
+        }
         List<Message> _messageArray = new List<Message>();
 
         public List<Message> MessageArray
@@ -120,9 +130,9 @@ namespace TheReturnOfTheKing
             set { _messageArray = value; }
         }
 
-        List<Message> _infoMessageArray = new List<Message>();
+        List<InfoMessage> _infoMessageArray = new List<InfoMessage>();
 
-        public List<Message> InfoMessageArray
+        public List<InfoMessage> InfoMessageArray
         {
             get { return _infoMessageArray; }
             set { _infoMessageArray = value; }
@@ -133,6 +143,10 @@ namespace TheReturnOfTheKing
             for (int i = 0; i < _messageArray.Count; ++i)
             {
                 _messageArray[i].Draw(gameTime, sb);
+            }
+            for (int i = 0; i < _infoMessageArray.Count; ++i)
+            {
+                _infoMessageArray[i].Draw(gameTime, sb);
             }
         }
 
@@ -146,7 +160,14 @@ namespace TheReturnOfTheKing
                 else
                     _messageArray[i].Update(gameTime);
             }
-
+            for (int i = 0; i < _infoMessageArray.Count; ++i)
+            {
+                _infoMessageArray[i].Update(gameTime);
+                _infoMessageArray[i].X = 5;
+                _infoMessageArray[i].Y = 5 + i * 15;
+                if (_infoMessageArray[i].LifeTime <= 0)
+                    _infoMessageArray.Remove(_infoMessageArray[i]);
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(17);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(17);
             prjt.X = PlayerOwner.X;
             prjt.Y = PlayerOwner.Y;
             prjt.MinDamage = PlayerOwner.MinDamage / 5;
@@ -38,7 +38,7 @@ namespace TheReturnOfTheKing
             float maxDim = Math.Abs(lspc.FlyingDirection.X) > Math.Abs(lspc.FlyingDirection.Y) ? Math.Abs(lspc.FlyingDirection.X): Math.Abs(lspc.FlyingDirection.Y);
             lspc.FlyingDirection = new Vector2(lspc.FlyingDirection.X / maxDim, lspc.FlyingDirection.Y / maxDim);
             prjt.ProjectileController = lspc;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            PlayerOwner.StateOwner._listProjectile.Add(prjt);
         }
 
         //public override void DoAdditionalEffect(VisibleGameEntity target)
