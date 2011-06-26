@@ -29,6 +29,7 @@ namespace TheReturnOfTheKing
         public DisplayMessageLayer _displayMessageLayer;
         public LHSkillSelectionFrame _lhSkillSelectionFrame;
         public RHSkillSelectionFrame _rhSkillSelectionFrame;
+        public SubMenu _subMenu;
 
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
@@ -89,6 +90,14 @@ namespace TheReturnOfTheKing
             _rhSkillSelectionFrame = new RHSkillSelectionFrame();
             _rhSkillSelectionFrame.SetCharacter(_char);
             _rhSkillSelectionFrame.GetResources(_resourceForLHSSelectionFrame);
+
+            //Phần subMenu
+            _subMenu = new SubMenu();
+            List<GameObjectManager> _resourceForSubMenu = new List<GameObjectManager>();
+            _resourceForSubMenu.Add(_objectManagerArray[8]);
+            _resourceForSubMenu.Add(_objectManagerArray[10]);
+            _subMenu.GetResources(_resourceForSubMenu);
+            _subMenu.GetStateOwner(this);
         }
 
         public override void EnterState()
@@ -100,7 +109,7 @@ namespace TheReturnOfTheKing
         {
             base.UpdateState(gameTime);
             if (!GlobalVariables.IsPauseGame)
-            {               
+            {
 
                 float minX = Math.Abs(GlobalVariables.dX);
                 float maxX = Math.Abs(GlobalVariables.dX) + GlobalVariables.ScreenWidth;
@@ -184,11 +193,10 @@ namespace TheReturnOfTheKing
                 _displayMessageLayer.Update(gameTime);
                 _frog.Update(gameTime);
             }
-            
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.N))
-                GlobalVariables.IsPauseGame = true;
-            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.M))
-                GlobalVariables.IsPauseGame = false;
+            else
+            {
+                _subMenu.Update(gameTime);
+            }
         }
         
         public override void DrawState(GameTime gameTime, SpriteBatch sb)
@@ -220,10 +228,10 @@ namespace TheReturnOfTheKing
             _rhSkillSelectionFrame.Draw(gameTime, sb);
             _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);
+
             if (GlobalVariables.IsPauseGame)
             {
-                Texture2D texture = Owner.Content.Load<Texture2D>("manhinhmo");
-                sb.Draw(texture, new Vector2(0, 0), Color.White);
+                _subMenu.Draw(gameTime, sb);
             }
         }
 

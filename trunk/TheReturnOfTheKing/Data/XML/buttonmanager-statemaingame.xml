@@ -491,4 +491,90 @@
     <Width>48</Width>
     <Height>48</Height>
   </Button>
+  
+  <!--Button tren submenu-->
+  <Button id ="40">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/onoff/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/onoff/clicked</Clicked>
+    </Image>
+
+    <X>75</X>
+    <Y>160</Y>
+    <Width>30</Width>
+    <Height>30</Height>
+  </Button>
+
+  <Button id ="41">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/onoff/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/onoff/clicked</Clicked>
+    </Image>
+
+    <X>172</X>
+    <Y>160</Y>
+    <Width>30</Width>
+    <Height>30</Height>
+  </Button>
+
+  <Button id ="42">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/helps/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/helps/clicked</Clicked>
+    </Image>
+
+    <X>30</X>
+    <Y>205</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="43">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/quit/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/quit/clicked</Clicked>
+    </Image>
+
+    <X>30</X>
+    <Y>272</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="44">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/resume/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/resume/clicked</Clicked>
+    </Image>
+
+    <X>30</X>
+    <Y>385</Y>
+    <Width>250</Width>
+    <Height>56</Height>
+  </Button>
+  
+  <!--Button OK va Cancel-->
+  <Button id ="45">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/ok/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/ok/clicked</Clicked>
+    </Image>
+
+    <X>24</X>
+    <Y>75</Y>
+    <Width>200</Width>
+    <Height>56</Height>
+  </Button>
+
+  <Button id ="46">
+    <Image>
+      <Idle>img/dialog/control/button/submenu/cancel/idle</Idle>
+      <Clicked>img/dialog/control/button/submenu/cancel/clicked</Clicked>
+    </Image>
+
+    <X>230</X>
+    <Y>75</Y>
+    <Width>200</Width>
+    <Height>56</Height>
+  </Button>
 </root>

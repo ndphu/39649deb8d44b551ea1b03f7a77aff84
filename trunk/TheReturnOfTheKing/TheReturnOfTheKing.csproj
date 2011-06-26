@@ -160,6 +160,7 @@
     <Compile Include="Manager\ProjectileManager.cs" />
     <Compile Include="GameObject\Projectile\PoisonWormController.cs" />
     <Compile Include="Misc\RHSkillSelectionFrame.cs" />
+    <Compile Include="Misc\SubMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MainGame.cs" />

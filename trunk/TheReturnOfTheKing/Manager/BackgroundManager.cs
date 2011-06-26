@@ -41,7 +41,7 @@ namespace TheReturnOfTheKing
                 _doc.Load(_xmlInfo);
                 XmlNode _background = _doc.SelectSingleNode(@"//Background[@id = '" + id.ToString() + "']");
 
-                XmlNodeList _imageList = _background.SelectNodes("//Image");
+                XmlNodeList _imageList = _background.SelectNodes("Image");
                 _prototype[id] = new Background();
                 _prototype[id]._nsprite = _imageList.Count;
                 _prototype[id]._sprite = new GameSprite[_prototype[id]._nsprite];
