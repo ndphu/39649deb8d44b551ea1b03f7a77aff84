@@ -85,4 +85,42 @@
       <FirstDirection>Null</FirstDirection>
     </MoveInfo>
   </Frame>
+  
+  <!--frame của cái submenu-->
+  <Frame id="7">
+    <BackGround>img/dialog/frame/submenu/menu</BackGround>
+    <X>243</X>
+    <Y>41</Y>
+    <Width>314</Width>
+    <Height>468</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+
+  <Frame id="8">
+    <BackGround>img/background/submenubg</BackGround>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>800</Width>
+    <Height>600</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
+  
+  <!--message frame-->
+  <Frame id="9">
+    <BackGround>img/dialog/frame/submenu/messageframe</BackGround>
+    <X>175</X>
+    <Y>192</Y>
+    <Width>450</Width>
+    <Height>166</Height>
+    <DelayTime>0</DelayTime>
+    <MoveInfo>
+      <FirstDirection>Null</FirstDirection>
+    </MoveInfo>
+  </Frame>
 </root>

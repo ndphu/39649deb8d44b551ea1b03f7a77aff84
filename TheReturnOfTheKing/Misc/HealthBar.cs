@@ -369,7 +369,7 @@ namespace TheReturnOfTheKing
 //Sư kiện cho main button
         public void UpCommandbutton_Clicked(object sender, EventArgs e)
         {
-            
+            GlobalVariables.IsPauseGame = true;
         }
 //----Hàm dùng chung--------------
         public Vector2 GetSkillDetailLocation(Button _button, int _picWid, int _picHei)
