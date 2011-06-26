@@ -38719,6 +38719,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="snd\dintro.wav">
+      <Name>dintro</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="snd\dlvla.wav">
+      <Name>dlvla</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="snd\dlvlb.wav">
+      <Name>dlvlb</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="img\background\submenubg.png">
       <Name>submenubg</Name>
       <Importer>TextureImporter</Importer>
@@ -38736,82 +38753,6 @@
     <Compile Include="img\dialog\control\button\submenu\quit\clicked.png">
       <Name>clicked</Name>
       <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\quit\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\control\button\submenu\resume\clicked.png">
-      <Name>clicked</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\resume\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\control\button\submenu\onoff\clicked.png">
-      <Name>clicked</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\onoff\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\control\button\submenu\helps\clicked.png">
-      <Name>clicked</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\helps\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\control\button\submenu\cancel\clicked.png">
-      <Name>clicked</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\cancel\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\control\button\submenu\ok\clicked.png">
-      <Name>clicked</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="img\dialog\control\button\submenu\ok\idle.png">
-      <Name>idle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="img\dialog\frame\submenu\messageframe.png">
-      <Name>messageframe</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="img\item\portion\00.png">
       <Name>00</Name>
       <Importer>TextureImporter</Importer>
@@ -38843,7 +38784,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="snd\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
