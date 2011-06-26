@@ -363,6 +363,14 @@ namespace TheReturnOfTheKing
             set { _skillboard = value; }
         }
 
+        InfoBoard _infoboard;
+
+        public InfoBoard Infoboard
+        {
+            get { return _infoboard; }
+            set { _infoboard = value; }
+        }
+
         LHSkillSelectionFrame _lhSkillSelectionFrame;
 
         public LHSkillSelectionFrame LhSkillSelectionFrame

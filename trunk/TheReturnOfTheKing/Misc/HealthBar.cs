@@ -395,7 +395,18 @@ namespace TheReturnOfTheKing
 //---Su kien cho Left Command Button---
         public void LeftCommandButon_Clicked(object sender, EventArgs e)
         {
-
+            if (_character.Infoboard.MainFrame.IsVisible)
+            {
+                _character.Infoboard.CreateMotion_GoOut();
+                _character.Infoboard.MainFrame.Motion = _character.Infoboard.MotionGoOut;
+                _character.Infoboard.MainFrame.Motion.IsStanding = false;
+            }
+            else
+            {
+                _character.Infoboard.CreateMotion_GoIn();
+                _character.Infoboard.MainFrame.Motion = _character.Infoboard.MotionGoIn;
+                _character.Infoboard.MainFrame.Motion.IsStanding = false;
+            }
         }
 
 //---Su kien cho Right Command Button---

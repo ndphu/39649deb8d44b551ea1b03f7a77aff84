@@ -718,8 +718,8 @@ namespace TheReturnOfTheKing
             _btLightingField.Endalbe = false;
             _btInvisible.Endalbe = false;
             //Passive
-            //_btGodStrength.Endalbe = false;
-            //_btBlur.Endalbe = false;
+            _btGodStrength.Endalbe = false;
+            _btBlur.Endalbe = false;
         }
 
         public void SetCharacter(PlayerCharacter _char)
@@ -1266,8 +1266,8 @@ namespace TheReturnOfTheKing
 
         public void LevelUpPassiveHand(Button _button)
         {
-            //if (_passiveAddition < 1)
-            //    return;
+            if (_passiveAddition < 1)
+                return;
             if (((Skill)_button.Owner).Level < ((Skill)_button.Owner).ListLevel.Count - 1)
             {
                 ((Skill)_button.Owner).Level++;

@@ -290,4 +290,251 @@
       <B>235</B>
     </Color>
   </Label>
+  
+  <!--Label temp font 16-->
+  <Label id="19">
+    <BackGround>img/dialog/control/label/infoboard/level</BackGround>
+    <Font>sf-Calibri-16</Font>
+    <StringInfo></StringInfo>
+    <X>92</X>
+    <Y>109</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>255</R>
+      <G>242</G>
+      <B>0</B>
+    </Color>
+  </Label>
+  
+  <Label id="20">
+  <BackGround>img/dialog/control/label/infoboard/exp</BackGround>
+  <Font>sf-Calibri-16</Font>
+  <StringInfo></StringInfo>
+  <X>144</X>
+  <Y>109</Y>
+  <DrawOffSetX>0</DrawOffSetX>
+  <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>255</R>
+      <G>242</G>
+      <B>0</B>
+    </Color>
+</Label>
+
+  <Label id="21">
+  <BackGround>img/dialog/control/label/infoboard/nextlevel</BackGround>
+  <Font>sf-Calibri-16</Font>
+  <StringInfo></StringInfo>
+  <X>273</X>
+  <Y>109</Y>
+  <DrawOffSetX>0</DrawOffSetX>
+  <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>255</R>
+      <G>242</G>
+      <B>0</B>
+    </Color>
+</Label>
+
+  <!--label HP-->
+  <Label id="22">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>311</X>
+    <Y>148</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="23">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>353</X>
+    <Y>148</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+  
+  <!--label của MP-->
+    <Label id="24">
+      <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+      <Font>sf-Calibri-8</Font>
+      <StringInfo></StringInfo>
+      <X>311</X>
+      <Y>173</Y>
+      <DrawOffSetX>0</DrawOffSetX>
+      <DrawOffSetY>0</DrawOffSetY>
+      <Color>
+        <R>235</R>
+        <G>235</G>
+        <B>235</B>
+      </Color>
+  </Label>
+
+    <Label id="25">
+      <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+      <Font>sf-Calibri-8</Font>
+      <StringInfo></StringInfo>
+      <X>353</X>
+      <Y>173</Y>
+      <DrawOffSetX>0</DrawOffSetX>
+      <DrawOffSetY>0</DrawOffSetY>
+      <Color>
+        <R>235</R>
+        <G>235</G>
+        <B>235</B>
+      </Color>
+    </Label>
+  
+  <!--label damage-->
+  <Label id="26">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>353</X>
+    <Y>211</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="27">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>353</X>
+    <Y>235</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="28">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>353</X>
+    <Y>259</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+  
+  <!--Label khang đòn-->
+  <Label id="29">
+    <BackGround>img/dialog/control/label/infoboard/standar2</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>340</X>
+    <Y>296</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="30">
+    <BackGround>img/dialog/control/label/infoboard/standar2</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>340</X>
+    <Y>320</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+  
+  <!--MS-->
+  <Label id="31">
+    <BackGround>img/dialog/control/label/infoboard/ms</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>241</X>
+    <Y>358</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+  
+  <!--portion-->
+  <Label id="32">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>351</X>
+    <Y>397</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="33">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>351</X>
+    <Y>421</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
+
+  <Label id="34">
+    <BackGround>img/dialog/control/label/infoboard/standar1</BackGround>
+    <Font>sf-Calibri-8</Font>
+    <StringInfo></StringInfo>
+    <X>351</X>
+    <Y>445</Y>
+    <DrawOffSetX>0</DrawOffSetX>
+    <DrawOffSetY>0</DrawOffSetY>
+    <Color>
+      <R>235</R>
+      <G>235</G>
+      <B>235</B>
+    </Color>
+  </Label>
 </root>
