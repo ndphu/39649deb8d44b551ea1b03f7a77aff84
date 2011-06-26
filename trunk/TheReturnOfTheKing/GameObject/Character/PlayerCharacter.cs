@@ -99,8 +99,36 @@ namespace TheReturnOfTheKing
             get { return _equipped; }
             set { _equipped = value; }
         }
+        /// <summary>
+        /// Danh sach binh mau
+        /// </summary>
+        List<Portion> _hPPortion = new List<Portion>();
 
-       
+        public List<Portion> HPPortion
+        {
+            get { return _hPPortion; }
+            set { _hPPortion = value; }
+        }
+        /// <summary>
+        /// Danh sach binh mana
+        /// </summary>
+        List<Portion> _mPPortion = new List<Portion>();
+
+        public List<Portion> MPPortion
+        {
+            get { return _mPPortion; }
+            set { _mPPortion = value; }
+        }
+        /// <summary>
+        /// Danh sach binh mau tim
+        /// </summary>
+        List<Portion> _restorePortion = new List<Portion>();
+
+        public List<Portion> RestorePortion
+        {
+            get { return _restorePortion; }
+            set { _restorePortion = value; }
+        }
         /// <summary>
         /// Điểm kinh nghiệm
         /// </summary>
@@ -474,7 +502,7 @@ namespace TheReturnOfTheKing
                 {
                     if (Mp + ListRightHandSkill[RightHandSkillIndex].ListLevel[ListRightHandSkill[RightHandSkillIndex].Level].ListSkillInfo[0].Mp < 0)
                     {
-                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                         {
                             MessageContent = "No enough mana",
                             TextColor = Color.OrangeRed,
@@ -491,7 +519,7 @@ namespace TheReturnOfTheKing
                     {
                         if (ListRightHandSkill[RightHandSkillIndex].CheckCoolDown != 0)
                         {
-                            Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                            StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                                 {
                                     MessageContent = "This skill is not ready yet",
                                     TextColor = Color.Yellow,
@@ -508,7 +536,7 @@ namespace TheReturnOfTheKing
                         {
                             if (ListRightHandSkill[RightHandSkillIndex].ListLevel[ListRightHandSkill[RightHandSkillIndex].Level].ListSkillInfo[0].CastRange < Math.Sqrt(Math.Pow(this.X - GlobalVariables.GameCursor.X, 2) + Math.Pow(this.Y - GlobalVariables.GameCursor.Y, 2)))
                             {
-                                Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                                StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                                 {
                                     MessageContent = "Target out of range",
                                     TextColor = Color.Yellow,
@@ -537,7 +565,7 @@ namespace TheReturnOfTheKing
                 }
                 else
                 {
-                        Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+                        StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
                         {
                             MessageContent = "Cannot cast skill there",
                             TextColor = Color.Yellow,
@@ -584,9 +612,9 @@ namespace TheReturnOfTheKing
                         this.DestPoint = new Point((int)this.X, (int)this.Y);
                         this.CellToMove = new List<Point>();
                     }
-                    Point newCell = Owner._map.PointToCell(new Point((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y));
-                    if (Owner._map.Matrix[newCell.Y][newCell.X] == true)
-                        Owner._char.CellToMove = Utility.FindPath(Owner._map.Matrix, Owner._map.PointToCell(new Point((int)this.X, (int)this.Y)), newCell);
+                    Point newCell = StateOwner._map.PointToCell(new Point((int)GlobalVariables.GameCursor.X, (int)GlobalVariables.GameCursor.Y));
+                    if (StateOwner._map.Matrix[newCell.Y][newCell.X] == true)
+                        StateOwner._char.CellToMove = Utility.FindPath(StateOwner._map.Matrix, StateOwner._map.PointToCell(new Point((int)this.X, (int)this.Y)), newCell);
                     IsMoving = true;
                     GlobalVariables.AlreadyUseLeftMouse = true;
                 }
@@ -720,6 +748,32 @@ namespace TheReturnOfTheKing
                     _listRightHandSkill[_rightHandSkillIndex].Level = 0;
                 }
             }
+
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.NumPad1) && GlobalVariables.PreviousKeyboardState.IsKeyUp(Keys.NumPad1))
+            {
+                if (_hPPortion.Count > 0)
+                {
+                    _hPPortion[0].DoEffect();
+                    _hPPortion.Remove(_hPPortion[0]);
+                }
+            }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.NumPad2) && GlobalVariables.PreviousKeyboardState.IsKeyUp(Keys.NumPad2))
+            {
+                if (_mPPortion.Count > 0)
+                {
+                    _mPPortion[0].DoEffect();
+                    _mPPortion.Remove(_mPPortion[0]);
+                }
+            }
+            if (GlobalVariables.CurrentKeyboardState.IsKeyDown(Keys.NumPad3) && GlobalVariables.PreviousKeyboardState.IsKeyUp(Keys.NumPad3))
+            {
+                if (_restorePortion.Count > 0)
+                {
+                    _restorePortion[0].DoEffect();
+                    _restorePortion.Remove(_restorePortion[0]);
+                }
+
+            }
         }
 
         public void UpdateCastingDirection(float x, float y)
@@ -779,7 +833,7 @@ namespace TheReturnOfTheKing
                     _listLeftHandSkill[_leftHandSkillIndex].DoEffect(Target);
                 else
                 {
-                    Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(3);
+                    Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(3);
                     prjt.X = Target.X;
                     prjt.Y = Target.Y;
                     prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
@@ -790,7 +844,7 @@ namespace TheReturnOfTheKing
             }
             else
             {
-                Projectile prjt = (Projectile)Owner._objectManagerArray[6].CreateObject(3);
+                Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(3);
                 prjt.X = Target.X;
                 prjt.Y = Target.Y;
                 prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
@@ -814,26 +868,26 @@ namespace TheReturnOfTheKing
         {
             OldNDelay = _sprite[16].NDelay;
             _listLeftHandSkill = new List<Skill>();
-            _listLeftHandSkill.Add((NormalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(0)));
-            _listLeftHandSkill.Add((CleavingAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(1)));
-            _listLeftHandSkill.Add((CriticalAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(2)));
-            _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(3)));
-            _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(4)));
-            _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(5)));
-            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(6)));
+            _listLeftHandSkill.Add((NormalAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(0)));
+            _listLeftHandSkill.Add((CleavingAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(1)));
+            _listLeftHandSkill.Add((CriticalAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(2)));
+            _listLeftHandSkill.Add((CurseAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(3)));
+            _listLeftHandSkill.Add((OverSpeedAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(4)));
+            _listLeftHandSkill.Add((LifeStealAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(5)));
+            _listLeftHandSkill.Add((BashAttackSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(6)));
             for (int i = 0; i < _listLeftHandSkill.Count; ++i)
             {
                     _listLeftHandSkill[i].PlayerOwner = this;
                     _listLeftHandSkill[i].Level = 0;
             }
             _listRightHandSkill = new List<Skill>();
-            _listRightHandSkill.Add((LightningStrike)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(13)));
-            _listRightHandSkill.Add((DeadlyBeeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(7)));
-            _listRightHandSkill.Add((SoulsReleaseSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(8)));
-            _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(9)));
-            _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(10)));
-            _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(11)));
-            _listRightHandSkill.Add((InvisiblePoisonSkill)(((SkillManager)Owner._objectManagerArray[7]).CreateObject(12)));
+            _listRightHandSkill.Add((LightningStrike)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(13)));
+            _listRightHandSkill.Add((DeadlyBeeSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(7)));
+            _listRightHandSkill.Add((SoulsReleaseSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(8)));
+            _listRightHandSkill.Add((EarthShakeSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(9)));
+            _listRightHandSkill.Add((WaveFormSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(10)));
+            _listRightHandSkill.Add((LightningFieldSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(11)));
+            _listRightHandSkill.Add((InvisiblePoisonSkill)(((SkillManager)StateOwner._objectManagerArray[7]).CreateObject(12)));
             _listRightHandSkill[0].PlayerOwner = this;
             _listRightHandSkill[0].Level = 1;
             for (int i = 1; i < _listRightHandSkill.Count; ++i)
@@ -842,9 +896,14 @@ namespace TheReturnOfTheKing
                     _listRightHandSkill[i].Level = 0;
             }
             _listPassiveSkill = new List<Skill>();
-            _listPassiveSkill.Add((GreatFortitudeSkill)Owner._objectManagerArray[7].CreateObject(14));
-            _listPassiveSkill.Add((GodStrengthSkill)Owner._objectManagerArray[7].CreateObject(15));
-            _listPassiveSkill.Add((BlurSkill)Owner._objectManagerArray[7].CreateObject(16));
+            _listPassiveSkill.Add((GreatFortitudeSkill)StateOwner._objectManagerArray[7].CreateObject(14));
+            _listPassiveSkill.Add((GodStrengthSkill)StateOwner._objectManagerArray[7].CreateObject(15));
+            _listPassiveSkill.Add((BlurSkill)StateOwner._objectManagerArray[7].CreateObject(16));
+            for (int i = 0; i < _listPassiveSkill.Count; ++i)
+            {
+                _listPassiveSkill[i].PlayerOwner = this;
+                _listPassiveSkill[i].Level = 0;
+            }
         }
     }
 }

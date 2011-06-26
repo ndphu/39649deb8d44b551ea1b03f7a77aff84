@@ -113,7 +113,7 @@ namespace TheReturnOfTheKing
 
             for (int i = 0; i < _listProjectileTarget.Count; ++i)
             {
-                Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                 prjt.X = _listProjectileTarget[i].X;
                 prjt.Y = _listProjectileTarget[i].Y;
                 
@@ -127,7 +127,7 @@ namespace TheReturnOfTheKing
                 }
 
                 prjt.SkillOwner = this;
-                PlayerOwner.Owner._listProjectile.Add(prjt);
+                PlayerOwner.StateOwner._listProjectile.Add(prjt);
 
 
             }

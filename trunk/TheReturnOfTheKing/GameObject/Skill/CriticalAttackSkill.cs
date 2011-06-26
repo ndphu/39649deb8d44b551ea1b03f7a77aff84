@@ -24,7 +24,7 @@ namespace TheReturnOfTheKing
         {
             base.DoEffect(_object);
           
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
             prjt.X = ((Monster)_object).X;
             prjt.Y = ((Monster)_object).Y;
             
@@ -39,7 +39,7 @@ namespace TheReturnOfTheKing
             }
 
             prjt.SkillOwner = this;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            PlayerOwner.StateOwner._listProjectile.Add(prjt);
             PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
     }

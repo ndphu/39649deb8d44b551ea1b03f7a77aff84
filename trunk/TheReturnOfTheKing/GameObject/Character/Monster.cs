@@ -179,34 +179,34 @@ namespace TheReturnOfTheKing
                 GlobalVariables.GameCursor.IsAttack = true;
                 if (GlobalVariables.CurrentMouseState.LeftButton == ButtonState.Pressed && !GlobalVariables.AlreadyUseLeftMouse)
                 {
-                    Owner._char.Target = this;
+                    StateOwner._char.Target = this;
                     GlobalVariables.AlreadyUseLeftMouse = true;
                 }
             }
             
-            for (int i = 0; i < Owner._listProjectile.Count; ++i)
+            for (int i = 0; i < StateOwner._listProjectile.Count; ++i)
             {
-                if (Owner._listProjectile[i].IsCollisionWith(this) && Owner._listProjectile[i].HitFrames.Contains(Owner._listProjectile[i]._sprite[0].Itexture2D) && Owner._listProjectile[i]._sprite[0].Check == 0 /*&& !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner)*/)
+                if (StateOwner._listProjectile[i].IsCollisionWith(this) && StateOwner._listProjectile[i].HitFrames.Contains(StateOwner._listProjectile[i]._sprite[0].Itexture2D) && StateOwner._listProjectile[i]._sprite[0].Check == 0 /*&& !this.EffectedSkill.Contains(Owner._listProjectile[i].SkillOwner)*/)
                 {
                     
-                    this.BeHit(GlobalVariables.GlobalRandom.Next(Owner._listProjectile[i].MinDamage, Owner._listProjectile[i].MaxDamage));
-                    if (Owner._listProjectile[i].SkillOwner != null)
-                        Owner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
-                    this.EffectedSkill.Add(Owner._listProjectile[i].SkillOwner);
+                    this.BeHit(GlobalVariables.GlobalRandom.Next(StateOwner._listProjectile[i].MinDamage, StateOwner._listProjectile[i].MaxDamage));
+                    if (StateOwner._listProjectile[i].SkillOwner != null)
+                        StateOwner._listProjectile[i].SkillOwner.DoAdditionalEffect(this);
+                    this.EffectedSkill.Add(StateOwner._listProjectile[i].SkillOwner);
                 }
                 else
-                    if (Owner._listProjectile[i]._sprite[0].Itexture2D == Owner._listProjectile[i]._sprite[0].Ntexture2D - 2)
-                        this.EffectedSkill.Remove(Owner._listProjectile[i].SkillOwner);
+                    if (StateOwner._listProjectile[i]._sprite[0].Itexture2D == StateOwner._listProjectile[i]._sprite[0].Ntexture2D - 2)
+                        this.EffectedSkill.Remove(StateOwner._listProjectile[i].SkillOwner);
             }
 
-            if (Owner._char != null && Math.Sqrt(Math.Pow(this.X - Owner._char.X, 2) - Math.Pow(this.Y - Owner._char.Y, 2)) < this.Sight)
-                this.Target = Owner._char;
+            if (StateOwner._char != null && Math.Sqrt(Math.Pow(this.X - StateOwner._char.X, 2) - Math.Pow(this.Y - StateOwner._char.Y, 2)) < this.Sight)
+                this.Target = StateOwner._char;
             else
                 this.Target = null;
 
-            if (this.IsCollisionWith(Owner._char))
+            if (this.IsCollisionWith(StateOwner._char))
             {
-                this.Target = Owner._char;
+                this.Target = StateOwner._char;
                 this.CellToMove = new List<Point>();
                 this.DestPoint = new Point((int)this.X, (int)this.Y);
                 this.IsAttacking = true;

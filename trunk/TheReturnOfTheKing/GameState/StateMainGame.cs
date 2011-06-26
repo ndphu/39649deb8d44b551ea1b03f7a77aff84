@@ -37,7 +37,7 @@ namespace TheReturnOfTheKing
             GlobalVariables.MapCollisionDim = _map.CollisionDim;
             _char = (PlayerCharacter)objectManagerArray[0].CreateObject(0);
             _char.SetMap(_map);
-            _char.Owner = this;
+            _char.StateOwner = this;
             
             _map.Owner = this;
             _listMonsters = _map.InitMonsterList((MonsterManager)objectManagerArray[2],@"Data\Map\map01\map01_monster.xml");

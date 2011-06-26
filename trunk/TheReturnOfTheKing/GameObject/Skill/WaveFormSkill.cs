@@ -67,13 +67,13 @@ namespace TheReturnOfTheKing
                 PlayerOwner.CellToMove = new List<Point>();
                 if (Check == 0)
                 {
-                    Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                    Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                     prjt.X = PlayerOwner.X;
                     prjt.Y = PlayerOwner.Y;
                     prjt.MinDamage = ListLevel[Level].ListSkillInfo[0].MinDamage;
                     prjt.MaxDamage = ListLevel[Level].ListSkillInfo[0].MaxDamage;
                     prjt.SkillOwner = this;
-                    PlayerOwner.Owner._listProjectile.Add(prjt);
+                    PlayerOwner.StateOwner._listProjectile.Add(prjt);
                     Check = ReleaseProjectileDelay;
                 }
                 else

@@ -27,7 +27,7 @@ namespace TheReturnOfTheKing
             base.DoEffect(_object);
             for (int i = 0; i < ListLevel[Level].ListSkillInfo[0].NumOfBee; ++i)
             {
-                Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
+                Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(ListLevel[Level].ListSkillInfo[0].ProjectileType);
                 prjt.X = GlobalVariables.GlobalRandom.Next((int)PlayerOwner.X - 100, (int)PlayerOwner.X + 100);
                 prjt.Y = GlobalVariables.GlobalRandom.Next((int)PlayerOwner.Y - 100, (int)PlayerOwner.Y + 100);
                 //prjt.X = PlayerOwner.X;
@@ -44,7 +44,7 @@ namespace TheReturnOfTheKing
                 ((InsectFlyingController)prjt.ProjectileController).MaxB = 100;
                 ((InsectFlyingController)prjt.ProjectileController).CenterX = prjt.X;
                 ((InsectFlyingController)prjt.ProjectileController).CenterY = prjt.Y;
-                PlayerOwner.Owner._listProjectile.Add(prjt);
+                PlayerOwner.StateOwner._listProjectile.Add(prjt);
             }
 
             PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;

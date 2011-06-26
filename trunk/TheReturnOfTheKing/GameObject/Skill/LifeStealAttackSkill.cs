@@ -25,7 +25,7 @@ namespace TheReturnOfTheKing
         public override void DoEffect(VisibleGameEntity _object)
         {
             base.DoEffect(_object);
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(3);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(3);
             prjt.X = _object.X;
             prjt.Y = _object.Y;
             prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4);
@@ -38,7 +38,7 @@ namespace TheReturnOfTheKing
                 prjt.MaxDamage *= 2;
             }
             prjt.SkillOwner = this;
-            PlayerOwner.Owner._listProjectile.Add(prjt);
+            PlayerOwner.StateOwner._listProjectile.Add(prjt);
             PlayerOwner.Mp += this.ListLevel[Level].ListSkillInfo[0].Mp;
         }
 
@@ -51,11 +51,11 @@ namespace TheReturnOfTheKing
             //prjt.X = PlayerOwner.X;
             //prjt.Y = PlayerOwner.Y;
             //PlayerOwner.Owner._listProjectile.Add(prjt);
-            Projectile prjt = (Projectile)PlayerOwner.Owner._objectManagerArray[6].CreateObject(5);
+            Projectile prjt = (Projectile)PlayerOwner.StateOwner._objectManagerArray[6].CreateObject(5);
             prjt.X = ((Monster)target).X;
             prjt.Y = ((Monster)target).Y;
             ((Monster)target).AdditionnalEffect.Add(prjt);
-            PlayerOwner.Owner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
+            PlayerOwner.StateOwner._displayMessageLayer.MessageArray.Add(new DisplayMessageLayer.Message
             {
                 X = PlayerOwner.X,
                 Y = PlayerOwner.Y - 2 * GlobalVariables.MapCollisionDim,
