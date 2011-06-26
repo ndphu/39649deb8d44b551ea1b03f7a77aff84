@@ -197,9 +197,14 @@ namespace TheReturnOfTheKing
             }
             set
             {
+                if (IsCasting == false && value == true)
+                {
+                    GlobalVariables.PlayEffectSound("cast8");
+                }
                 base.IsCasting = value;
                 if (value == true)
                     State = 48;
+                
             }
         }
 
@@ -514,6 +519,7 @@ namespace TheReturnOfTheKing
                             DeltaY = -1,
                             Owner = this,
                         });
+                        GlobalVariables.PlayEffectSound("hero1");
                     }
                     else
                     {
@@ -531,6 +537,7 @@ namespace TheReturnOfTheKing
                                     DeltaY = -1,
                                     Owner = this,
                                 });
+                            GlobalVariables.PlayEffectSound("hero2");
                         }
                         else
                         {
@@ -548,6 +555,7 @@ namespace TheReturnOfTheKing
                                     DeltaY = -1,
                                     Owner = this,
                                 });
+                                GlobalVariables.PlayEffectSound("hero3");
                             }
                             else
                             {
@@ -577,6 +585,7 @@ namespace TheReturnOfTheKing
                             DeltaY = -1,
                             Owner = this,
                         });
+                        GlobalVariables.PlayEffectSound("hero3");
                 }
 
             }
@@ -880,6 +889,11 @@ namespace TheReturnOfTheKing
                 waitToCast = false;
             }
         }
+        public override void BeHit(int damage)
+        {
+            base.BeHit(damage);
+            GlobalVariables.PlayEffectSound("behit");
+        }
 
         public override void Hit()
         {
@@ -897,7 +911,8 @@ namespace TheReturnOfTheKing
                     prjt.CollisionRect = new Rectangle(prjt.CollisionRect.X + 3 * GlobalVariables.MapCollisionDim / 8, prjt.CollisionRect.Y + 3 * GlobalVariables.MapCollisionDim / 8, GlobalVariables.MapCollisionDim / 4, GlobalVariables.MapCollisionDim / 4); 
                     prjt.MinDamage = MinDamage * 2;
                     prjt.MaxDamage = MaxDamage * 2;
-                    Target.AdditionnalEffect.Add(prjt);                   
+                    Target.AdditionnalEffect.Add(prjt);
+                    GlobalVariables.PlayEffectSound("normalattack");
                 }
             }
             else
@@ -909,6 +924,7 @@ namespace TheReturnOfTheKing
                 prjt.MinDamage = MinDamage;
                 prjt.MaxDamage = MaxDamage;
                 Target.AdditionnalEffect.Add(prjt);
+                GlobalVariables.PlayEffectSound("normalattack");
             }
         }
         public void UpdateEquippedItemṣ̣()

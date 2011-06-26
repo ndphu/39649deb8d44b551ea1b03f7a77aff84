@@ -18,17 +18,30 @@ namespace TheReturnOfTheKing
                 IdleIcon = this.IdleIcon,
                 LargeIcon = this.LargeIcon,
                 ClickedIcon = this.ClickedIcon,
+                SoundName = this.SoundName,
             };
         }
 
+        public override int Level
+        {
+            get
+            {
+                return base.Level;
+            }
+            set
+            {
+                //base.Level = value;
+                _level = value;
+            }
+        }
 
         public override void Active()
         {
             base.Active();
             if (PlayerOwner != null)
             {
-                for (int i = 16; i < 24; ++i)
-                    PlayerOwner._sprite[i].NDelay = Math.Max(0, PlayerOwner.AttackSpeed - ListLevel[Level].ListSkillInfo[0].NumOfHit);
+                for (int i = 16; i < 32; ++i)
+                    PlayerOwner._sprite[i].NDelay = 0;
             }
         }
         public override void Deactive()
@@ -36,7 +49,7 @@ namespace TheReturnOfTheKing
             base.Deactive();
             if (PlayerOwner != null)
             {
-                for (int i = 16; i < 24; ++i)
+                for (int i = 16; i < 32; ++i)
                     PlayerOwner._sprite[i].NDelay = PlayerOwner.AttackSpeed;
             }
         }

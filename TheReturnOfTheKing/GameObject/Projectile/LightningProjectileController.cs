@@ -20,6 +20,7 @@ namespace TheReturnOfTheKing
                 prjt.MinDamage = ((Projectile)Owner).MinDamage;
                 Owner = prjt;
                 ((Projectile)Owner).SkillOwner.PlayerOwner.StateOwner._listProjectile.Add(prjt);
+                GlobalVariables.PlayEffectSound("lighningstrike");
             }
         }
     }

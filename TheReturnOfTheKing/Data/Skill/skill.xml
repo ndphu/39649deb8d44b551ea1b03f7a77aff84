@@ -2,6 +2,7 @@
 <root>
   <Skill id="0">
     <Name>Normal Attack</Name>
+    <Sound>normalattack</Sound>
     <Clicked>img/skillicon/Clicked/00</Clicked>
     <Idle>img/skillicon/Idle/00</Idle>
     <Large>img/skillicon/Large/00</Large>
@@ -28,6 +29,7 @@
   </Skill>
   <Skill id="1">
     <Name>Cleaving Attack</Name>
+    <Sound>cleavingattack</Sound>
     <Clicked>img/skillicon/Clicked/01</Clicked>
     <Idle>img/skillicon/Idle/01</Idle>
     <Large>img/skillicon/Large/01</Large>
@@ -55,6 +57,7 @@
   
   <Skill id="2">
     <Name>Critical Attack</Name>
+    <Sound>criticalattack</Sound>
     <Clicked>img/skillicon/Clicked/02</Clicked>
     <Idle>img/skillicon/Idle/02</Idle>
     <Large>img/skillicon/Large/02</Large>
@@ -82,6 +85,7 @@
 
   <Skill id="3">
     <Name>Curse Attack</Name>
+    <Sound>curseattack</Sound>
     <Clicked>img/skillicon/Clicked/03</Clicked>
     <Idle>img/skillicon/Idle/03</Idle>
     <Large>img/skillicon/Large/03</Large>
@@ -117,6 +121,7 @@
 
   <Skill id="4">
     <Name>OverSpeed Attack</Name>
+    <Sound>NormalAttack</Sound>
     <Clicked>img/skillicon/Clicked/04</Clicked>
     <Idle>img/skillicon/Idle/04</Idle>
     <Large>img/skillicon/Large/04</Large>
@@ -144,6 +149,7 @@
 
   <Skill id="5">
     <Name>LifeSteal Attack</Name>
+    <Sound>normalattack</Sound>
     <Clicked>img/skillicon/Clicked/05</Clicked>
     <Idle>img/skillicon/Idle/05</Idle>
     <Large>img/skillicon/Large/05</Large>
@@ -171,6 +177,7 @@
 
   <Skill id="6">
     <Name>Bash Attack</Name>
+    <Sound>normalattack</Sound>
     <Clicked>img/skillicon/Clicked/06</Clicked>
     <Idle>img/skillicon/Idle/06</Idle>
     <Large>img/skillicon/Large/06</Large>
@@ -202,6 +209,7 @@
   
   <Skill id="7">
     <Name>Deadly Bee</Name>
+    <Sound>deadlybee</Sound>
     <Clicked>img/skillicon/Clicked/07</Clicked>
     <Idle>img/skillicon/Idle/07</Idle>
     <Large>img/skillicon/Large/07</Large>
@@ -242,9 +250,9 @@
       <BeeLifeTime>12</BeeLifeTime>
     </Level>    
   </Skill>
-
   <Skill id="8">
     <Name>Souls Release</Name>
+    <Sound>soulsrelease</Sound>
     <Clicked>img/skillicon/Clicked/08</Clicked>
     <Idle>img/skillicon/Idle/08</Idle>
     <Large>img/skillicon/Large/08</Large>
@@ -284,6 +292,7 @@
 
   <Skill id="9">
     <Name>Earth Shake</Name>
+    <Sound>earthshake</Sound>
     <Clicked>img/skillicon/Clicked/09</Clicked>
     <Idle>img/skillicon/Idle/09</Idle>
     <Large>img/skillicon/Large/09</Large>
@@ -323,6 +332,7 @@
 
   <Skill id="10">
     <Name>Wave Form</Name>
+    <Sound>waveform</Sound>
     <Clicked>img/skillicon/Clicked/10</Clicked>
     <Idle>img/skillicon/Idle/10</Idle>
     <Large>img/skillicon/Large/10</Large>
@@ -363,6 +373,7 @@
 
   <Skill id="11">
     <Name>Lightning Field</Name>
+    <Sound>lightningfield</Sound>
     <Clicked>img/skillicon/Clicked/11</Clicked>
     <Idle>img/skillicon/Idle/11</Idle>
     <Large>img/skillicon/Large/11</Large>
@@ -406,6 +417,7 @@
 
   <Skill id="12">
     <Name>Invisible Poison</Name>
+    <Sound>invisiblepoison</Sound>
     <Clicked>img/skillicon/Clicked/12</Clicked>
     <Idle>img/skillicon/Idle/12</Idle>
     <Large>img/skillicon/Large/12</Large>
@@ -443,6 +455,7 @@
     </Level>
     <Skill id="13">
       <Name>Lightning Strike</Name>
+      <Sound>lighningstrike</Sound>
       <Clicked>img/skillicon/Clicked/00</Clicked>
       <Idle>img/skillicon/Idle/00</Idle>
       <Large>img/skillicon/Large/00</Large>
@@ -466,6 +479,7 @@
   </Skill>
   <Skill id="14">
     <Name>Great Fortitude</Name>
+    <Sound></Sound>
     <Clicked>img/skillicon/Clicked/00</Clicked>
     <Idle>img/skillicon/Idle/00</Idle>
     <Large>img/skillicon/Large/00</Large>
@@ -492,6 +506,7 @@
   </Skill>
   <Skill id="15">
     <Name>God Strength</Name>
+    <Sound></Sound>
     <Clicked>img/skillicon/Clicked/00</Clicked>
     <Idle>img/skillicon/Idle/00</Idle>
     <Large>img/skillicon/Large/00</Large>
@@ -514,6 +529,7 @@
   </Skill>
   <Skill id="16">
     <Name>Blur</Name>
+    <Sound></Sound>
     <Clicked>img/skillicon/Clicked/00</Clicked>
     <Idle>img/skillicon/Idle/00</Idle>
     <Large>img/skillicon/Large/00</Large>

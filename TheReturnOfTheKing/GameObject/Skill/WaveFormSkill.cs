@@ -19,6 +19,7 @@ namespace TheReturnOfTheKing
                 LargeIcon = this.LargeIcon,
                 ClickedIcon = this.ClickedIcon,
                 ReleaseProjectileDelay = this.ReleaseProjectileDelay,
+                SoundName = this.SoundName,
             };
         }
 

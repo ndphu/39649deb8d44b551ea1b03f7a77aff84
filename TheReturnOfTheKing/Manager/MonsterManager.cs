@@ -73,7 +73,7 @@ namespace TheReturnOfTheKing
             ((Monster)_prototype[id]).DestPoint = new Point();
             ((Monster)_prototype[id]).IsMoving = false;
             ((Monster)_prototype[id]).Map = null;
-            ((Monster)_prototype[id]).Speed = int.Parse(_monster.SelectSingleNode(@"Speed").InnerText);
+            ((Monster)_prototype[id]).Speed = float.Parse(_monster.SelectSingleNode(@"Speed").InnerText);
             ((Monster)_prototype[id]).Hp = int.Parse(_monster.SelectSingleNode(@"Hp").InnerText);
             ((Monster)_prototype[id]).Mp = int.Parse(_monster.SelectSingleNode(@"Mp").InnerText);
             ((Monster)_prototype[id]).CriticalRate = int.Parse(_monster.SelectSingleNode(@"CriticalRate").InnerText);

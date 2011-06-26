@@ -451,9 +451,9 @@ namespace TheReturnOfTheKing
         /// <summary>
         /// Tốc độ di chuyển
         /// </summary>
-        int _speed;
+        float _speed;
 
-        public int Speed
+        public float Speed
         {
             get { return _speed; }
             set { _speed = value; }
@@ -681,9 +681,13 @@ namespace TheReturnOfTheKing
                         StateOwner._char.NextLevelEXP += StateOwner._char.NextLevelEXP * 80 / 100;
                         Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(18);
                         prjt.X = StateOwner._char.X;
-                        prjt.Y = StateOwner._char.Y; 
+                        prjt.Y = StateOwner._char.Y;
+                        prjt.CharacterOwner = StateOwner._char;
+                        ProjectileController pct = new PoisonWormController();
+                        pct.Owner = prjt;
+                        prjt.ProjectileController = pct;
                         StateOwner._char.AdditionnalEffect.Add(prjt);
-                        
+                        GlobalVariables.PlayEffectSound("levelup");
                         StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
                         {
                             MessageContent = "Level up to " + StateOwner._char.Level.ToString(),

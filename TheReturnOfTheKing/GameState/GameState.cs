@@ -15,6 +15,13 @@ namespace TheReturnOfTheKing
 {
     public abstract class GameState
     {
+        Cue _stateCue;
+
+        public Cue StateCue
+        {
+            get { return _stateCue; }
+            set { _stateCue = value; }
+        }
         /// <summary>
         /// Đối tượng đang nắm giữ state (tức là Game chính)
         /// </summary>

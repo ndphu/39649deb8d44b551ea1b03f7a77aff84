@@ -30,6 +30,7 @@ namespace TheReturnOfTheKing
                 Owner = prjt;
                 ((Projectile)Owner).SkillOwner.PlayerOwner.StateOwner._listProjectile.Add(prjt);
                 CurrentProjectile = 1;
+                GlobalVariables.PlayEffectSound("earthshake");
             }
             else
                 if (CurrentProjectile == 1 && Owner._sprite[0].Itexture2D == Owner._sprite[0].Ntexture2D - 1/* && Owner._sprite[0].Check == 0*/)

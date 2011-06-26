@@ -31,6 +31,10 @@ namespace TheReturnOfTheKing
             set { _currentState = value; }
         }
 
+
+
+       
+
         public override void InitState(GameObjectManager[] objectManagerArray, MainGame owner)
         {
             base.InitState(objectManagerArray, owner);
@@ -72,7 +76,7 @@ namespace TheReturnOfTheKing
 
         public override void EnterState()
         {
-            
+            GlobalVariables.BackgroundSound = GlobalVariables.SoundBank.GetCue("dintro");
         }
 
         public override void UpdateState(GameTime gameTime)
@@ -89,7 +93,7 @@ namespace TheReturnOfTheKing
 
         public override void ExitState()
         {
-            
+            GlobalVariables.BackgroundSound.Stop(AudioStopOptions.Immediate);
         }
     }
 }

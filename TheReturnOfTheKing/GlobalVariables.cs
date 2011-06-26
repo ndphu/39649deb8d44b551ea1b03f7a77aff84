@@ -174,5 +174,52 @@ namespace TheReturnOfTheKing
             get { return GlobalVariables.isPauseGame; }
             set { GlobalVariables.isPauseGame = value; }
         }
+
+        static AudioEngine audioEngine;
+
+        public static AudioEngine AudioEngine
+        {
+            get { return GlobalVariables.audioEngine; }
+            set { GlobalVariables.audioEngine = value; }
+        }
+        static WaveBank waveBank;
+
+        public static WaveBank WaveBank
+        {
+            get { return GlobalVariables.waveBank; }
+            set { GlobalVariables.waveBank = value; }
+        }
+
+        static SoundBank soundBank;
+
+        public static SoundBank SoundBank
+        {
+            get { return GlobalVariables.soundBank; }
+            set { GlobalVariables.soundBank = value; }
+        }
+
+        static Cue _backgroundSound;
+
+        public static Cue BackgroundSound
+        {
+            get { return GlobalVariables._backgroundSound; }
+            set { GlobalVariables._backgroundSound = value; }
+        }
+
+        static bool _isEnableSound = true;
+
+        public static bool IsEnableSound
+        {
+            get { return _isEnableSound; }
+            set { _isEnableSound = value; }
+        }
+
+        public static void PlayEffectSound(string name)
+        {
+            if (IsEnableSound)
+            {
+                SoundBank.GetCue(name).Play();                
+            }
+        }
     }
 }

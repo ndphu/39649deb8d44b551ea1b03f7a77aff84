@@ -99,9 +99,9 @@ namespace TheReturnOfTheKing
         /// <summary>
         /// Cap do cua skill
         /// </summary>
-        int _level = 0;
+        protected int _level = 0;
 
-        public int Level
+        public virtual int Level
         {
             get { return _level; }
             set 
@@ -166,6 +166,8 @@ namespace TheReturnOfTheKing
         {
             _checkCoolDown = ListLevel[Level].ListSkillInfo[0].CoolDown;
             _coolDownTime = _checkCoolDown;
+            if (SoundName != null && SoundName.Length > 0)
+                GlobalVariables.PlayEffectSound(SoundName);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
