@@ -404,9 +404,9 @@ namespace TheReturnOfTheKing
         public void GetResources(List<GameObjectManager> _resources)
         {
             //Khoi tao cac bien Addition
-            _lhAddition = 1;
-            _rhAddition = 1;
-            _passiveAddition = 1;
+            _lhAddition = 50;
+            _rhAddition = 50;
+            _passiveAddition = 50;
             _preLevelOfChar = _character.Level;
 
             _boardFrame = (GameFrame)_resources[0].CreateObject(1);
@@ -708,18 +708,18 @@ namespace TheReturnOfTheKing
             
             //Khởi tạo 1 số giá trị mặt định về skill của nhân vật
             //Left hand
-            _btSkillCurse.Endalbe = false;
-            _btSkillOverSpeed.Endalbe = false;
-            _btSkillLifeSteal.Endalbe = false;
-            _btSkillBash.Endalbe = false;
+            //_btSkillCurse.Endalbe = false;
+            //_btSkillOverSpeed.Endalbe = false;
+            //_btSkillLifeSteal.Endalbe = false;
+            //_btSkillBash.Endalbe = false;
             //Right
-            _btEathShakeSkill.Endalbe = false;
-            _btWaveFormSkill.Endalbe = false;
-            _btLightingField.Endalbe = false;
-            _btInvisible.Endalbe = false;
+            //_btEathShakeSkill.Endalbe = false;
+            //_btWaveFormSkill.Endalbe = false;
+            //_btLightingField.Endalbe = false;
+            //_btInvisible.Endalbe = false;
             //Passive
-            _btGodStrength.Endalbe = false;
-            _btBlur.Endalbe = false;
+            //_btGodStrength.Endalbe = false;
+            //_btBlur.Endalbe = false;
         }
 
         public void SetCharacter(PlayerCharacter _char)

@@ -174,23 +174,48 @@ namespace TheReturnOfTheKing
             int numofframe = int.Parse(node.SelectSingleNode(@"NumOfFrames").InnerText);
             string contentName = node.SelectSingleNode("ContentName").InnerText;
             GameSprite[] sprite = new GameSprite[8];
-            for (int i = 0; i < 8; ++i)
+            if (numofframe < 100)
             {
-                Texture2D[] textures = new Texture2D[numofframe];
-                for (int j = 0; j < numofframe; ++j)
+                for (int i = 0; i < 8; ++i)
                 {
-                    textures[j] = content.Load<Texture2D>(contentName + i.ToString("00") + "-" + j.ToString("00"));
+                    Texture2D[] textures = new Texture2D[numofframe];
+                    for (int j = 0; j < numofframe; ++j)
+                    {
+                        textures[j] = content.Load<Texture2D>(contentName + i.ToString("00") + "-" + j.ToString("00"));
+                    }
+                    sprite[i] = new GameSprite(textures, 0, 0);
+                    sprite[i].Xoffset = xoffset;
+                    sprite[i].Yoffset = yoffset;
+                    try
+                    {
+                        sprite[i].NDelay = int.Parse(node.SelectSingleNode(@"NDelay").InnerText);
+                    }
+                    catch
+                    {
+                        sprite[i].NDelay = 3;
+                    }
                 }
-                sprite[i] = new GameSprite(textures, 0, 0);
-                sprite[i].Xoffset = xoffset;
-                sprite[i].Yoffset = yoffset;
-                try
+            }
+            else
+            {
+                for (int i = 0; i < 8; ++i)
                 {
-                    sprite[i].NDelay = int.Parse(node.SelectSingleNode(@"NDelay").InnerText);
-                }
-                catch
-                {
-                    sprite[i].NDelay = 3;
+                    Texture2D[] textures = new Texture2D[numofframe];
+                    for (int j = 0; j < numofframe; ++j)
+                    {
+                        textures[j] = content.Load<Texture2D>(contentName + j.ToString("000"));
+                    }
+                    sprite[i] = new GameSprite(textures, 0, 0);
+                    sprite[i].Xoffset = xoffset;
+                    sprite[i].Yoffset = yoffset;
+                    try
+                    {
+                        sprite[i].NDelay = int.Parse(node.SelectSingleNode(@"NDelay").InnerText);
+                    }
+                    catch
+                    {
+                        sprite[i].NDelay = 3;
+                    }
                 }
             }
             return sprite;
