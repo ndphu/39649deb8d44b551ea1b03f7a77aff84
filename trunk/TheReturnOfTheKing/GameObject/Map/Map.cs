@@ -249,6 +249,14 @@ namespace TheReturnOfTheKing
                 ret[i].CellToMove = new List<Point>();
                 ret[i].SetMap(this);
                 ret[i].StateOwner = this.Owner;
+                try
+                {
+                    if (bool.Parse(Monsters[i].SelectSingleNode(@"LastBoss").InnerText))
+                        GlobalVariables.LastBoss = ret[i];
+                }
+                catch
+                {
+                }
             }
             return ret;
         }

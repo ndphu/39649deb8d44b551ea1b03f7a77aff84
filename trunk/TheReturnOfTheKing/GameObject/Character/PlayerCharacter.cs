@@ -1003,5 +1003,37 @@ namespace TheReturnOfTheKing
                 this.Healthbar.BtRighthandSkill.GetNewClickedTexture(_newSkill.ClickedIcon);
             }
         }
+
+        public void DoLevelUp()
+        {
+            this.Level += 1;
+            this.CurrentEXP = 0;
+            this.NextLevelEXP += this.NextLevelEXP * 45 / 100;
+            this.MaxHp += 6 * this.MaxHp / 100;
+            this.MaxMp += 4 * this.MaxMp / 100;
+            this.Hp = this.MaxHp;
+            this.Mp = this.MaxMp;
+            this.MinDamage += this.MinDamage * 10 / 100;
+            this.MaxDamage += this.MaxDamage * 15 / 100;
+            this.ChangeToDodge += 2;
+            this.Defense += 4;
+            this.CriticalRate += 2;
+            Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(18);
+            prjt.X = this.X;
+            prjt.Y = this.Y;
+            prjt.CharacterOwner = this;
+            ProjectileController pct = new PoisonWormController();
+            pct.Owner = prjt;
+            prjt.ProjectileController = pct;
+            this.AdditionnalEffect.Add(prjt);
+            GlobalVariables.PlayEffectSound("levelup");
+            StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
+            {
+                MessageContent = "Level up to " + this.Level.ToString(),
+                LifeTime = 120,
+                TextColor = Color.OrangeRed,
+            });
+        }
+
     }
 }

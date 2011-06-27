@@ -39,18 +39,18 @@
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>-30</PercentDamage>
-      <MP>-5</MP>
+      <PercentDamage>0</PercentDamage>
+      <MP>-150</MP>
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>-0</PercentDamage>
-      <MP>-15</MP>
+      <PercentDamage>20</PercentDamage>
+      <MP>-250</MP>
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
       <PercentDamage>50</PercentDamage>
-      <MP>-25</MP>
+      <MP>-350</MP>
       <ProjectileType>0</ProjectileType>
     </Level>    
   </Skill>
@@ -67,18 +67,18 @@
       <ProjectileType>0</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>150</PercentDamage>
-      <MP>-15</MP>
+      <PercentDamage>100</PercentDamage>
+      <MP>-150</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>450</PercentDamage>
-      <MP>-25</MP>
+      <PercentDamage>200</PercentDamage>
+      <MP>-250</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
     <Level>
-      <PercentDamage>900</PercentDamage>
-      <MP>-50</MP>
+      <PercentDamage>300</PercentDamage>
+      <MP>-450</MP>
       <ProjectileType>1</ProjectileType>
     </Level>
   </Skill>
@@ -98,30 +98,30 @@
     </Level>
     <Level>
       <PercentDamage>25</PercentDamage>
-      <MP>-10</MP>
+      <MP>-150</MP>
       <ProjectileType>2</ProjectileType>
-      <ChanceToCurse>10</ChanceToCurse>
-      <AmorReduce>3</AmorReduce>
-    </Level>
-    <Level>
-      <PercentDamage>75</PercentDamage>
-      <MP>-45</MP>
-      <ProjectileType>2</ProjectileType>
-      <ChanceToCurse>35</ChanceToCurse>
+      <ChanceToCurse>5</ChanceToCurse>
       <AmorReduce>10</AmorReduce>
     </Level>
     <Level>
-      <PercentDamage>200</PercentDamage>
-      <MP>-80</MP>
+      <PercentDamage>50</PercentDamage>
+      <MP>-250</MP>
       <ProjectileType>2</ProjectileType>
-      <ChanceToCurse>100</ChanceToCurse>
-      <AmorReduce>50</AmorReduce>
+      <ChanceToCurse>10</ChanceToCurse>
+      <AmorReduce>30</AmorReduce>
+    </Level>
+    <Level>
+      <PercentDamage>75</PercentDamage>
+      <MP>-350</MP>
+      <ProjectileType>2</ProjectileType>
+      <ChanceToCurse>15</ChanceToCurse>
+      <AmorReduce>70</AmorReduce>
     </Level>
   </Skill>
 
   <Skill id="4">
     <Name>OverSpeed Attack</Name>
-    <Sound>NormalAttack</Sound>
+    <Sound>normalattack</Sound>
     <Clicked>img/skillicon/Clicked/04</Clicked>
     <Idle>img/skillicon/Idle/04</Idle>
     <Large>img/skillicon/Large/04</Large>
@@ -132,17 +132,17 @@
     </Level>
     <Level>
       <PercentDamage>20</PercentDamage>
-      <HP>-5</HP>
+      <HP>-15</HP>
       <NumOfHit>2</NumOfHit>
     </Level>
     <Level>
-      <PercentDamage>70</PercentDamage>
-      <HP>-15</HP>
+      <PercentDamage>30</PercentDamage>
+      <HP>-25</HP>
       <NumOfHit>3</NumOfHit>
     </Level>
     <Level>
-      <PercentDamage>170</PercentDamage>
-      <HP>-50</HP>
+      <PercentDamage>40</PercentDamage>
+      <HP>-55</HP>
       <NumOfHit>5</NumOfHit>
     </Level>    
   </Skill>
@@ -159,19 +159,19 @@
       <PercentLifeSteal>0</PercentLifeSteal>
     </Level>
     <Level>
-      <PercentDamage>20</PercentDamage>
-      <MP>-10</MP>
+      <PercentDamage>10</PercentDamage>
+      <MP>-85</MP>
       <PercentLifeSteal>15</PercentLifeSteal>
     </Level>
     <Level>
-      <PercentDamage>50</PercentDamage>
-      <MP>-25</MP>
-      <PercentLifeSteal>35</PercentLifeSteal>
+      <PercentDamage>20</PercentDamage>
+      <MP>-170</MP>
+      <PercentLifeSteal>25</PercentLifeSteal>
     </Level>
     <Level>
-      <PercentDamage>100</PercentDamage>
-      <MP>-50</MP>
-      <PercentLifeSteal>75</PercentLifeSteal>
+      <PercentDamage>30</PercentDamage>
+      <MP>-225</MP>
+      <PercentLifeSteal>50</PercentLifeSteal>
     </Level>
   </Skill>
 
@@ -188,21 +188,21 @@
       <BashTime>0</BashTime>
     </Level>
     <Level>
-      <PercentDamage>50</PercentDamage>
-      <MP>-10</MP>
-      <ChanceToBash>25</ChanceToBash>
+      <PercentDamage>20</PercentDamage>
+      <MP>-100</MP>
+      <ChanceToBash>10</ChanceToBash>
       <BashTime>60</BashTime>
     </Level>
     <Level>
-      <PercentDamage>80</PercentDamage>
-      <MP>-25</MP>
-      <ChanceToBash>35</ChanceToBash>
+      <PercentDamage>30</PercentDamage>
+      <MP>-150</MP>
+      <ChanceToBash>20</ChanceToBash>
       <BashTime>120</BashTime>
     </Level>
     <Level>
-      <PercentDamage>130</PercentDamage>
-      <MP>-50</MP>
-      <ChanceToBash>65</ChanceToBash>
+      <PercentDamage>50</PercentDamage>
+      <MP>-200</MP>
+      <ChanceToBash>35</ChanceToBash>
       <BashTime>180</BashTime>
     </Level>
   </Skill>
@@ -265,27 +265,27 @@
       <NumberOfSoul>0</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>6</MinDamage>
-      <MaxDamage>9</MaxDamage>
-      <MP>-100</MP>
+      <MinDamage>40</MinDamage>
+      <MaxDamage>70</MaxDamage>
+      <MP>-300</MP>
       <ProjectileType>13</ProjectileType>
-      <CoolDown>3</CoolDown>
+      <CoolDown>6</CoolDown>
       <NumberOfSoul>9</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>10</MinDamage>
-      <MaxDamage>15</MaxDamage>
-      <MP>-200</MP>
+      <MinDamage>90</MinDamage>
+      <MaxDamage>115</MaxDamage>
+      <MP>-450</MP>
       <ProjectileType>13</ProjectileType>
-      <CoolDown>5</CoolDown>
+      <CoolDown>12</CoolDown>
       <NumberOfSoul>18</NumberOfSoul>
     </Level>
     <Level>
-      <MinDamage>20</MinDamage>
-      <MaxDamage>43</MaxDamage>
-      <MP>-300</MP>
+      <MinDamage>170</MinDamage>
+      <MaxDamage>220</MaxDamage>
+      <MP>-600</MP>
       <ProjectileType>13</ProjectileType>
-      <CoolDown>7</CoolDown>
+      <CoolDown>18</CoolDown>
       <NumberOfSoul>36</NumberOfSoul>
     </Level>
   </Skill>
@@ -305,27 +305,27 @@
       <BashTime>0</BashTime>
     </Level>
     <Level>
-      <MinDamage>100</MinDamage>
-      <MaxDamage>200</MaxDamage>
-      <MP>-100</MP>
+      <MinDamage>300</MinDamage>
+      <MaxDamage>700</MaxDamage>
+      <MP>-300</MP>
       <ProjectileType>10</ProjectileType>
-      <CoolDown>3</CoolDown>
+      <CoolDown>6</CoolDown>
       <BashTime>3</BashTime>
     </Level>
     <Level>
-      <MinDamage>200</MinDamage>
-      <MaxDamage>300</MaxDamage>
-      <MP>-200</MP>
+      <MinDamage>600</MinDamage>
+      <MaxDamage>1000</MaxDamage>
+      <MP>-600</MP>
       <ProjectileType>10</ProjectileType>
-      <CoolDown>5</CoolDown>
+      <CoolDown>10</CoolDown>
       <BashTime>4</BashTime>
     </Level>
     <Level>
-      <MinDamage>400</MinDamage>
-      <MaxDamage>600</MaxDamage>
-      <MP>-300</MP>
+      <MinDamage>900</MinDamage>
+      <MaxDamage>1400</MaxDamage>
+      <MP>-900</MP>
       <ProjectileType>10</ProjectileType>
-      <CoolDown>7</CoolDown>
+      <CoolDown>15</CoolDown>
       <BashTime>6</BashTime>
     </Level>
   </Skill>
@@ -346,9 +346,9 @@
       <CastRange>0</CastRange>
     </Level>
     <Level>
-      <MinDamage>30</MinDamage>
-      <MaxDamage>100</MaxDamage>
-      <MP>-100</MP>
+      <MinDamage>80</MinDamage>
+      <MaxDamage>120</MaxDamage>
+      <MP>-200</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>3</CoolDown>
       <CastRange>150</CastRange>
@@ -356,7 +356,7 @@
     <Level>
       <MinDamage>160</MinDamage>
       <MaxDamage>350</MaxDamage>
-      <MP>-200</MP>
+      <MP>-400</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>5</CoolDown>
       <CastRange>225</CastRange>
@@ -364,7 +364,7 @@
     <Level>
       <MinDamage>400</MinDamage>
       <MaxDamage>600</MaxDamage>
-      <MP>-300</MP>
+      <MP>-600</MP>
       <ProjectileType>14</ProjectileType>
       <CoolDown>7</CoolDown>
       <CastRange>450</CastRange>
@@ -430,28 +430,28 @@
       <Duration>0</Duration>
     </Level>
     <Level>
-      <MinDamage>50</MinDamage>
-      <MaxDamage>75</MaxDamage>
-      <HP>-30</HP>
-      <MP>-30</MP>
+      <MinDamage>35</MinDamage>
+      <MaxDamage>50</MaxDamage>
+      <HP>-40</HP>
+      <MP>-40</MP>
       <ProjectileType>16</ProjectileType>
-      <Duration>4</Duration>
+      <Duration>3</Duration>
     </Level>
     <Level>
-      <MinDamage>150</MinDamage>
-      <MaxDamage>450</MaxDamage>
-      <HP>-60</HP>
-      <MP>-60</MP>
+      <MinDamage>75</MinDamage>
+      <MaxDamage>125</MaxDamage>
+      <HP>-80</HP>
+      <MP>-80</MP>
       <ProjectileType>16</ProjectileType>
-      <Duration>5</Duration>
+      <Duration>3</Duration>
     </Level>
     <Level>
-      <MinDamage>600</MinDamage>
-      <MaxDamage>1000</MaxDamage>
+      <MinDamage>135</MinDamage>
+      <MaxDamage>220</MaxDamage>
       <MP>-120</MP>
       <HP>-120</HP>
       <ProjectileType>16</ProjectileType>
-      <Duration>6</Duration>
+      <Duration>4</Duration>
     </Level>
     <Skill id="13">
       <Name>Lightning Strike</Name>
@@ -489,19 +489,19 @@
       <Defense>0</Defense>
     </Level>
     <Level>
-      <HP>2</HP>
-      <MP>1</MP>
-      <Defense>7</Defense>
+      <HP>50</HP>
+      <MP>25</MP>
+      <Defense>15</Defense>
     </Level>
     <Level>
-      <HP>6</HP>
-      <MP>3</MP>
-      <Defense>18</Defense>
+      <HP>80</HP>
+      <MP>45</MP>
+      <Defense>35</Defense>
     </Level>
     <Level>
-      <HP>16</HP>
-      <MP>8</MP>
-      <Defense>30</Defense>
+      <HP>140</HP>
+      <MP>60</MP>
+      <Defense>90</Defense>
     </Level>
   </Skill>
   <Skill id="15">

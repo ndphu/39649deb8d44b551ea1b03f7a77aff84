@@ -221,5 +221,13 @@ namespace TheReturnOfTheKing
                 SoundBank.GetCue(name).Play();                
             }
         }
+
+        static Monster _lastBoss;
+
+        public static Monster LastBoss
+        {
+            get { return _lastBoss; }
+            set { _lastBoss = value; }
+        }
     }
 }

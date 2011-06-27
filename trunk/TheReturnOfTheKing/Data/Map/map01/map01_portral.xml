@@ -1,21 +1,3 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  
-  <Portral>
-    <X>24</X>
-    <Y>60</Y>
-    <Type>0</Type>
-    <Destination>menu</Destination>
-    <DestinationX>0</DestinationX>
-    <DestinationY>0</DestinationY>
-  </Portral>
-  <Portral>
-    <X>60</X>
-    <Y>3</Y>
-    <Type>0</Type>
-    <Destination>map02</Destination>
-    <DestinationX>12</DestinationX>
-    <DestinationY>54</DestinationY>
-  </Portral> 
-  
 </root>
