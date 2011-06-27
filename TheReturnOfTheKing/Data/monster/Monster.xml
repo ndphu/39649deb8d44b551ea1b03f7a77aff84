@@ -592,6 +592,57 @@
       <YOffset>-59</YOffset>
     </Dyed>
   </Monster>
+
+  <Monster id="11">
+    <Speed>1.4</Speed>
+    <Hp>69000</Hp>
+    <MaxHp>69000</MaxHp>
+    <Mp>0</Mp>
+    <MaxMp>0</MaxMp>
+    <CriticalRate>45</CriticalRate>
+    <MinDamage>1250</MinDamage>
+    <MaxDamage>2250</MaxDamage>
+    <Defense>68</Defense>
+    <AttackSpeed>3</AttackSpeed>
+    <Range>32</Range>
+    <HitFrame>14</HitFrame>
+    <Sight>128</Sight>
+    <ChangeToDodge>25</ChangeToDodge>
+    <ExpReward>60000</ExpReward>
+    <Stand>
+      <ContentName>img/character/DI/stand/D</ContentName>
+      <NumOfFrames>12</NumOfFrames>
+      <XOffset>-114</XOffset>
+      <YOffset>-133</YOffset>
+    </Stand>
+    <Move>
+      <ContentName>img/character/DI/move/D</ContentName>
+      <NumOfFrames>12</NumOfFrames>
+      <XOffset>-123</XOffset>
+      <YOffset>-128</YOffset>
+      <NDelay>2</NDelay>
+    </Move>
+    <Attack>
+      <ContentName>img/character/DI/attack/D</ContentName>
+      <NumOfFrames>20</NumOfFrames>
+      <XOffset>-123</XOffset>
+      <YOffset>-210</YOffset>
+      <NDelay>2</NDelay>
+    </Attack>
+    <Dying>
+      <ContentName>img/character/DI/dying/D</ContentName>
+      <NumOfFrames>142</NumOfFrames>
+      <XOffset>-105</XOffset>
+      <YOffset>-218</YOffset>
+    </Dying>
+    <Dyed>
+      <ContentName>img/character/DI/dyed/D</ContentName>
+      <NumOfFrames>1</NumOfFrames>
+      <XOffset>-128</XOffset>
+      <YOffset>-202</YOffset>
+    </Dyed>
+  </Monster>
+  
   <!--Dong lai de debug-->
   <!--
   <!BH
