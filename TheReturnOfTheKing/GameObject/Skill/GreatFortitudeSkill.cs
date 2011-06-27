@@ -19,5 +19,11 @@ namespace TheReturnOfTheKing
                 ClickedIcon = this.ClickedIcon,
             };
         }
+        public override void Active()
+        {
+            base.Active();
+            PlayerOwner.Defense += this.ListLevel[Level].ListSkillInfo[0].Defense;
+
+        }
     }
 }

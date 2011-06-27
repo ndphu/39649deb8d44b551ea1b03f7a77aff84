@@ -622,6 +622,7 @@ namespace TheReturnOfTheKing
                 if (_sprite[Dir].Itexture2D == _sprite[Dir].Ntexture2D - 1)
                 {
                     IsDyed = true;
+                    GlobalVariables.PlayEffectSound("monster" + GlobalVariables.GlobalRandom.Next(1, 17).ToString());
                     int dropItemRate = GlobalVariables.GlobalRandom.Next(0, 100);
                     if (dropItemRate < 35)
                     {
@@ -630,7 +631,7 @@ namespace TheReturnOfTheKing
                         portion.PlayerOwner = StateOwner._char;
                         if (portionKindRate < 40)
                         {
-                            portion.HP = 50;
+                            portion.HP = 1500;
                             portion.MP = 0;                            
                             StateOwner._char.HPPortion.Add(portion);
                             StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
@@ -643,7 +644,7 @@ namespace TheReturnOfTheKing
                         if (40 <= portionKindRate && portionKindRate < 80)
                         {
                             portion.HP = 0;
-                            portion.MP = 20;
+                            portion.MP = 1000;
                             StateOwner._char.MPPortion.Add(portion);
                             StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
                             {
@@ -654,8 +655,8 @@ namespace TheReturnOfTheKing
                         }
                         if (80 <= portionKindRate)
                         {
-                            portion.HP = 50;
-                            portion.MP = 20;
+                            portion.HP = 1500;
+                            portion.MP = 1000;
                             StateOwner._char.RestorePortion.Add(portion);
                             StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
                             {
@@ -676,24 +677,7 @@ namespace TheReturnOfTheKing
                     });
                     if (StateOwner._char.CurrentEXP >= StateOwner._char.NextLevelEXP)
                     {
-                        StateOwner._char.Level += 1;
-                        StateOwner._char.CurrentEXP = 0;
-                        StateOwner._char.NextLevelEXP += StateOwner._char.NextLevelEXP * 80 / 100;
-                        Projectile prjt = (Projectile)StateOwner._objectManagerArray[6].CreateObject(18);
-                        prjt.X = StateOwner._char.X;
-                        prjt.Y = StateOwner._char.Y;
-                        prjt.CharacterOwner = StateOwner._char;
-                        ProjectileController pct = new PoisonWormController();
-                        pct.Owner = prjt;
-                        prjt.ProjectileController = pct;
-                        StateOwner._char.AdditionnalEffect.Add(prjt);
-                        GlobalVariables.PlayEffectSound("levelup");
-                        StateOwner._displayMessageLayer.InfoMessageArray.Add(new DisplayMessageLayer.InfoMessage
-                        {
-                            MessageContent = "Level up to " + StateOwner._char.Level.ToString(),
-                            LifeTime = 120,
-                            TextColor = Color.OrangeRed,
-                        });
+                        StateOwner._char.DoLevelUp();
                     }
                 }
                 return;

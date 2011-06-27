@@ -63,9 +63,18 @@ namespace TheReturnOfTheKing
             }
             set
             {
+                if (IsAttacking == false && value == true)
+                {
+                    GlobalVariables.PlayEffectSound("monster" + GlobalVariables.GlobalRandom.Next(1, 17).ToString());
+                }
                 base.IsAttacking = value;
                 if (value == true)
+                {
                     State = 16;
+                
+                }
+
+
             }
         }
 

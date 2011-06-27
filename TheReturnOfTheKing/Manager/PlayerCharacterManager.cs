@@ -105,7 +105,7 @@ namespace TheReturnOfTheKing
                 ((PlayerCharacter)_prototype[id]).ChangeToDodge = int.Parse(_char.SelectSingleNode(@"ChangeToDodge").InnerText);
                 ((PlayerCharacter)_prototype[id]).Level = 1;
                 ((PlayerCharacter)_prototype[id]).CurrentEXP = 0;
-                ((PlayerCharacter)_prototype[id]).NextLevelEXP = 100;
+                ((PlayerCharacter)_prototype[id]).NextLevelEXP = 6000;
                 return true;
             }
             catch

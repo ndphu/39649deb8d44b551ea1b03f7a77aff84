@@ -3,13 +3,13 @@
   <Map id="0">
     <ContentName>img/map/map01/res0000</ContentName>
     <Collision>data/map/map01/map01.txt</Collision>
-    <Width>4</Width>
-    <Height>4</Height>
+    <Width>8</Width>
+    <Height>8</Height>
     <PieceWidth>512</PieceWidth>
     <PieceHeight>512</PieceHeight>
     <CollisionUnitDim>32</CollisionUnitDim>
-    <StartPointX>25</StartPointX>
-    <StartPointY>54</StartPointY>
+    <StartPointX>5</StartPointX>
+    <StartPointY>123</StartPointY>
     <MapName>Map 01</MapName>
   </Map>
   <Map id="1">

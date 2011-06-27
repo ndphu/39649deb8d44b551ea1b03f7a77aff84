@@ -4,12 +4,12 @@
     <Speed>2</Speed>
     <Hp>15000</Hp>
     <MaxHp>15000</MaxHp>
-    <Mp>5000</Mp>
-    <MaxMp>5000</MaxMp>
-    <CriticalRate>15</CriticalRate>
-    <MinDamage>45</MinDamage>
-    <MaxDamage>85</MaxDamage>
-    <Defense>7</Defense>
+    <Mp>10000</Mp>
+    <MaxMp>10000</MaxMp>
+    <CriticalRate>25</CriticalRate>
+    <MinDamage>370</MinDamage>
+    <MaxDamage>579</MaxDamage>
+    <Defense>18</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
     <HitFrame>9</HitFrame>

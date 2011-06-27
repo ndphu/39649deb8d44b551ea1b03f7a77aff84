@@ -205,13 +205,29 @@ namespace TheReturnOfTheKing
                     Owner.GameState.EnterState();
                     Owner.ResetElapsedTime();
                 }
-
+                if (GlobalVariables.LastBoss.IsDying)
+                {
+                    if (GlobalVariables.BackgroundSound.Name != "soulsrelease")
+                    {
+                        GlobalVariables.BackgroundSound = GlobalVariables.SoundBank.GetCue("soulsrelease");
+                        GlobalVariables.BackgroundSound.Play();
+                    }
+                }
+                if (GlobalVariables.LastBoss.IsDyed)
+                {
+                    GlobalVariables.IsPauseGame = true;
+                }
                 _displayMessageLayer.Update(gameTime);
                 _frog.Update(gameTime);
             }
             else
             {
-                _subMenu.Update(gameTime);
+                if (GlobalVariables.LastBoss.IsDyed)
+                {
+                    Owner.Exit();
+                }
+                else
+                    _subMenu.Update(gameTime);
             }
         }
         
@@ -246,9 +262,12 @@ namespace TheReturnOfTheKing
             _lhSkillSelectionFrame.Draw(gameTime, sb);
             _healthBar.Draw(gameTime, sb);
 
+            
+
             if (GlobalVariables.IsPauseGame)
             {
                 _subMenu.Draw(gameTime, sb);
+
             }
         }
 

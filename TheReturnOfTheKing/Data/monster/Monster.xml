@@ -3,20 +3,20 @@
   <!--Angel-->
   <Monster id="0">
     <Speed>1.8</Speed>
-    <Hp>45000</Hp>
-    <MaxHp>45000</MaxHp>
+    <Hp>25000</Hp>
+    <MaxHp>25000</MaxHp>
     <Mp>600</Mp>
     <MaxMp>600</MaxMp>
     <CriticalRate>35</CriticalRate>
-    <MinDamage>650</MinDamage>
-    <MaxDamage>900</MaxDamage>
+    <MinDamage>360</MinDamage>
+    <MaxDamage>570</MaxDamage>
     <Defense>35</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
     <HitFrame>12</HitFrame>
     <Sight>150</Sight>
     <ChangeToDodge>15</ChangeToDodge>
-    <ExpReward>32000</ExpReward>
+    <ExpReward>16000</ExpReward>
     <Stand>
       <ContentName>img/character/fallenangel/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -52,20 +52,20 @@
   <!--Demon-->
   <Monster id="1">
     <Speed>1.5</Speed>
-    <Hp>2000</Hp>
-    <MaxHp>2000</MaxHp>
+    <Hp>25000</Hp>
+    <MaxHp>25000</MaxHp>
     <Mp>200</Mp>
     <MaxMp>200</MaxMp>
     <CriticalRate>20</CriticalRate>
-    <MinDamage>160</MinDamage>
-    <MaxDamage>220</MaxDamage>
+    <MinDamage>360</MinDamage>
+    <MaxDamage>480</MaxDamage>
     <Defense>10</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
     <HitFrame>12</HitFrame>
     <Sight>100</Sight>
     <ChangeToDodge>15</ChangeToDodge>
-    <ExpReward>3500</ExpReward>
+    <ExpReward>16000</ExpReward>
     <Stand>
       <ContentName>img/character/demon/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -98,62 +98,10 @@
       <YOffset>-110</YOffset>
     </Dyed>
   </Monster>
-  <!--Zoombie-->
-  <!--
-  <Monster id="2">
-    <Speed>1</Speed>
-    <Hp>1</Hp>
-    <MaxHp>1</MaxHp>
-    <Mp>10</Mp>
-    <MaxMp>10</MaxMp>
-    <CriticalRate>50</CriticalRate>
-    <MinDamage>30</MinDamage>
-    <MaxDamage>55</MaxDamage>
-    <Defense>2</Defense>
-    <AttackSpeed>2</AttackSpeed>
-    <Range>32</Range>
-    <HitFrame>10</HitFrame>
-    <Sight>128</Sight>
-    <ChangeToDodge>0</ChangeToDodge>
-    <ExpReward>1500</ExpReward>
-    <Stand>
-      <ContentName>img/character/zombie/stand/D</ContentName>
-      <NumOfFrames>8</NumOfFrames>
-      <XOffset>-2</XOffset>
-      <YOffset>-34</YOffset>
-    </Stand>
-    <Move>
-      <ContentName>img/character/zombie/move/D</ContentName>
-      <NumOfFrames>12</NumOfFrames>
-      <XOffset>-7</XOffset>
-      <YOffset>-35</YOffset>
-    </Move>
-    <Attack>
-      <ContentName>img/character/zombie/attack/D</ContentName>
-      <NumOfFrames>16</NumOfFrames>
-      <XOffset>-26</XOffset>
-      <YOffset>-47</YOffset>
-    </Attack>
-    <Dying>
-      <ContentName>img/character/zombie/dying/D</ContentName>
-      <NumOfFrames>19</NumOfFrames>
-      <XOffset>-50</XOffset>
-      <YOffset>-40</YOffset>
-    </Dying>
-    <Dyed>
-      <ContentName>img/character/zombie/dyed/D</ContentName>
-      <NumOfFrames>1</NumOfFrames>
-      <XOffset>-50</XOffset>
-      <YOffset>-40</YOffset>
-    </Dyed>
-  </Monster>
--->
-  
-  
   <Monster id="2">
     <Speed>1.4</Speed>
-    <Hp>1500</Hp>
-    <MaxHp>1500</MaxHp>
+    <Hp>8000</Hp>
+    <MaxHp>8000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>25</CriticalRate>
@@ -165,7 +113,7 @@
     <HitFrame>8</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>15</ChangeToDodge>
-    <ExpReward>1500</ExpReward>
+    <ExpReward>8000</ExpReward>
     <Stand>
       <ContentName>img/character/BH/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -200,8 +148,8 @@
   
   <Monster id="3">
     <Speed>2.3</Speed>
-    <Hp>1200</Hp>
-    <MaxHp>1200</MaxHp>
+    <Hp>6500</Hp>
+    <MaxHp>6500</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>15</CriticalRate>
@@ -213,7 +161,7 @@
     <HitFrame>8</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>15</ChangeToDodge>
-    <ExpReward>2000</ExpReward>
+    <ExpReward>6500</ExpReward>
     <Stand>
       <ContentName>img/character/FD/stand/D</ContentName>
       <NumOfFrames>7</NumOfFrames>
@@ -249,8 +197,8 @@
   
   <Monster id="4">
     <Speed>1.2</Speed>
-    <Hp>1000</Hp>
-    <MaxHp>1000</MaxHp>
+    <Hp>8000</Hp>
+    <MaxHp>8000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>25</CriticalRate>
@@ -262,7 +210,7 @@
     <HitFrame>11</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>20</ChangeToDodge>
-    <ExpReward>2000</ExpReward>
+    <ExpReward>8000</ExpReward>
     <Stand>
       <ContentName>img/character/GY/stand/D</ContentName>
       <NumOfFrames>12</NumOfFrames>
@@ -297,8 +245,8 @@
   
   <Monster id="5">
     <Speed>0.7</Speed>
-    <Hp>1600</Hp>
-    <MaxHp>1600</MaxHp>
+    <Hp>14000</Hp>
+    <MaxHp>14000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>25</CriticalRate>
@@ -310,7 +258,7 @@
     <HitFrame>4</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>20</ChangeToDodge>
-    <ExpReward>3000</ExpReward>
+    <ExpReward>14000</ExpReward>
     <Stand>
       <ContentName>img/character/HP/stand/D</ContentName>
       <NumOfFrames>7</NumOfFrames>
@@ -346,8 +294,8 @@
   
   <Monster id="6">
     <Speed>1.5</Speed>
-    <Hp>1400</Hp>
-    <MaxHp>1400</MaxHp>
+    <Hp>12000</Hp>
+    <MaxHp>12000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>25</CriticalRate>
@@ -359,7 +307,7 @@
     <HitFrame>7</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>20</ChangeToDodge>
-    <ExpReward>3000</ExpReward>
+    <ExpReward>12000</ExpReward>
     <Stand>
       <ContentName>img/character/CS/stand/D</ContentName>
       <NumOfFrames>8</NumOfFrames>
@@ -395,8 +343,8 @@
   
   <Monster id="7">
     <Speed>1.5</Speed>
-    <Hp>25000</Hp>
-    <MaxHp>25000</MaxHp>
+    <Hp>190000</Hp>
+    <MaxHp>190000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>45</CriticalRate>
@@ -408,7 +356,7 @@
     <HitFrame>9</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>25</ChangeToDodge>
-    <ExpReward>16000</ExpReward>
+    <ExpReward>160000</ExpReward>
     <Stand>
       <ContentName>img/character/Duriel/stand/D</ContentName>
       <NumOfFrames>12</NumOfFrames>
@@ -445,8 +393,8 @@
   
   <Monster id="8">
     <Speed>1.1</Speed>
-    <Hp>600</Hp>
-    <MaxHp>600</MaxHp>
+    <Hp>4300</Hp>
+    <MaxHp>4300</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>10</CriticalRate>
@@ -458,7 +406,7 @@
     <HitFrame>11</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>25</ChangeToDodge>
-    <ExpReward>600</ExpReward>
+    <ExpReward>4300</ExpReward>
     <Stand>
       <ContentName>img/character/G1/stand/D</ContentName>
       <NumOfFrames>4</NumOfFrames>
@@ -495,8 +443,8 @@
   
   <Monster id="9">
     <Speed>1.1</Speed>
-    <Hp>1000</Hp>
-    <MaxHp>1000</MaxHp>
+    <Hp>5500</Hp>
+    <MaxHp>5500</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>10</CriticalRate>
@@ -508,7 +456,7 @@
     <HitFrame>11</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>25</ChangeToDodge>
-    <ExpReward>1000</ExpReward>
+    <ExpReward>5500</ExpReward>
     <Stand>
       <ContentName>img/character/G2/stand/D</ContentName>
       <NumOfFrames>4</NumOfFrames>
@@ -545,8 +493,8 @@
   
   <Monster id="10">
     <Speed>1.5</Speed>
-    <Hp>800</Hp>
-    <MaxHp>800</MaxHp>
+    <Hp>4500</Hp>
+    <MaxHp>4500</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
     <CriticalRate>10</CriticalRate>
@@ -558,7 +506,7 @@
     <HitFrame>11</HitFrame>
     <Sight>128</Sight>
     <ChangeToDodge>25</ChangeToDodge>
-    <ExpReward>1000</ExpReward>
+    <ExpReward>4500</ExpReward>
     <Stand>
       <ContentName>img/character/G4/stand/D</ContentName>
       <NumOfFrames>4</NumOfFrames>
@@ -595,20 +543,20 @@
 
   <Monster id="11">
     <Speed>1.4</Speed>
-    <Hp>69000</Hp>
-    <MaxHp>69000</MaxHp>
+    <Hp>1350000</Hp>
+    <MaxHp>1350000</MaxHp>
     <Mp>0</Mp>
     <MaxMp>0</MaxMp>
-    <CriticalRate>45</CriticalRate>
-    <MinDamage>1250</MinDamage>
-    <MaxDamage>2250</MaxDamage>
-    <Defense>68</Defense>
+    <CriticalRate>70</CriticalRate>
+    <MinDamage>4000</MinDamage>
+    <MaxDamage>7000</MaxDamage>
+    <Defense>350</Defense>
     <AttackSpeed>3</AttackSpeed>
     <Range>32</Range>
     <HitFrame>14</HitFrame>
-    <Sight>128</Sight>
+    <Sight>512</Sight>
     <ChangeToDodge>25</ChangeToDodge>
-    <ExpReward>60000</ExpReward>
+    <ExpReward>160000</ExpReward>
     <Stand>
       <ContentName>img/character/DI/stand/D</ContentName>
       <NumOfFrames>12</NumOfFrames>
@@ -627,7 +575,7 @@
       <NumOfFrames>20</NumOfFrames>
       <XOffset>-123</XOffset>
       <YOffset>-210</YOffset>
-      <NDelay>2</NDelay>
+      <NDelay>1</NDelay>
     </Attack>
     <Dying>
       <ContentName>img/character/DI/dying/D</ContentName>
